@@ -1,0 +1,1 @@
+alter table opt_base_info  add critical_level VARCHAR2(1);

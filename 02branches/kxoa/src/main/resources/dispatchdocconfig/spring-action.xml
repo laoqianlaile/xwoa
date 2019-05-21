@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="true">
+
+	<bean name="dispatchDocAction" class="com.centit.dispatchdoc.action.DispatchDocAction"
+		scope="request">
+		<property name="dispatchDocManager" ref="dispatchDocManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="incomeDocListManager" ref="VIncomeDocListManager" />
+		<property name="docRelativeManager" ref="docRelativeManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="incomeDocManager" ref="incomeDocManager" />
+		<property name="docSendManager" ref="docSendManager" />
+		<property name="applyUnitInfoManager" ref="applyUnitInfoManager" />
+		<property name="vDispatchDocListManager" ref="VDispatchDocListManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="optStuffInfoManager" ref="optStuffInfoManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="oaBizBindInfoManager" ref="oaBizBindInfoManager" />
+        <property name="rtxInfoManager" ref="rtxInfoManager" />
+        <property name="actionTaskDao" ref="actionTaskDao"/>
+        <property name="generalModuleParamManager" ref="generalModuleParamManager" />
+        <property name="optProcCollectionManager" ref="optProcCollectionManager" />
+        <property name="VOptProcCollectionManager" ref="VOptProcCollectionManager" />
+        <property name="vOptBaseListManager" ref="vOptBaseListManager" />
+        <property name="voaUnitArchiveDispatchdocManager" ref="voaUnitArchiveDispatchdocManager" />
+        <property name="oaArchiveManager" ref="oaArchiveManager" />
+	    <property name="taskExecutor" ref="taskExecutor" />
+		<property name="optPdfInfoManager" ref="optPdfInfoManager" />
+		<property name="ideaTempletManager" ref="ideaTempletManager" />
+		<property name="oaSmssendManager" ref="oaSmssendManager" />
+	</bean>
+
+	<bean name="incomeDocAction" class="com.centit.dispatchdoc.action.IncomeDocAction"
+		scope="request">
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="incomeDocManager" ref="incomeDocManager" />
+		<property name="incomeDocListManager" ref="VIncomeDocListManager" />
+		<property name="incomeProjectManager" ref="incomeProjectManager" />
+		<property name="optFlowNoInfoManager" ref="optFlowNoInfoManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="optLeaderShipManager" ref="optLeaderShipManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<!-- <property name="optStuffInfoManager" ref="optStuffInfoManager" /> -->
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="oaBizBindInfoManager" ref="oaBizBindInfoManager" />
+		<property name="rtxInfoManager" ref="rtxInfoManager" />
+		<property name="optProcCollectionManager" ref="optProcCollectionManager" />
+		<property name="userbizoptLogManager" ref="userbizoptLogManager"/>
+		<property name="VOptProcCollectionManager" ref="VOptProcCollectionManager" />
+		<property name="oaUnitIncomedocManager" ref="oaUnitIncomedocManager" />
+		<property name="vOptBaseListManager" ref="vOptBaseListManager" />
+		<property name="voaUnitArchiveIncomedocManager" ref="voaUnitArchiveIncomedocManager" />
+		<property name="oaArchiveManager" ref="oaArchiveManager" />
+		 <property name="taskExecutor" ref="taskExecutor" />
+         <property name="optPdfInfoManager" ref="optPdfInfoManager" />
+         <property name="ideaTempletManager" ref="ideaTempletManager" />
+         <property name="oaSmssendManager" ref="oaSmssendManager" />
+	</bean>
+
+	<bean name="applyUnitInfoAction" class="com.centit.dispatchdoc.action.ApplyUnitInfoAction"
+		scope="request">
+		<property name="applyUnitInfoManager" ref="applyUnitInfoManager" />
+	</bean>
+
+	<bean name="incomeProjectAction" class="com.centit.dispatchdoc.action.IncomeProjectAction"
+		scope="request">
+		<property name="incomeProjectManager" ref="incomeProjectManager" />
+	</bean>
+
+	<bean name="ioDocTasksExcuteAction" class="com.centit.dispatchdoc.action.IODocTasksExcuteAction"
+		scope="request">
+		<property name="dispatchDocManager" ref="dispatchDocManager" />
+		<property name="incomeDocManager" ref="incomeDocManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="incomeProjectManager" ref="incomeProjectManager" />
+		<property name="optStuffInfoManager" ref="optStuffInfoManager" />
+		<property name="signedReportManager" ref="signedReportManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="oaBizBindInfoManager" ref="oaBizBindInfoManager" />
+		<property name="optProcCollectionManager" ref="optProcCollectionManager" />
+		<property name="actionTaskDao" ref="actionTaskDao"/>
+		<property name="rtxInfoManager" ref="rtxInfoManager"/>
+		<property name="userbizoptLogManager" ref="userbizoptLogManager"/>
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		 <property name="taskExecutor" ref="taskExecutor" />
+         <property name="optPdfInfoManager" ref="optPdfInfoManager" />
+         <property name="oaSmssendManager" ref="oaSmssendManager" />
+         <property name="flowDefine" ref="flowDefine" />
+         
+	</bean>
+
+	<bean name="ioDocTasksAction" class="com.centit.dispatchdoc.action.IODocTasksAction"
+		scope="request">
+		<property name="ioDocTasksManager" ref="ioDocTasksManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="flowDefine" ref="flowDefine" />
+	</bean>
+
+	<bean name="ioDocArchiveNoAction" class="com.centit.dispatchdoc.action.IODocArchiveNoAction"
+		scope="request">
+		<property name="ioDocArchiveNoManager" ref="ioDocArchiveNoManager" />
+		<property name="optFlowNoInfoManager" ref="optFlowNoInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optZwhReservedManager" ref="optZwhReservedManager" />
+		<property name="dispatchDocManager" ref="dispatchDocManager" />
+		<property name="userbizoptLogManager" ref="userbizoptLogManager"/>
+		<property name="oaSmssendManager" ref="oaSmssendManager" />
+
+	</bean>
+
+	<bean name="subprocessProjectAction" scope="request"
+		class="com.centit.dispatchdoc.action.SubprocessProjectAction">
+		<property name="subprocessProjectManager" ref="subprocessProjectManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="optWritdefManager" ref="optWritdefManager" />
+		<property name="functionManager" ref="functionManager" />
+		<property name="incomeProjectManager" ref="incomeProjectManager" />
+		<property name="ioDocTasksManager" ref="ioDocTasksManager" />
+	</bean>
+
+	<bean name="VSubprocessProjectTaskListAction" scope="request"
+		class="com.centit.dispatchdoc.action.VSubprocessProjectTaskListAction">
+		<property name="VSubprocessProjectTaskListManager" ref="VSubprocessProjectTaskListManager" />
+	</bean>
+
+	<bean name="dataChangeAction" class="com.centit.dispatchdoc.action.DataChangeAction"
+		scope="request">
+		<property name="dataChgManager" ref="dataChgManager" />
+	</bean>
+
+	<bean name="VUserTransaffairAction" class="com.centit.dispatchdoc.action.VUserTransaffairAction"
+		scope="request">
+		<property name="VUserTransaffairManager" ref="VUserTransaffairManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+
+	<bean name="VStuffTransaffairAction" class="com.centit.dispatchdoc.action.VStuffTransaffairAction"
+		scope="request">
+		<property name="VStuffTransaffairManager" ref="VStuffTransaffairManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+
+	<bean name="readInfoAction" class="com.centit.dispatchdoc.action.ReadInfoAction"
+		scope="request">
+		<property name="readInfoManager" ref="readInfoManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="vReadInfoManager" ref="vReadInfoManager" />
+	</bean>
+
+	<bean name="VSwSearchAction" class="com.centit.dispatchdoc.action.VSwSearchAction">
+		<property name="VSwSearchManager" ref="VSwSearchManager" />
+	</bean>
+
+	<bean name="VProjectAuditInfoAction" class="com.centit.dispatchdoc.action.VProjectAuditInfoAction">
+		<property name="VProjectAuditInfoManager" ref="VProjectAuditInfoManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+	</bean>
+	<bean name="VUserTransaffairAttentionAction"
+		class="com.centit.dispatchdoc.action.VUserTransaffairAttentionAction">
+		<property name="VUserTransaffairAttentionManager" ref="VUserTransaffairAttentionManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+
+	<bean name="VUserTransaffairDcyjAction"
+		class="com.centit.dispatchdoc.action.VUserTransaffairDcyjAction">
+		<property name="VUserTransaffairDcyjManager" ref="VUserTransaffairDcyjManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="VUserTransaffairDcyjGrAction"
+		class="com.centit.dispatchdoc.action.VUserTransaffairDcyjGrAction">
+		<property name="VUserTransaffairDcyjGrManager" ref="VUserTransaffairDcyjGrManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="vuserTaskListOAAction" class="com.centit.dispatchdoc.action.VuserTaskListOAAction"
+		scope="request">
+		<property name="vuserTaskListOAManager" ref="vuserTaskListOAManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="sysRoleManager" ref="sysRoleManager" />
+		<property name="userbizoptLogManager" ref="userbizoptLogManager"/>
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+	</bean>
+	<bean name="signedReportAction" scope="request"
+		class="com.centit.dispatchdoc.action.SignedReportAction">
+		<property name="signedReportManager" ref="signedReportManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="optFlowNoInfoManager" ref="optFlowNoInfoManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="optLeaderShipManager" ref="optLeaderShipManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+	</bean>
+<!-- 	<bean name="optProcStuffInfoAction" class="com.centit.dispatchdoc.action.OptProcStuffInfoAction">
+		<property name="optProcStuffInfoManager" ref="optProcStuffInfoManager" />
+	</bean> -->
+</beans>

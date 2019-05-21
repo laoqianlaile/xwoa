@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    http://www.springframework.org/schema/context     http://www.springframework.org/schema/context/spring-context.xsd"
+	default-lazy-init="false">
+
+	<bean id="sysUserDao" class="com.centit.sys.dao.UserInfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="sysUnitDao" class="com.centit.sys.dao.UnitInfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="functionDao" class="com.centit.sys.dao.OptInfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="dictionaryDao" class="com.centit.sys.dao.DataDictionaryDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="catalogDao" class="com.centit.sys.dao.DataCatalogDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="sysRoleDao" class="com.centit.sys.dao.RoleInfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- <bean id="sysRoprvDao" class="com.centit.sys.dao.SysRoprvDao"> <property 
+		name="sessionFactory"> <ref bean="sessionFactory" /> </property> </bean> -->
+	<bean id="userRoleDao" class="com.centit.sys.dao.UserRoleDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optdefDao" class="com.centit.sys.dao.OptDefDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userUnitDao" class="com.centit.sys.dao.UserUnitDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vUserUnitsDao" class="com.centit.sys.dao.VUserUnitsDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="addressBookDao" class="com.centit.sys.dao.AddressBookDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userSettingDao" class="com.centit.sys.dao.UserSettingDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optRunRecDao" class="com.centit.sys.dao.OptRunRecDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optVariableDao" class="com.centit.sys.dao.OptVariableDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vOptdefDao" class="com.centit.sys.dao.VOptDefDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optFlowNoInfoDao" class="com.centit.sys.dao.OptFlowNoInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optFlowNoPoolDao" class="com.centit.sys.dao.OptFlowNoPoolDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="optLogDao" class="com.centit.sys.dao.OptLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="taskLogDao" class="com.centit.sys.dao.TaskLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+
+	<!-- lq -->
+	<bean id="indexDao" class="com.centit.app.dao.IndexDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="userInfoDao" class="com.centit.sys.dao.UserInfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="accessLogDao" class="com.centit.sys.dao.AccessLogDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="vUserOnlineDao" class="com.centit.sys.dao.VUserOnlineDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="useroptLogDao" class="com.centit.sys.dao.UseroptLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="userbizoptLogDao" class="com.centit.sys.dao.UserbizoptLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+		
+	<bean id="userForgetPasswordDao" class="com.centit.sys.dao.UserForgetPasswordDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+ <description>JSTL 1.1 core library</description>
+ <display-name>JSTL core</display-name>
+ <tlib-version>1.0</tlib-version>
+ <short-name>fns</short-name>
+ <uri>http://www.centit.com/el/sysfuncs</uri>
+  <function>
+  <description>获取文件扩展名</description>
+  <name>getFileSuffix</name>
+  <function-class>com.centit.sys.util.PageExpressionUtil</function-class>
+  <function-signature>java.lang.String getFileSuffix(java.lang.String)</function-signature>
+ </function>
+ 
+ <function>
+  <description>除法运算向上保存精度</description>
+  <name>roundupAfterDivide</name>
+  <function-class>com.centit.sys.util.PageExpressionUtil</function-class>
+  <function-signature>java.lang.String roundupAfterDivide(java.lang.String,java.lang.String)</function-signature>
+ </function>
+  <function>
+  <description>html字符显示在浏览器上</description>
+  <name>convertHtmlTo</name>
+  <function-class>com.centit.sys.util.PageExpressionUtil</function-class>
+  <function-signature>java.lang.String convertHtmlTo(java.lang.String)</function-signature>
+ </function>
+</taglib>

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-lazy-init="true">
+	<bean name="oaArchiveAction" class="com.centit.oa.action.OaArchiveAction"
+		scope="request">
+		<property name="oaArchiveManager" ref="oaArchiveManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="dispatchDocManager" ref="dispatchDocManager" />
+		<property name="incomeDocManager" ref="incomeDocManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+	</bean>
+	<bean name="voaUnitArchiveDispatchdocAction" class="com.centit.oa.action.VoaUnitArchiveDispatchdocAction"
+		scope="request">
+		<property name="voaUnitArchiveDispatchdocManager" ref="voaUnitArchiveDispatchdocManager" />
+	</bean>
+	<bean name="voaUnitArchiveIncomedocAction" class="com.centit.oa.action.VoaUnitArchiveIncomedocAction"
+		scope="request">
+		<property name="voaUnitArchiveIncomedocManager" ref="voaUnitArchiveIncomedocManager" />
+	</bean>
+	<bean name="equipmentInfoAction" scope="request"
+		class="com.centit.oa.action.EquipmentInfoAction">
+		<property name="equipmentInfoManager" ref="equipmentInfoManager" />
+		<property name="equipmentUsingManager" ref="equipmentUsingManager" />
+		<property name="dictManger" ref="dictionaryManager" />
+		<property name="codeRepoManager" ref="codeRepositoryManager" />
+	</bean>
+	<bean name="equipmentUsingAction" scope="request"
+		class="com.centit.oa.action.EquipmentUsingAction">
+		<property name="equipmentInfoManager" ref="equipmentInfoManager" />
+		<property name="equipmentUsingManager" ref="equipmentUsingManager" />
+		<property name="dictManger" ref="dictionaryManager" />
+	</bean>
+
+	<bean name="innermsgAction" class="com.centit.oa.action.InnermsgAction"
+		scope="request">
+		<property name="innermsgManager" ref="innermsgManager" />
+		<property name="userMailConfigManager" ref="userMailConfigManager" />
+		<property name="innermsgRecipientManager" ref="innermsgRecipientManager" />
+		<property name="fileinfoFsManager" ref="fileinfoFsManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+	</bean>
+	<bean name="innermsgRecipientAction" scope="request"
+		class="com.centit.oa.action.InnermsgRecipientAction">
+		<property name="innermsgRecipientManager" ref="innermsgRecipientManager" />
+	</bean>
+
+	<!-- <bean name="userMailAction" class="com.centit.oa.action.UserMailAction" 
+		scope="request"> <property name="userMailManager" ref="userMailManager" /> 
+		</bean> -->
+	<!-- <bean name="userMailConfigAction" scope="request" class="com.centit.oa.action.UserMailConfigAction"> 
+		<property name="userMailConfigManager" ref="userMailConfigManager" /> </bean> -->
+
+
+	<bean name="addressbooksAction" scope="request"
+		class="com.centit.oa.action.AddressbooksAction">
+		<property name="addressbooksManager" ref="addressbooksManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="addressBookRelectionAction" scope="request"
+		class="com.centit.oa.action.AddressBookRelectionAction">
+		<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+	</bean>
+	<bean name="oATasksExcuteAction" class="com.centit.oa.action.OATasksExcuteAction"
+		scope="request">
+		<property name="oaMeetroomApplyManager" ref="oaMeetroomApplyManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="oaMeetApplyManager" ref="oaMeetApplyManager" />
+		<property name="oaCarApplyManager" ref="oaCarApplyManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="oaBizBindInfoManager" ref="oaBizBindInfoManager" />
+		<property name="actionTaskDao" ref="actionTaskDao" />
+		<property name="rtxInfoManager" ref="rtxInfoManager" />
+		<property name="userbizoptLogManager" ref="userbizoptLogManager" />
+		<property name="taskExecutor" ref="taskExecutor" />
+		<property name="optPdfInfoManager" ref="optPdfInfoManager" />
+	</bean>
+	<bean name="oaMeetApplyAction" scope="request"
+		class="com.centit.oa.action.OaMeetApplyAction">
+		<property name="oaMeetApplyManager" ref="oaMeetApplyManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+		<property name="oaMeetinfoManager" ref="oaMeetinfoManager" />
+		<property name="oaMeetMinutesManager" ref="oaMeetMinutesManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="oaScheduleManager" ref="oaScheduleManager" />
+		<property name="innermsgManager" ref="innermsgManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="oaRemindInformationManager" ref="oaRemindInformationManager" />
+		<property name="oaMeetroomApplyManager" ref="oaMeetroomApplyManager" />
+		<property name="rtxInfoManager" ref="rtxInfoManager" />
+		<property name="actionTaskDao" ref="actionTaskDao" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="userbizoptLogManager" ref="userbizoptLogManager" />
+
+	</bean>
+
+	<bean name="oaMeetinfoAction" scope="request"
+		class="com.centit.oa.action.OaMeetinfoAction">
+		<property name="oaMeetinfoManager" ref="oaMeetinfoManager" />
+		<property name="oaMeetApplyManager" ref="oaMeetApplyManager" />
+		<property name="oaCommonTypeManager" ref="oaCommonTypeManager" />
+
+	</bean>
+	<bean name="oaCommonTypeAction" scope="request"
+		class="com.centit.oa.action.OaCommonTypeAction">
+		<property name="oaCommonTypeManager" ref="oaCommonTypeManager" />
+	</bean>
+
+	<bean name="oaMeetMinutesAction" scope="request"
+		class="com.centit.oa.action.OaMeetMinutesAction">
+		<property name="oaMeetMinutesManager" ref="oaMeetMinutesManager" />
+		<property name="oaMeetApplyManager" ref="oaMeetApplyManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="oaMeetinfoManager" ref="oaMeetinfoManager" />
+		<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+	</bean>
+	<bean name="oaInformationAction" class="com.centit.oa.action.OaInformationAction"
+		scope="request">
+		<property name="oaInformationManager" ref="oaInformationManager" />
+		<property name="userbizoptLogManager" ref="userbizoptLogManager" />
+		<property name="voaInformationManager" ref="voaInformationManager" />
+		<property name="oaInformationAttachmentManager" ref="oaInformationAttachmentManager" />
+	</bean>
+	<bean name="oaCarApplyAction" scope="request"
+		class="com.centit.oa.action.OaCarApplyAction">
+		<property name="oaCarApplyManager" ref="oaCarApplyManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="oaCarinfoManager" ref="oaCarinfoManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="userbizoptLogManager" ref="userbizoptLogManager" />
+		<property name="actionTaskDao" ref="actionTaskDao" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="oaRemindInformationManager" ref="oaRemindInformationManager" />
+		<property name="innermsgManager" ref="innermsgManager" />
+		<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+		<property name="vOptBaseListManager" ref="vOptBaseListManager" />
+		<property name="oaDriverInfoManager" ref="oaDriverInfoManager" />
+		<property name="taskExecutor" ref="taskExecutor" />
+		<property name="optPdfInfoManager" ref="optPdfInfoManager" />
+
+	</bean>
+	<bean name="oaCarinfoAction" scope="request"
+		class="com.centit.oa.action.OaCarinfoAction">
+		<property name="oaCarinfoManager" ref="oaCarinfoManager" />
+		<property name="oaCommonTypeManager" ref="oaCommonTypeManager" />
+		<property name="oaDriverInfoManager" ref="oaDriverInfoManager" />
+	</bean>
+	<bean name="oaDriverInfoAction" scope="request"
+		class="com.centit.oa.action.OaDriverInfoAction">
+		<property name="oaDriverInfoManager" ref="oaDriverInfoManager" />
+	</bean>
+	<bean name="oaAccidentRecordAction" class="com.centit.oa.action.OaAccidentRecordAction"
+		scope="request">
+		<property name="oaCarApplyManager" ref="oaCarApplyManager" />
+		<property name="oaAccidentRecordManager" ref="oaAccidentRecordManager" />
+		<property name="oaCommonTypeManager" ref="oaCommonTypeManager" />
+	</bean>
+	<bean name="oaFeedbackAction" class="com.centit.oa.action.OaFeedbackAction"
+		scope="request">
+		<property name="oaFeedbackManager" ref="oaFeedbackManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+	<bean name="oaTrafficRecordAction" class="com.centit.oa.action.OaTrafficRecordAction"
+		scope="request">
+		<property name="oaCarApplyManager" ref="oaCarApplyManager" />
+		<property name="oaCommonTypeManager" ref="oaCommonTypeManager" />
+		<property name="oaTrafficRecordManager" ref="oaTrafficRecordManager" />
+	</bean>
+	<bean name="oaCostInfoAction" class="com.centit.oa.action.OaCostInfoAction"
+		scope="request">
+		<property name="oaCostInfoManager" ref="oaCostInfoManager" />
+	</bean>
+	<bean name="oaDriverBookAction" class="com.centit.oa.action.OaDriverBookAction"
+		scope="request">
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="oaDriverBookManager" ref="oaDriverBookManager" />
+		<property name="oaCarApplyManager" ref="oaCarApplyManager" />
+
+	</bean>
+	<bean name="oaScheduleAction" class="com.centit.oa.action.OaScheduleAction"
+		scope="request">
+		<property name="oaScheduleManager" ref="oaScheduleManager" />
+		<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+		<property name="oaScheduleResponseManager" ref="oaScheduleResponseManager" />
+		<property name="innermsgManager" ref="innermsgManager" />
+		<property name="oaRemindInformationManager" ref="oaRemindInformationManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+	</bean>
+	<bean name="oaVideoInformationAction" class="com.centit.oa.action.OaVideoInformationAction"
+		scope="request">
+		<property name="oaVideoInformationManager" ref="oaVideoInformationManager" />
+		<property name="oaSubvideoInformationMag" ref="oaSubvideoInformationManager" />
+	</bean>
+	<bean name="oaSuperviseAction" class="com.centit.oa.action.OaSuperviseAction"
+		scope="request">
+
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="vOptBaseListManager" ref="vOptBaseListManager" />
+		<property name="oaUnitsLeaderManager" ref="oaUnitsLeaderManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+	</bean>
+	<bean name="oaScheduleResponseAction" class="com.centit.oa.action.OaScheduleResponseAction"
+		scope="request">
+		<property name="oaScheduleResponseManager" ref="oaScheduleResponseManager" />
+
+	</bean>
+	<bean name="oaRemindInformationAction" class="com.centit.oa.action.OaRemindInformationAction"
+		scope="request">
+		<property name="oaRemindInformationManager" ref="oaRemindInformationManager" />
+		<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="oaSmssendManager" ref="oaSmssendManager" />
+	</bean>
+	<bean name="oaMeetroomApplyAction" class="com.centit.oa.action.OaMeetroomApplyAction">
+		<property name="oaMeetroomApplyManager" ref="oaMeetroomApplyManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="oaMeetinfoManager" ref="oaMeetinfoManager" />
+		<property name="oaMeetMinutesManager" ref="oaMeetMinutesManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+	</bean>
+	<bean name="oaLeaveMessageAction" class="com.centit.oa.action.OaLeaveMessageAction"
+		scope="request">
+		<property name="oaLeaveMessageManager" ref="oaLeaveMessageManager" />
+		<property name="oaLeaveMessagereplyManager" ref="oaLeaveMessagereplyManager" />
+		<property name="oaHelpinfoManager" ref="oaHelpinfoManager" />
+	</bean>
+	<bean name="oaWorkLogAction" class="com.centit.oa.action.OaWorkLogAction"
+		scope="request">
+		<property name="oaWorkLogManager" ref="oaWorkLogManager" />
+		<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+	</bean>
+	<bean name="oaOnlineItemAction" class="com.centit.oa.action.OaOnlineItemAction"
+		scope="request">
+		<property name="oaOnlineItemManager" ref="oaOnlineItemManager" />
+		<property name="oaSurveyManager" ref="oaSurveyManager" />
+		<property name="oaSurveydetailManager" ref="oaSurveydetailManager" />
+	</bean>
+	<bean name="oaOnlineItemsAction" class="com.centit.oa.action.OaOnlineItemsAction"
+		scope="request">
+		<property name="oaOnlineItemsManager" ref="oaOnlineItemsManager" />
+
+	</bean>
+	<bean name="oaSurveyAction" class="com.centit.oa.action.OaSurveyAction"
+		scope="request">
+		<property name="oaSurveyManager" ref="oaSurveyManager" />
+		<property name="oaCommonTypeManager" ref="oaCommonTypeManager" />
+		<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+		<property name="oaSurveydetailManager" ref="oaSurveydetailManager" />
+		<property name="oaOnlineItemsManager" ref="oaOnlineItemsManager" />
+		<property name="oaOnlineItemManager" ref="oaOnlineItemManager" />
+		<property name="oaSurveyTypeManager" ref="oaSurveyTypeManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+	</bean>
+	<bean name="oaSurveydetailAction" class="com.centit.oa.action.OaSurveydetailAction"
+		scope="request">
+		<property name="oaSurveydetailManager" ref="oaSurveydetailManager" />
+		<property name="oaSurveyManager" ref="oaSurveyManager" />
+	</bean>
+	<bean name="oaSurveyTypeAction" class="com.centit.oa.action.OaSurveyTypeAction"
+		scope="request">
+		<property name="oaSurveyTypeManager" ref="oaSurveyTypeManager" />
+	</bean>
+	<bean name="oaPowergroupDetailAction" class="com.centit.oa.action.OaPowergroupDetailAction"
+		scope="request">
+		<property name="oaPowergroupDetailManager" ref="oaPowergroupDetailManager" />
+	</bean>
+	<bean name="oaPowerrolergroupAction" class="com.centit.oa.action.OaPowerrolergroupAction"
+		scope="request">
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="oaPowergroupDetailManager" ref="oaPowergroupDetailManager" />
+	</bean>
+	<bean name="oaHelpinfoAction" class="com.centit.oa.action.OaHelpinfoAction"
+		scope="request">
+		<property name="oaHelpinfoManager" ref="oaHelpinfoManager" />
+		<property name="oaLeaveReplyManager" ref="oaLeaveReplyManager" />
+		<property name="oaLeaveMessageManager" ref="oaLeaveMessageManager" />
+	</bean>
+	<bean name="oaLeaveReplyAction" class="com.centit.oa.action.OaLeaveReplyAction"
+		scope="request">
+		<property name="oaLeaveReplyManager" ref="oaLeaveReplyManager" />
+	</bean>
+	<bean name="oaBizBindInfoAction" class="com.centit.oa.action.OaBizBindInfoAction"
+		scope="request">
+		<property name="oaBizBindInfoManager" ref="oaBizBindInfoManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+	</bean>
+	<bean name="voaBizBindInfoAction" class="com.centit.oa.action.VoaBizBindInfoAction"
+		scope="request">
+		<property name="voaBizBindInfoManager" ref="voaBizBindInfoManager" />
+	</bean>
+	<bean name="oaUserinfoAction" class="com.centit.oa.action.OaUserinfoAction"
+		scope="request">
+		<property name="oaUserinfoManager" ref="oaUserinfoManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="wsclientManager" ref="wsclientManager" />
+	</bean>
+	<bean name="oaUnitIncomedocAction" class="com.centit.oa.action.OaUnitIncomedocAction"
+		scope="request">
+		<property name="oaUnitIncomedocManager" ref="oaUnitIncomedocManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+	<bean name="oaAssetinformationAction" class="com.centit.oa.action.OaAssetinformationAction"
+		scope="request">
+		<property name="oaAssetinformationManager" ref="oaAssetinformationManager" />
+		<property name="oaAssetinformationInlogManager" ref="oaAssetinformationInlogManager" />
+		<property name="oaAssetinformationOutlogManager" ref="oaAssetinformationOutlogManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="oaAssetinformationBondAction" class="com.centit.oa.action.OaAssetinformationBondAction"
+		scope="request">
+		<property name="oaAssetinformationBondManager" ref="oaAssetinformationBondManager" />
+	</bean>
+	<bean name="oaAssetinformationInlogAction" class="com.centit.oa.action.OaAssetinformationInlogAction"
+		scope="request">
+		<property name="oaAssetinformationInlogManager" ref="oaAssetinformationInlogManager" />
+		<property name="oaAssetinformationBondManager" ref="oaAssetinformationBondManager" />
+		<property name="oaAssetinformationManager" ref="oaAssetinformationManager" />
+	</bean>
+	<bean name="oaAssetinformationOutlogAction" class="com.centit.oa.action.OaAssetinformationOutlogAction"
+		scope="request">
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="oaAssetinformationBondManager" ref="oaAssetinformationBondManager" />
+		<property name="oaAssetinformationManager" ref="oaAssetinformationManager" />
+		<property name="oaAssetinformationOutlogManager" ref="oaAssetinformationOutlogManager" />
+	</bean>
+	<bean name="oaSubvideoInformationAction" class="com.centit.oa.action.OaSubvideoInformationAction">
+		<property name="oaSubvideoInformationManager" ref="oaSubvideoInformationManager" />
+		<property name="oaVideoInformationManager" ref="oaVideoInformationManager" />
+	</bean>
+
+	<bean name="vOptBaseListAction" class="com.centit.oa.action.VOptBaseListAction">
+		<property name="vOptBaseListManager" ref="vOptBaseListManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="oaSmssendAction" class="com.centit.oa.action.OaSmssendAction"
+		scope="request">
+		<property name="oaSmssendManager" ref="oaSmssendManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="oaSmssendLogManager" ref="oaSmssendLogManager" />
+	</bean>
+	<bean name="sampleFlowRoleRelegateExpandAction"
+		class="com.centit.oa.action.SampleFlowRoleRelegateExpandAction" scope="request">
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="flowRoleRelegate" ref="flowRoleRelegate" />
+	</bean>
+	<bean name="OaLeaveOverTimeAction" class="com.centit.oa.action.OaLeaveOverTimeAction"
+		scope="request">
+		<property name="oaLeaveOverTimeMgr" ref="oaLeaveOverTimeManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+	<bean name="oaAttendanceDetailsAction" class="com.centit.oa.action.OaAttendanceDetailsAction"
+		scope="request">
+		<property name="OaAttendanceDetailsManager" ref="oaAttendanceDetailsManager" />
+	</bean>
+	<!-- <bean name="oaServiceentranceAction" class="com.centit.oa.action.OaServiceentranceAction"> 
+		<property name="oaServiceentranceManager" ref="oaServiceentranceManager" 
+		/> </bean> -->
+
+	<bean id="oaOptPowerDefAction" class="com.centit.oa.action.OaOptPowerDefAction"
+		scope="request">
+		<property name="oaOptPowerDefManager" ref="oaOptPowerDefManager" />
+		<property name="codeRepositoryManager" ref="codeRepositoryManager" />
+	</bean>
+
+	<bean id="mailProfileAction" class="com.centit.mailclient.action.MailProfileAction"
+		scope="request">
+		<property name="mailProfileService" ref="mailProfileService" />
+	</bean>
+
+	<bean id="mailInfoAction" class="com.centit.mailclient.action.MailInfoAction"
+		scope="request">
+		<property name="mailProfileService" ref="mailProfileService" />
+		<property name="mailInfoService" ref="mailInfoService" />
+		<property name="mailAttachmentService" ref="mailAttachmentService" />
+		<property name="taskExecutor" ref="taskExecutor" />
+	</bean>
+
+	<bean id="oaFilemanagerAction" class="com.centit.oa.action.OaFilemanagerAction"
+		scope="request">
+		<property name="oaFilemanagerManager" ref="oaFilemanagerManager" />
+		<property name="oaInformationAttachmentManager" ref="oaInformationAttachmentManager" />
+	</bean>
+
+	<bean id="optFileTransferSendAction" class="com.centit.oa.action.OptFileTransferSendAction"
+		scope="request">
+		<property name="optFileTransferSendMgr" ref="optFileTransferSendMgr" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="optFilingCabinetsMgr" ref="optFilingCabinetsMgr" />
+		<property name="oaSmssendManager" ref="oaSmssendManager" />
+	</bean>
+	<bean id="optFileTransferReceiveAction" class="com.centit.oa.action.OptFileTransferReceiveAction"
+		scope="request">
+		<property name="optFileTransferReceiveMgr" ref="optFileTransferReceiveMgr" />
+		<property name="optFilingCabinetsMgr" ref="optFilingCabinetsMgr" />
+		<property name="userbizoptLogManager" ref="userbizoptLogManager" />
+	</bean>
+	<bean id="optFilingCabinetsAction" class="com.centit.oa.action.OptFilingCabinetsAction"
+		scope="request">
+		<property name="optFilingCabinetsMgr" ref="optFilingCabinetsMgr" />
+	</bean>
+	<bean id="oaArrangeweekAction" class="com.centit.oa.action.OaArrangeweekAction"
+		scope="request">
+		<property name="oaArrangeweekMgr" ref="oaArrangeweekMgr" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="oaBudgetstravelAction" class="com.centit.oa.action.OaBudgetstravelAction"
+		scope="request">
+		<property name="oaBudgetstravelManager" ref="oaBudgetstravelManager" />
+		<property name="vPowerUserInfoManager" ref="vPowerUserInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="taskExecutor" ref="taskExecutor" />
+		<property name="optPdfInfoManager" ref="optPdfInfoManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="optApplyManager" ref="optApplyManager" />
+		<property name="ideaTempletManager" ref="ideaTempletManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		
+	</bean>
+	<bean name="oaSpecialBudgetAction" class="com.centit.oa.action.OaSpecialBudgetAction"
+		scope="request">
+		<property name="oaSpecialBudgetManager" ref="oaSpecialBudgetManager" />
+		<property name="vPowerUserInfoManager" ref="vPowerUserInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="taskExecutor" ref="taskExecutor" />
+		<property name="optPdfInfoManager" ref="optPdfInfoManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="optApplyManager" ref="optApplyManager" />
+		<property name="ideaTempletManager" ref="ideaTempletManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+	</bean>
+</beans>

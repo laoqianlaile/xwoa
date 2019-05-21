@@ -1,0 +1,1 @@
+update F_OPTINFO set optname='通知公告'  where optid='GGZY' and preoptid='YGJGRCBG';

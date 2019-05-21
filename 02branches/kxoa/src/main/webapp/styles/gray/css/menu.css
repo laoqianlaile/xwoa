@@ -1,0 +1,14 @@
+/* CSS Document */
+
+body { background: url(../images/frame/menu_fill.jpg); margin:0; padding:0;}
+#left1 { color:#666666; font-size:12px; margin:0;}
+BODY, DIV
+{
+  scrollbar-3dlight-color:#dff0ff;
+  scrollbar-highlight-color:#dff0ff;
+  scrollbar-face-color: #cae4ff;
+  scrollbar-arrow-color:#000;
+  scrollbar-shadow-color:#dff0ff;
+  scrollbar-darkshadow-color:#dff0ff;
+  scrollbar-track-color:#dff0ff;
+  }

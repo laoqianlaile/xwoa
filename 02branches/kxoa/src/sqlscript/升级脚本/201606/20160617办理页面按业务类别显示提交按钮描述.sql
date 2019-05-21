@@ -1,0 +1,14 @@
+insert into F_DATACATALOG (CATALOGCODE, CATALOGNAME, CATALOGSTYLE, CATALOGTYPE, CATALOGDESC, FIELDDESC, ISUPLOAD, DICTIONARYTYPE, CREATEDATE, LASTMODIFYDATE, ROWID)
+values ('optComButton', '业务类别提交按钮名称', 'S', 'L', 'demolitioncase   FW 发文', '根据djId判断业务类别，对应的action', '0', null, null, null, null);
+
+insert into F_DATADICTIONARY (CATALOGCODE, DATACODE, EXTRACODE, EXTRACODE2, DATATAG, DATAVALUE, DATASTYLE, DATADESC, LASTMODIFYDATE, CREATEDATE, ROWID)
+values ('optComButton', 'CARSQ', null, '7', 'T', '提交', 'S', null, null, null, null);
+
+insert into F_DATADICTIONARY (CATALOGCODE, DATACODE, EXTRACODE, EXTRACODE2, DATATAG, DATAVALUE, DATASTYLE, DATADESC, LASTMODIFYDATE, CREATEDATE, ROWID)
+values ('optComButton', 'FW', null, '4', 'T', '办文提交', 'S', null, null, null, null);
+
+insert into F_DATADICTIONARY (CATALOGCODE, DATACODE, EXTRACODE, EXTRACODE2, DATATAG, DATAVALUE, DATASTYLE, DATADESC, LASTMODIFYDATE, CREATEDATE, ROWID)
+values ('optComButton', 'HYSQ', null, '5', 'T', '提交', 'S', null, null, null, null);
+
+insert into F_DATADICTIONARY (CATALOGCODE, DATACODE, EXTRACODE, EXTRACODE2, DATATAG, DATAVALUE, DATASTYLE, DATADESC, LASTMODIFYDATE, CREATEDATE, ROWID)
+values ('optComButton', 'SW', null, '3', 'T', '办文提交', 'S', null, null, null, null);

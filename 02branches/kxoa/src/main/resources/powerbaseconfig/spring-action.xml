@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="true">
+	<bean name="powerOrgInfoAction" class="com.centit.powerbase.action.PowerOrgInfoAction"
+		scope="request">
+		<property name="powerOrgInfoManager" ref="powerOrgInfoManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+	</bean>
+
+	<bean name="supPowerAction" class="com.centit.powerbase.action.SupPowerAction"
+		scope="request">
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="suppowerstatechglogManager" ref="suppowerstatechglogManager" />
+		<property name="vPowerOrgInfoManager" ref="vPowerOrgInfoManager" />
+		<property name="suppowerchglogManager" ref="suppowerchglogManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="powerOrgInfoManager" ref="powerOrgInfoManager" />
+		<property name="vPowerUserInfoManager" ref="vPowerUserInfoManager" />
+	</bean>
+	<bean name="vsuppowerinusingAction" scope="request"
+		class="com.centit.powerbase.action.VsuppowerinusingAction">
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="suppowerchglogAction" scope="request"
+		class="com.centit.powerbase.action.SuppowerchglogAction">
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="suppowerchglogManager" ref="suppowerchglogManager" />
+		<property name="vPowerUserInfoManager" ref="vPowerUserInfoManager" />
+	</bean>
+
+	<bean name="pcfreeumpiredegreeAction" class="com.centit.powerbase.action.PcfreeumpiredegreeAction"
+		scope="request">
+		<property name="pcfreeumpiredegreeManager" ref="pcfreeumpiredegreeManager" />
+		<property name="pcpunishItemManager" ref="pcpunishItemManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+	</bean>
+	<bean name="pcfreeumpiretypeAction" class="com.centit.powerbase.action.PcfreeumpiretypeAction"
+		scope="request">
+		<property name="pcfreeumpiretypeManager" ref="pcfreeumpiretypeManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="pcpunishStandardManager" ref="pcpunishStandardManager" />
+		<property name="pcfreeumpiredegreeManager" ref="pcfreeumpiredegreeManager" />
+	</bean>
+	<!-- <bean name="pcpunishItemAction" class="com.centit.powerbase.action.PcpunishItemAction" 
+		scope="request"> <property name="pcpunishItemManager" ref="pcpunishItemManager" 
+		/> </bean> -->
+	<bean name="pcpunishStandardAction" class="com.centit.powerbase.action.PcpunishStandardAction"
+		scope="request">
+		<property name="pcpunishStandardManager" ref="pcpunishStandardManager" />
+		<property name="pcpunishItemManager" ref="pcpunishItemManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="pcfreeumpiretypeManager" ref="pcfreeumpiretypeManager" />
+	</bean>
+
+	<bean name="dataenterpriseAction" class="com.centit.powerbase.action.DataenterpriseAction"
+		scope="request">
+		<property name="dataenterpriseManager" ref="dataenterpriseManager" />
+	</bean>
+	<bean name="dataindividualAction" class="com.centit.powerbase.action.DataindividualAction"
+		scope="request">
+		<property name="dataindividualManager" ref="dataindividualManager" />
+	</bean>
+	<bean name="powerUserInfoAction" class="com.centit.powerbase.action.PowerUserInfoAction"
+		scope="request">
+		<property name="powerUserInfoManager" ref="powerUserInfoManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />	
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+	</bean>
+</beans>

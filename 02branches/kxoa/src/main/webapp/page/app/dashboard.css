@@ -1,0 +1,624 @@
+font {
+	font-size: 18px;
+	color: #16387c;
+	display: inline;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+.eXtremeTable .even {
+	background-color: #DCF3FF !important;
+}
+
+.childBlockTile {
+	margin: 0 15px 0 15px;
+	padding-top: 5px;
+	border-bottom: 1px solid #dedede;
+	overflow: hidden;
+}
+
+.childBlockTile .childBlockTile_left {
+	float: left;
+}
+
+.childBlockTile .childBlockTile_left > i {
+	width: 3px;
+	height: 31px;
+	margin: 0 15px 0 15px;
+	float: left;
+	display: block;
+	background: url("../../themes/default/improve/geduan.png") no-repeat center center;
+}
+
+.childBlockTile .childBlockTile_left1 {
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	text-align: center;
+	color: #2f2f2f;
+	cursor: pointer;
+}
+
+.childBlockTile .childBlockTile_left1:FIRST-CHILD {
+	padding-left: 20px;
+}
+
+.childBlockTile .document-switch-hover {
+	font-weight: bold;
+	color: #006fc1;
+	background: none;
+	border-bottom: 2px solid #5ac45c;
+}
+
+.childBlockTile .childBlockTile_right {
+	float: right;
+}
+
+.childBlockTile .childBlockTile_right span {
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	color: #006fc1;
+}
+
+.childBlockTile .childBlockTile_right .childBlockMore{
+	height: 30px;
+	line-height: 30px;
+	display: block;
+}
+
+table .even {
+	background: #f7f7f7;
+}
+
+.childBlock .childBlockCont {
+	height: 94px;
+	margin: 0 15px;
+}
+/* ========================================== */
+.childBlock .childBlockCont_faqi div {
+	width: 16%;
+	height: 100%;
+	float: left;
+}
+.childBlock .childBlockCont_faqi div a {
+	border-radius: 35px;
+	width: 73px;
+	height: 73px;
+	margin: 10px auto 0 auto;
+	display: block;
+	text-align: center;
+	color: #ffffff;
+	overflow: hidden;
+}
+
+.childBlock .childBlockCont_faqi div a:hover {
+	border:1px white solid;
+	border-radius:33px;
+}
+
+.childBlock .childBlockCont_faqi div a label {
+	margin-top: 10px;
+	display: block;
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.childBlock .childBlockCont_faqi > div a span {
+	margin-top: 3px;
+	display: block;
+	font-size: 15px;
+}
+/* ========================================== */
+
+.childBlock .childBlockCont div {
+	width: 25%;
+	height: 100%;
+	float: left;
+}
+
+.childBlock .childBlockCont div a {
+	border-radius: 35px;
+	width: 73px;
+	height: 73px;
+	margin: 10px auto 0 auto;
+	display: block;
+	text-align: center;
+	color: #ffffff;
+	overflow: hidden;
+}
+
+.childBlock .childBlockCont div a:hover {
+	border:1px white solid;
+	border-radius:33px;
+}
+
+.childBlock .childBlockCont div a label {
+	margin-top: 10px;
+	display: block;
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.childBlock .childBlockCont > div a span {
+	margin-top: 3px;
+	display: block;
+	font-size: 15px;
+}
+
+.folder {
+	background: url(${pageContext.request.contextPath}/images/folder.png) no-repeat 10px;
+	height: 16px;
+	vertical-align: text-top;
+	width: 26px;
+}
+
+.document {
+	background: url(${pageContext.request.contextPath}/images/document.png) no-repeat 10px;
+	height: 16px;
+	vertical-align: text-top;
+	width: 26px;
+	display: inline-block !important;
+}
+
+.itemTitle {
+	width: 70%;
+	padding: 9px 0 8px 5px;
+	text-align: left;
+	/* background:url(${pageContext.request.contextPath}/images/redicon.gif) no-repeat 5px; */
+	cursor: pointer;
+}
+
+.itemTitle span,.itemTitle a {
+	font-size: 14px;
+	color: #2f2f2f;
+}
+.itemTitle span.icon{display:inline-block;}
+.itemTime {
+	width: 28%;
+	padding: 9px 15px 6px 0;
+	text-align: right;
+	font-size: 14px;
+	color: #006fc1;
+}
+.itemTimeV2 {
+	width: 28%;
+	padding: 9px 15px 6px 0;
+	text-align: right;
+	font-size: 14px;
+}
+
+.improveLeft {
+	margin-right: 290px;
+	border-right: 1px solid #d9d7d8;
+}
+
+.improveLeft .leftHead {
+	padding: 20px 15px 0 20px;
+	background: #fafafa;
+}
+
+.improveLeft .leftHead .leftTitle {
+	overflow: hidden;
+}
+
+.improveLeft .leftHead .leftTitle > div {
+	width: 50%;
+	float: left;
+}
+
+.improveLeft .leftHead .leftTitle .mail  {
+	height: 63px;
+	margin-right: 7.5px;
+	background: url("../../themes/default/improve/title-1.png") repeat-x;
+	overflow: hidden;
+}
+
+
+
+.improveLeft .leftHead .leftTitle > div:FIRST-CHILD + div div {
+	height: 63px;
+	margin-left: 10px;
+	background: url("../../themes/default/improve/title-2.png") repeat-x;
+}
+
+/* 个人邮件位置move到顶端 beg */
+.improveLeft .leftHead .leftTitle .mail label {
+	height: 21px;
+	line-height: 21px;
+	margin-top: 7px;
+	padding-left: 50px;
+	display: block;
+	color: #ffffff;
+	background:url(../../themes/default/improve/mail.png) no-repeat 15px center; 
+}
+
+.improveLeft .leftHead .leftTitle .mail div {
+	margin-top: 6px;
+	padding-right: 5px;
+	text-align: right;
+}
+
+.improveLeft .leftHead .leftTitle .mail div a {
+	font-size: 14px;
+	color: #ffffff;
+}
+
+.improveLeft .leftHead .leftTab {
+	height: 10px;/*23px*/
+/* 	margin-top: 10px; */
+	background: url("../../themes/default/improve/shadow.png") repeat-x left bottom;
+}
+
+.improveLeft .leftHead .leftTab label {
+	width: 78px;
+	height: 23px;
+	line-height: 23px;
+	padding-left: 13px;
+	display: block;
+	text-align: center;
+	color: #ffffff;
+/* 	首页个人办公图标隐藏 */
+/* 	background: url("../../themes/default/improve/tab.png") no-repeat left bottom; */
+}
+
+.improveLeft .leftInfo {
+	padding:10px 10px 30px 20px;
+	background: #f3f3f3;
+}
+
+.improveLeft .leftInfo .leftCont {
+	overflow: hidden;
+}
+
+.improveLeft .leftInfo .leftCont > div {
+	width: 50%;
+	position: relative;
+	float: left;
+}
+
+.improveLeft .leftInfo .leftCont > div .childBlock {
+	height: 237px;
+	background: url("../../themes/default/improve/center.png") repeat-x;
+}
+
+.improveLeft .leftInfo .leftCont > div:FIRST-CHILD .childBlock {
+	margin: 0 10px 10px 2px;
+}
+
+.improveLeft .leftInfo .leftCont > div:FIRST-CHILD + div .childBlock {
+	margin: 0 5px 0 10px;
+}
+
+.improveLeft .leftInfo .leftCont > div .i-l {
+	width: 7px;
+	height: 237px;
+	top: -2px;
+	left: -5px;
+	position: absolute;
+	background: url("../../themes/default/improve/left.png") no-repeat left top;
+}
+
+.improveLeft .leftInfo .leftCont > div .i-r {
+	width: 7px;
+	height: 235px;
+	top: 0;
+	right: 3px;
+	position: absolute;
+	background: url("../../themes/default/improve/right.png") no-repeat right top;
+}
+
+.improveLeft .leftInfo .leftCont > div .r-l {
+	left: 3px;
+}
+
+.improveLeft .leftInfo .leftCont > div .r-r {
+	right: -2px;
+}
+
+.improveLeft .leftInfo .leftCont1 {
+	width: 99.6%;
+	height: 78px;
+	margin: 10px 0 10px 0;
+	position: relative;
+	background: url("../../themes/default/improve/title-3.png") repeat-x left top;
+}
+
+.improveLeft .leftInfo .leftCont1 > div:FIRST-CHILD {
+	width: 262px;
+	height: 73px;
+	margin-left: 30px;
+	float: left;
+	background:url(../../themes/default/improve/title-4.png) no-repeat left center;
+}
+
+.improveLeft .leftInfo .leftCont1 i {
+	width: 328px;
+	height: 6px;
+	bottom: -1px;
+	left: -20px;
+	position: absolute;
+	display: block;
+	background: url("../../themes/default/improve/yin-left.png") no-repeat; 
+}
+
+.improveLeft .leftInfo .leftCont1 .s-r {
+	right: -14px;
+	left: auto;
+	background: url("../../themes/default/improve/yin-right.png") no-repeat; 
+}
+
+.improveRight {
+	width: 290px;
+	top: 0;
+	right: 0;
+	bottom: 60px;
+	position: absolute;
+	background: #ececee;
+	height: 643px;
+}
+
+.improveRight .rightInfo {
+/* 	gc */
+/* 	padding: 15px 20px 30px 15px; */
+	padding: 10px 20px 30px 15px;
+}
+
+.improveRight .rightInfo .childBlockTile {
+	margin-right: 20px;
+	border: none;
+}
+
+.improveRight .rightInfo .childBlockTile_left1,.improveRight .rightInfo .childBlockTile_right {
+	height: 25px;
+	line-height: 25px;
+}
+
+.improveRight .rightInfo .itemTitle {
+	padding: 7px 0 7px 15px;
+}
+
+.improveRight .rightInfo .itemTime {
+	padding: 7px 15px 7px 0;
+}
+
+.improveRight .rightInfo .rightCont1 .childBlock {
+	height: 127px;
+	background: url("../../themes/default/improve/tongzhi.png") no-repeat;
+}
+
+.improveRight .rightInfo .rightCont2 .childBlock {
+	height: 324px;
+	background: url("../../themes/default/improve/shoufa2.jpg") no-repeat;
+}
+
+.improveRight .rightInfo .rightCont3 iframe {
+	background: #ffffff;
+}
+
+.improveRight .rightInfo .rightCont3 .learn {
+	height: 66px;
+	display: block;
+	background: url("../../themes/default/improve/learn_1.png") no-repeat;
+}
+
+ .learn {
+	height: 66px;
+	display: block;
+	background: url("../../themes/default/improve/xxyd.jpg") no-repeat;
+}
+.message{position:fixed;bottom:80px;right:35px;z-index:10;background-color: white;padding: 5px 0;}
+.message>a{display:inline-block;height:25px;padding-left:30px;padding-right:5px;line-height:25px;border-right: 1px solid #999999;cursor: pointer;position:relative;}
+.message>a>span{position: absolute;
+    top: -5px;
+    left: 15px;
+    padding: 2px 4px;
+    border-radius: 50%;
+    background-color: #CC5D5D;
+    font-size: 12px;
+    color: white;}
+.message>a.tx{background: url("../../themes/default/improve/tx.png") 5px center no-repeat}
+.message>a.db{background: url("../../themes/default/improve/db.png") 5px center no-repeat}
+.message>a.tz{background: url("../../themes/default/improve/tz.png") 5px center no-repeat}
+.message>a.sw{background: url("../../themes/default/improve/sw.png") 5px center no-repeat}
+.message>a.yj{background: url("../../themes/default/improve/yj.png") 5px center no-repeat}
+.message>a.zdarrow{background: url("../../themes/default/improve/zdarrow.png") center center no-repeat!important}
+.message>a.zd{background: url("../../themes/default/improve/zd.png") center center;width:34px;padding:0px;border:0}
+.message>a:hover{font-weight: bold;}
+#improveFooter {
+	height: 60px;
+	text-align: center;
+	background: #dbdbdb;
+	overflow: hidden;
+}
+
+#improveFooter div {
+	margin-top: 16px;
+	font-size: 11px;
+	color: #767676;
+}
+
+#improveFooter div + div {
+	margin-top: 10px;
+}
+
+#improveFooter div a {
+	font-size: 11px;
+	color: #767676;
+}
+.leftTitle_custom .mail{
+	margin-right: 7.5px!important;
+	margin-left: 10px!important;
+	background: url("../../themes/default/improve/yjxt.jpg") left top no-repeat #2860B3!important
+	}
+.leftTitle_custom .mail>div{padding-top:2px!important;}
+.leftTitle_custom #tipTitle{
+	margin-left:0!important;
+	margin-right: 10px!important;
+	background: url("../../themes/default/improve/title-5.png") left top repeat-x!important;
+	position:relative;
+	}
+.leftTitle_custom .wdyj{
+	background: url("../../themes/default/improve/wdyj.png") center top no-repeat;
+    display: inline-block;
+    padding-top: 35px;
+    position:relative;
+    margin-right:20px;
+    text-align: center;
+   }
+.leftTitle_custom .wdyj>span{
+	position:absolute;
+    top: -2px;
+    left: 28px;
+    background-color: #ff5a00;
+    padding: 2px 5px;
+    border-radius: 50%;
+    }
+.leftTitle_custom .fjx{
+	
+	background: url("../../themes/default/improve/fjx.png") center top no-repeat;
+    display: inline-block;
+    padding-top: 35px;
+    position:relative;
+    margin-right:20px;
+    text-align: center;
+}
+.leftTitle_custom .fjx>span{
+	position:absolute;
+    top: -2px;
+    left: 28px;
+    background-color: #ff5a00;
+        padding: 2px 5px;
+    border-radius: 50%;
+	}
+.leftTitle_custom .cgx{
+	
+	background: url("../../themes/default/improve/cgx.png") center top no-repeat;
+    display: inline-block;
+    padding-top: 35px;
+    position:relative;
+    margin-right:20px;
+    text-align: center;
+}
+.leftTitle_custom .cgx>span{
+	position:absolute;
+    top: -2px;
+    left: 28px;
+    background-color: #ff5a00;
+        padding: 2px 5px;
+    border-radius: 50%;
+	}
+	#header{
+	/* 	background: url(../../themes/default/improve/bg.gif) left top repeat-x!important */
+	background: url(../../themes/default/improve/head.png) left top repeat-x!important
+	}
+	#header .headerNav {
+	/*     background: url(../../themes/default/improve/zi.png) no-repeat 20px center!important; */
+	 background: url(../../themes/default/improve/head-sy.png) no-repeat 20px center!important;
+	
+	}
+#header .tabBar li a{color:white!important}
+#header .tabBar li.home a {
+    background: url(../../themes/default/improve/wdsy.png) no-repeat center 6px!important;
+}
+#header .tabBar li.to a {
+    background: url(../../themes/default/improve/grbg.png) no-repeat center 6px!important;
+}
+#header .tabBar li.three a{
+    background: url(../../themes/default/improve/nbsq.png) no-repeat center 6px!important;
+}
+#header .tabBar li.four a{
+    background: url(../../themes/default/improve/gwlz.png) no-repeat center 6px!important;
+}
+#header .tabBar li.five a{
+    background: url(../../themes/default/improve/bgzy.png) no-repeat center 6px!important;
+}
+#header .tabBar li.six a{
+    background: url(../../themes/default/improve/rcbg.png) no-repeat center 6px!important;
+}
+#header .tabBar li.one a{
+    background: url(../../themes/default/improve/xxyd.png) no-repeat center 6px!important;
+}
+.improveLeft .leftInfo .leftCont > div .childBlock{height:260px!important}
+.improveLeft .leftInfo .leftCont > div .i-l{
+	height: 260px!important;
+    background: url(../../themes/default/improve/left.png) left top repeat-y!important;
+}
+.improveLeft .leftInfo .leftCont > div .i-r {
+	height: 255px!important;
+    background: url(../../themes/default/improve/right.png) right top repeat-y!important;
+}
+.inter{background:url(../../themes/default/improve/inter_1.jpg)!important;}
+/* #header .secHeader{ */
+/* 	color: #666666!important; */
+/*     background: white!important; */
+/* } */
+/* #header .nav li a{color: #666666!important;} */
+
+#header .tabBar li.home a.select {
+    background: url(../../themes/default/improve/wdsy02.png) no-repeat center 6px!important;
+}
+#header .tabBar li.to a.select {
+    background: url(../../themes/default/improve/grbg02.png) no-repeat center 6px!important;
+    margin-top: 0px;
+}
+#header .tabBar li.three a.select{
+    background: url(../../themes/default/improve/nbsq02.png) no-repeat center 6px!important;
+}
+#header .tabBar li.four a.select{
+    background: url(../../themes/default/improve/gwlz02.png) no-repeat center 6px!important;
+}
+#header .tabBar li.five a.select{
+    background: url(../../themes/default/improve/bgzy02.png) no-repeat center 6px!important;
+}
+#header .tabBar li.six a.select{
+    background: url(../../themes/default/improve/rcbg02.png) no-repeat center 6px!important;
+}
+#header .tabBar li.one a.select{
+    background: url(../../themes/default/improve/xxyd02.png) no-repeat center 6px!important;
+}
+
+#improveFooter{background: #767676!important;}
+#improveFooter div{color:white!important}
+
+ul.num_a2{
+	position:absolute;
+	bottom:3px;
+	right:0px;
+	}
+ul.num_a2 li{
+	width:5px;
+	height:5px;
+	position:relative;
+	display: inline-block;
+    margin-right: 10px;
+	}
+ul.num_a2 .current{
+	color:#4D4D4F;
+	background-color:white;
+	-webkit-transform:scale(1.8);
+	transform:scale(1.8);
+	}
+ul.num_a2 a{
+	width:100%;
+	height:100%;
+	line-height:100%;
+	border-radius:50%;
+	text-indent:-70px;
+	color:#808285;
+	background-color:#DADADA;
+	position:absolute;
+	top:0;
+	left:0;
+	-webkit-transition:-webkit-transform 0.5s ease, background-color 0.5s ease;
+	transition:transform 0.5s ease, background-color 0.5s ease;
+	}
+
+/* .improveRight .rightInfo .rightCont4 .childBlock { */
+/* 	height:90px; */
+/* 	background:  url("../../themes/default/improve/title-2.png") repeat-x; */
+/* } */

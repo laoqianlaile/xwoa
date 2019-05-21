@@ -1,0 +1,319 @@
+.eXtremeTable {
+	margin-top:10px;
+	padding: 0;
+}
+
+.eXtremeTable select {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	border: solid 1px #cacaca;
+	width: 95px;
+	height:24px !important;
+}
+
+.eXtremeTable .tableRegion {
+	/* font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px; */
+	border-left: 1px solid #cacaca;
+	border-top: 1px solid #cacaca;
+	/* width: 99%; */
+	background-color: white;
+	/* margin-left: 5px; */
+	text-align: center;
+	border-collapse:collapse;
+}
+.eXtremeTable .tableRegion table { border:0; }
+.eXtremeTable .tableRegion thead {/*  height:20px; line-height:20px; */ }
+.eXtremeTable  thead td { border-bottom:0; }
+
+.eXtremeTable .filter {
+	background-color: #F4F4F4;
+}
+
+.eXtremeTable .filter td {
+	padding: 2px;
+}
+
+.eXtremeTable .title {
+	color: #444444;
+	font-weight: bold;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 15px;
+	vertical-align: middle;
+}
+
+.eXtremeTable .titleRow {
+	background-color: #F4F4F4;
+}
+
+.eXtremeTable .titleRow td {
+	border-bottom: 1px solid #308dbb;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.eXtremeTable .titleRow span {
+	color: #444444;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.eXtremeTable .filter input {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	border: solid 1px grey;
+	padding: 1px;
+}
+
+.eXtremeTable .filter select {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	border: solid 1px #EEE;
+}
+fieldset .eXtremeTable td { height:0; }
+.eXtremeTable thead .tableHeader {
+	/* color: white;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin: 0px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-color: white; */
+	background-color: #F2F2F2;
+	font-size: 14px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #cacaca;
+}
+
+.tableRegion td {
+	border-right: 1px solid #CACACA;
+	border-bottom: 1px solid #CACACA;
+	/* padding: 5px; */
+	font-size: 12px;
+}
+
+.eXtremeTable thead .tableHeaderSort {
+	
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 1px solid #CACACA;
+	/* border-right-style: solid;
+	border-right-width: 1px;
+	border-color: white; */
+}
+
+.eXtremeTable .fixedOverflow { /*width:30em;*/
+	table-layout: fixed; /* 只锟叫讹拷锟斤拷锟剿憋拷锟侥诧拷锟斤拷锟姐法为fixed锟斤拷锟斤拷锟斤拷td锟侥讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷谩锟�*/
+}
+
+.eXtremeTable .fixedOverflow tbody td { /*width:100%;*/
+	font-family: verdana, arial, helvetica, sans-serif;
+	word-break: keep-all; /* 锟斤拷锟斤拷锟斤拷 */
+	white-space: nowrap; /* 锟斤拷锟斤拷锟斤拷 */
+	overflow: hidden; /* 锟斤拷锟捷筹拷锟斤拷锟斤拷锟绞憋拷锟斤拷爻锟斤拷锟斤拷锟斤拷值锟斤拷锟斤拷锟�*/
+	text-overflow: ellipsis;
+	/* 锟斤拷锟斤拷锟斤拷锟斤拷锟侥憋拷锟斤拷锟绞憋拷锟绞臼★拷员锟斤拷(...) 锟斤拷锟斤拷锟斤拷overflow:hidden;一锟斤拷使锟矫★拷*/
+}
+
+.eXtremeTable .odd a,.even a {
+	color: Black;
+	font-size: 14px;
+}
+
+.eXtremeTable .odd td,.eXtremeTable .even td {
+	
+	line-height:16px;
+	padding:5px;
+	vertical-align: middle;
+	font-size: 14px;
+	/*white-space:nowrap; *//*锟斤拷止td锟节碉拷锟斤拷锟街伙拷锟斤拷  */
+	
+}
+
+.eXtremeTable .odd {
+	background-color: #FFFFFF;
+}
+
+.eXtremeTable .even {
+	/* background-color: #DCF3FF; */
+}
+
+.eXtremeTable .highlight td {
+	color: black;
+	vertical-align: middle;
+	background-color: #fdecae;
+	line-height:16px;
+	padding:5px;
+	font-size:14px;
+	/*white-space:nowrap; *//*锟斤拷止td锟节碉拷锟斤拷锟街伙拷锟斤拷  */
+	
+	height: 20px;
+}
+
+
+.eXtremeTable .highlight a,.highlight a {
+	color: black;
+	font-size: 14px;
+	margin: 0 2px;
+}
+
+.eXtremeTable .compactToolbar {
+	text-align:right;
+	background:#F4F4F4;
+}
+.eXtremeTable .compactToolbar td{
+	height:33px;
+}
+/* .eXtremeTable .compactToolbar img{
+	float:right;
+}
+
+.eXtremeTable .compactToolbar img[alt=Separator] {
+	display: none;
+} */
+
+.eXtremeTable .toolbar {
+	background-color: #F4F4F4;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 9px;
+	margin-right: 1px;
+	border-right: 1px solid silver;
+	border-left: 1px solid silver;
+	border-top: 1px solid silver;
+	border-bottom: 1px solid silver;
+}
+
+.eXtremeTable .toolbar a:hover {
+	background-color: transparent;
+}
+
+.eXtremeTable .toolbar td {
+	color: #444444;
+	padding: 0px 3px 0px 3px;
+	text-align: center;
+}
+
+.eXtremeTable thead table { width:98%; margin:0 10px; display:none;}
+
+.eXtremeTable .separator {
+	width: 7px;
+}
+
+.eXtremeTable .statusBar {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	padding:6px;
+	border:0px;
+	text-align:right;
+	background:#F4F4F4;
+}
+
+.eXtremeTable .filterButtons {
+	text-align: right;
+}
+
+.eXtremeTable .title span {
+	margin-left: 7px;
+}
+
+.eXtremeTable .formButtons {
+	display: block;
+	margin-top: 12px;
+	margin-left: 5px;
+}
+
+.eXtremeTable .formButton {
+	cursor: pointer;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #308dbb;
+	color: white;
+	margin-top: 5px;
+	border: outset 1px #333;
+	vertical-align: middle;
+}
+
+.eXtremeTable .calcRow {
+	background-color: #F4F4F4;
+}
+
+.eXtremeTable .calcTitle {
+	background-color: #F4F4F4;
+	color: black;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.eXtremeTable .calcResult {
+	background-color: #F4F4F4;
+	color: black;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.eXtremeTable .odd td table tr td {
+	/* padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 3px; */
+	padding:0px;
+	font-size: 14px;
+	background-color: #FFFFFF;
+	text-align: left;
+	border:0px;
+}
+
+.eXtremeTable .even td table tr td {
+	/* padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 3px; */
+	padding:0px;
+	font-size: 14px;
+	/* background-color: #DCF3FF; */
+	text-align: left;
+	border:0px;
+}
+
+.withLink {
+	text-align: left;
+}
+
+.eXtremeTable .highlight td table tr td {
+	/* padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 3px; */
+	padding:0px;
+	text-align: left;
+	border:0px;
+	font-size:14px;
+}
+
+.eXtremeTable .highlight td table td { text-align:left;  /* padding: 2px 3px; */ padding:0px;border:0px;font-size:14px;}
+/*
+*  锟斤拷锟斤拷锟绞斤拷锟斤拷锟斤拷锟叫憋拷锟斤拷锟街诧拷锟斤拷锟斤拷为图片锟斤拷锟斤拷
+*/
+.eXtremeTable .option-btn { display:inline-block: margin:0 auto; }
+.eXtremeTable .option-btn td { vertical-align:middle; }
+.eXtremeTable .option-btn a { margin-right:10px; }
+.eXtremeTable img { border:0; }
+.ui-datepicker-trigger { background:none; border:0; cursor:pointer; }
+
+
+
+#ec .eXtremeTable #ec_table tr a {
+	text-decoration: underline;
+}

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<!-- 1、=============================================================================================================================== -->
+	<!-- begin 督办定时器+会议申请使用状态定时器 -->
+	<bean id="job_everyDay" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.oa.jobTimer.OaSuperviseTimer</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="flowEngine" value-ref="flowEngine" />
+				<entry key="oaSuperviseManager" value-ref="oaSuperviseManager" />
+				<entry key="oaRemindInformationManager" value-ref="oaRemindInformationManager" />
+				<entry key="optBaseInfoManager" value-ref="optBaseInfoManager" />
+				<entry key="oaMeetApplyManager" value-ref="oaMeetApplyManager" />
+			</map>
+		</property>
+	</bean>
+	<!--配置触发器 -->
+	<bean id="trigger_everyDay" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_everyDay" />
+		</property>
+		<property name="cronExpression">
+			<value>0 */2 * * * ?</value>
+			<!-- <value>0 30 18 * * ?</value> -->
+		</property>
+	</bean>
+    <!-- end 督办定时器+会议申请使用状态定时器 -->
+<!-- 2、=============================================================================================================================== -->
+
+	 <!--begin 在线调查定义触发时间 -->
+	<bean id="job_survey" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.oa.jobTimer.OaSurveyTimer</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="oaSurveyManager" value-ref="oaSurveyManager" />
+			</map>
+		</property>
+	</bean>
+	 
+	<bean id="trigger_survey" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_survey" />
+		</property>
+		 <!-- cron表达式 -->
+		<property name="cronExpression">
+		  <!-- Cron 表达式包括以下 7 个字段：秒 分 小时 月内日期 月 周内日期 年（可选字段） -->
+			<value>0 */2 * * * ?</value>
+		</property>
+	</bean>
+	<!--end 在线调查定义触发时间 -->
+	
+<!-- 3、=============================================================================================================================== -->
+
+	<!--begin 邮件定时发送 -->
+	<bean id="job_innermsg" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.oa.jobTimer.OaInnermsgTimer</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="innermsgManager" value-ref="innermsgManager" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="trigger_innermsg" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_innermsg" />
+		</property>
+		 <!-- cron表达式 -->
+		<property name="cronExpression">
+		  <!-- Cron 表达式包括以下 7 个字段：秒 分 小时 月内日期 月 周内日期 年（可选字段） -->
+			<value>0 */2 * * * ?</value>
+		</property>
+	</bean>
+	<!--end 邮件定时发送 -->
+	
+<!--4、 =============================================================================================================================== -->
+	
+	<!-- begin 视频信息过了信息有效期，自动变成禁用(state=0) -->
+	<bean id="job_videoInfo" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.oa.jobTimer.OaVideoInformationTimer</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="oaVideoInformationManager" value-ref="oaVideoInformationManager" />
+			</map>
+		</property>
+	</bean>
+	<bean id="trigger_videoInfo" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_videoInfo" />
+		</property>
+		<property name="cronExpression">
+			<value>0 */2 * * * ?</value>
+			<!-- <value>0 30 18 * * ?</value> -->
+		</property>
+	</bean>
+    <!-- end 视频信息过了信息有效期，自动变成禁用(state=0) -->
+    
+<!-- 5、=============================================================================================================================== -->
+	
+	<!--begin 通知公告过了信息有效期，自动变成禁用(state=0) -->
+	<bean id="job_oaInfor" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.oa.jobTimer.oaInformationTimer</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="oaInformationManager" value-ref="oaInformationManager" />
+			</map>
+		</property>
+	</bean>
+	<bean id="trigger_oaInfor" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_oaInfor" />
+		</property>
+		<property name="cronExpression">
+			<value>0 */2 * * * ?</value>
+			<!-- <value>0 30 18 * * ?</value> -->
+		</property>
+	</bean>
+	<!--end 通知公告过了信息有效期，自动变成禁用(state=0) -->
+	
+<!-- 6、=============================================================================================================================== -->
+
+    <!--begin RTX定时机制 -->
+    <bean id="job_everyMonth" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.sys.job.SendRtxJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="rtxInfoManager" value-ref="rtxInfoManager" />
+				<entry key="open" value="false"></entry>
+			</map>
+		</property>
+	</bean>
+	<!-- 配置触发器-->
+	<bean id="trigger_everyMonth" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_everyMonth" />
+		</property>
+		<property name="cronExpression">
+			<value>0 */1 * * * ?</value>
+			<!-- <value>0 0 1 * * ?</value> -->
+		</property>
+	</bean>
+	<!--end RTX定时机制-->
+	
+<!-- 7、=============================================================================================================================== -->
+	
+	<!-- begin清理7天之前的外网同步文件，也清理temp-->
+	<!--  定时清理文件、定时清理人员状态（每天凌晨2点）-->
+     <bean id="job_clearFile" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.sys.job.ClearFileJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="publicinfoManager" value-ref="outerNetPublicinfoManager" />
+				<entry key="fileInfoFsManager" value-ref="outerNetFileinfoFsManager" />
+				<entry key="vUserOnlineManager" value-ref="vUserOnlineManager" />	
+				<entry key="oaLeaveOverTimeManager" value-ref="oaLeaveOverTimeManager" />				
+			</map>
+		</property>
+	</bean>
+	
+    <!-- 配置触发器-->
+	<bean id="trigger_clearFile" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_clearFile" />
+		</property>
+		<property name="cronExpression">
+		  <!-- 每天凌晨2点执行 -->
+			<value>0 0 2 * * ?</value>
+		</property>
+	</bean>
+	<!--end清理7天之前的外网同步文件，也清理temp-->
+	
+	
+	<!-- 8、=============================================================================================================================== -->
+	<!-- begin 短信发送定时器 -->
+	<bean id="job_sendmsg" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.oa.jobTimer.OaSmssendTimer</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="sendMsgClientManager" value-ref="sendMsgClientManager" />
+			</map>
+		</property>
+	</bean>
+	<!--配置触发器 -->
+	<bean id="trigger_sendmsg" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_sendmsg" />
+		</property>
+		<property name="cronExpression">
+			<value>0 */30 * * * ?</value>
+		</property>
+	</bean>
+    <!-- end 短信发送定时器 -->
+	
+	<!-- 9、=============================================================================================================================== -->
+	<!-- begin 邮件收取定时器 -->
+	<bean id="job_mailpull" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.mailclient.job.MailPullJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="mailInfoService" value-ref="mailInfoService" />
+				<entry key="mailProfileService" value-ref="mailProfileService" />
+			</map>
+		</property>
+	</bean>
+	<!--配置触发器 -->
+	<bean id="trigger_mailpull" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_mailpull" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 18 * * ?</value>
+		</property>
+	</bean>
+    <!-- end 短信发送定时器 -->
+<!-- =============================================================================================================================== -->
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<!-- 添加触发器 -->
+		<property name="triggers">
+			<list>
+				<ref local="trigger_everyDay" />
+<!-- 				<ref local="trigger_everyMonth" /> -->
+				<!-- <ref local="trigger_survey" /> -->
+				<ref local="trigger_innermsg" />
+				<!-- <ref local="trigger_videoInfo" /> --><!-- 视频信息过了信息有效期，自动变成禁用(state=0) -->
+				<!-- <ref local="trigger_oaInfor" /> --><!-- 通知公告过了信息有效期，自动变成禁用(state=0) -->
+				<!-- <ref local="trigger_clearFile" /> -->
+				<ref local="trigger_mailpull" />
+	<!--			<ref local="trigger_sendmsg" />-->
+			</list>
+		</property>
+		
+	</bean>
+</beans>

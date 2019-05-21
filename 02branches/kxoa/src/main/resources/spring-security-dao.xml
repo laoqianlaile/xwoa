@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	    http://www.springframework.org/schema/security
+	    http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+	default-lazy-init="true">
+
+	<security:http auto-config="true" use-expressions="true" access-denied-page="/page/common/NoPermit.jsp">
+
+        <security:anonymous granted-authority="R_G-anonymous" username="noname"  /> 
+		<security:intercept-url pattern="/sys/mainFrame!login.do" filters="none" />
+		<security:intercept-url pattern="/sys/userDef!register.do" filters="none" />
+		<security:intercept-url pattern="/sys/userDef!captchaimage.do" filters="none" />
+		<security:intercept-url pattern="/**/anonymous/*.do" filters="none" />
+		 <security:intercept-url pattern="/**/*.do" access="isAuthenticated()" /> 
+		<!--此处的默认认证成功后，跳转已经被验证码过滤器给覆盖了，不要在里面定义认证成功后的处理即定义handler;这里login-page，将作为没有身份被拦截跳转的页面--> 
+		<security:form-login login-page="/page/frame/login.jsp"
+			authentication-failure-url="/sys/mainFrame!loginError.do"
+			default-target-url="/sys/mainFrame!loginSuccess.do" 
+			/> 
+		<security:logout  success-handler-ref="logoutSuccessHandler"/>
+		
+		<security:session-management 
+ 			 invalid-session-url="/page/frame/loginTransition.jsp" 
+ 			 session-authentication-strategy-ref="sas" />
+ 	
+		<security:http-basic />
+     <!--   增加一个filter，这点与Acegi是不一样的，不能修改默认的filter了，这个filter位于FILTER_SECURITY_INTERCEPTOR之前-->
+		<security:custom-filter before="FILTER_SECURITY_INTERCEPTOR"
+             ref="centitPowerFilter" />
+        <security:custom-filter  before="FORM_LOGIN_FILTER" 
+        	ref="validateCodeAuthenticationFilter" />
+             
+      		
+	</security:http>
+	<bean id="logoutSuccessHandler" class="com.centit.sys.filter.LogoutSuccessHandler">
+	    <constructor-arg value="/page/frame/login.jsp" />
+	</bean>
+ 	<!-- 一个自定义的filter，必须包含authenticationManager,accessDecisionManager,securityMetadataSource三个属性，
+     我们的所有控制将在这三个类中实现，解释详见具体配置 -->
+    <bean id="centitPowerFilter" class="com.centit.sys.security.DaoFilterSecurityInterceptor">
+        <property name="authenticationManager"
+             ref="authenticationManager" />
+        <property name="accessDecisionManager"
+             ref="centitAccessDecisionManagerBean" />
+        <property name="securityMetadataSource"
+             ref="centitSecurityMetadataSource" />
+    </bean>
+    
+    <!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源 -->
+    <bean id="centitAccessDecisionManagerBean"
+         class="com.centit.sys.security.DaoAccessDecisionManager">
+    </bean>
+    
+    <!-- 资源源数据定义，即定义某一资源可以被哪些角色访问 -->
+    <bean id="centitSecurityMetadataSource"
+         class="com.centit.sys.security.DaoInvocationSecurityMetadataSource" >
+         <property name="functionDao" ref="functionDao"/>
+         <property name="optRunRecDao" ref="optRunRecDao"/>
+    </bean>
+     <!--
+    <bean id="validateCodeAuthenticationFilter"  
+    	class="com.centit.sys.security.CodeAuthenticationProcessingFilter" >
+    	</bean>
+	l--> 
+	<!-- 认证管理器，实现用户认证的入口，主要实现UserDetailsService接口即可 -->
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider user-service-ref="sysUserManager">  
+			 <security:password-encoder ref="passwordEncoder">
+			 	<security:salt-source user-property="usercode"  />
+			 </security:password-encoder>
+		 </security:authentication-provider> 
+	 </security:authentication-manager>
+	<!--  <bean id="loginLogAuthenticationSuccessHandler"
+		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+		<property name="defaultTargetUrl" value="/sysexpand/mainFrameExpand!loginSuccess.do"></property>
+		<property name="alwaysUseDefaultTargetUrl" value="true"></property>
+	</bean> -->
+	<!-- 认证成功后，一些处理 -->
+	<bean id="centitAuthenticationSuccessHandler"  
+        class="com.centit.sys.security.SimpleUrlAuthenticationSuccessHandler">
+       <property name="acLogMgr" ref="accessLogManager"/>
+       <property name="sysUserMgr" ref="sysUserManager"/>
+    </bean>
+        
+	<bean id="validateCodeAuthenticationFilter"  
+    	class="com.centit.sys.security.CodeAuthenticationProcessingFilter" >
+    	<property name="authenticationManager" ref="authenticationManager"/>  
+		<property name="authenticationSuccessHandler"
+			ref="centitAuthenticationSuccessHandler"></property>
+		<property name="authenticationFailureHandler"
+			ref="simpleUrlAuthenticationFailureHandler"></property>
+ 		<property name="sessionAuthenticationStrategy" ref="sas" />    
+	</bean>
+	<bean id="sas"
+      class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">  
+    <constructor-arg name="sessionRegistry" ref="sessionRegistry" />   
+    <property name="maximumSessions" value="10" />
+    <property name="exceptionIfMaximumExceeded" value="false" />  
+    <property name="alwaysCreateSession" value="true" />  
+  </bean>
+  <!-- 认证失败后处理 -->
+  <bean id="simpleUrlAuthenticationFailureHandler"
+		class="com.centit.sys.security.SimpleUrlAuthenticationFailureHandler"/>
+  
+   <bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />  
+	 
+</beans>

@@ -1,0 +1,128 @@
+.red {
+	color: red;
+}
+.clear {
+	clear: both;
+}
+
+/*工作流总容器*/
+.flow-container {
+	margin: 0 25px; 
+	padding-top: 20px;
+}
+
+.flow-container.fixed {
+	padding-top: 50px;
+}
+.flow-container.fixed .flow-form-container {
+	position: fixed;
+	width: 100%;
+	padding: 0 25px;
+	left: 0; top: 0;
+	box-sizing: border-box;
+}
+.flow-container.fixed .flow-form{
+	background: #fff;
+}
+.flow-container.fixed .flow-form .node{
+	display: none;
+}
+.flow-container.fixed .flow-form .title{
+	line-height: 40px;
+	color: #fff;
+}
+.flow-container.fixed .flow-form .flow-operator{
+	
+	transition: left .5s ease-in-out;
+	-moz-transition: left .5s ease-in-out; /* Firefox 4 */
+	-webkit-transition: left .5s ease-in-out; /* Safari 和 Chrome */
+	-o-transition: left .5s ease-in-out; /* Opera */
+}
+.flow-form {
+	padding-left: 50px;
+	position: relative;
+	overflow: hidden; 
+	border-bottom: 2px solid #cdcdcd; 
+	margin-bottom: 30px;
+	background: url(images/flow-form.png) no-repeat;
+}
+
+.flow-title {
+	float: left;
+}
+.flow-title .affairTitle {
+	font-size: 24px; 
+	display: block; 
+	text-align: left; 
+	line-height: 30px;
+}
+.flow-title .node {
+	margin-right: 15px; 
+	line-height: 20px;
+}
+
+.flow-operator {
+	height: 30px; 
+	text-align:center;
+}
+
+
+.flow-iframe {
+	width: 100%; 
+	border: none; 
+	margin-bottom:0px;
+}
+
+/*子容器*/
+body.sub-flow {
+	width: 100%;
+	margin: 0;
+}
+
+.sub-flow-title {
+	color: #0C6DA0;
+	font-size: 16px;
+	padding: 5px 0 5px 10px;
+	border-bottom: 2px solid #cdcdcd;
+}
+.sub-flow-title.notitle {
+	display: none;
+}
+.sub-flow .viewTable, {
+	width: 99%;
+	margin: 20px auto 0;
+}
+.sub-flow .viewTable .tableHeader {
+  background-color: #F2F2F2;
+  font-family: arial,tahoma,Simsun!important;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+.sub-flow #ec {
+	margin: 0;
+}
+.sub-flow #ec .eXtremeTable {
+	width: 100%;
+	margin: 0;
+}
+.sub-flow #ec .eXtremeTable .tableRegion{
+	width: 99%;
+	margin: 20px auto 0;
+}
+.sub-flow .viewTable .addTd {
+	background: #EDEDED;
+	color: #0C6DA0;
+	font-weight: normal;
+}
+
+.sub-flow #viewTable, .sub-flow #viewTable td, .sub-flow .viewTable, .sub-flow .viewTable td {
+  border-color: #C7C7C7;
+}
+
+.sub-flow #infoTab .current { border-bottom: 2px solid #ff0000; cursor:default; color:#ff0000; font-weight:bold;}
+.sub-flow #infoTab .disable { cursor:default; color:#ddd; font-weight:bold;}
+.sub-flow #infoTab { overflow: hidden; border-bottom: 1px solid #dedede; }
+.sub-flow #infoTab li { height: 30px; line-height: 30px; padding: 0 15px 0 15px; font-size: 16px; color: #0C6DA0; cursor:pointer; float:left; }
+.sub-flow #infoTab li + li { background: url("../../themes/default/improve/geduan.png") no-repeat left center; }
+.sub-flow #infoTab .select { font-weight: bold; border-bottom: 3px solid #5ac45c; }

@@ -1,0 +1,82 @@
+
+div.tableleft{
+	float:left;
+	 width:140px;
+	  margin-top:0px;
+    background: #f8f8f8;
+}
+
+ div.tableleft table td{
+    line-height: 40px;
+    display: block;
+	border: none;
+/* 	border-bottom: 1px solid #dedede; */
+/* 	border-top: 1px solid #ececec; */
+	padding: 0px 30px ;
+	background:url("../oaInformationimage/zwgk_Rz_icon16.jpg") no-repeat ;
+}
+
+div.tableleft table td:hover{
+	  background: #DFD8D8;
+	
+}
+
+ div.tableleft table td.news{
+	 line-height: 56px;
+/*     width: 136px; */
+	height:56px;
+	background:url("../oaInformationimage/newsShortTab.jpg") no-repeat ;
+}
+div.tableright{
+	width:80%;
+	position:absolute;
+    left:150px;
+}
+div.tableright table {
+	width: 99%;
+ 	border: 1px solid #ececec; 
+	margin: auto
+}
+
+div.tableright table td{
+	border: none;
+/* 	border-bottom: 1px solid #ececec; */
+/* 	border-top: 1px solid #ececec; */
+	padding: 10px 15px 10px 15px;
+}
+.public-position {
+	background: rgb(238, 238, 238); margin: 10px auto; border: 1px solid rgb(204, 204, 204); border-image: none; 
+	
+	height: 40px; 
+	overflow: hidden;
+}
+.pubpos-search-box {
+	overflow: hidden; float: right; display: inline;
+}
+.pubpos-nav {
+	height: 30px; line-height: 30px; overflow: hidden; padding-left: 10px; float: left; display: inline;
+}
+.pubpos-search-box {
+	padding: 2px 0px 0px 0px; width: 200px; height: 30px;
+}
+.search-box {
+	padding: 10px; height: 47px; overflow: hidden; margin-bottom: 10px;
+}
+.search-txt {
+	padding: 2px 0px 2px 2px;
+	 border: 1px solid rgb(204, 204, 204); 
+	 border-image: none; 
+	 width: 150px;
+	  height: 27px !important; 
+	  color: rgb(67, 67, 67); 
+	  float: left; 
+	  display: inline;
+	  padding:0px !important;
+}
+
+.submit-botton {
+	background: rgb(176, 0, 7); border: currentColor; border-image: none; 
+	width: 40px !important; 
+	height: 27px !important; 
+	color: rgb(255, 255, 255); float: left; display: inline; cursor: pointer;
+}

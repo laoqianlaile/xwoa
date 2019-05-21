@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="bbs" namespace="/bbs" extends="centitbsdfw">
+		
+		<action name="oaBbsDashboard" class="oaBbsDashboardAction">
+			<result name="list">/page/bbs/oaBbsDashboardList.jsp</result>
+			<result name="view">/page/bbs/oaBbsDashboardView.jsp</result>
+			<result name="edit">/page/bbs/oaBbsDashboardForm.jsp</result>
+			<result name="bbsMainPage">/page/bbs/oaBbsDashboard.jsp</result>
+			<result name="oaBbsShowTVMainPage">/page/bbs/oaBbsShowTVMainPage.jsp</result>
+			<result name="bbsDisMainPage">/page/bbs/oaBbsDisDashboard.jsp</result>
+			<result name="oaBbsDiscussionsLab">/page/bbs/oaBbsDiscussionsLab.jsp</result>
+			<result name="bbsIframe">/page/bbs/oaBbsIframe.jsp</result>
+			
+			<result name="built" type="chain">
+				<param name="actionName">oaBbsDashboard</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaBbsDashboard</param>
+				<param name="method">list</param>
+			</result>
+			
+			<result name="userinfos" type="json">
+				<param name="root">jsonDatas</param>
+			</result>
+			<result name="options" type="json">
+				<param name="root">json</param>
+			</result>
+		</action>
+		
+		
+	<action name="oaBbsTheme" class="oaBbsThemeAction">
+			<result name="list">/page/bbs/oaBbsThemeList.jsp</result>
+			<result name="ownerThemeList">/page/bbs/oaBbsOwnerThemeList.jsp</result>
+			<result name="ownerReplayList">/page/bbs/oaBbsOwnerReplayList.jsp</result>
+			<result name="attentionThemeList">/page/bbs/oaBbsAttentionThemeList.jsp</result>
+			<result name="ownerCommon">/page/bbs/oaBbsOwnerCommon.jsp</result>
+			<result name="view">/page/bbs/oaBbsThemeView.jsp</result>
+			<result name="edit">/page/bbs/oaBbsThemeForm.jsp</result>
+			<result name="themeMainPage">/page/bbs/oaBbsThemeDashboard.jsp</result>
+			<result name="themeView">/page/bbs/themeView.jsp</result>
+			<result name="themeEdit">/page/bbs/themeForm.jsp</result>
+			<result name="oaThemeLab">/page/bbs/oaBbsThemeLab.jsp</result>
+			
+			<result name="themeAdd" type="chain">
+				<param name="actionName">oaBbsTheme</param>
+				<param name="method">themeEdit</param>
+			</result>
+		
+		     <result name="gotoNext">/page/bbs/oaBbsGotoNextStep.jsp</result>
+		
+			<result name="built" type="chain">
+				<param name="actionName">oaBbsTheme</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaBbsTheme</param>
+				<param name="method">list</param>
+			</result>
+			<result name="themeSuccess" type="chain">
+				<param name="actionName">vBbsThemeUser</param>
+				<param name="method">list</param>
+			</result>
+			<result name="options" type="json">
+				<param name="root">json</param>
+			</result>
+		</action>
+		
+		<action name="vBbsThemeUser" class="vBbsThemeUserAction">
+			<result name="list">/page/bbs/oaBbsThemeList.jsp</result>
+			<result name="view">/page/bbs/oaBbsThemeView.jsp</result>
+			<result name="themeView">/page/bbs/themeView.jsp</result>
+			<result name="themeEdit">/page/bbs/themeForm.jsp</result>
+			<result name="oaBbsThemeReplayList" >/page/bbs/oaBbsThemeReplayList.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			
+			<result name="themeAdd" type="chain">
+				<param name="actionName">oaBbsTheme</param>
+				<param name="method">themeEdit</param>
+			</result>
+			
+			<result name="success" type="chain">
+				<param name="actionName">vBbsThemeUser</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		
+		<action name="oaBbsDiscussion" class="oaBbsDiscussionAction">
+			<result name="list">/page/bbs/oaBbsDiscussionList.jsp</result>
+			<result name="view">/page/bbs/oaBbsDiscussionView.jsp</result>
+			<result name="edit">/page/bbs/oaBbsDiscussionForm.jsp</result>
+			<result name="oaDiscussonLab">/page/bbs/oaDiscussonLab.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaBbsDiscussion</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaBbsDiscussion</param>
+				<param name="method">list</param>
+			</result>
+			<result name="dashboardList" type="redirectAction">
+			    <param name="actionName">oaBbsDashboard</param>
+			    <param name="method">list</param>
+			</result>
+			<result name="options" type="json">
+				<param name="root">json</param>
+			</result>
+		</action>
+		
+		<action name="oaLeaveMessagereply" class="oaLeaveMessagereplyAction">
+			<result name="refeshReplyList" type="redirectAction">
+				<param name="actionName">oaBbsTheme</param>
+				<param name="s_layoutno">${s_layoutno}</param>
+				<param name="themeno">${themeno}</param>
+				<param name="method">view</param>
+			</result>
+		</action>
+		
+		<action name="*" class="{1}Action">
+			<result name="list">/page/bbs/{1}List.jsp</result>
+			<result name="view">/page/bbs/{1}View.jsp</result>
+			<result name="edit">/page/bbs/{1}Form.jsp</result>
+		 
+			<result name="built" type="chain" />
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			
+			<result name="options" type="json">
+				<param name="root">json</param>
+			</result>
+			
+				<result name="attentionThemeList" type="redirectAction">
+			    <param name="actionName">oaBbsTheme</param>
+			    <param name="method">attentionThemeList</param>
+			    <param name="s_usercode">${s_usercode}</param>
+			    <param name="s_laytype">${s_laytype}</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+span.error {
+	height: 20px; line-height: 20px; padding: 2px 0 2px 18px; margin-left: 10px;
+	color: #c24949; background: url(../images/validator_error_icon.png) 0 0 no-repeat;
+}
+
+td.error {background:url(../images/invalid_line.gif) bottom repeat-x;}
+
+span.valid {width: 20px; background:url(../images/validator_icons.png) -80px 0 no-repeat;}
+
+input.error, textarea.error {border: 1px solid #c24949; background: #ffbcbc;}
+
+

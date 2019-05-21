@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="sys" namespace="/sys" extends="centitbsdfw">
+
+		<action name="dictionary" class="dictionaryAction">
+			<result name="list">/page/sys/dictionaryList.jsp</result>
+			<result name="view">/page/sys/dictionaryView.jsp</result>
+			<result name="edit">/page/sys/dictionaryForm.jsp</result>
+			<result name="userUnitList_rank">/page/sys/userUnitList_rank.jsp</result>
+			<result name="userUnitList_station">/page/sys/userUnitList_station.jsp</result>
+			<result name="built" type="redirectAction">
+				/dictionary!edit.do?s_catalogstyle=${s_catalogstyle}&amp;s_catalogstylenot=${s_catalogstylenot}
+			</result>
+			<result name="success" type="redirectAction">
+				/dictionary!list.do?s_catalogstyle=${s_catalogstyle}&amp;s_catalogstylenot=${s_catalogstylenot}
+			</result>
+			<result name="editDetail">/page/sys/dataDetailForm.jsp</result>
+			<result name="saveDetail" type="redirectAction">
+				/dictionary!view.do?catalogcode=${datadictionary.catalogcode}&amp;cdtbnm=${cdtbnm}			
+			</result>
+			<result name="deleteDetail" type="redirectAction">
+				/dictionary!view.do?catalogcode=${id.catalogcode}&amp;cdtbnm=${cdtbnm}		
+			</result>
+		</action>
+		<action name="userForgetPassword" class="userForgetPasswordAction">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="userDef" class="userDefAction">
+			<result name="list">/page/sys/userDefList.jsp</result>
+			<result name="view">/page/sys/userDefView.jsp</result>
+			<result name="edit">/page/sys/userDefForm.jsp</result>
+			<result name="cp">/page/sys/userDefCpForm.jsp</result>
+			<result name="userUnitList_rank" type="redirectAction">
+				/dictionary!listUserUnits.do?datacode=${datacode}&amp;cdtbnm=${cdtbnm}
+			</result>
+			<result name="userUnitList_station" type="redirectAction">
+				/dictionary!listUserUnits.do?datacode=${datacode}&amp;cdtbnm=${cdtbnm}
+			</result>
+			<result name="underUnit" type="redirectAction">
+				<param name="actionName">userDef</param>
+				<param name="method">listUserInfo</param>
+				<param name="s_byUnderUnit">thisunit</param>
+			</result>
+			<result name="editUserUnit">/page/sys/userunitForm.jsp</result>
+			<result name="editUserRole">/page/sys/userroleForm.jsp</result>
+			<result name="modifyPwdPage">/page/sys/modifyPassword.jsp</result>
+			<result name="registerPage">/page/frame/registerdialog.jsp
+			</result>
+			<result name="listUserInfo">/page/sys/userUnderUnit.jsp</result>
+			<result name="registerSuccess">/index.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">userDef</param>
+				<param name="method">list</param>
+			</result>
+			<result name="viewUnderUnit">/page/sys/viewUnderUnit.jsp</result>
+			<result name="built" type="redirectAction">
+				<param name="actionName">userDef</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="saveUserUnit" type="redirectAction">
+				<param name="actionName">userDef</param>
+				<param name="method">view</param>
+				<param name="usercode">${userUnit.usercode}</param>
+			</result>
+			<result name="saveUserRole" type="redirectAction">			
+				 <param name="actionName">userDef</param>
+				<param name="method">view</param>
+				<param name="usercode">${userrole.usercode}</param>
+			</result>
+			<result name="editAddressBook" type="redirectAction">
+				/addressBook!editindialog.do?addrbookid=${object.addrbookid}
+			</result>
+			<result name="captchaimage" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="map" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="modifypwd" type="centitui">
+				<param name="newWin">true</param>
+				<param name="forwardUrl">/index.do</param>
+			</result>
+			<result name="verify">/page/sys/userVerifyList.jsp</result>
+			<result name="verifyEdit">/page/sys/userDefFormSb.jsp</result>
+			<result name="verifySave" type="redirectAction">
+				/userDef!list.do?s_userState=0
+			</result>
+			<result name="pwdlist">/page/sys/resetpwd.jsp</result>
+		</action>
+
+
+		<action name="addressBook" class="addressBookAction">
+			<result name="view">/page/sys/addressBookView.jsp</result>
+			<result name="list">/page/sys/addressBookList.jsp</result>
+			<result name="edit">/page/sys/addressBookForm.jsp</result>
+			<result name="editindialog">/page/sys/addressBookDialogForm.jsp</result>
+			<result name="returnuser" type="redirectAction">
+				/userDef!edit.do?usercode=${object.bodycode}
+			</result>
+			<result name="load" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="loadLabelFields" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">addressBook</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+
+		<action name="unit" class="unitAction">
+			<result name="list">/page/sys/unitList.jsp</result>
+			<result name="edit">/page/sys/unitForm.jsp</result>
+			<result name="view">/page/sys/unitView.jsp</result>
+			<result name="built" type="redirectAction">
+				<param name="actionName">unit</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="underUnit" type="redirectAction">
+				<param name="actionName">deptManager</param>
+				<param name="method">listunit</param>
+			</result>
+			<result type="redirectAction" name="success">
+				/sys/unit!list.do
+			</result>
+			<result name="reView" type="redirectAction">
+				<param name="actionName">unit</param>
+				<param name="method">view</param>
+				<param name="unitcode">${userunit.unitcode}</param>
+			</result>
+			<result name="editUnitPower">/page/sys/unitpowerForm.jsp</result>
+			<result name="editUnitUser">/page/sys/unituserForm.jsp</result>
+			<result name="editAddressBook" type="redirectAction">
+				/addressBook!editindialog.do?addrbookid=${object.addrbookid}
+			</result>
+			<result name="unituser" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="optInfo" class="optInfoAction">
+			<result name="list">/page/sys/optInfoList.jsp</result>
+			<result name="edit">/page/sys/optInfoForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">optInfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">optInfo</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="operSuccess" type="stream">
+				<param name="contentType">text/html;charset=utf-8</param>
+				<param name="inputName">inputStream</param>
+		   </result>
+		</action>
+
+		<action name="optDef" class="optDefAction">
+			<result name="list">/page/sys/optDefList.jsp</result>
+			<result name="edit">/page/sys/optDefForm.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">optDef</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">optDef</param>
+				<param name="method">list</param>
+			</result>
+			<result name="operSuccess" type="stream">
+				<param name="contentType">text/html;charset=utf-8</param>
+				<param name="inputName">inputStream</param>
+		   </result>
+		</action>
+		<action name="roleDef" class="roleDefAction">
+			<result name="list">/page/sys/roleDefList.jsp</result>
+			<result name="edit">/page/sys/roleDefForm.jsp</result>
+			<result name="userroles">/page/sys/roleUserList.jsp</result>
+			<result name="editUserRole">/page/sys/roleUserEdit.jsp</result>
+			<result name="saveUserRole" type="redirectAction">			
+				<param name="actionName">roleDef</param>
+				<param name="method">roleUsers</param>
+				<param name="rolecode">${userrole.rolecode}</param>
+			</result>
+			<result name="newEdit">/page/sys/roleDefNewForm.jsp</result>
+			<!-- <result name="treeEdit">/page/sys/roleMenuTree.jsp</result> -->
+			<result name="success" type="redirectAction">
+				<param name="actionName">roleDef</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">roleDef</param>
+				<param name="method">newEdit</param>
+			</result>
+
+		</action>
+
+		<action name="optVar" class="optVariableAction">
+			<result name="list">/page/sys/optVarList.jsp</result>
+			<result name="edit">/page/sys/optVarForm.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">optVar</param>
+				<param name="method">list</param>
+				<param name="s_OPTID">${object.optid}</param>
+			</result>
+			<result name="built">/page/sys/optVarForm.jsp</result>
+			<result name="operSuccess" type="stream">
+				<param name="contentType">text/html;charset=utf-8</param>
+				<param name="inputName">inputStream</param>
+		   </result>
+		</action>
+
+
+		<action name="deptManager" class="deptManagerAction">
+			<result name="listuser">/page/sys/deptUserList.jsp</result>
+			<result name="listunit">/page/sys/deptUnitList.jsp</result>
+			<result name="listrole">/page/sys/deptRoleList.jsp</result>
+			<result name="editDeptPower">/page/sys/deptpowerForm.jsp</result>
+			<result name="editDeptRole">/page/sys/deptroleForm.jsp</result>
+			<result name="viewUserRole">/page/sys/deptuserroleView.jsp</result>
+			<result name="editUserRole">/page/sys/deptuserroleForm.jsp</result>
+			<result name="saveUserRole" type="redirectAction">
+				<param name="actionName">userDef</param>
+				<param name="method">view</param>
+				<param name="usercode">${userrole.usercode}</param>
+				<param name="underUnit">T</param>
+			</result>
+			<result name="saveDeptRole" type="redirectAction">
+				<param name="actionName">deptManager</param>
+				<param name="method">listrole</param>
+			</result>
+			<result name="saveDeptPower" type="chain">
+				<param name="actionName">deptManager</param>
+				<param name="method">listunit</param>
+			</result>
+		</action>
+
+		<action name="mainFrame" class="mainFrameAction">
+		   <result name="menus" type="json">
+				<param name="root">menus</param>
+			</result>
+			<result name="demo">/ui/templates/index.jsp</result>
+			<result name="MainPage">/page/frame/MainPage.jsp</result>
+			<result name="MainPageNG">/page/ng/index.jsp</result>
+			<result name="MainPageNew">/page/frame/MainPageNew.jsp</result>
+			<result name="menus" type="json">
+				<param name="root">menus</param>
+			</result>
+			<result name="firstPage" type="redirect">${userFirstPage}</result>
+			<result name="dashboard">/page/frame/dashboard.jsp</result>
+			<result name="dashboardV2">/page/frame/dashboardV2.jsp</result>
+			 <!--CAS 单点登录  -->
+			<result name="login" type="redirectAction">
+				<param name="actionName">mainFrame</param>
+				<param name="method">logincas</param>
+			</result>
+			<result name="loginError" type="redirectAction">
+				<param name="actionName">mainFrame</param>
+				<param name="method">logincas</param>
+			</result>
+			<result name="loginSuccess" type="redirect">/index.do</result>
+			<result name="loginInDialog">/page/frame/logindialog.jsp</result>
+			<result name="loginResInDialog" type="centitui">
+				<param name="newWin">true</param>
+				<param name="forwardUrl">/index.do</param>
+			</result>
+			
+			<result name="lgoinSuccess" type="redirectAction">
+				<param name="actionName">mainFrame</param>
+				<param name="method">showMain</param>
+			</result>
+			<result name="randomkey">/page/frame/login.jsp</result>
+			<result name="signauthByRTX">/page/rtx/signauth.jsp</result>
+		</action>
+
+
+		<action name="userSetting" class="userSettingAction" >
+			<result name="find" type="redirectAction">/sys/userSetting!list.do?s_usercode=${uinfo.usercode}</result>	
+			<result name="list">/page/sys/userSettingForm.jsp</result>			
+			<result name="edit">/page/sys/userSettingForm.jsp</result>		
+			<result name="success" type="chain">
+				<param name="actionName">userSetting</param>
+				<param name="method">find</param>
+			</result>		
+		</action>
+
+		<action name="*" class="{1}Action">
+			<result name="list">/page/sys/{1}List.jsp</result>
+			<result name="view">/page/sys/{1}View.jsp</result>
+			<result name="edit">/page/sys/{1}Form.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		<action name="dataSync" class="dataSyncAction">
+            <result name="list">/page/sys/dataSyncList.jsp</result>
+
+
+            <result name="syncAll" type="centitui">
+                <param name="newWin">false</param>
+                <param name="navTabId">external_DATASYNC</param>
+            </result>
+
+            <result name="syncUser" type="centitui">
+                <param name="newWin">false</param>
+            </result>
+
+            <result name="error" type="centitui">
+                <param name="newWin">false</param>
+            </result>
+		</action>
+		<action name="accessLog" class="accessLogAction">
+	        <result name="list">/page/sys/accessLogList.jsp</result>
+	   </action>
+	    <action name="vUserOnline" class="vUserOnlineAction">
+	        <result name="list">/page/sys/userOnlineList.jsp</result>
+	   </action>
+	    <action name="userbizoptLog" class="userbizoptLogAction">
+	        <result name="getprocessinfo" type="json">
+	        <param name="root">mark</param>
+	        </result>
+	   </action>
+	</package>
+
+</struts>

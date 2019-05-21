@@ -1,0 +1,31 @@
+﻿body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+body{ font:12px Verdana,Arial,sans-serif; color: #7d7d7d; }
+button {white-space: nowrap;}
+table { border-collapse: collapse; border-spacing: 0; }
+img { display:inline-block; border:0;}
+
+#main{ width:800px; margin:20px; border: solid #d3d3d3 2px; margin-left: auto; margin-right: auto; }
+#main .tabContent{ padding:15px; }
+#main .tabContent h2{ font-size:14px; height:30px; margin-bottom:10px; line-height:30px; text-align:center; color:#000; background-color:#eee; font-weight:bold; }
+#main .tabContent p{ padding:10px 0; }
+#main .about{ padding:2em; margin-bottom:15px; background:#F8F8F8; border:1px solid #F3F3F3; }
+#main .tabContent h3 { font-weight:bold; color:#000; font-size: 14px; }
+#main .about p { text-indent:2em; font-size: 14px; }
+#main .tabContent pre { margin:10px 0; font: 14px Courier New; }
+#main .tabContent .buttons { text-align:right; }
+#main .tabContent button { font-size:12px; padding:2px 8px; background-color:#e3e3e3; border:solid 1px #ccc; cursor:pointer; }
+#main .tabContent button:hover { background: #f2f2f2; }
+
+/*各行变色表格*/
+table.zebra, .zebra th, .zebra td { border-width: 1px; border-style: solid; margin: 0; font-family:'Microsoft Yahei', Tahoma, Arial!important; font-family:'宋体', Tahoma, Arial; }
+table.zebra { table-layout: fixed; width: 100%; margin-bottom: 24px; padding: 0 1px 1px 0; border-spacing: 0; border-collapse: separate; *border-collapse:collapse; border-color: #abb8ce; background: #EDEDED; }
+.zebra th { padding: 5px 0; font-weight: bold; border-color: #f8f8f8 #abb8ce #abb8ce #f8f8f8; text-align: center; text-shadow: 1px 1px 0 #e4edfb; vertical-align: middle; background: #d0dbee; }
+.zebra td { padding:0; }
+.zebra th.separate { border-color: #E1F196 #AECD1B #AECD1B #F3FAD6; background-color: #f3f7fd; }
+.zebra td { padding: 4px; font: 12px/18px Consolas, "Courier New", Courier, monospace; text-align: left; vertical-align: top; }
+.zebra td { border-color: #f8f8f8 #abb8ce #abb8ce #f8f8f8; background: #e0e8f5; }
+.zebra tr.odd th { background: #dbe4f4; }
+.zebra tr.odd td { background: #e6eef9; }
+table.zebra .type, table.zebra .default { width:6em; }
+table.zebra .parameter { width: 10em; }
+

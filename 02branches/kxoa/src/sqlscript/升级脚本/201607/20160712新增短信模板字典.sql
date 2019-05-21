@@ -1,0 +1,2 @@
+insert into F_DATADICTIONARY (CATALOGCODE, DATACODE, EXTRACODE, EXTRACODE2, DATATAG, DATAVALUE, DATASTYLE, DATADESC, LASTMODIFYDATE, CREATEDATE)
+values ('sendMSgMod', 'fileSend', null, '4', 'T', '{username}您好!{datetime},{userName}上报了标题为"{event}"的文，请及时处理！【OA办公系统】', 'S', null, null, null);

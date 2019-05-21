@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="optPdfInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.OptPdfInfoManagerImpl">
+				<property name="optStuffInfoDao" ref="optStuffInfoDao" />
+				<property name="optPdfInfoDao" ref="optPdfInfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="dispatchDocManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.DispatchDocManagerImpl">
+				<property name="dispatchDocDao" ref="dispatchDocDao" />
+				<property name="docRelativeDao" ref="docRelativeDao" />
+				<property name="vDispatchDocListDao" ref="vDispatchDocListDao" />
+				<property name="optBaseInfoDao" ref="optBaseInfoDao" />
+				<property name="optApplyDao" ref="optApplyDao" />
+				<property name="incomeDocDao" ref="incomeDocDao" />
+				<property name="incomeProjectDao" ref="incomeProjectDao" />
+				<property name="templateFileDao" ref="templateFileDao" />
+				<property name="optStuffInfoDao" ref="optStuffInfoDao" />
+				<property name="optFlowNoInfoManager" ref="optFlowNoInfoManager" />
+				<property name="applyUnitInfoManager" ref="applyUnitInfoManager" />
+				<property name="vprocTransUsersDao" ref="vprocTransUsersDao" />
+				<property name="optProcInfoDao" ref="optProcInfoDao" />
+				<property name="optIdeaInfoDao" ref="optIdeaInfoDao" />
+				<property name="flowEngine" ref="flowEngine" />
+				<property name="workCalendar" ref="workCalendar" />
+				<property name="oaLeaderSortDao" ref="oaLeaderSortDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="incomeDocManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.IncomeDocManagerImpl">
+				<property name="incomeDocDao" ref="incomeDocDao" />
+				<property name="vOrgSupPowerDao" ref="vOrgSupPowerDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="optLeaderShipManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.OptLeaderShipManagerImpl">
+				<property name="optLeaderShipDao" ref="optLeaderShipDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="vprocTransUsersManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.VProcTransUsersManagerImpl">
+				<property name="vprocTransUsersDao" ref="vprocTransUsersDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ioDocTasksManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.IODocTasksManagerImpl">
+				<property name="dispatchDocTaskDao" ref="dispatchDocTaskDao" />
+				<property name="incomeDocTaskDao" ref="incomeDocTaskDao" />
+				<property name="commonDocTaskDao" ref="commonDocTaskDao" />
+				<property name="actionTaskDao" ref="actionTaskDao" />
+				<property name="oaSmssendManager" ref="oaSmssendManager" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="VIncomeDocListManager"
+		class="com.centit.dispatchdoc.service.impl.VIncomeDocListManagerImpl">
+		<property name="VIncomeDocListDao" ref="VIncomeDocListDao" />
+		<property name="optBaseInfoDao" ref="optBaseInfoDao" />
+	</bean>
+
+	<bean id="docRelativeManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.DocRelativeManagerImpl">
+				<property name="docRelativeDao" ref="docRelativeDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ioDocArchiveNoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.IODocArchiveNoManagerImpl">
+				<property name="ioDocArchiveNoDao" ref="ioDocArchiveNoDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="incomeProjectManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.IncomeProjectManagerImpl">
+				<property name="incomeProjectDao" ref="incomeProjectDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="applyUnitInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.ApplyUnitInfoManagerImpl">
+				<property name="applyUnitInfoDao" ref="applyUnitInfoDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="docSendManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.DocSendManagerImpl">
+				<property name="docSendDao" ref="docSendDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="subprocessProjectManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.SubprocessProjectManagerImpl">
+				<property name="subprocessProjectDao" ref="subprocessProjectDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="VSubprocessProjectTaskListManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.VSubprocessProjectTaskListManagerImpl">
+				<property name="VSubprocessProjectTaskListDao" ref="VSubprocessProjectTaskListDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="dataChgManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.DataChangeManagerImpl">
+				<property name="fileinfoDao" ref="fileinfoDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="VUserTransaffairManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.VUserTransaffairManagerImpl">
+				<property name="VUserTransaffairDao" ref="VUserTransaffairDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="VStuffTransaffairManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.VStuffTransaffairManagerImpl">
+				<property name="VStuffTransaffairDao" ref="VStuffTransaffairDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="VDispatchDocListManager"
+		class="com.centit.dispatchdoc.service.impl.VDispatchDocListManagerImpl">
+		<property name="VDispatchDocListDao" ref="VDispatchDocListDao" />
+		<property name="optBaseInfoDao" ref="optBaseInfoDao" />
+	</bean>
+
+	<bean id="readInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.ReadInfoManagerImpl">
+				<property name="readInfoDao" ref="readInfoDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="vReadInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.VReadInfoManagerImpl">
+				<property name="vReadInfoDao" ref="vReadInfoDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="VSwSearchManager"
+		class="com.centit.dispatchdoc.service.impl.VSwSearchManagerImpl">
+		<property name="VSwSearchDao" ref="VSwSearchDao" />
+	</bean>
+
+	<bean id="optZwhReservedManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.OptZwhReservedManagerImpl">
+				<property name="optZwhReservedDao" ref="optZwhReservedDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="VProjectAuditInfoManager"
+		class="com.centit.dispatchdoc.service.impl.VProjectAuditInfoManagerImpl">
+		<property name="VProjectAuditInfoDao" ref="VProjectAuditInfoDao" />
+	</bean>
+	<bean id="VUserTransaffairAttentionManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.VUserTransaffairAttentionManagerImpl">
+				<property name="VUserTransaffairAttentionDao" ref="VUserTransaffairAttentionDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="VUserTransaffairDcyjManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.VUserTransaffairDcyjManagerImpl">
+				<property name="VUserTransaffairDcyjDao" ref="VUserTransaffairDcyjDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="VUserTransaffairDcyjGrManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.VUserTransaffairDcyjGrManagerImpl">
+				<property name="VUserTransaffairDcyjGrDao" ref="VUserTransaffairDcyjGrDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="vuserTaskListOAManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.VuserTaskListOAManagerImpl">
+				<property name="vuserTaskListOADao" ref="vuserTaskListOADao" />
+				<property name="voadDcdbNumDao" ref="voadDcdbNumDao" />
+				<property name="dispatchDocManager" ref="dispatchDocManager" />
+				<property name="incomeDocManager" ref="incomeDocManager" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="signedReportManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.SignedReportManagerImpl">
+				<property name="signedReportDao" ref="signedReportDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="optProcStuffInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.dispatchdoc.service.impl.OptProcStuffInfoManagerImpl">
+				<property name="optProcStuffInfoDao" ref="optProcStuffInfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="oaFwdepmangeManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.OaFwdepmangeManagerImpl">
+				<property name="oaFwdepmangeDao" ref="oaFwdepmangeDao" />
+			</bean>
+		</property>
+	</bean>
+</beans>

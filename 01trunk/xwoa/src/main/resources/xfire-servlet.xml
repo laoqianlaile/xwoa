@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- soap服务配置 -->
+	<import resource="classpath:org/codehaus/xfire/spring/xfire.xml" />
+
+	<!-- 没有加密，解密的webservice的调用 -->
+	<bean id="centitWebService" class="org.codehaus.xfire.spring.remoting.XFireExporter">
+		<property name="serviceFactory" ref="xfire.serviceFactory" />
+		<property name="xfire" ref="xfire" />
+		<property name="serviceBean" ref="centitWebServiceImpl" />
+		<property name="serviceClass"
+			value="com.centit.webservice.server.CentitWebService" />
+		<property name="name" value="centitWebService" />
+	</bean>
+	<bean id="centitWebServiceImpl" class="com.centit.webservice.server.impl.CentitWebServiceImpl">
+    <property name="oaMeetingApplyManager" ref="oaMeetingApplyManager" />
+	<property name="dictionaryManager" ref="dictionaryManager" />
+		<property name="sysunitDao" ref="sysUnitDao" />
+		<property name="sysuserDao" ref="sysUserDao" />
+		<property name="userRoleDao" ref="userRoleDao" />
+		<property name="functionDao" ref="functionDao" />
+		<property name="oaTripPlanManager" ref="oaTripPlanManager" />
+
+
+		<property name="optBaseInfoDao" ref="optBaseInfoDao" />
+		<property name="wsclientManager" ref="wsclientManager" />
+		<property name="optStuffInfoManager" ref="optStuffInfoManager" />
+		<property name="optProcCollectionManager" ref="optProcCollectionManager" />
+		<property name="optProcLockManager" ref="optProcLockManager" />
+		<property name="vOptBaseListManager" ref="vOptBaseListManager" />
+
+
+		
+		
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+
+
+
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="optIdeaInfoDao" ref="optIdeaInfoDao" />
+		<property name="nodeInstanceDao" ref="nodeInstanceDao" />
+		<property name="vuserTaskListOAManager" ref="vuserTaskListOAManager" />
+
+		<property name="dashboardDao" ref="dashboardDao" />
+		<property name="oaScheduleManager" ref="oaScheduleManager" />
+		<property name="publicinfoManager" ref="publicinfoManager" />
+		<property name="fileinfoFsManager" ref="fileinfoFsManager" />
+		<property name="innermsgManager" ref="innermsgManager" />
+		<property name="innermsgRecipientManager" ref="innermsgRecipientManager" />
+		<property name="oaInformationManager" ref="oaInformationManager" />
+		<property name="oaUnitIncomedocManager" ref="oaUnitIncomedocManager" />
+		<property name="oaMeetinfoManager" ref="oaMeetinfoManager" />
+		<property name="VOptProcCollectionManager" ref="VOptProcCollectionManager" />
+		<property name="oaMeetApplyManager" ref="oaMeetApplyManager" />
+		<property name="oaUserinfoManager" ref="oaUserinfoManager" />
+
+		<property name="voaUnitArchiveDispatchdocManager" ref="voaUnitArchiveDispatchdocManager" />
+		<property name="voaUnitArchiveIncomedocManager" ref="voaUnitArchiveIncomedocManager" />
+		<property name="oaArchiveManager" ref="oaArchiveManager" />
+
+		<property name="optProcStuffInfoManager" ref="optProcStuffInfoManager" />
+
+
+		<property name="actionTaskDao" ref="actionTaskDao" />
+		<property name="oaRemindInformationManager" ref="oaRemindInformationManager" />
+		<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+
+		<property name="incomeDocManager" ref="incomeDocManager" />
+		<property name="dispatchDocManager" ref="dispatchDocManager" />
+		<property name="optPdfInfoManager" ref="optPdfInfoManager" />
+		<property name="oaSmssendManager" ref="oaSmssendManager" />
+
+		<property name="userbizoptLogManager" ref="userbizoptLogManager" />
+		<property name="oaCarApplyManager" ref="oaCarApplyManager" />
+		<property name="oaInformationAttachmentManager" ref="oaInformationAttachmentManager" />
+	
+	    <property name="oaFilemanagerManager" ref="oaFilemanagerManager" />
+	     
+	    <property name="mipLogManager" ref="mipLogManager" />
+	     
+	    <property name="oaLeaveapplyManager" ref="oaLeaveapplyManager" /> 
+	    <property name="vPowerUserInfoManager" ref="vPowerUserInfoManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />  
+		<property name="optApplyManager" ref="optApplyManager" />  
+		<property name="oaBuffetapplyManager" ref="oaBuffetapplyManager" />  
+		<property name="oaOfficesuppliesManager" ref="oaOfficesuppliesManager" />  
+		<property name="oaNetapplicationManager" ref="oaNetapplicationManager" />  
+		<property name="oaLeavereportedManager" ref="oaLeavereportedManager" />  
+		<property name="oaInfosummaryManager" ref="oaInfosummaryManager" />  
+		
+		<property name="oaBbsThemeManager" ref="oaBbsThemeManager" />
+	    <property name="oaLeaveMessageManager" ref="oaLeaveMessageManager"/>
+	    <property name="oaLeaveMessagereplyManager" ref="oaLeaveMessagereplyManager"/>
+	    <property name="oaBbsDiscussionManager" ref="oaBbsDiscussionManager" />
+	    
+	    <property name="oaMeetingmaterialManager" ref="oaMeetingmaterialManager" />
+	    <property name="oaMeetingmaterialinfosManager" ref="oaMeetingmaterialinfosManager" />
+	</bean>
+
+	<bean id="centitWebCommonBizServiceImpl"
+		class="com.centit.webservice.server.impl.CentitWebCommonBizServiceImpl"
+		scope="prototype">
+
+		<property name="optStuffInfoManager" ref="optStuffInfoManager" />
+		<property name="actionTaskDao" ref="actionTaskDao" />
+		<property name="flowInstanceDao" ref="flowInstanceDao" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+
+
+
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="optIdeaInfoDao" ref="optIdeaInfoDao" />
+		<property name="nodeInstanceDao" ref="nodeInstanceDao" />
+		<property name="vuserTaskListOAManager" ref="vuserTaskListOAManager" />
+		<property name="oaSmssendManager" ref="oaSmssendManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="dispatchDocManager" ref="dispatchDocManager" />
+
+	</bean>
+
+
+
+	<bean id="sysUserDao" class="com.centit.sys.dao.UserInfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="sysUnitDao" class="com.centit.sys.dao.UnitInfoDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+
+	<!-- beg 发送短信 -->
+	<bean id="sendMsgYDClientManager" class="com.centit.webservice.client.impl.SendMsgYDClientManagerImpl">
+		<property name="oaSmssendDao" ref="oaSmssendDao" />
+		<property name="smsApiClient" ref="smsApiClient" />
+		<property name="oaSMSConfigManager" ref="oaSMSConfigManager" />
+	</bean>
+
+	
+	<!-- beg 发送短信 -->
+	<bean id="sendMsgDXClientManager" class="com.centit.webservice.client.impl.SendMsgDXClientManagerImpl">
+		<property name="oaSmssendDao" ref="oaSmssendDao" />
+		<property name="sendMsgReceive" ref="sendMsgDXReceive" />
+		<property name="client" ref="client" />
+		<property name="oaSMSConfigManager" ref="oaSMSConfigManager" />
+	</bean>
+
+	<bean id="sendMsgDXReceive" class="com.centit.webservice.client.impl.SendMsgDXReceive">
+		<property name="oaSmssendDao" ref="oaSmssendDao" />
+		<property name="oaSmssendLogManager" ref="oaSmssendLogManager" />
+	</bean>
+	<bean id="client" class="com.linkage.netmsg.NetMsgclient">
+		
+	</bean>
+	<bean id="smsApiClient" class="com.api.SmsApiClient">
+	</bean>
+
+	<!-- end 发送短信 -->
+
+	<!-- start 用户信息同步  -->
+	<bean id="taijiUserRestService" class="com.centit.webservice.server.impl.TaijiUserRestServiceImpl">
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysRoleManager" ref="sysRoleManager"/>
+		<property name="wsclientManager" ref="wsclientManager" />
+	</bean>
+	<!-- end 用户信息同步 -->
+	<bean id="taijiLogRestService" class="com.centit.webservice.server.impl.TaijiSysLogRestServiceImpl">
+		<property name="accessLogManager" ref="accessLogManager"/>
+	</bean>
+	<!--spring 请求上下文 -->
+	<bean id="springContextUtil" class="com.centit.sys.job.SpringContextUtil"
+		scope="singleton" />
+
+
+</beans>

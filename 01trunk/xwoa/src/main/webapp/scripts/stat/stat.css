@@ -1,0 +1,37 @@
+.container {padding-top:5px;}
+select.form-control {color:#000;}
+/*鎼滅储鏍�/
+.search-bar {line-height:30px;}
+.search-bar div {margin-bottom:5px;}
+.search-bar .title {font-weight:bold; text-align:center;}
+
+/*宸ュ叿鏍�/
+.tool-bar .excel, .tool-bar .add, .tool-bar .size {margin-right:5px; float:right;}
+
+/*琛ㄦ牸*/
+.table-container {margin-top:5px;}
+.table-container td{white-space: nowrap}
+
+.tool-container {margin-top:5px;}
+body{font-size:12px;}
+#statTable{width:100%;border-left:1px solid #CACACA;border-bottom:1px solid #CACACA;margin-top:10px; border-spacing:0; border-collapse:collapse;}
+.searchTd{width:21%;height:20px;float:left;text-align:center;margin-bottom:10px;}
+.searchPt{width:21%;height:20px;float:left;text-align:left;margin-bottom:10px;}
+thead th{
+	 background-color:#F2F2F2;color:black;border-bottom: 1px solid #CACACA;text-align:center;font-weight: bold;padding-top: 4px;
+          cursor:pointer;font-size:12px;padding:5px;border-top: 1px solid #CACACA; border-right: 1px solid #CACACA;line-height:16px;vertical-align: middle; 
+ 
+          
+          }
+table td {font-size:12px; padding:5px;}
+table#statTable td{border-right: 1px solid #CACACA;font-size:12px;line-height:16px;padding:5px;vertical-align: middle;}
+
+/*#statTable > caption {height: 20px; line-height:20px; background: #D1FBFB; font-weight: bold; border: 1px solid #cacaca; border-width: 1px 1px 0 1px;}*/
+#statTable > caption {font-size: 16px; padding: 5px;}
+ td > a {text-decoration:none; color:#2D80D2;}
+
+/*琛ㄦ牸鍒楄嚜鍔ㄩ殣钘�/
+.table-column-hide .grey {color:#eee;}
+.table-column-hide .table-headers button:hover, .table-column-hide .table-headers button:focus {background:#fff;} 
+
+table tbody .btn {margin-left:5px;}

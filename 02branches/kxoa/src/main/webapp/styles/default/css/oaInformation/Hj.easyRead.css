@@ -1,0 +1,207 @@
+.Hj-easyReadViewBox {
+	border: 1px solid rgb(255, 0, 0); border-image: none; left: 0px; width: 100%; height: 50px; bottom: 0px; position: fixed;
+}
+#viewArrowH {
+	left: 0px; top: 300px; width: 100%; font-size: 0px; display: block; position: absolute; z-index: 200; background-color: rgb(255, 0, 0);
+}
+#viewArrowV {
+	left: 150px; top: 0px; height: 100%; font-size: 0px; display: block; position: absolute; z-index: 200; background-color: rgb(255, 0, 0);
+}
+#Hj-EasyRead-Sider {
+	top: 0px; width: 52px; right: 100px; position: absolute; z-index: 30;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Arrow {
+	background: url("Hj.EasyRead.SiderBar.gif") no-repeat left top; width: 52px; height: 35px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Arrow a {
+	width: 52px; height: 35px; line-height: 0px; font-size: 0px; display: block;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns {
+	background: rgb(241, 237, 237); border: 1px solid rgb(213, 213, 213); border-image: none; min-height: 500px; _height: 500px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Item {
+	background: url("Hj.EasyRead.SiderBar.gif") -1px -37px; width: 44px; height: 48px; padding-top: 12px; padding-left: 6px; display: none;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Init {
+	
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Text {
+	background-position: -1px -97px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Back {
+	background-position: -1px -157px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Forward {
+	background-position: -1px -217px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Toghter {
+	background-position: -1px -277px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Refresh {
+	background-position: -1px -337px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Voice {
+	background-position: -1px -397px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Display {
+	background-position: -1px -457px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Color {
+	background-position: -1px -517px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Line {
+	background-position: -1px -577px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-WScaleL {
+	background-position: -1px -637px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-WScaleP {
+	background-position: -1px -697px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Pointer {
+	background-position: -1px -757px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-TScaleL {
+	background-position: -1px -817px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-TScaleP {
+	background-position: -1px -877px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Item a {
+	background: url("Hj.EasyRead.SiderBar.gif") no-repeat -7px -49px; width: 39px; height: 36px; line-height: 0px; font-size: 0px; display: inline-block;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Init a {
+	
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Text a {
+	background-position: -7px -109px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Back a {
+	background-position: -7px -169px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Forward a {
+	background-position: -7px -229px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Toghter a {
+	background-position: -7px -289px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Refresh a {
+	background-position: -7px -349px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Voice a {
+	background-position: -7px -409px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Display a {
+	background-position: -7px -469px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Color a {
+	background-position: -7px -529px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Line a {
+	background-position: -7px -589px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-WScaleL a {
+	background-position: -7px -649px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-WScaleP a {
+	background-position: -7px -709px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Pointer a {
+	background-position: -7px -769px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-TScaleL a {
+	background-position: -7px -829px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-TScaleP a {
+	background-position: -7px -889px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Item a:hover {
+	background-position: -455px -49px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Item a.hover {
+	background-position: -455px -49px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Text a:hover {
+	background-position: -455px -109px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Text a.hover {
+	background-position: -455px -109px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Back a:hover {
+	background-position: -455px -169px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Back a.hover {
+	background-position: -455px -169px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Forward a:hover {
+	background-position: -455px -229px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Forward a.hover {
+	background-position: -455px -229px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Toghter a:hover {
+	background-position: -455px -289px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Toghter a.hover {
+	background-position: -455px -289px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Refresh a:hover {
+	background-position: -455px -349px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Refresh a.hover {
+	background-position: -455px -349px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Voice a:hover {
+	background-position: -455px -409px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Voice a.hover {
+	background-position: -455px -409px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Display a:hover {
+	background-position: -455px -469px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Display a.hover {
+	background-position: -455px -469px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Color a:hover {
+	background-position: -455px -529px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Color a.hover {
+	background-position: -455px -529px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Line a:hover {
+	background-position: -455px -589px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Line a.hover {
+	background-position: -455px -589px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-WScaleL a:hover {
+	background-position: -455px -649px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-WScaleL a.hover {
+	background-position: -455px -649px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-WScaleP a:hover {
+	background-position: -455px -709px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-WScaleP a.hover {
+	background-position: -455px -709px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Pointer a:hover {
+	background-position: -455px -769px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-Pointer a.hover {
+	background-position: -455px -769px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-TScaleL a:hover {
+	background-position: -455px -829px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-TScaleL a.hover {
+	background-position: -455px -829px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-TScaleP a:hover {
+	background-position: -455px -889px;
+}
+#Hj-EasyRead-Sider #Hj-EasyRead-Sider-Btns .Hj-EasyRead-Sider-Btns-TScaleP a.hover {
+	background-position: -455px -889px;
+}

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    http://www.springframework.org/schema/context     http://www.springframework.org/schema/context/spring-context.xsd" default-lazy-init="false">
+
+	<!-- 机构管理 -->
+	<bean id="sysUnitManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.SysUnitManagerImpl">
+				<property name="sysunitdao" ref="sysUnitDao"/>
+				<property name="unituserDao" ref="userUnitDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+	
+	
+	<!-- 用户管理 -->
+	<bean id="sysUserManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.SysUserManagerImpl">
+				<property name="sysuserDao" ref="sysUserDao"/>
+				<property name="sysunitDao" ref="sysUnitDao"/>
+				<property name="userRoleDao" ref="userRoleDao"/>
+				<property name="functionDao" ref="functionDao"/>
+				<property name="unituserDao" ref="userUnitDao"/>
+				<property name="userSettingDao" ref="userSettingDao"/>
+				<property name="passwordEncoder" ref="passwordEncoder"/>
+				<property name="vUserUnitsDao" ref="vUserUnitsDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- 系统元数据库 -->
+
+	<bean id="codeRepositoryManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.CodeRepositoryManagerImpl" init-method="refreshAll">
+				<property name="catalogDao" ref="catalogDao"/>
+				<property name="dictionaryDao" ref="dictionaryDao"/>
+				<property name="sysUserDao" ref="sysUserDao"/>
+				<property name="sysUnitDao" ref="sysUnitDao"/>
+				<property name="functionDao" ref="functionDao"/>
+				<property name="optdefDao" ref="optdefDao"/>
+				<property name="sysroleDao" ref="sysRoleDao"/>
+				<property name="unituserDao" ref="userUnitDao"/>
+				<!-- <property name="suppowerDao" ref="suppowerDao" /> -->
+				<!-- <property name="applyUnitInfoDao" ref="applyUnitInfoDao" /> -->
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- 菜单管理 -->
+	<bean id="functionManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.FunctionManagerImpl">
+				<property name="functionDao" ref="functionDao"/>
+				<property name="optdefdao" ref="optdefDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 操作管理 -->
+	<bean id="optdefManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.OptdefManagerImpl">
+				<property name="optdefDao" ref="optdefDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- 数据字典 -->
+	<bean id="dictionaryManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.DictionaryManagerImpl">
+				<property name="catalogDao" ref="catalogDao"/>
+				<property name="dictionaryDao" ref="dictionaryDao"/>
+				<property name="userunitDao" ref="userUnitDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	
+	
+	
+	<!-- 用户机构 -->
+	<bean id="userUnitManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.UserUnitManagerImpl">
+				<property name="userunitDao" ref="userUnitDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+	
+	<!-- ͨ通讯管理 -->
+	<bean id="addressBookManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.AddressBookManagerImpl">
+				<property name="addressBookDao" ref="addressBookDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="userSettingManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.UserSettingManagerImpl">
+				<property name="usersettingDao" ref="userSettingDao"/>
+				<property name="functionDao" ref="functionDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="optRunRecManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.OptRunRecManagerImpl">
+				<property name="optRunRecDao" ref="optRunRecDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 流程业务变量管理 -->
+	<bean id="optVariableManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.OptVariableManagerImpl">
+				<property name="optVariableDao" ref="optVariableDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 系统定时器 ，这个定义应该放到更目录下，呵呵 -->
+	<bean id="centitTask" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.core.task.CentitTaskTimer">
+				<property name="taskList">
+					<list>
+						<!-- <ref bean="flowTask" /> -->
+					</list>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="optLogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.OptLogManagerImpl">
+				<property name="optLogDao" ref="optLogDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optFlowNoInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.OptFlowNoInfoManagerImpl">
+				<property name="optFlowNoInfoDao" ref="optFlowNoInfoDao"/>
+				<property name="optFlowNoPoolDao" ref="optFlowNoPoolDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="taskLogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.TaskLogManagerImpl">
+				<property name="taskLogDao" ref="taskLogDao"/>
+				<property name="schedulerManager" ref="schedulerManager"/>
+			</bean>
+		</property>
+	</bean>
+
+	
+	<!-- 角色管理 wxy -->
+	<bean id="sysRoleManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.SysRoleManagerImpl">
+				<property name="sysroleDao" ref="sysRoleDao"/>
+				<property name="userroledao" ref="userRoleDao"/>
+				<property name="userinfodao" ref="sysUserDao"/>
+			</bean>
+		</property>
+	</bean>
+    <!-- lq -->
+    <bean id="indexManager" parent="baseTransactionProxy">
+		<property name="target">
+			<!-- <bean class="com.centit.sys.service.impl.IndexManagerImpl" init-method="initTimerTask"> -->
+			<bean class="com.centit.sys.service.impl.IndexManagerImpl">
+				<property name="taskLogManager" ref="taskLogManager"/>
+				<property name="schedulerManager" ref="schedulerManager"/>
+				<!-- <property name="publicinfoManager" ref="publicinfoManager" /> -->
+				<property name="fileinfoFsManager" ref="fileinfoFsManager"/>
+				<property name="indexDao" ref="indexDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+    <bean id="schedulerManager" class="com.centit.sys.service.impl.SchedulerManagerImpl">
+		<property name="scheduler" ref="scheduler"/>
+	</bean>
+	<bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"/>
+
+	<bean id="rtxMsg" class="com.centit.sys.service.impl.RtxMessageSenderImpl">
+		<property name="sysuserDao" ref="sysUserDao"/>
+	</bean>
+    
+    <bean id="accessLogManager" class="com.centit.sys.service.impl.AccessLogManagerImpl">
+		<property name="accessLogDao" ref="accessLogDao"/>
+	</bean>
+	
+	<bean id="vUserOnlineManager" class="com.centit.sys.service.impl.VUserOnlineManagerImpl">
+		<property name="vUserOnlineDao" ref="vUserOnlineDao"/>
+	</bean>
+	<bean id="useroptLogManager" parent="baseTransactionProxy">
+			<property name="target">
+				<bean class="com.centit.sys.service.impl.UseroptLogManagerImpl">
+					<property name="useroptLogDao" ref="useroptLogDao"/>
+				</bean>
+			</property>
+	 </bean>
+	<bean id="userbizoptLogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.UserbizoptLogManagerImpl">
+				<property name="userbizoptLogDao" ref="userbizoptLogDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="userForgetPasswordManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.sys.service.impl.UserForgetPasswordManagerImpl">
+			    <property name="userForgetPasswordDao" ref="userForgetPasswordDao"/>
+			    <property name="sysUserMgr" ref="sysUserManager" />
+			</bean>
+		</property>
+		
+	</bean>
+	
+</beans>

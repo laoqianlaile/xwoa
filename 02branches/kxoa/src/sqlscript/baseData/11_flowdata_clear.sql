@@ -1,0 +1,11 @@
+delete from wf_flow_define t where t.version <> 0;
+update wf_flow_define set wfstate = 'A';
+commit;
+truncate table WF_ACTION_LOG;
+truncate table WF_ACTION_TASK;
+truncate table WF_FLOW_INSTANCE;
+truncate table WF_MANAGE_ACTION;
+truncate table WF_NODE;
+truncate table WF_NODE_INSTANCE;
+truncate table WF_TRANSITION;
+truncate table WF_TEAM;

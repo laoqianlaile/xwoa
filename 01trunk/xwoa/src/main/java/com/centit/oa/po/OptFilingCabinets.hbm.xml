@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.centit.oa.po">
+	<class name="OptFilingCabinets" table="OPT_FIlING_CABINETS" >
+		<id name="id" type="java.lang.Long">
+			<column name="ID"/>
+			<generator class="assigned" />
+		</id>
+		<property name="fileSize" type="java.lang.Long">
+			<column name="FILESIZE" />
+		</property>
+		<property name="refId" type="java.lang.String">
+			<column name="REF_ID" />
+		</property>
+		<property name="fileName" type="java.lang.String">
+			<column name="FILENAME" length="100"/>
+		</property>
+		<property name="filePath" type="java.lang.String">
+			<column name="FILEPATH" length="1000"/>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="dispatchdoc" namespace="/dispatchdoc" extends="centitbsdfw">
+
+		<action name="ioDocArchiveNo" class="ioDocArchiveNoAction">
+			<result name="edit">/page/dispatchdoc/IODocArchiveNoForm.jsp</result>
+			<result name="gotoNext">/page/powerruntime/optcommon/gotoNextStep.jsp</result>
+			<result name="zwhReservedShow">/page/dispatchdoc/optZwhReservedShow.jsp</result>
+			<result name="zwhReservedUsePop">/page/dispatchdoc/optZwhReservedUsePop.jsp</result>
+			<result name="zwhReservedSetPop">/page/dispatchdoc/optZwhReservedSetPop.jsp</result>
+			<result name="zwhReservedView">/page/dispatchdoc/optZwhReservedView.jsp</result>
+<!-- 			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/dispatchdoc</param>
+				<param name="actionName">ioDocTasks</param>
+				<param name="method">refreshTasks</param>
+				<param name="flowInstId">${flowInstId}</param>
+			</result> -->
+				<result name="refreshTasks" type="redirectAction">
+			   vuserTaskListOA!list.do?s_flowCode=${flowCode}
+		
+			</result>
+			<result name="ajaxResult" type="json">
+				<param name="root">json</param>
+			</result>
+		</action>
+		
+		<action name="ioDocTasks" class="ioDocTasksAction">
+			<result name="DispatchDocTask">/page/dispatchdoc/dispatchDocTaskList.jsp</result>
+			<result name="IncomeDocTask">/page/dispatchdoc/incomeDocTaskList.jsp</result>
+			<result name="ioSelectFlow">/page/dispatchdoc/IODocFlowStart.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">VSubprocessProjectTaskList</param>
+				<param name="method">list</param>
+				<param name="flowInstId">${flowInstId}</param>
+				<param name="flowCode">${flowCode}</param>
+			</result>
+			<result name="listIncomeDocTasks_by">/page/dispatchdoc/incomeDocTaskList_by.jsp</result>
+			<result name="listIncomeDocTasks_gw">/page/dispatchdoc/incomeDocTaskList_gw.jsp</result>
+			<result name="listIncomeDocTasks_common">/page/dispatchdoc/IODocTasks.jsp</result>
+		</action>
+		
+		<action name="ioDocTasksExcute" class="ioDocTasksExcuteAction">
+			<result name="CompNodes">/page/sampleflow/wfUserCompleteTaskList.jsp</result>
+			<result name="gotoNext">/page/powerruntime/optcommon/gotoNextStep.jsp</result>
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp</result>
+			<result name="IODocTransForm">/page/dispatchdoc/IODocTransInfo.jsp</result>
+			<result name="ioDocLeaderTransInfo">/page/dispatchdoc/common/IODocLeaderTransInfo.jsp</result>
+			<result name="tobyj_chooseZRWS">/page/dispatchdoc/optTobyj_chooseZRWS.jsp</result>
+			<result name="HandleApproval">/page/dispatchdoc/IODocHandleApproval.jsp</result>
+			<result name="officeInChargeFrame">/page/dispatchdoc/optOfficeInChargeFrame.jsp</result>
+			<result name="SubProjectTransForm">/page/dispatchdoc/register/projectSubFlowTrans.jsp</result>
+			<result name="defaultTrans">/page/powerruntime/optcommon/buildingNode.jsp</result>
+			<result name="transaffairView">/page/dispatchdoc/IODocTransaffairView.jsp</result>
+			<result name="ioDocPF">/page/dispatchdoc/IODocPF.jsp</result>
+			<result name="toDoSignTheSummary">/page/dispatchdoc/ToDoSignTheSummary.jsp</result>
+			<result name="hqhbyj">/page/dispatchdoc/HqHbyjFrame.jsp</result>
+			<result name="selectOrganize">/page/dispatchdoc/selectOrganize.jsp</result>
+		<!-- 	<result name="refreshTasks" type="redirectAction">
+				<param name="actionName">ioDocTasks</param>
+				<param name="method">refreshTasks</param>
+				<param name="flowInstId">${flowInstId}</param>
+				<param name="flowCode">${flowCode}</param> 
+					</result>-->
+			<result name="refreshTasks" type="redirectAction">
+			   vuserTaskListOA!list.do?s_flowCode=${flowCode}&amp;s_itemtype=${itemtype}
+		
+			</result>
+			<result name="ListWorkGroup" type="redirectAction">
+				<param name="actionName">ioDocTasksExcute</param>
+				<param name="method">ioDocPF</param>
+				<param name="djId">${djId}</param>
+				<param name="flowInstId">${flowInstId}</param>
+				<param name="nodeInstId">${nodeInstId}</param>
+				<param name="iszbfb">${iszbfb}</param>
+				<param name="iszb">${iszb}</param>
+				<param name="isxb">${isxb}</param>
+			</result>
+			<result name="viewAllList">/page/dispatchdoc/common/allInfoView.jsp</result>
+			<result name="ajaxResult" type="json">
+				<param name="root">json</param>
+			</result>
+			<!-- <result name="success" type="chain">
+				<param name="actionName">ioDocTasksExcute</param>
+				<param name="method">genDispatchDocFrame</param>
+				
+				<param name="nodeInstId">${nodeInstId}</param>
+				<param name="flowInstId">${flowInstId}</param>
+				<param name="moduleCode">${moduleCode}</param>
+				<param name="frameType">${frameType}</param>
+				<param name="djId">${djId}</param>
+			</result> -->
+		</action>
+
+		<action name="dispatchDoc" class="dispatchDocAction">
+			<result name="startDispatchDoc">/page/dispatchdoc/dispatchDocForm.jsp</result>
+			<result name="list">/page/dispatchdoc/dispatchDocList.jsp</result>
+			<result name="listV1">/page/dispatchdoc/dispatchDocListV1.jsp</result>
+			<result name="listV2">/page/dispatchdoc/dispatchDocListV2.jsp</result>
+			<result name="listV3">/page/dispatchdoc/dispatchDocListV3.jsp</result>
+			<result name="cList">/page/dispatchdoc/dispatchDocCList.jsp</result>
+			<result name="rList">/page/dispatchdoc/dispatchDocRList.jsp</result>
+			<result name="view">/page/dispatchdoc/dispatchDocView.jsp</result>
+			<result name="viewTemplate">/page/dispatchdoc/dispatchDocViewTemplate.jsp</result>
+			<result name="fEdit">/page/dispatchdoc/dispatchDocFEdit.jsp</result>
+			<result name="procEdit">/page/dispatchdoc/dispatchDocEdit.jsp</result>
+			<result name="edit">/page/dispatchdoc/dispatchDocForm.jsp</result>
+			<result name="IODocSubFlow">/page/dispatchdoc/IODocSubFlowForm.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+			   vuserTaskListOA!list.do?s_flowCode=${flowCode}&amp;s_itemtype=${d_itemtype}
+			</result>
+			<result name="dispatchDocTask" type="redirectAction">/ioDocTasks!listDispatchDocTasks.do</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">dispatchDoc</param>
+				<param name="method">list</param>
+			</result>
+			
+			<result name="refreshAptStartEntrance" type="redirectAction">
+				<param name="namespace">/powerruntime</param>
+				<param name="actionName">optApply</param>
+				<param name="method">startEntrance</param>
+				<param name="d_djId">${d_djId}</param>
+				<param name="d_itemtype">${d_itemtype}</param>
+				<param name="d_nodeInstId">${d_nodeInstId}</param>
+			</result>
+			
+			<result name="gotoNext">/page/dispatchdoc/common/gotoNextStep.jsp</result>
+			<result name="registerFWEdit">/page/dispatchdoc/optRegisterFWEditForm.jsp</result>
+			<result name="register">/page/dispatchdoc/register/dispatchDocRegister.jsp</result>
+			<result name="registerView">/page/dispatchdoc/register/dispatchDocRegisterView.jsp</result>
+			
+			<result name="generalOptView">/page/dispatchdoc/common/optTransAffairView.jsp</result>
+			<result name="AllmilitarycaseView">/page/dispatchdoc/common/allInfoView.jsp</result>
+		    <result name="openFw" >/page/powerruntime/optcommon/startEntrance.jsp</result>
+		</action>
+
+		<action name="incomeDoc" class="incomeDocAction">
+			<result name="list">/page/dispatchdoc/incomeDocList.jsp</result>
+			<result name="listV1">/page/dispatchdoc/incomeDocListV1.jsp</result>
+			<result name="listV2">/page/dispatchdoc/incomeDocListV2.jsp</result>
+			<result name="listV3">/page/dispatchdoc/incomeDocListV3.jsp</result>
+			<result name="view">/page/dispatchdoc/incomeDocView.jsp</result>
+			<result name="viewIncomeDoc">/page/dispatchdoc/viewIncomeDoc.jsp</result>
+			<result name="edit">/page/dispatchdoc/incomeDocForm.jsp</result>
+			<result name="reEdit">/page/dispatchdoc/incomeDocReForm.jsp</result>
+			<result name="registerProjectEdit">/page/dispatchdoc/register/registerProjectForm.jsp</result>
+			<result name="registerProjectView">/page/dispatchdoc/register/registerProjectView.jsp</result>
+			<result name="projectInfoEdit">/page/dispatchdoc/register/projectInfoForm.jsp</result>
+			<result name="projectInfoView">/page/dispatchdoc/register/projectInfoView.jsp</result>
+			<result name="registerDoOrReadEdit">/page/dispatchdoc/register/registerDoOrReadForm.jsp</result>
+			<result name="registerDoOrReadEditNew">/page/dispatchdoc/register/registerDoOrReadFormNew.jsp</result>
+			<result name="registerDoOrReadView">/page/dispatchdoc/register/registerDoOrReadView.jsp</result>
+			<result name="registerPiece">/page/dispatchdoc/register/registerPieceForm.jsp</result>
+			<result name="registerPieceView">/page/dispatchdoc/register/registerPieceView.jsp</result>
+			<result name="syncIncomeDoc">/page/dispatchdoc/SysSync/syncIncomeDocList.jsp</result>
+			<result name="registerGWEdit">/page/dispatchdoc/optRegisterGWEditForm.jsp</result>
+			<result name="editShip">/page/dispatchdoc/optLeaderShipForm.jsp</result>
+			<result name="ajaxResult" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="options" type="json">
+				<param name="root">jsonList</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">dispatchDoc</param>
+				<param name="method">list</param>
+			</result>
+			<result name="refreshIncomeTasks" type="redirectAction">
+				<param name="actionName">ioDocTasks</param>
+				<param name="method">refreshTasks</param>
+				<param name="flowInstId">${flowInstId}</param>
+			</result>
+			<result name="saveShip" type="redirectAction">
+				<param name="namespace">/dispatchdoc</param>
+				<param name="actionName">incomeDoc</param>
+				<param name="method">registerDoOrReadEdit</param>
+				<param name="djId">${djId }</param>
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/dispatchdoc</param>
+				<param name="actionName">ioDocTasks</param>
+				<param name="method">refreshTasks</param>
+				<param name="flowInstId">${flowInstId}</param>
+				<param name="flowCode">${flowCode}</param>
+			</result>
+			<result name="gotoNext">/page/dispatchdoc/common/gotoNextStep.jsp</result>
+			<result name="byj_officeBranch">/page/dispatchdoc/optOfficeBranch.jsp</result>
+			<result name="pieceFrame">/page/dispatchdoc/ioDocPieceFrame.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			
+			<result name="generalOptView">/page/dispatchdoc/common/optTransAffairView.jsp</result>
+			<result name="AllmilitarycaseView">/page/dispatchdoc/common/allInfoView.jsp</result>
+			<result name="SWListNodes">/page/sampleflow/nodeInstanceSWList.jsp</result>
+			<result name="SWRefreshNodes" type="redirectAction">
+				<param name="actionName">incomeDoc</param>
+				<param name="method">listFlowInstNodes</param>
+				<param name="flowInstId">${flowInstId}</param>
+			</result>
+		</action>
+		<action name="readInfo" class="readInfoAction">
+			<result name="list">/page/dispatchdoc/readInfoList.jsp</result>
+			<result name="view">/page/dispatchdoc/readInfoView.jsp</result>
+			<result name="edit">/page/dispatchdoc/readInfoForm.jsp</result>
+			<result name="built">/page/dispatchdoc/readInfoForm.jsp</result>
+			<result name="listView">/page/dispatchdoc/readInfoListView.jsp</result>
+			
+			<result name="success" type="chain">
+				<param name="actionName">readInfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		</action>
+		
+		<action name="incomeProject" class="incomeProjectAction">
+			<result name="projectInfoEdit">/page/dispatchdoc/register/projectInfoForm.jsp</result>
+			<result name="projectInfoView">/page/dispatchdoc/register/projectInfoView.jsp</result>
+			<result name="approvalInfoEdit">/page/dispatchdoc/register/projectApprovalInfoForm.jsp</result>
+			<result name="approvalInfoView">/page/dispatchdoc/register/projectApprovalInfoView.jsp</result>
+			<result name="cottonUnitEdit">/page/dispatchdoc/register/cottonUnitForm.jsp</result>
+			<result name="cottonUnitView">/page/dispatchdoc/register/cottonUnitView.jsp</result>
+		</action>
+		
+		<action name="swSearch" class="VSwSearchAction">
+			<result name="list">/page/dispatchdoc/search/VSwSearchList.jsp</result>
+		</action>
+		
+		<action name="VUserTransaffair" class="VUserTransaffairAction">
+			<result name="list">/page/dispatchdoc/VUserTransaffairList.jsp</result>
+			<result name="listFwh">/page/dispatchdoc/VUserTransaffairFwhList.jsp</result>
+			<result name="hbList">/page/dispatchdoc/VUserTransaffairHbList.jsp</result>
+		</action>
+		<action name="VUserTransaffairAttention" class="VUserTransaffairAttentionAction">
+			<result name="list">/page/dispatchdoc/VUserTransaffairAttentionList.jsp</result>
+		</action>
+		<action name="VUserTransaffairDcyj" class="VUserTransaffairDcyjAction">
+			<result name="list">/page/dispatchdoc/VUserTransaffairDcyjList.jsp</result>
+		</action>
+		<action name="VUserTransaffairDcyjGr" class="VUserTransaffairDcyjGrAction">
+			<result name="list">/page/dispatchdoc/VUserTransaffairDcyjGrList.jsp</result>
+		    <result name="success" type="chain">
+				<param name="actionName">VUserTransaffairDcyjGr</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		
+		<action name="VStuffTransaffair" class="VStuffTransaffairAction">
+			<result name="list">/page/dispatchdoc/VStuffTransaffairList.jsp</result>
+			<result name="edit">/page/dispatchdoc/VStuffTransaffairForm.jsp</result>
+		</action>
+		
+		<action name="VProjectAuditInfo" class="VProjectAuditInfoAction">
+			<result name="list">/page/dispatchdoc/VProjectAuditInfoList.jsp</result>
+			<result name="listResult">/page/dispatchdoc/VProjectAuditInfoResultList.jsp</result>
+		</action>
+		
+		<action name="applyUnitInfo" class="applyUnitInfoAction">
+			<result name="selectList">/page/dispatchdoc/selectApplyUnitInfo.jsp</result>
+		</action>
+		
+		<action name="oaFwdepmange" class="oaFwdepmangeAction">
+		
+			 <result name="mangeList">/page/oa/oaFwdepmangeList.jsp</result>
+			 <result name="mangeDetail">/page/oa/oaFwdepmangeDetail.jsp</result>
+			 <result name="DocSelectList">/page/oa/oaFwdepmangeDocSelectList.jsp</result>
+			 <result name="ZWHSelectList">/page/oa/oaFwdepmangeZWHSelectList.jsp</result>
+			 <result name="success" type="redirectAction">
+				<param name="actionName">oaFwdepmange</param>
+				<param name="method">mangeDetail</param>
+			</result>
+	    </action>
+	    
+		<action name="*" class="{1}Action">
+			<result name="list">/page/dispatchdoc/{1}List.jsp</result>
+			<result name="listV2">/page/dispatchdoc/{1}ListV2.jsp</result>
+			<result name="view">/page/dispatchdoc/{1}View.jsp</result>
+			<result name="edit">/page/dispatchdoc/{1}Form.jsp</result>
+			<result name="generalOptView">/page/dispatchdoc/common/optTransAffairView.jsp</result>
+			<result name="AllmilitarycaseView">/page/dispatchdoc/common/allInfoView.jsp</result>
+			<result name="built" type="chain" />
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="listUsersOfTransaction">/page/dispatchdoc/listUsersOfTransaction.jsp</result>
+				<result name="dblist">/page/dispatchdoc/dcdbselectList.jsp</result>
+				<result name="DbList">/page/dispatchdoc/dcdbDbList.jsp</result>
+				<result name="DbListV2">/page/dispatchdoc/dcdbDbListV2.jsp</result>
+				<result name="dcdblist">/page/dispatchdoc/{1}dcdbList.jsp</result>
+				
+		</action>
+		
+		<action name="subprocessProject" class="subprocessProjectAction">
+			<result name="edit">/page/dispatchdoc/subprocessProjectForm.jsp</result>
+			<result name="view">/page/dispatchdoc/subprocessProjectView.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="actionName">ioDocTasksExcute</param>
+				<param name="method">genProjectSubFrame</param>
+				<param name="nodeInstId">${prenodeinstid}</param>
+				<param name="flowInstId">${preinstid}</param>
+				<param name="moduleCode">${moduleCode}</param>
+				<param name="djId">${supDjId}</param>
+			</result>
+			<result name="isOver" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="dataChange" class="dataChangeAction">
+			<result name="view">/page/dispatchdoc/datachange.jsp</result>
+			
+			<result name="view1">/page/dispatchdoc/datachange1.jsp</result>
+			<result name="view2">/page/dispatchdoc/datachange2.jsp</result>
+			<result name="view3">/page/dispatchdoc/datachange3.jsp</result>
+			
+			<result name="export">/page/dispatchdoc/datachange.jsp</result>
+			<result name="import">/page/dispatchdoc/datachange.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="downloadlog" type="stream">
+				<param name="contentType">text/plain</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		</action>
+		
+		<action name="signedReport" class="signedReportAction">
+			<result name="list">/page/dispatchdoc/signedReportList.jsp</result>
+			<result name="view">/page/dispatchdoc/signedReportView.jsp</result>
+			<result name="viewIncomeDoc">/page/dispatchdoc/viewIncomeDoc.jsp</result>
+			<result name="signedReportForm">/page/dispatchdoc/signedReportForm.jsp</result>
+			<result name="ngForm">/page/dispatchdoc/signedReportngForm.jsp</result>
+
+			<result name="ajaxResult" type="json">
+				<param name="root">json</param>
+			</result>
+	
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/dispatchdoc</param>
+				<param name="actionName">ioDocTasks</param>
+				<param name="method">refreshTasks</param>
+				<param name="flowInstId">${flowInstId}</param>
+				<param name="flowCode">${flowCode}</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="gotoNext">/page/dispatchdoc/common/gotoNextStep.jsp</result>
+			<result name="generalOptView">/page/dispatchdoc/common/optTransAffairView.jsp</result>
+			<result name="AllmilitarycaseView">/page/dispatchdoc/common/allInfoView.jsp</result>
+		</action>
+		
+	</package>
+</struts>

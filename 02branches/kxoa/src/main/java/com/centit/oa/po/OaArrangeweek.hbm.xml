@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.centit.oa.po.OaArrangeweek" table="OA_ARRANGEWEEK">
+		<id name="djId" type="java.lang.String">
+			<column name="DJID" length="50" />
+			<generator class="assigned" />
+		</id>
+		<property name="dateran" type="java.lang.String">
+			<column name="DATERAN" length="2" />
+		</property>
+		<property name="createtime" type="java.util.Date">
+			<column name="CREATETIME" />
+		</property>
+		<property name="weekname" type="java.lang.String">
+			<column name="WEEKNAME" length="10" />
+		</property>
+		<property name="weektitle" type="java.lang.String">
+			<column name="WEEKTITLE" length="200" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="REMARK" length="200" />
+		</property>
+		<property name="attendusers" type="java.lang.String">
+			<column name="ATTENDUSERS" length="200" />
+		</property>
+		<property name="attendleaders" type="java.lang.String">
+			<column name="ATTENDLEADERS" length="200" />
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="ADDRESS" length="200" />
+		</property>
+		<property name="depno" type="java.lang.String">
+			<column name="DEPNO" length="20" />
+		</property>
+		<property name="creater" type="java.lang.String">
+			<column name="CREATER" length="10" />
+		</property>
+		<property name="createdate" type="java.util.Date">
+			<column name="CREATEDATE" />
+		</property>
+		<property name="state" type="java.lang.String">
+			<column name="STATE" length="1" />
+		</property>
+	</class>
+</hibernate-mapping>

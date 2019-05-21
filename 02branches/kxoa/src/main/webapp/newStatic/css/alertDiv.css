@@ -1,0 +1,71 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+html,body {
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	background: #f8f8f8;
+	padding: 30px;
+	height: 100%;
+}
+
+.content a {
+	font-size: 30px;
+	color: #369;
+	font-weight: 700;
+}
+
+.alert {
+	border: 1px solid #369;
+	background:#FCFCFC;
+	z-index: 1000;
+	position: absolute;
+	display: none;
+}
+
+.alert h4 {
+	height: 20px;
+	background: #369;
+	color: #fff;
+	padding: 5px 0 0 5px;
+}
+
+.alert h4 span {
+	float: left;
+}
+
+.alert h4 span.close {
+	margin-left: 210px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.alert p {
+	padding: 12px 0 0 30px;
+} 
+
+// 上线后再取消注释
+/* .ztree li span.button{width:0px;} */
+.alert h5 span.chooseGroupType{display: inline-block; margin: 5px 0;}
+.userTabDiv{height: 26px;width: 100%;border-bottom: 1px solid rgb(159, 182, 207);margin: 5px 15px;}
+.userTabDiv div{
+    display: inline-block;
+	width: 80px;
+	height: 25px;
+	color: #666666;
+	line-height: 25px;
+	text-align: center;
+	border: 1px solid rgb(222, 227, 232);
+	border-bottom: 0
+}
+	
+.userTabDiv div.select{
+	background:#eda95a!important;
+	color:white!important
+}

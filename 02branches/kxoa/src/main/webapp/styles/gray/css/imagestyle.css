@@ -1,0 +1,77 @@
+.INPUT1 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: ??,Arial, Verdana, Helvetica, sans-serif; back-color: white; highlight-color: #000000
+}
+.TEXTAREA1 {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 9pt; BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-COLOR: #000000; FONT-FAMILY: ËÎÌו; BACKGROUND-COLOR: #efefef; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #000000
+}
+.line {
+	font-size: 9px;
+	line-height: 10px;
+}
+
+A:link{font-size: 9pt;COLOR: #000000;text-decoration:none}
+A:visited{font-size: 9pt;COLOR: #000000;text-decoration:none}
+A:hover {font-size: 9pt;color: #990000;text-decoration:underline}
+
+.font_black {
+	font-family: "ËÎÌו";FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 22px;TEXT-DECORATION: none
+}
+.font_white {
+	FONT-SIZE: 14px; COLOR: #ffffff; LINE-HEIGHT: 20px; font-weight: normal;TEXT-DECORATION: none
+}
+.font_white1 {
+	FONT-SIZE: 14px; COLOR: #ffffff; LINE-HEIGHT: 20px; font-weight: bold;l;TEXT-DECORATION: none
+}
+.font_red {
+	FONT-SIZE: 12px; COLOR: #ff0000; LINE-HEIGHT: 22px; TEXT-DECORATION: none
+}
+.font_blue {
+	FONT-SIZE: 12px; COLOR: #0000ff; LINE-HEIGHT: 28px; TEXT-DECORATION: none
+}
+.font_green {
+	FONT-SIZE: 12px; COLOR: #00ff00; LINE-HEIGHT: 28px; TEXT-DECORATION: none
+}
+.font_purple {
+	FONT-SIZE: 12px; COLOR: #ff00ff; LINE-HEIGHT: 21px; TEXT-DECORATION: none
+}
+.font_2874A5 {
+	FONT-SIZE: 12px; COLOR: #2874A5; TEXT-DECORATION: none
+}
+.font_484848 {
+	FONT-SIZE: 14px; COLOR: #484848; TEXT-DECORATION: none;font-weight: bold
+}
+.font_2874A5_1 {
+	FONT-SIZE: 12px; COLOR: #2874A5; TEXT-DECORATION: none;text-decoration: underline
+}
+.TableBody1 {
+	BACKGROUND-COLOR: #ffffff;
+}
+.tableBorder1 {
+	Border: 1px solid #5CA1E6;
+	border-collapse: collapse;
+}
+.t_table{ border-left:1px solid #87b2dd; border-top:1px solid #87b2dd;}
+.t_table td {  border-right:1px solid #87b2dd; border-bottom:1px solid #87b2dd;}
+.bg1 {
+	font-size: 12px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+td
+{
+	font-size: 12px;
+}
+.tdgray
+{
+	font-size: 12px;
+	background-color: #efefef;
+}
+.tdblue
+{
+	font-size: 12px;
+	background-color: #d7ebff;
+}
+.list td
+{
+	border-bottom: 1 dashed #cccccc;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="oaBbsAttentionDao" class="com.centit.bbs.dao.OaBbsAttentionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaBbsDashboardDao" class="com.centit.bbs.dao.OaBbsDashboardDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaBbsDiscussionDao" class="com.centit.bbs.dao.OaBbsDiscussionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaBbsThemeDao" class="com.centit.bbs.dao.OaBbsThemeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vBbsThemeUserDao" class="com.centit.bbs.dao.VBbsThemeUserDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+		<bean id="vBbsThemeReplayDao" class="com.centit.bbs.dao.VBbsThemeReplayDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaLeaveMessagereplyDao" class="com.centit.bbs.dao.OaLeaveMessagereplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

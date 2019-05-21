@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/*透明定义*/
+.transparent-10 { filter:alpha(opacity=10); -moz-opacity:0.1; -khtml-opacity: 0.1; opacity: 0.1;}
+.transparent-20 { filter:alpha(opacity=20); -moz-opacity:0.2; -khtml-opacity: 0.2; opacity: 0.2;}
+.transparent-30 { filter:alpha(opacity=30); -moz-opacity:0.3; -khtml-opacity: 0.3; opacity: 0.3;}
+.transparent-40 { filter:alpha(opacity=40); -moz-opacity:0.4; -khtml-opacity: 0.4; opacity: 0.4;}
+.transparent-50 { filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5;}
+.transparent-60 { filter:alpha(opacity=60); -moz-opacity:0.6; -khtml-opacity: 0.6; opacity: 0.6;}
+.transparent-70 { filter:alpha(opacity=70); -moz-opacity:0.7; -khtml-opacity: 0.7; opacity: 0.7;}
+.transparent-80 { filter:alpha(opacity=80); -moz-opacity:0.8; -khtml-opacity: 0.8; opacity: 0.8;}
+.transparent-90 { filter:alpha(opacity=90); -moz-opacity:0.9; -khtml-opacity: 0.9; opacity: 0.9;}
+
+/*圆角定义*/
+.radius {-moz-border-radius: 20px;  -webkit-border-radius: 20px;}
+
+/*文件上传对话框*/
+.inline-mask {position: absolute; left:0; top:0; z-index:0; height:100%;}
+.shadow {-webkit-box-shadow: 0 0 20px -2px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 20px -2px rgba(0,0,0,0.5); -ms-box-shadow: 0 0 20px -2px rgba(0,0,0,0.5); box-shadow: 0 0 20px -2px rgba(0, 0, 0, 0.5);}
+
+.upload-dialog {position:absolute; bottom:0; right:30px; display:block; width:562px; background:#fff; z-index:100;}
+.upload-dialog .inline-mask {background:#87C4FB; background:#87C4FB -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(138, 198, 252, .8)),color-stop(.5,rgba(117, 187, 249, .8)),color-stop(1,rgba(97, 176, 247, .8))); background:#87C4FB -moz-linear-gradient(top,rgba(138, 198, 252, .8),rgba(117, 187, 249, .8) 50%,rgba(97, 176, 247, .8));}
+
+.upload-dialog .title {background:url(./images/publicinfo/sprite_n1.gif) 0 0 repeat-x; position:relative; z-index:1; overflow:hidden; border: 1px solid #6D7A89;}
+.upload-dialog .title .h4 {position: relative; z-index: 2; font-size: 14px; text-indent: 1em; color: white;}
+.upload-dialog .title .h4 strong {float:left; margin: 12px 0 0; font-size:14px; }
+
+.upload-dialog .content {position:relative; z-index:2; overflow-y:auto; background:#fff; height:340px; border: 1px solid #6D7A89; border-width:0 1px 1px 1px;}
+.upload-dialog .content .line {position:relative; height:32px; line-height:32px; border:1px solid #EBEBEB; border-width: 0 0 1px 0;}
+.upload-dialog .content .line .cell {float:left; text-indent: 15px; position:relative; z-index:2; height:32px; line-height:32px; }
+.upload-dialog .content .line .name {width:36%;}
+.upload-dialog .content .line .size {width:17%;}
+.upload-dialog .content .line .path {width:15%;}
+.upload-dialog .content .line .path a {text-decoration:none; color:#06c; cursor:pointer; line-height:32px;}
+.upload-dialog .content .line .status {width:20%;}
+.upload-dialog .content .line .status dfn {line-height:32px; float:left;}
+.upload-dialog .content .line .operation {width:6%;}
+
+.upload-dialog .icon {display:inline-block; position:relative; z-index:5; margin-right:10px;}
+.upload-dialog .cst2 {top:7px; left:15px; line-height:32px; width:18px; height:18px; background: url(./images/publicinfo/sprite_n1.gif) no-repeat;}
+.upload-dialog .icon.complete {background-position: -22px -162px;}
+.upload-dialog .icon.error {background-position: -22px -180px;}
+
+.upload-dialog .btn {text-indent:-9999px; vertical-align: middle; position:relative; margin:0 0 0 10px; padding:0 0 0 10px; cursor:pointer; text-decoration:none; display:inline-block; background:url(${pageContext.request.contextPath}/themes/default/images/publicinfo/btn_sprit.gif) no-repeat;}
+.upload-dialog .btn {padding:0; z-index:5;}
+.upload-dialog .bst5 {margin:12px 6px; width:15px; height:15px; line-height:15px; background: url(./images/publicinfo/sprite_n1.gif) no-repeat; float:right; }
+.upload-dialog .btn.close {background-position:0 -177px;}
+.upload-dialog .btn.min {background-position:0 -162px;}
+.upload-dialog .btn.restore {background-position:0 -192px;}
+
+.upload-dialog .bst6  {margin:0; width:18px; height:18px; line-height:18px; background:url(./images/publicinfo/sprite_n1.gif) no-repeat;}
+.upload-dialog .btn.waiting {background-position: 0 -269px; top:7px;}
+.upload-dialog .btn.waiting:hover {background-position: -21px -269px; top:7px;}
+.upload-dialog .btn.refresh {background-position: 0 -285px; top:7px;}
+.upload-dialog .btn.refresh:hover {background-position: -21px -285px; top:7px;}
+
+.upload-dialog .uploadify-queue-item {max-width:560px;}

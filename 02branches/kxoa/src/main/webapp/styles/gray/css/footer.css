@@ -1,0 +1,7 @@
+/* CSS Document */
+
+body { margin:0 3px 3px 3px}
+#footer { background:url(../images/frame/footer_fill.gif) repeat-x; height:23px;}
+#footer_l {float:left; height:92px;}
+#footer_c { text-align:center; height:30px; color:#181818; font-size:12px; padding-top:5px;}
+#footer_r { float:right; height:92px;}

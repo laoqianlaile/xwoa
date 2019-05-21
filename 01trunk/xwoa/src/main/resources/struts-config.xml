@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+		
+    <!--下述语句是将struts2交给spring管理 -->
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.custom.i18n.resources" 
+         value="ApplicationResources,sysconfig/SysResource,
+         appconfig/AppResource,
+         statconfig/StatResource,
+         sampleflowconfig/SampleflowResource,
+         powerruntimeconfig/PowerruntimeResource,
+         powerbaseconfig/PowerbaseResource,
+         dispatchdocconfig/DispatchdocResource,
+         oaconfig/OaResource,
+         bbsconfig/BbsResource,
+         attendanceconfig/AttendanceResource"/>
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.action.extension" value="do"/>
+    <constant name="struts.ui.theme" value="simple"/>
+    <!-- struts2 升级成2.3.16版本以后，开启动态访问action方法 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    <constant name="struts.multipart.maxSize" value="10000000000"/>
+    <constant name="struts.locale" value="zh_CN"/>
+
+    <package name="centitbsdfw" namespace="/" extends="json-default"> 
+        <result-types>
+            <result-type name="centitui" class="com.centit.core.structs2.CentitUIResultType"/>
+        </result-types>
+        <interceptors>
+            <interceptor name="centitui" class="org.apache.struts2.json.JSONInterceptor"/>
+        </interceptors>
+    
+    	<default-interceptor-ref name="defaultStack" />
+     	<global-results>
+     		<!--diverror 用DIV来返回错误  -->
+ 			<result type="centitui" name="diverror">/page/common/error.jsp</result>
+  			<result name="error">/page/common/error.jsp</result>
+			<result name="NoPermit">/page/common/NoPermit.jsp</result>
+			<result name="invalid.token">/page/common/error.jsp</result>
+			<result name="login" >/page/frame/login.jsp</result>
+			<result name="useroptlogError">/page/sys/useroptLogError.jsp</result>
+			
+			
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping result="error" exception="java.lang.ClassNotFoundException" />
+            <exception-mapping result="error"  exception="java.lang.Exception"/>
+        </global-exception-mappings>
+     </package>
+    
+     <package name="default" namespace="/" extends="centitbsdfw">
+        <action name="index">
+            <result>index.jsp</result>
+        </action>
+     </package>
+  
+    <!-- <include file="classpath*:/*config/struts-action.xml"/> -->
+    <include file="sysconfig/struts-action.xml"/>    
+    <include file="sysconfig/struts-action-expand.xml"/>    
+    <include file="appconfig/struts-action.xml"/>
+    <include file="statconfig/struts-action.xml"/>   
+    <include file="sampleflowconfig/struts-action.xml"/>
+    <include file="powerruntimeconfig/struts-action.xml"/>  
+    <include file="powerbaseconfig/struts-action.xml"/>  
+    <include file="dispatchdocconfig/struts-action.xml"/>    
+    <include file="oaconfig/struts-action.xml"/>
+    <include file="bbsconfig/struts-action.xml"/>    
+    <include file="attendanceconfig/struts-action.xml"/>
+</struts>

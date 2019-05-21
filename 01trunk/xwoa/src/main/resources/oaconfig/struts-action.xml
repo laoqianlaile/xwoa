@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="oa" namespace="/oa" extends="centitbsdfw">
+
+		<action name="equipmentInfo" class="equipmentInfoAction">
+			<result name="list">/page/oa/equipmentInfoList.jsp</result>
+			<result name="equipmentInfoType">/page/oa/equipmentInfoType.jsp</result>
+			<result name="listSmall">/page/oa/equipmentInfoListSmall.jsp</result>
+			<result name="applicantList">/page/oa/equipmentApplicantList.jsp</result>
+			<result name="frameList">/page/oa/equipmentInfoFrameList.jsp</result>
+			<result name="detailList">/page/oa/equipmentInfoDetailList.jsp</result>
+			<result name="applicantDetailList">/page/oa/equipmentApplicantDetailList.jsp
+			</result>
+			<result name="view">/page/oa/equipmentInfoView.jsp</result>
+			<result name="edit">/page/oa/equipmentInfoForm.jsp</result>
+			<result name="discardEdit">/page/oa/equipmentInfoDiscardForm.jsp</result>
+			<result name="usingList">/page/oa/equipmentApplicantList.jsp</result>
+			<result name="dictionaryEdit">/page/oa/dataDetailForm.jsp</result>
+
+			<result name="success" type="redirectAction">
+				<param name="actionName">equipmentInfo</param>
+				<param name="method">equipmentInfoType</param>
+				<param name="s_supEquipmentType">${s_supEquipmentType}</param>
+				<param name="s_equipmentType">${s_equipmentType}</param>
+			</result>
+
+
+			<result name="built" type="redirectAction">
+				<param name="actionName">equipmentInfo</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="json" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="options" type="json">
+				<param name="options">options</param>
+			</result>
+
+			<result name="userinfos" type="json">
+				<param name="root">jsonDatas</param>
+			</result>
+
+			<result name="save" type="chain">
+				<param name="actionName">equipmentInfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="exportExcel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${exportFileName }"</param>
+				<param name="inputName">exportExcelFile</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		</action>
+
+		<action name="equipmentUsing" class="equipmentUsingAction">
+			<result name="list">/page/oa/equipmentUsingList.jsp</result>
+			<result name="listMineConfirm">/page/oa/equipmentMineConfirmUsingList.jsp
+			</result>
+			<result name="listMine">/page/oa/equipmentUsingListMine.jsp</result>
+			<result name="view">/page/oa/equipmentUsingView.jsp</result>
+			<result name="infoDetailview">/page/oa/equipmentInfoDetailView.jsp</result>
+			<result name="edit">/page/oa/equipmentUsingForm.jsp</result>
+
+			<result name="built" type="redirectAction">
+				<param name="actionName">equipmentInfo</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="error" type="chain">
+				<param name="actionName">equipmentUsing</param>
+				<param name="method">edit</param>
+
+			</result>
+			<result name="infolist" type="redirectAction">
+				<param name="actionName">equipmentInfo</param>
+				<param name="method">applicantList</param>
+				<param name="s_supEquipmentType">${s_supEquipmentType}</param>
+				<param name="s_equipmentType">${s_equipmentType}</param>
+			</result>
+			<result name="json" type="json">
+				<param name="root">json</param>
+			</result>
+
+			<result name="exportExcel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${exportFileName }"</param>
+				<param name="inputName">exportExcelFile</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		</action>
+
+		<action name="innermsg" class="innermsgAction">
+			<result name="rewardMail">/page/oa/innermsgRewardMail.jsp</result>
+			<result name="replayMail">/page/oa/innermsgReplayMail.jsp</result>
+			<result name="list">/page/oa/innermsgList.jsp</result>
+			<result name="listV2">/page/oa/innermsgListV2.jsp</result>
+			<!-- <result name="recList">/page/oa/innermsgRecList.jsp</result> -->
+			<result name="recList">/page/oa/innermsgRecListV2.jsp</result>
+			<result name="draftsBoxlist">/page/oa/innermsgdraftsBoxlist.jsp</result>
+			<result name="msgAList">/page/oa/innermsgAList.jsp</result>
+			<result name="view">/page/oa/innermsgView.jsp</result>
+			<result name="viewMail">/page/oa/innermsgViewMail.jsp</result>
+			<result name="edit">/page/oa/innermsgForm.jsp</result>
+			<result name="editDraft">/page/oa/innermsgdraftForm.jsp</result>
+			<result name="files" type="chain">
+				<param name="actionName">innermsg</param>
+				<param name="method">editDraft</param>
+				<param name="msgcode">${object.msgcode}</param>
+			</result>
+			<result name="add">/page/oa/innermsgAdd.jsp</result>
+			<result name="userTree">/page/oa/innermsgAddUserTree.jsp</result>
+			<result name="listMailBox">/page/oa/listMailBox.jsp</result>
+			<result name="search">/page/oa/innermsgSearchList.jsp</result>
+			<!-- <result name="listMailBox">/page/oa/innermsgMailBoxList.jsp</result> -->
+			<result name="addMail">/page/oa/innermsgAddMail.jsp</result>
+			<result name="innermsgSucces">/page/oa/innermsgSucces.jsp</result>
+			<result name="innermsgTree">/page/oa/innermsgAddTree.jsp</result>
+
+			<result name="saveMsg" type="chain">
+				<param name="actionName">innermsg</param>
+				<param name="method">list</param>
+			</result>
+
+			<result name="innermsgList" type="chain">
+				<param name="actionName">innermsg</param>
+				<param name="method">list</param>
+			</result>
+
+			<result name="innermsgRecList" type="chain">
+				<param name="actionName">innermsg</param>
+				<param name="method">recList</param>
+			</result>
+
+			<result name="innermsgRecipientList" type="chain">
+				<param name="actionName">innermsgRecipient</param>
+				<param name="method">list</param>
+				<param name="s_mailtype">${object.mailtype }</param>
+			</result>
+
+			<result name="success" type="chain">
+				<param name="actionName">innermsg</param>
+				<param name="method">listMailBox</param>
+				<param name="s_mailtype">${object.mailtype }</param>
+				<param name="s_mailaccount">${object.c.mailaccount }</param>
+			</result>
+			<result name="saveReceiveMail" type="centitui">
+				<param name="newWin">false</param>
+				<!-- <param name="callbackType">closeCurrent</param> -->
+				<!-- <param name="navTabId">external_EMAIL</param> -->
+				<!-- <param name="forwardUrl">/app/innermsg!listMailBox.do</param> -->
+			</result>
+
+			<result name="modifyMailBox" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+
+			<result name="deleteMsg" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+			
+			<result name="annexExist" type="json">
+			    <param name="contentType">text/html</param>
+				<param name="root">result</param>
+			</result>
+			
+			<result name="userOnlineList" type="redirectAction">
+                <param name="namespace">/sys</param>
+                <param name="actionName">vUserOnline</param>
+				<param name="method">list</param>
+            </result>
+            <result name="sendSucces">/page/common/sendSucces.jsp</result>
+		</action>
+
+
+		<action name="innermsgRecipient" class="innermsgRecipientAction">
+			<result name="list">/page/oa/innermsgRecipientList.jsp</result>
+			<result name="listV2">/page/oa/innermsgRecipientListV2.jsp</result>
+			<result name="view">/page/oa/innermsgRecipientView.jsp</result>
+			<result name="edit">/page/oa/innermsgRecipientForm.jsp</result>
+			<result name="recipient">/page/oa/innermsgRecipientAdd.jsp</result>
+			<result name="userPortal">/page/oa/innermsgRecipientUserPortal.jsp</result>
+
+			<result name="saveMsg" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">closeCurrent</param>
+				<param name="navTabId">external_MSG</param>
+			</result>
+
+		</action>
+		<action name="oaBizBindInfo" class="oaBizBindInfoAction">
+			<result name="listBizbind">/page/oa/oaBizBindInfoList.jsp</result>
+			<result name="listBizbind4tab">/page/oa/oaBizBindInfoList4tab.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaBizBindInfo</param>
+				<param name="method">listbiz</param>
+			</result>
+			<result name="deleteSuccess" type="chain">
+				<param name="actionName">oaBizBindInfo</param>
+				<param name="method">listbiz4tab</param>
+			</result>
+		</action>
+		<action name="userMailConfig" class="userMailConfigAction">
+			<result name="list">/page/oa/userMailConfigList.jsp</result>
+			<result name="view">/page/oa/userMailConfigView.jsp</result>
+			<result name="edit">/page/oa/userMailConfigForm.jsp</result>
+
+			<result name="success" type="chain">
+				<param name="actionName">userMailConfig</param>
+				<param name="method">list</param>
+			</result>
+
+			<result name="saveConfig" type="chain">
+				<param name="actionName">userMailConfig</param>
+				<param name="method">list</param>
+			</result>
+
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+			<result name="error" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+		</action>
+
+		<action name="addressbooks" class="addressbooksAction">
+			<result name="list">/page/oa/addressbooksList.jsp</result>
+			<result name="PList">/page/oa/addressbooksPList.jsp</result>
+			<result name="CList">/page/oa/addressbooksCList.jsp</result>
+			<result name="OList">/page/oa/addressbooksOList.jsp</result>
+			<result name="PListV2">/page/oa/addressbooksPListV2.jsp</result>
+			<result name="CListV2">/page/oa/addressbooksCListV2.jsp</result>
+			<result name="view">/page/oa/addressbooksView.jsp</result>
+			<result name="edit">/page/oa/addressbooksForm.jsp</result>
+			<result name="PForm">/page/oa/addressbooksPForm.jsp</result>
+			<result name="CForm">/page/oa/addressbooksCForm.jsp</result>
+			<result name="OForm">/page/oa/addressbooksOForm.jsp</result>
+			<result name="userTree">/page/oa/addressbooksAddUserTree.jsp</result>
+			<result name="lab">/page/oa/addressbookslab.jsp</result>
+			<result name="oaUserView">/page/oa/addressBookoaUserView.jsp</result>
+			<result name="oaUnitView">/page/oa/addressBookoaUnitView.jsp</result>
+			<result name="oaUserEdit">/page/oa/addressBookoaUserForm.jsp</result>
+			<result name="oaUnitEdit">/page/oa/addressBookoaUnitForm.jsp</result>
+			<result name="sucess" type="redirectAction">
+				<param name="namespace">/oa</param>
+				<param name="actionName">addressbooks</param>
+				<param name="method">list</param>
+				<param name="s_type">${object.type}</param>
+			</result>
+
+			<result name="exportExcel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${exportFileName }"</param>
+				<param name="inputName">exportExcelFile</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="exportExcelP" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${exportFileName }"</param>
+				<param name="inputName">exportExcelFileP</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		</action>
+
+
+		<action name="oaMeetinfo" class="oaMeetinfoAction">
+			<result name="list">/page/oa/oaMeetinfoList.jsp</result>
+			<result name="listV2">/page/oa/oaMeetinfoListV2.jsp</result>
+			<result name="view">/page/oa/oaMeetinfoView.jsp</result>
+			<result name="edit">/page/oa/oaMeetinfoForm.jsp</result>
+			<result name="options" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">oaMeetinfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="generalOptView">/page/oa/common/optTransAffairView.jsp</result>
+			<result name="meetingView">/page/oa/common/meetingView.jsp</result>
+			<result name="selectList">/page/oa/oaMeetInfoSelectlist.jsp</result>
+		</action>
+		<action name="oaCommonType" class="oaCommonTypeAction">
+			<result name="list">/page/oa/oaCommonTypeList.jsp</result>
+			<result name="view">/page/oa/oaCommonTypeView.jsp</result>
+			<result name="edit">/page/oa/oaCommonTypeForm.jsp</result>
+			<result name="options" type="json">
+				<param name="options">options</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaCommonType</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+
+		<action name="oATasksExcute" class="oATasksExcuteAction">
+			<result name="gotoNext">/page/powerruntime/optcommon/gotoNextStep.jsp
+			</result>
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp
+			</result>
+			<result name="IODocTransForm">/page/oa/oATransInfo.jsp</result>
+			<result name="defaultTrans">/page/powerruntime/optcommon/buildingNode.jsp
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/dispatchdoc</param>
+				<param name="actionName">vuserTaskListOA</param>
+				<param name="method">list</param>
+				<param name="s_flowCode">${flowCode}</param>
+				<param name="s_itemtype">${itemtype}</param>
+			</result>
+			<!-- <result name="refreshTasks" type="redirectAction"> vuserTaskListOA!list.do?s_flowCode=${flowCode} 
+				</result> -->
+
+			<result name="viewAllList">/page/oa/common/allInfoView.jsp</result>
+			<result name="ajaxResult" type="json">
+				<param name="root">json</param>
+			</result>
+
+		</action>
+		<action name="oaMeetMinutes" class="oaMeetMinutesAction">
+			<result name="list">/page/oa/oaMeetMinutesList.jsp</result>
+			<result name="view">/page/oa/oaMeetMinutesView.jsp</result>
+			<result name="edit">/page/oa/oaMeetMinutesForm.jsp</result>
+
+			<result name="options" type="json">
+				<param name="options">options</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaMeetMinutes</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaMeetMinutes</param>
+				<param name="method">list</param>
+			</result>
+
+		</action>
+
+		<action name="oaFeedback" class="oaFeedbackAction">
+			<result name="list">/page/oa/oaFeedbackList.jsp</result>
+			<result name="view">/page/oa/oaFeedbackView.jsp</result>
+			<result name="edit">/page/oa/oaFeedbackForm.jsp</result>
+			<result name="listHZ">/page/oa/oaFeedbacklistHZ.jsp</result>
+			<result name="listFK">/page/oa/oaFeedbacklistFK.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaMeetMinutes</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaMeetMinutes</param>
+				<param name="method">list</param>
+			</result>
+
+		</action>
+
+		<action name="oaDriverBook" class="oaDriverBookAction">
+			<result name="list">/page/oa/oaDriverBookList.jsp</result>
+			<result name="view">/page/oa/oaDriverBookView.jsp</result>
+			<result name="edit">/page/oa/oaDriverBookForm.jsp</result>
+
+			<result name="built" type="chain">
+				<param name="actionName">oaDriverBook</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaDriverBook</param>
+				<param name="method">list</param>
+			</result>
+
+		</action>
+		<action name="oaCostInfo" class="oaCostInfoAction">
+			<result name="list">/page/oa/oaCostInfoList.jsp</result>
+			<result name="view">/page/oa/oaCostInfoView.jsp</result>
+			<result name="edit">/page/oa/oaCostInfoForm.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaCostInfo</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaCostInfo</param>
+				<param name="method">list</param>
+			</result>
+			<!-- <result name="saveCostInfo" type="redirectAction"> -->
+			<!-- <param name="actionName">saveCostInfo</param> -->
+			<!-- <param name="method">edit</param> -->
+			<!-- <param name="djid">${djid}</param> -->
+			<!-- <param name="show_type">${show_type}</param> -->
+			<!-- <param name="edittype">${edittype}</param> -->
+			<!-- </result> -->
+		</action>
+		<action name="oaAccidentRecord" class="oaAccidentRecordAction">
+			<result name="list">/page/oa/oaAccidentRecordList.jsp</result>
+			<result name="view">/page/oa/oaAccidentRecordView.jsp</result>
+			<result name="edit">/page/oa/oaAccidentRecordForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaAccidentRecord</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaAccidentRecord</param>
+				<param name="method">edit</param>
+			</result>
+		</action>
+		<action name="oaTrafficRecord" class="oaTrafficRecordAction">
+			<result name="list">/page/oa/oaTrafficRecordList.jsp</result>
+			<result name="view">/page/oa/oaTrafficRecordView.jsp</result>
+			<result name="edit">/page/oa/oaTrafficRecordForm.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaTrafficRecord</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaTrafficRecord</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+
+
+		<action name="oaDriverInfo" class="oaDriverInfoAction">
+			<result name="list">/page/oa/oaDriverInfoList.jsp</result>
+			<result name="listV2">/page/oa/oaDriverInfoListV2.jsp</result>
+			<result name="view">/page/oa/oaDriverInfoView.jsp</result>
+			<result name="edit">/page/oa/oaDriverInfoForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaDriverInfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaDriverInfo</param>
+				<param name="method">edit</param>
+			</result>
+		</action>
+
+		<action name="oaCarinfo" class="oaCarinfoAction">
+			<result name="list">/page/oa/oaCarinfoList.jsp</result>
+			<result name="listV2">/page/oa/oaCarinfoListV2.jsp</result>
+			<result name="view">/page/oa/oaCarinfoView.jsp</result>
+			<result name="edit">/page/oa/oaCarinfoForm.jsp</result>
+			<result name="options" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">oaCarinfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaCarinfo</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="carView">/page/oa/common/carView.jsp</result>
+			<result name="selectList">/page/oa/oaCarSelectlist.jsp</result>
+			<result name="outselectList">/page/oa/oaCarOutSelectlist.jsp</result>
+			
+		</action>
+
+		<action name="oaSchedule" class="oaScheduleAction">
+			<result name="list">/page/oa/oaScheduleList.jsp</result>
+			<result name="listV2">/page/oa/oaScheduleListV2.jsp</result>
+			<result name="leaderTabList">/page/oa/oaScheduleLeaderTabList.jsp</result>
+			<result name="leaderTabListV2">/page/oa/oaScheduleLeaderTabListV2.jsp</result>
+			<result name="CalendarView">/page/oa/oaScheduleCalendarView.jsp</result>
+			<result name="LeaderCalendarView">/page/oa/oaLeaderScheduleCalendarView.jsp
+			</result>
+			<result name="view">/page/oa/oaScheduleView.jsp</result>
+			<result name="edit">/page/oa/oaScheduleForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaSchedule</param>
+				<param name="method">tabList</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaSchedule</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="options" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="json" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="userinfos" type="json">
+				<param name="root">jsonDatas</param>
+		</result>
+			<result name="oaScheduleView">/page/oa/common/oaScheduleView.jsp</result>
+			<result name="calendarView">/page/oa/oaScheduleCalendarTabView.jsp</result>
+			<result name="addOaSchedule">/page/oa/addOaSchedule.jsp</result>
+		</action>
+
+		<action name="oaVideoInformation" class="oaVideoInformationAction">
+			<result name="list">/page/oa/oaVideoInformationList.jsp</result>
+			<result name="videoList">/page/oa/oaVideoInformationVList.jsp</result>
+			<result name="view">/page/oa/oaVideoInformationView.jsp</result>
+			<result name="videoView">/page/oa/oaVideoInformationVView.jsp</result>
+			<result name="edit">/page/oa/oaVideoInformationForm.jsp</result>
+			<result name="videoEdit">/page/oa/oaVideoInformationVForm.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		<result name="showVideo">/page/oa/oaVideoInformationShowVideo.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaVideoInformation</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaVideoInformation</param>
+				<param name="method">edit</param>
+			</result>
+            <result name="json" type="json">
+				<param name="root">json</param>
+			</result>
+		</action>
+
+		<action name="oaRemindInformation" class="oaRemindInformationAction">
+			<result name="list">/page/oa/oaRemindInformationList.jsp</result>
+			<result name="listV2">/page/oa/oaRemindInformationListV2.jsp</result>
+			<result name="recList">/page/oa/oaRemindInformationRecList.jsp</result>
+			<result name="recListV2">/page/oa/oaRemindInformationRecListV2.jsp</result>
+			<result name="view">/page/oa/oaRemindInformationView.jsp</result>
+			<result name="edit">/page/oa/oaRemindInformationForm.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaRemindInformation</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="save" type="redirectAction">
+				<param name="actionName">oaRemindInformation</param>
+				<param name="method">list</param>
+				<param name="s_thesign">2</param>
+			</result>
+			<result name="submit" type="redirectAction">
+				<param name="actionName">oaRemindInformation</param>
+				<param name="method">list</param>
+				<param name="s_thesign">1</param>
+			</result>
+			<result name="userOnlineList" type="redirectAction">
+                <param name="namespace">/sys</param>
+                <param name="actionName">vUserOnline</param>
+				<param name="method">list</param>
+            </result>
+            <result name="sendSucces">/page/common/sendSucces.jsp</result>
+		</action>
+
+		<action name="oaLeaveMessage" class="oaLeaveMessageAction">
+			<result name="list">/page/oa/oaLeaveMessageList.jsp</result>
+			<result name="replayList">/page/oa/oaLeaveMessageReplayList.jsp</result>
+			<result name="replayListNew">/page/oa/oaLeaveMessageReplayListNew.jsp</result>
+			<result name="replayList1">/page/oa/oaLeaveMessge4help.jsp</result>
+			<result name="view">/page/oa/oaLeaveMessageView.jsp</result>
+			<result name="edit">/page/oa/oaLeaveMessageForm.jsp</result>
+			
+			<result name="deleteMessage" type="chain">
+				<param name="actionName">oaLeaveMessage</param>
+				<param name="method">replayList</param>
+			</result>
+			
+		</action>
+		<action name="oaLeaveMessagereply" class="oaLeaveMessagereplyAction">
+			    <result name="refeshReplyList" type="redirectAction">
+					<param name="actionName">oaLeaveMessage</param>
+					<param name="s_infoType">${s_infoType}</param>
+					<param name="s_djid">${s_djid}</param>
+					<param name="method">replayList</param>
+				</result>
+		</action>
+
+		<action name="oaOnlineItem" class="oaOnlineItemAction">
+			<result name="list">/page/oa/oaOnlineItemList.jsp</result>
+			<result name="previewList">/page/oa/oaOnlineItemPreviewList.jsp</result>
+			<result name="tjList">/page/oa/oaOnlineItemTjList.jsp</result>
+			<result name="view">/page/oa/oaOnlineItemView.jsp</result>
+			<result name="edit">/page/oa/oaOnlineItemForm.jsp</result>
+			<result name="json" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaOnlineItem</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaOnlineItem</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+
+
+		<action name="oaSurveydetail" class="oaSurveydetailAction">
+			<result name="detailList">/page/oa/oaSurveydetailList.jsp</result>
+			<result name="resultList">/page/oa/oaSurveyresultList.jsp</result>
+			<result name="surveyDetailView">/page/oa/oaSurveyDetailViewList.jsp</result>
+			<result name="view">/page/oa/oaSurveydetailView.jsp</result>
+			<result name="edit">/page/oa/oaSurveydetailForm.jsp</result>
+			<result name="surveyList" type="redirectAction">
+				<param name="actionName">oaSurvey</param>
+				<param name="method">list</param>
+				<param name="s_type">${s_type}</param>
+			</result>
+		</action>
+		<action name="oaSurvey" class="oaSurveyAction">
+			<result name="list">/page/oa/oaSurveyList.jsp</result>
+			<result name="listV2">/page/oa/oaSurveyListV2.jsp</result>
+			<result name="view">/page/oa/oaSurveyView.jsp</result>
+			<result name="edit">/page/oa/oaSurveyForm.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaSurvey</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="json" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">oaSurvey</param>
+				<param name="method">list</param>
+				<param name="s_type">${s_type}</param>
+
+			</result>
+
+		</action>
+		<action name="oaSurveyType" class="oaSurveyTypeAction">
+			<result name="list">/page/oa/oaSurveyTypeList.jsp</result>
+			<result name="view">/page/oa/oaSurveyTypeView.jsp</result>
+			<result name="edit">/page/oa/oaSurveyTypeForm.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaSurveyType</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">oaSurveyType</param>
+				<param name="method">list</param>
+			</result>
+
+		</action>
+
+		<action name="oaHelpinfo" class="oaHelpinfoAction">
+			<result name="list">/page/oa/oaHelpinfoList.jsp</result>
+			<result name="view">/page/oa/oaHelpinfoView.jsp</result>
+			<result name="edit">/page/oa/oaHelpinfoForm.jsp</result>
+			
+			<result name="modify">/page/oa/oaHelpinfoModify.jsp</result>
+			
+			<result name="iframe">/page/oa/oaHelpinfoiframe.jsp</result>
+			<result name="leaderlist">/page/oa/oaHelpinfoLeaderList.jsp</result>
+			<result name="oaHelpinfolist" type="chain">
+				<param name="actionName">oaHelpinfo</param>
+				<param name="method">list</param>
+			</result>
+
+			<result name="saveModify" type="chain">
+				<param name="actionName">oaHelpinfo</param>
+				<param name="method">list4Manager</param>
+			</result>
+			
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		</action>
+
+		<action name="oaUserinfo" class="oaUserinfoAction">
+			<result name="list">/page/oa/oaUserinfoList.jsp</result>
+			<result name="listV2">/page/oa/oaUserinfoListV2.jsp</result>
+			<result name="view">/page/oa/oaUserinfoView.jsp</result>
+			<result name="edit">/page/oa/oaUserinfoForm.jsp</result>
+			<result name="editDY">/page/oa/oaUserinfoDyForm.jsp</result>
+			<result name="selectuser">/page/oa/oaUserinfoSelect.jsp
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaUserinfo</param>
+				<param name="method">list</param>
+			</result>
+
+			<result name="exportExcel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${exportFileName }"</param>
+				<param name="inputName">exportExcelFile</param>
+				<param name="bufferSize">40960</param>
+			</result>
+
+			<result name="userinfoDashboard">/page/bbs/oaBbsUserinfoDashboard.jsp</result>
+			<result name="userinfoView2">/page/oa/oaUserinfoView2.jsp</result>
+			<result name="userinfoView">/page/oa/bbsUserinfoView.jsp</result>
+			<result name="userinfoEdit">/page/oa/bbsUserinfoForm.jsp</result>
+			<result name="userinfoEdit2">/page/oa/oaUserinfoForm2.jsp</result>
+			<result name="userinfoSave" type="chain">
+				<param name="actionName">oaUserinfo</param>
+				<param name="method">userinfoView</param>
+			</result>
+			<result name="userinfoSave2" type="chain">
+				<param name="actionName">oaUserinfo</param>
+				<param name="method">userinfoView2</param>
+			</result>			
+            
+			<result name="options" type="json">
+				<param name="root">json</param>
+			</result>
+		</action>
+
+        <action name="vOptBaseList" class="vOptBaseListAction">
+		<result name="list">/page/oa/vOptBaseList.jsp</result>
+		<result name="listV2">/page/oa/vOptBaseListV2.jsp</result>
+		<result name="listBM">/page/oa/vOptBaseListBM.jsp</result>
+		<result name="listBMV2">/page/oa/vOptBaseListBMV2.jsp</result>
+		<result name="listOwn">/page/oa/vOptBaseListOwn.jsp</result>
+		
+		<result name="oaOpenGLQB">/page/oa/oaOpenGLQB.jsp</result>
+		
+		</action>
+
+		<action name="oaOptPowerDef" class="oaOptPowerDefAction">
+			<result name="DocViewPower">/page/oa/oaOptPowerDefForm.jsp</result>
+			<result name="options" type="json">
+				<param name="options">options</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaCommonType</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+
+	<action name="oaSubvideoInformation" class="oaSubvideoInformationAction">
+			<result name="list">/page/oa/oaSubvideoInformationList.jsp</result>
+
+			<result name="view">/page/oa/oaSubvideoInformationView.jsp</result>
+			<result name="oasubvideoShowList">/page/oa/oaSubvideoShowList.jsp</result>
+
+			<result name="edit">/page/oa/oaSubvideoInformationForm.jsp</result>
+			<result name="showVideo">/page/oa/oaVideoInformationShowVideoList.jsp</result>
+			<result name="oaSubvideoFormSucces">/page/oa/oaSubvideoFormSucces.jsp</result>
+			<result name="showVideoEmpty">/page/oa/oaVideoInformationShowVideoEmpty.jsp</result>
+			<result name="oasubvideoMainpage">/page/bbs/oaBbsShowTVMainPage.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">oaVideoInformation</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">oaSubvideoInformation</param>
+				<param name="method">edit</param>
+			</result>
+            <result name="listSubVideo" type="redirectAction">
+                <param name="namespace">/oa</param>
+				<param name="actionName">oaSubvideoInformation</param>
+				<param name="method">list</param>
+				<param name="no">${object.no}</param>
+			</result>
+		</action>
+		
+		<action name="oaSmssend" class="oaSmssendAction">
+			<result name="list">/page/oa/oaSmssendList.jsp</result>
+			<result name="listV2">/page/oa/oaSmssendListV2.jsp</result>
+			<result name="view">/page/oa/oaSmssendView.jsp</result>
+			<result name="edit">/page/oa/oaSmssendForm.jsp</result>
+			<result name="editSend">/page/oa/oaSmssendForm.jsp</result>
+			<result name="userOnlineList" type="redirectAction">
+                <param name="namespace">/sys</param>
+                <param name="actionName">vUserOnline</param>
+				<param name="method">list</param>
+            </result>
+            <result name="canSendMsgs" type="json">
+            	<param name="root">result</param>
+            </result>
+            <result name="reSend" type="chain">
+            	<param name="actionName">oaSmssend</param>
+            	<param name="method">list</param>
+            </result>
+            <result name="sendSucces">/page/common/sendSucces.jsp</result>
+		</action>
+		
+		<action name="sampleFlowRoleRelegateExpand" class="sampleFlowRoleRelegateExpandAction">
+		   <result name="edit">/page/sampleflow/wfRoleRelegateForm.jsp</result>
+		   <result name="RefreshList" type="redirectAction">
+		        <param name="namespace">/sampleflow</param>
+				<param name="actionName">sampleFlowRelegate</param>
+				<param name="method">list</param>
+				<param name="grant">${grant}</param>
+				<param name="s_grant">${grant}</param>
+			</result>
+		</action>
+		
+		<action name="oaLeaveOverTime" class="OaLeaveOverTimeAction">
+		<result name="list">/page/oa/oaLeaveOverTimeList.jsp</result>
+		<result name="view">/page/oa/oaLeaveOverTimeView.jsp</result>
+		<result name="edit">/page/oa/oaLeaveOverTimeForm.jsp</result>
+		<result name="built" type="chain">
+			<param name="actionName">oaLeaveOverTime</param>
+			<param name="method">edit</param>
+		</result>
+		<result name="add">/page/oa/oaLeaveOverTimeAdd.jsp</result>
+		<result name="addDetail">/page/oa/oaLeaveOverTimeAddDetail.jsp</result>
+		<result name="listdetail">/page/oa/oaLeaveOverTimeDetail.jsp</result>
+		<result name="listdetailV2">/page/oa/oaLeaveOverTimeDetailV2.jsp</result>
+		<result name="success" type="chain">
+			<param name="actionName">oaLeaveOverTime</param>
+			<param name="method">list</param>
+		</result>
+		<result name="saveSuccess" type="chain">
+			<param name="actionName">oaLeaveOverTime</param>
+			<param name="method">listDetail</param>		
+		</result>
+		<result name="summarList">/page/oa/summarList.jsp</result>
+		<result name="hz">/page/oa/oaLeaveOverTimeDetailHZ.jsp</result>
+		<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		<result name="info" type="json">
+				<param name="root">note</param>
+		</result>
+		<result name="userinfos" type="json">
+				<param name="root">jsonDatas</param>
+		</result>
+	</action>
+	
+	  <action name="mailprofile" class="mailProfileAction">
+			<result name="settingPanel">/page/oa/mailclient/mailprofile_settingpanel.jsp</result>
+			<result name="settingCustomPanel">/page/oa/mailclient/mailprofile_settingcustompanel.jsp</result>
+			<result name="settingForm">/page/oa/mailclient/mailprofile_form.jsp</result>
+			<result name="accountAdd">/page/oa/mailclient/mailprofile_account.jsp</result>
+	  </action>
+	  
+	   <action name="mailinfo" class="mailInfoAction">
+	      <result name="mainPanel">/page/oa/mailclient/mailinfo_mainpanel.jsp</result>
+	      <result name="mailForm">/page/oa/mailclient/mailinfo_form.jsp</result>
+	      <result name="mailHandleProgress">/page/oa/mailclient/mail_handle_progress.jsp</result>
+	      <result name="list">/page/oa/mailclient/mailinfo_list.jsp</result>
+	      <result name="view">/page/oa/mailclient/mailinfo_view.jsp</result>
+	      <result name="downloadfile" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">40960</param>
+		 </result>
+	   </action>
+	    <action name="optFileTransferSend" class="optFileTransferSendAction">
+			<result name="listReportToSysout">/page/oa/optFileTransferSend_sysout_list.jsp</result>
+			<result name="listReportToSysin">/page/oa/optFileTransferSend_sysin_list.jsp</result>
+			<result name="listReportToSysin_dashboard" type="json">
+            	<param name="root">objList</param>
+            </result>
+			<result name="listIssued">/page/oa/optFileTransferSend_issued_list.jsp</result>
+			<result name="built">/page/oa/optFileTransferForm.jsp</result>
+			<result name="view">/page/oa/optFileTransferView.jsp</result>
+	    </action>
+	    <action name="optFileTransferReceive" class="optFileTransferReceiveAction">
+			<result name="list">/page/oa/optFileTransferReceiveList.jsp</result>
+			<result name="list_dashboard" type="json">
+            	<param name="root">objList</param>
+            </result>
+			<result name="view">/page/oa/optFileTransferView.jsp</result>
+	    </action>
+	    <action name="optFilingCabinets" class="optFilingCabinetsAction">
+			 <result name="downloadfile" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+		    </result>
+	    </action>
+	   
+	   
+	   
+	   	  <action name="oaSMSConfig" class="oaSMSConfigAction">
+			<result name="settingCustomPanel">/page/oa/oaSMSConfigSettingCustomPanel.jsp</result>
+			<result name="customPanel">/page/oa/oaSMSConfigCustomPanel.jsp</result>
+	     </action>
+	   <action name="oaDuescollection" class="oaDuescollectionAction">
+		<result name="dcmangeList">/page/oa/oaDuescollectioninfosMl.jsp</result>
+		<result name="dcmangeDetail">/page/oa/oaDuescollectioninfosMd.jsp</result>
+		<result name="list">/page/oa/oaDuescollectionList.jsp</result>
+	    <result name="view">/page/oa/oaDuescollectionView.jsp</result>
+	    <result name="edit">/page/oa/oaDuescollectionForm.jsp</result>
+	    <result name="editDY">/page/oa/oaDuescollectionDYForm.jsp</result>
+	    <result name="mangeDyDetail">/page/oa/oaDuescollectionDyMd.jsp</result>
+	     </action>
+	  <action name="oaMeetingmaterial" class="oaMeetingmaterialAction">
+			<result name="list">/page/oa/oaMeetingmaterialList.jsp</result>
+			<result name="viewList">/page/oa/oaMeetingmaterialViewList.jsp</result>
+			<result name="view">/page/oa/oaMeetingmaterialView.jsp</result><!-- 议程详情信息 -->
+			<result name="viewNew">/page/oa/oaMeetingmaterialViewNew.jsp</result>
+			<result name="viewInfo">/page/oa/oaMeetingmaterialViewInfo.jsp</result>
+			<result name="edit">/page/oa/oaMeetingmaterialForm.jsp</result>
+			<result name="editNew">/page/oa/oaMeetingmaterialFormNew.jsp</result>
+			<result name="editplus">/page/oa/oaMeetingmaterialFormEdit.jsp</result>
+			<result name="editYC">/page/oa/oaMeetingmaterialFormEditYC.jsp</result>
+			<result name="meetingDown">/page/oa/oaMeetingmaterialinfosView.jsp</result>
+			<result name="query" type="json">
+            	<param name="root">OaMeetings</param>
+            </result>
+			<result name="built" type="chain">
+				<param name="actionName">oaMeetingmaterial</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="deleteYC" type="json">
+	        <param name="root">mark</param>
+	        </result>
+			</action>  
+		<action name="oaMeetingApply" class="oaMeetingApplyAction">
+			<result name="list">/page/oa/oaMeetingApplyList.jsp</result><!-- 会议资料会议列表 -->
+			<result name="edit">/page/oa/oaMeetingApplyForm.jsp</result>
+			<result name="editplus">/page/oa/oaMeetingApplyFormEdit.jsp</result>
+			<result name="viewList">/page/oa/oaMeetingapplyView.jsp</result>
+			<result name="viewperson">/page/oa/oaMeetingApplyViewNew.jsp</result><!-- 会议资料会议详情查看 -->
+			<result name="view">/page/oa/oaMeetingApplyViewNewPerson.jsp</result><!-- 我的会议会议详情查看 -->
+			<result name="oaMeetingView">/page/oa/oaMeetingView.jsp</result>
+			<result name="oaMeetingList">/page/oa/oaMeetingList.jsp</result><!-- 我的会议会议列表 -->
+			<result name="built" type="chain">
+				<param name="actionName">oaMeetingApply</param>
+				<param name="method">edit</param>
+			</result>
+			</action>	
+		<action name="*" class="{1}Action">
+		    <result name="mainpage">/page/bbs/{1}MainPage.jsp</result>
+		    <result name="mainlist">/page/bbs/{1}MainList.jsp</result>
+			<result name="list">/page/oa/{1}List.jsp</result>
+			<result name="listV2">/page/oa/{1}ListV2.jsp</result>
+			<result name="listOwn">/page/oa/oaMeetApplyVList.jsp</result>
+			<result name="listGather">/page/oa/oaMeetinfoListGather.jsp</result>
+			<result name="view">/page/oa/{1}View.jsp</result>
+			<result name="edit">/page/oa/{1}Form.jsp</result>
+			<result name="editApplyInfo">/page/oa/{1}ReEditForm.jsp</result>
+			<result name="gotoNext">/page/dispatchdoc/common/gotoNextStep.jsp
+			</result>
+            <result name="meetApplyPanel">/page/oa/oaMeetApplyPanel.jsp</result>
+			<result name="viewGGZY">/page/oa/viewGGZY.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="generalOptView">/page/oa/common/optTransAffairView.jsp</result>
+			<result name="AllmilitarycaseView">/page/oa/common/allInfoView.jsp</result>
+			<result name="meetinginfoView">/page/oa/common/meetingInfoView.jsp</result>
+			<result name="dbinfoView">/page/oa/common/dbinfoView.jsp</result>
+
+			<result name="doMeeting">/page/oa/opt_doMeeting.jsp</result>
+			<result name="doBack">/page/oa/opt_doBack.jsp</result>
+			<result name="doReEdit">/page/oa/opt_doReEdit.jsp</result>
+			<result name="meetplan">/page/oa/oaMeetroomApplymeetplan.jsp</result>
+
+			<result name="doMeetrooming">/page/oa/opt_doMeetroom.jsp</result>
+			<result name="doReEditroom">/page/oa/opt_doReEditroom.jsp</result>
+
+			<result name="carplan">/page/oa/opt_carplan.jsp</result>
+			<result name="carBack">/page/oa/opt_carBack.jsp</result>
+			<result name="carReEdit">/page/oa/opt_carReEdit.jsp</result>
+			<result name="calendarView">/page/oa/{1}CalendarView.jsp</result>
+
+			<result name="calendarList" type="redirectAction">
+				<param name="actionName">{1}</param>
+				<param name="method">calendarList</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<!-- 返回待办页面 -->
+			<!-- <result name="refreshTasks" type="redirectAction"> <param name="namespace">/dispatchdoc</param> 
+				<param name="actionName">vuserTaskListOA</param> <param name="method">list</param> 
+				<param name="s_flowCode">${flowCode}</param> </result> -->
+
+			<result name="nextList" type="redirectAction">
+				<param name="namespace">/oa</param>
+				<param name="actionName">vOptBaseList</param>
+				<param name="method">list</param>
+				<param name="s_itemtype">${s_itemtype}</param>
+			</result>
+
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/dispatchdoc</param>
+				<param name="actionName">vuserTaskListOA</param>
+				<param name="method">list</param>
+				<param name="s_flowCode">${flowCode}</param>
+			</result>
+
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="json" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+				<param name="show_type">${show_type}</param>
+			</result>
+			<result name="cardjid">/page/oa/oaCarApplySelectlist.jsp</result>
+			<result name="listdjid">/page/oa/oaMeetMinutesSelectlist.jsp</result>
+			<result name="suplist">/page/oa/superviseList.jsp</result>
+			<result name="supFramelist">/page/oa/superviseFrameList.jsp</result>
+			<result name="meetlist">/page/oa/oameetroomlist.jsp</result>
+			<result name="userTree">/page/oa/{1}AddUserTree.jsp</result>
+			<result name="oaOpenGLSQ">/page/oa/oaOpenGLSQ.jsp</result>
+			<result name="oaCarApplyviewDateFrame">/page/oa/common/oaCarApplyviewDateFrame.jsp
+			</result>
+			<result name="oaMeetApplyviewDateFrame">/page/oa/common/oaMeetApplyviewDateFrame.jsp
+			</result>
+			<result name="listSelectOrg">/page/oa/powerOrgInfolistSelectOrg.jsp
+			</result>
+			<result name="listDoc">/page/oa/voaUnitIncomedocList.jsp
+			</result>
+			<result name="listDocV2">/page/oa/voaUnitIncomedocListV2.jsp
+			</result>
+			<result name="listLab">/page/oa/oaAssetinformationListlab.jsp
+			</result>
+			<result name="oaAssetinformationViewInfo">/page/oa/oaAssetinformationViewInfo.jsp
+			</result>
+			<result name="oaAssetinformationInlogList" type="redirectAction">
+				<param name="actionName">oaAssetinformation</param>
+				<param name="method">list</param>
+				<param name="s_supEquipmentType">${s_supEquipmentType}</param>
+			</result>
+			<result name="oaAssetinformationUserSelect">/page/oa/oaAssetinformationUserSelect.jsp
+			</result>
+			<result name="FWList" type="redirectAction">
+				<param name="namespace">/oa</param>
+				<param name="actionName">voaUnitArchiveDispatchdoc</param>
+				<param name="method">list</param>
+			</result>
+			
+			<result name="SWList" type="redirectAction">
+				<param name="namespace">/oa</param>
+				<param name="actionName">voaUnitArchiveIncomedoc</param>
+				<param name="method">list</param>
+			</result>
+		 <result name="editOptBaseBIZ">/page/oa/{1}flowForm.jsp
+		</result>	
+	
+		<result name="publishlist">/page/oa/oaInformationListPub.jsp</result>
+		<result name="attendlist">/page/oa/oaInformationListAttend.jsp</result>
+		<result name="dcmangeList">/page/oa/oaDuescollectioninfosMl.jsp</result>
+		<result name="dcmangeDetail">/page/oa/oaDuescollectioninfosMd.jsp</result>
+		
+		
+		<result name="flowEdit">/page/oa/oaSuperviseFlowForm.jsp</result>
+		</action> 
+<!-- 		<action name="oaMeetingmaterial" class="oaMeetingmaterialAction">
+		<result name="edit">/page/oa/oaMeetingmaterialFormEdit.jsp
+		</result>
+		</action>  -->
+		<action name="oaKqvisitorgroupAction" class="oaKqvisitorgroupActionAction">
+				<result name="exportExcel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${exportFileName }"</param>
+				<param name="inputName">exportExcelFile</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		</action>
+		<!-- <action name="oaInformation" class="oaInformationAction">
+			<result name="publishlist">/page/oa/oaInformationListPub.jsp</result>
+			<result name="attendlist">/page/oa/oaInformationListAttend.jsp</result>
+	    </action> -->
+	     <action name="advsearch" class="advancedSearchAction">
+			<result name="searchIndex">/page/oa/advancedsearch.jsp</result>
+	    </action>
+	    <action name="oaArrangeweek" class="oaArrangeweekAction">
+			<result name="regiseter">/page/oa/oaArrangeweekForm.jsp</result>
+			<result name="list">/page/oa/oaArrangeweekList.jsp</result>
+			<result name="view">/page/oa/oaArrangeweekView.jsp</result>
+			<result name="workSummary" type="json">
+				<param name="root">workSummaries</param>
+			</result>
+			<result name="JsonResult" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

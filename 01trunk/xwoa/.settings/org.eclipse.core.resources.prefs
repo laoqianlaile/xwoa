@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/system.properties=UTF-8
+encoding//src/main/webapp/page/frame/forgetPassword/forgetPassword.jsp=UTF-8
+encoding//src/main/webapp/page/frame/login.jsp=UTF-8
+encoding//src/main/webapp/styles/default=UTF-8
+encoding//src/main/webapp/styles/default/css/am.css=UTF-8
+encoding//src/main/webapp/styles/gray/css/am.css=UTF-8
+encoding//src/sqlscript/\u5B58\u50A8\u8FC7\u7A0B/alert_warning.pck=GBK
+encoding//src/sqlscript/\u5B58\u50A8\u8FC7\u7A0B/performance_appraisal.pck=GBK
+encoding//src/sqlscript/\u5B58\u50A8\u8FC7\u7A0B/\u6D4B\u8BD5\u9884\u62A5\u8B66.sql=GBK
+encoding//src/sqlscript/\u5B58\u50A8\u8FC7\u7A0B/\u9884\u62A5\u8B66\u53C2\u6570\u8BBE\u5B9A.sql=GBK
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8

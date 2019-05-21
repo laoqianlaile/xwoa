@@ -1,0 +1,146 @@
+body
+{
+  padding: 0;
+  font:12px/1.5 Tahoma,Helvetica,Arial,sans-serif;
+  overflow: hidden;
+  /*FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#C2C2C2, EndColorStr=#F0F0F0);*/
+  background-color:#C2C2C2;   
+}
+a 
+{
+	text-decoration:none;
+}
+.grid-c2 .col-sub
+{
+  margin-left: 0;
+}
+
+#page, #content
+{
+  width: 150px;
+  overflow: auto;
+  margin-left: 0;
+}
+li 
+{
+	list-style:none outside none;
+}
+.hidden
+{
+	display: none;
+}
+
+#coolMenu-panel .main-wrap #main-content,.box-diamond .coolMenu-bd,.box-diamond-white .coolMenu-bd {
+	/*background-color: #FFF;*/
+	border: 1px solid #c4d5e0;
+}
+
+#coolMenu-menu .menu-box {
+	/*background: #FDFEFF;*/
+	padding: 0;
+	margin-top: -1px;
+	overflow: hidden;
+	*zoom: 1;
+}
+
+#coolMenu-menu .menu-box a {
+	color: #414141;
+}
+
+.coolMenu-bar span,.coolMenu-bar-grey span {
+	font-weight: bold;
+	line-height: 26px;
+	font-size: 12px;
+	background-color: #EFF4F7;
+	margin: 1px;
+	padding-left: 22px;
+	background: #f0f5f9 url(../images/v4_bg.png) scroll repeat-x 0 -100px;
+	display: block;
+}
+#coolMenu-menu .coolMenu-bar button.menu-open,#coolMenu-menu .coolMenu-bar button.menu-close {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	text-indent: -999em;
+	cursor: pointer;
+	top: 9px;
+	left: 6px;
+	border: 0;
+	overflow: hidden;
+	background: url(../images/v4_bg.png) no-repeat scroll 2000px 2000px;
+}
+#coolMenu-menu .coolMenu-bar {
+	background-color:#FFFFFF;
+	border-color:#C4D5DF;
+	border-style:solid;
+	border-width:1px 0;
+	cursor:pointer;
+	height:28px;
+	line-height:28px;
+	margin:0;
+	padding:0;
+	position:relative;
+	width:100%;
+}
+#coolMenu-menu .coolMenu-bar button.menu-close {
+	background-position: 0 -200px;
+}
+#coolMenu-menu .coolMenu-bar button.menu-open
+{
+	background-position: -20px -200px;
+}
+#coolMenu-menu .group {
+	margin: 6px 5px 10px;
+	clear: both;
+	*zoom: 1;
+}
+
+#coolMenu-menu .group li {
+	padding: 3px 0;
+	float: left;
+	width: 100%;
+	clear: both;
+}
+
+#coolMenu-menu #account .group li a,#coolMenu-menu .group li span a,#coolMenu-menu .group li ul li a {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	display: block;
+	*zoom: 1;
+	background: transparent url(../images/v4_bg.png) scroll no-repeat 2000px 2000px;
+}
+#coolMenu-menu #account .group li a,#coolMenu-menu .group li span a {
+	padding-left: 18px;
+}
+#coolMenu-menu .group li ul {
+	margin-left: 0;
+	overflow: hidden;
+	padding:0px;
+}
+#coolMenu-menu .group li ul li {
+	padding: 6px 0 0;
+}
+#coolMenu-menu .group li ul li a {
+	padding-left: 30px;
+	display: block;
+}
+#coolMenu-menu .group li a:hover {
+	background-color:#DEE7ED;
+	background-position:-200px -150px;
+}
+
+#coolMenu-menu .group li.fold-close ul {
+	display: none;
+}
+#coolMenu-menu .group li.fold-open span a {
+	background-position: 0 -150px;
+}
+#coolMenu-menu .group li.fold-close span a {
+	background-position: 0 -170px;
+}
+body, div, ul,  li, h3
+{
+	margin:0;
+	padding:0;
+}

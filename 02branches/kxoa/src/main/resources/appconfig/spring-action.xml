@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+ 	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="true">
+
+	<!--上传文件 -->
+	<bean name="fileinfoAction" class="com.centit.app.action.FileinfoAction"  scope="request">
+		<property name="fileinfoManager" ref="fileinfoManager"/>	
+	</bean>
+	<bean name="fileinfoFsAction" class="com.centit.app.action.FileinfoFsAction"  scope="request">
+		<property name="fileinfoFsManager" ref="fileinfoFsManager"/>	
+	</bean>
+	<bean name="outerNetFileinfoFsAction" class="com.centit.app.action.OuterNetFileinfoFsAction"  scope="request">
+		<property name="fileinfoFsManager" ref="outerNetFileinfoFsManager"/>	
+	</bean>
+	<!--全文检索 -->
+	<bean name="searcherAction" class="com.centit.app.action.SearchAction" scope="request"/>
+	<bean name="innermsgAction" class="com.centit.app.action.InnermsgAction" scope="request">
+		<property name="innermsgManager" ref="innermsgManager" />
+	</bean>
+	<bean name="dashboardAction" class="com.centit.app.action.DashboardAction" scope="request">
+<!-- 		<property name="innermsgManager" ref="innermsgManager" /> -->
+		
+		<property name="userSettingMgr" ref="userSettingManager" />
+    	<property name="oaScheduleManager" ref="oaScheduleManager" />
+		<property name="oaFeedbackManager" ref="oaFeedbackManager" />
+		<property name="oaInformationManager" ref="oaInformationManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="dashboardManager" ref="dashboardManager" />
+		<property name="innermsgManager" ref="innermsgManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="oaUnitIncomedocManager" ref="oaUnitIncomedocManager" />
+		<property name="publicinfoManager" ref="publicinfoManager" />
+		<property name="oaServiceentranceManager" ref="oaServiceentranceManager" />
+		<property name="vuserTaskListOAManager" ref="vuserTaskListOAManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="oaRemindInformationManager" ref="oaRemindInformationManager" />
+		<property name="userbizoptLogManager" ref="userbizoptLogManager"/>
+		<property name="vOptBaseListManager" ref="vOptBaseListManager" />
+		<property name="dispatchDocListManager" ref="VDispatchDocListManager" />
+		<property name="voaScheduleRemindManager" ref="voaScheduleRemindManager" />
+		<property name="voaInformationManager" ref="voaInformationManager" />
+		<property name="incomeDocListManager" ref="VIncomeDocListManager" />
+		<property name="innermsgRecipientManager" ref="innermsgRecipientManager" />
+		<property name="optFileTransferSendMgr" ref="optFileTransferSendMgr" />
+		<property name="optFileTransferReceiveMgr" ref="optFileTransferReceiveMgr" />
+		<property name="optDashboardLayoutManager" ref="optDashboardLayoutManager" />
+		<property name="optDashboardActiveManager" ref="optDashboardActiveManager" />
+		<property name="optLayoutMethodManager" ref="optLayoutMethodManager" />
+	</bean>
+	<bean name="calendarAction" class="com.centit.app.action.CalendarAction" scope="request">
+		<property name="oaWorkDayManager" ref="oaWorkDayManager"></property>
+		<property name="workCalendar" ref="workCalendar"></property>
+		<property name="calendarManager" ref="calendarManager"></property>
+		<property name="oaLeaveOverTimeManager" ref="oaLeaveOverTimeManager"></property>
+	</bean>
+	<bean name="taskListAction" scope="request"
+		class="com.centit.app.action.TaskListAction">
+		<property name="taskListManager" ref="taskListManager" />
+		<property name="toDoMatter" ref="taskListManager" />
+		<property name="taskListAnnexManager" ref="taskListAnnexManager" />
+	</bean>
+	
+	
+	<!-- lq -->
+	
+	<!-- 讨论版 -->
+		<bean name="forumAction" scope="request" class="com.centit.app.action.ForumAction">
+		<property name="forumManager" ref="forumManager" />
+		<property name="forumStaffManager" ref="forumStaffManager" />
+		<property name="threadManager" ref="threadManager" />
+	</bean>
+	<bean name="threadAction" scope="request"
+		class="com.centit.app.action.ThreadAction">
+		<property name="threadManager" ref="threadManager" />
+		<property name="forumManager" ref="forumManager" />
+		<property name="forumStaffManager" ref="forumStaffManager" />
+	</bean>
+	<bean name="forumStaffAction" scope="request"
+		class="com.centit.app.action.ForumStaffAction">
+		<property name="forumStaffManager" ref="forumStaffManager" />
+		<property name="forumManager" ref="forumManager" />
+	</bean>
+	<bean name="replyAction" scope="request" class="com.centit.app.action.ReplyAction">
+		<property name="replyManager" ref="replyManager" />
+		<property name="threadManager" ref="threadManager" />
+		<property name="fileinfoFsManager" ref="fileinfoFsManager" />
+		<property name="forumStaffManager" ref="forumStaffManager" />
+	</bean>
+	<bean name="replyAnnexAction" scope="request"
+		class="com.centit.app.action.ReplyAnnexAction">
+		<property name="replyAnnexManager" ref="replyAnnexManager" />
+	</bean>
+	<bean name="threadAnnexAction" scope="request"
+		class="com.centit.app.action.ThreadAnnexAction">
+		<property name="threadAnnexManager" ref="threadAnnexManager" />
+	</bean>
+		<bean name="forumTypeAction" scope="request"
+		class="com.centit.app.action.ForumTypeAction">
+		<property name="forumTypeManager" ref="forumTypeManager" />
+	</bean>
+	<!-- 讨论版 end-->
+	<!-- 文件夹 begin -->
+	<bean name="publicinfoAction" class="com.centit.app.action.PublicinfoAction"
+		scope="request">
+		<property name="publicinfoManager" ref="publicinfoManager" />
+		<property name="fileinfoFsManager" ref="fileinfoFsManager" />
+		<property name="replyManager" ref="replyManager" />
+		<property name="threadManager" ref="threadManager" />
+		<property name="forumManager" ref="forumManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+	</bean>
+	<bean name="outerNetPublicinfoAction" class="com.centit.app.action.OuterNetPublicinfoAction"
+		scope="request">
+		<property name="publicinfoManager" ref="outerNetPublicinfoManager" />
+		<property name="fileinfoFsManager" ref="outerNetFileinfoFsManager" />
+		<property name="replyManager" ref="replyManager" />
+		<property name="threadManager" ref="threadManager" />
+		<property name="forumManager" ref="forumManager" />
+	</bean>
+	<!-- 文件夹 end -->
+	<!-- 通讯录 -->
+	<bean name="addressBookFsAction" scope="request"
+		class="com.centit.app.action.AddressBookFsAction">
+		<property name="addressBookFsManager" ref="addressBookFsManager" />
+		<property name="sysUserMgr" ref="sysUserManager" />
+	</bean>
+	<!-- 通讯录 end-->	
+	<bean name="optDashboardModuleAction" scope="request"
+		class="com.centit.app.action.OptDashboardModuleAction">
+		<property name="optDashboardModuleMgr" ref="optDashboardModuleManager" />
+	</bean>
+	<bean name="optDashboardLayoutAction" scope="request"
+		class="com.centit.app.action.OptDashboardLayoutAction">
+		<property name="optDashboardLayoutMgr" ref="optDashboardLayoutManager" />
+		<property name="optDashboardModuleMgr" ref="optDashboardModuleManager" />
+		<property name="optLayoutMethodMgr" ref="optLayoutMethodManager" />
+	</bean>
+	<bean name="optLayoutMethodAction" scope="request"
+		class="com.centit.app.action.OptLayoutMethodAction">
+		<property name="optLayoutMethodManager" ref="optLayoutMethodManager" />
+	</bean>
+</beans>

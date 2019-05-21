@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-lazy-init="true">
+	<bean name="oaBbsAttentionAction" class="com.centit.bbs.action.OaBbsAttentionAction"
+		scope="request">
+		<property name="oaBbsAttentionManager" ref="oaBbsAttentionManager" />
+	</bean>
+	<bean name="oaBbsDashboardAction" class="com.centit.bbs.action.OaBbsDashboardAction"
+		scope="request">
+		<property name="oaBbsDashboardManager" ref="oaBbsDashboardManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="oaUserinfoManager" ref="oaUserinfoManager" />
+		<property name="oaBbsThemeManager" ref="oaBbsThemeManager" />
+	</bean>
+	<bean name="oaBbsDiscussionAction" class="com.centit.bbs.action.OaBbsDiscussionAction"
+		scope="request">
+		<property name="oaBbsDiscussionManager" ref="oaBbsDiscussionManager" />
+		<property name="oaBbsDashboardManager" ref="oaBbsDashboardManager" />
+		<property name="sysUserManager" ref="sysUserManager"/>
+	</bean>
+	<bean name="vBbsThemeUserAction" class="com.centit.bbs.action.VBbsThemeUserAction"
+		scope="request">
+		<property name="vBbsThemeUserManager" ref="vBbsThemeUserManager" />
+	</bean>
+	<bean name="oaBbsThemeAction" class="com.centit.bbs.action.OaBbsThemeAction"
+		scope="request">
+		<property name="oaBbsThemeManager" ref="oaBbsThemeManager" />
+		<property name="oaBbsDiscussionManager" ref="oaBbsDiscussionManager" />
+		<property name="oaLeaveMessageManager" ref="oaLeaveMessageManager"/>
+		<property name="oaBbsDashboardManager" ref="oaBbsDashboardManager" />
+		<property name="oaBbsAttentionManager" ref="oaBbsAttentionManager" />
+		<property name="oaUserinfoManager" ref="oaUserinfoManager" />
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="oaLeaveMessagereplyManager" ref="oaLeaveMessagereplyManager"/>
+		<property name="vBbsThemeUserManager" ref="vBbsThemeUserManager" />
+	</bean>
+	<bean name="oaLeaveMessagereplyAction" class="com.centit.bbs.action.OaLeaveMessagereplyAction"
+		scope="request">
+		<property name="oaLeaveMessagereplyManager" ref="oaLeaveMessagereplyManager" />
+	</bean>
+</beans>

@@ -1,0 +1,1382 @@
+.public-service li {
+	overflow: hidden; float: left; display: inline;
+}
+.mc-pic ul li {
+	overflow: hidden; float: left; display: inline;
+}
+.wc-tit-tabNav li {
+	overflow: hidden; float: left; display: inline;
+}
+.interImg {
+	overflow: hidden; float: left; display: inline;
+}
+.interview {
+	overflow: hidden; float: left; display: inline;
+}
+.open-cont li {
+	overflow: hidden; float: left; display: inline;
+}
+.tabNav-list li {
+	overflow: hidden; float: left; display: inline;
+}
+.infor-list li a {
+	overflow: hidden; float: left; display: inline;
+}
+.aside-cont .leader b {
+	overflow: hidden; float: left; display: inline;
+}
+.aside-cont .leader dl {
+	overflow: hidden; float: left; display: inline;
+}
+.aside-cont .leader dl dd {
+	overflow: hidden; float: left; display: inline;
+}
+.wc-form p {
+	overflow: hidden; float: left; display: inline;
+}
+.public-service li {
+	overflow: hidden; float: left; display: inline;
+}
+.service-look a {
+	overflow: hidden; float: left; display: inline;
+}
+.city-picList li {
+	overflow: hidden; float: left; display: inline;
+}
+.infor-list li .date {
+	overflow: hidden; float: right; display: inline;
+}
+.work-col-rg {
+	overflow: hidden; float: right; display: inline;
+}
+.page-box {
+	background: url("bg_zzl_homeBody.jpg") no-repeat center 0px;
+}
+#first {
+	height: 100%; overflow: hidden;
+}
+.open-infor {
+	background: url("home_openTit_0.png") no-repeat 0px 0px; padding-top: 2px;
+}
+.open-tit {
+	border-width: 1px; border-style: solid; border-color: rgb(229, 229, 229) rgb(229, 229, 229) rgb(65, 160, 211); border-image: none; left: 0px; top: 0px; height: 26px; overflow: hidden; position: relative;
+}
+.open-tit h2 {
+	background: rgb(255, 255, 255); padding: 0px 0px 0px 6px; color: rgb(65, 160, 211); line-height: 26px; font-size: 12px; font-weight: normal;
+}
+.open-tit h2 a {
+	color: rgb(65, 160, 211);
+}
+.open-cont {
+	padding: 5px 0px 0px 6px; height: 100px; overflow: hidden; border-right-color: rgb(229, 229, 229); border-left-color: rgb(229, 229, 229); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.open-cont li {
+	background: url("home_triangleIco_0.png") no-repeat 0px; width: 96px; height: 19px; line-height: 19px; overflow: hidden; padding-left: 10px; margin-bottom: 5px;
+}
+.open-cont .size-96 {
+	width: 96px;
+}
+.open-bottom {
+	background: url("home_openBottom_0.png") no-repeat center -7px;
+}
+.open-bottom2 {
+	background: url("home_zzl_openBottom_001.png") no-repeat center -7px;
+}
+.important-open {
+	color: rgb(149, 149, 149); line-height: 26px; overflow: hidden; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.important-open a {
+	margin: 0px; display: inline-block;
+}
+.important-open a.zdLyTxttitle {
+	margin: 0px 4px 0px 0px;
+}
+.open-tit .more {
+	top: 2px;
+}
+#newsTab-3-box .tabNav-list li a {
+	background: rgb(229, 229, 229);
+}
+#newsTab-2-box .tabNav-list li a {
+	background: rgb(229, 229, 229);
+}
+#newsTab-1-box .tabNav-list li a {
+	background: rgb(229, 229, 229);
+}
+.tit-tabNav {
+	left: 0px; top: 0px; height: 24px; overflow: hidden; border-bottom-color: rgb(65, 160, 211); border-bottom-width: 2px; border-bottom-style: solid; position: relative;
+}
+.tit-tabNav .more {
+	top: 2px; color: rgb(67, 67, 67);
+}
+.tabNav-list {
+	height: 24px; overflow: hidden;
+}
+.tabNav-list li a {
+	padding: 0px 10px; height: 24px; color: rgb(67, 67, 67); line-height: 24px; margin-right: 1px; display: inline-block;
+	font-size:16px;
+	font-weight:bold;
+/* 	font-style:italic; */
+	
+}
+.tabNav-list li .current {
+	background: rgb(65, 160, 211); color: rgb(255, 255, 255);
+}
+.tabNav-list .nobg .current {
+	background: rgb(65, 160, 211); color: rgb(255, 255, 255);
+}
+#newsTab-3-box .tabNav-list li .current {
+	background: rgb(65, 160, 211); color: rgb(255, 255, 255);
+}
+#newsTab-2-box .tabNav-list li .current {
+	background: rgb(65, 160, 211); color: rgb(255, 255, 255);
+}
+#newsTab-1-box .tabNav-list li .current {
+	background: rgb(65, 160, 211); color: rgb(255, 255, 255);
+}
+#newsTab li .current {
+	color: rgb(255, 255, 255); font-weight: bold;
+}
+.tabNav-list li a {
+	color: rgb(65, 160, 211);
+}
+#newsTab li {
+	color: rgb(51, 51, 51);
+}
+#newsTab li a {
+	color: rgb(51, 51, 51);
+}
+.tabNav-list li a:hover {
+	text-decoration: none; _color: #fff;
+}
+.tabNav-list .nobg a {
+	background: none;
+}
+.cont-tabShow {
+	padding: 10px;
+}
+#newsShow-2 {
+	height:330px; overflow: hidden;
+}
+#newsShow-3 {
+	height:285px; overflow: hidden;
+}
+.cont-tabShow {
+	border-width: 1px 1px medium; 
+	border-style: dashed dashed none; 
+	border-color: rgb(222, 222, 222) ; border-image: none;
+
+}
+.aside-cont {
+	border-width: 1px 1px medium; border-style: solid solid none; border-color: rgb(229, 229, 229) rgb(229, 229, 229) currentColor; border-image: none;
+}
+.brief {
+	color: rgb(67, 67, 67); line-height: 22px; padding-bottom: 10px; margin-bottom: 10px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dashed;
+}
+.brief h1 {
+	text-align: center; font-size: 14px; margin-bottom: 4px;
+}
+.brief p {
+	
+}
+.brief p a {
+	color: rgb(65, 160, 211));
+}
+.infor-list li {
+	height: 24px; line-height: 24px; overflow: hidden; font-size: 14px; margin-bottom: 4px; vertical-align: bottom;
+}
+.infor-list li a {
+	 height: 24px; color: rgb(67, 67, 67); overflow: hidden; display: inline-block; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+.infor-list-zwdt li {
+	position: relative;
+}
+.infor-list-zwdt li span.date {
+	top: 0px; right: 0px; position: absolute;
+}
+.news-list-box .infor-list-zwdt li a {
+	width: auto; margin-right: 5px; float: none; display: inline;
+}
+.infor_list_noDate li a {
+	
+}
+.infor-list li a::after {
+	
+}
+.infor-list li a:not(p)::after {
+	
+}
+.infor-list li a:hover {
+	color: rgb(65, 160, 211);
+}
+.infor-list li .date {
+	height: 24px; float: right; display: inline-block;
+}
+.h252 {
+	height: 252px; overflow: hidden;
+}
+.date {
+	color: rgb(67, 67, 67);
+}
+.aside-tit {
+	height: 26px;
+}
+.aside-cont {
+	padding: 10px;
+}
+.aside-bt-cont {
+	padding: 10px;
+}
+.aside-cont .dashed {
+	margin: 0px 0px 10px;
+}
+.aside-cont .leader {
+	width: 198px; line-height: 20px; overflow: hidden;
+}
+.aside-cont .leader b {
+	width: 42px; display: inline-block;
+}
+.aside-cont .leader dl {
+	width: 150px;
+}
+.aside-cont .leader dl dd {
+	margin: 0px 4px 4px 12px; width: 50px;
+}
+#leader-box {
+	height: 132px; padding-bottom: 0px;
+}
+.aside-ico-bt {
+	border: 1px solid rgb(204, 204, 204); border-image: none; height: 46px; overflow: hidden; display: block;
+}
+.aside-ico-rt {
+	height: 50px; overflow: hidden; display: block;
+}
+.module {
+	margin-bottom: 8px;
+}
+.aside-bt-tit {
+	border: 1px solid rgb(229, 229, 229); border-image: none; height: 25px; overflow: hidden;
+}
+.aside-bt-tit h2 {
+	background: url("home_newsBg_0.jpg") repeat-x 0px 0px; height: 29px; line-height: 29px; overflow: hidden; padding-left: 10px; font-family: "΢���ź�","����"; font-size: 14px; display: block;
+}
+.aside-bt-cont {
+	border-width: medium 1px; border-style: none solid; border-color: currentColor rgb(229, 229, 229); border-image: none; height: 93px;
+}
+#centerGovList .infor-list li {
+	height: 20px; line-height: 20px;
+}
+.tit-tips {
+	top: 3px; height: 19px; text-align: left; right: 10px; color: rgb(67, 67, 67); display: block; position: absolute;
+}
+.tit-tips-things {
+	left: 80px; top: 3px; height: 19px; text-align: left; color: rgb(67, 67, 67); display: block; position: absolute;
+}
+.two-row .tabNav-list li {
+	font-family: "΢���ź�","����"; font-weight: bold;
+}
+.four-row .tabNav-list li {
+	font-family: "΢���ź�","����"; font-weight: bold;
+}
+.five-row .tabNav-list li {
+	font-family: "΢���ź�","����"; font-weight: bold;
+}
+.cont-show {
+	border: 1px solid rgb(229, 229, 229); border-image: none;
+}
+.work-top {
+	height: 36px; color: rgb(67, 67, 67); overflow: hidden; border-bottom-color: rgb(229, 229, 229); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.wc-form-box {
+	padding: 10px 0px 10px 10px; height: 20px; overflow: hidden; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.work-top .wc-form .bjcx {
+	
+}
+.work-top .wc-form .bscx {
+	
+}
+.work-top a {
+	margin: 0px 10px; color: rgb(67, 67, 67);
+}
+.work-top .wc-cont {
+	padding-top: 8px;
+}
+.wc-cont {
+	border-width: medium 1px 1px; border-style: none solid solid; border-color: currentColor rgb(230, 230, 230) rgb(230, 230, 230); padding: 10px; border-image: none; height: 135px; color: rgb(67, 67, 67); line-height: 24px;
+}
+.wcb-cont-box {
+	border-width: medium 1px 1px; border-style: none solid solid; border-color: currentColor rgb(230, 230, 230) rgb(230, 230, 230); border-image: none;
+}
+.work-center {
+	overflow: hidden;
+}
+.wc-cont a {
+	background: url("home_fgIcoBg_0.png") no-repeat right; width: 80px; height: 22px; text-align: center; color: rgb(67, 67, 67); margin-bottom: 5px; display: inline-block;
+}
+#workTitShow-0 .wc-cont {
+	height: 225px; overflow: hidden;
+}
+.wc-cont a:hover {
+	color: rgb(65, 160, 211);
+}
+.work-top a:hover {
+	color: rgb(65, 160, 211);
+}
+.wc-cont .aNobg {
+	background: none;
+}
+.wc-tit {
+	height: 26px; line-height: 26px; overflow: hidden;
+}
+.w126 {
+	width: 126px; overflow: hidden;
+}
+.w126 .wc-tit {
+	border-right-color: currentColor; border-right-width: medium; border-right-style: none;
+}
+.w126 .wc-cont {
+	border-right-color: currentColor; border-right-width: medium; border-right-style: none;
+}
+.w126 .wc-tit {
+	padding-left: 10px;
+}
+.wc-form p {
+	height: 24px; text-align: left;
+}
+.wc-form .fl {
+	padding-left: 15px;
+}
+.wc-form .rg {
+	padding-right: 55px;
+}
+.wc-tit img {
+	vertical-align: middle;
+}
+.wc-input {
+	background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); border-image: none; width: 120px; color: rgb(67, 67, 67); margin-left: 4px;
+}
+.wcb-box {
+	height: 66px;
+}
+.wc-botton {
+	background: rgb(153, 0, 0); border: currentColor; border-image: none; width: 52px; color: rgb(255, 255, 255); cursor: pointer;
+}
+.wcb-tit {
+	height: 33px; line-height: 33px; font-size: 12px;
+}
+.wcb-tit h2 {
+	height: 33px; line-height: 33px; font-size: 12px;
+}
+.wcb-tit {
+	text-align: center; border-top-color: rgb(216, 216, 216); border-bottom-color: rgb(216, 216, 216); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.wcb-tit h2 {
+	color: rgb(67, 67, 67);
+}
+.wc-bottom {
+	overflow: hidden;
+}
+.wcb-nav li {
+	overflow: hidden; float: left; display: inline-block;
+}
+.wcb-nav li {
+	background: url("home_fgIcoBg_0.png") no-repeat 0px; margin: 0px 5px; padding-left: 10px;
+}
+.wcb-nav {
+	color: rgb(67, 67, 67); overflow: hidden; padding-left: 60px;
+}
+.wcb-nav .hover {
+	color: rgb(67, 67, 67); font-weight: bolder;
+}
+.wcb-form-box {
+	padding: 15px 0px 0px 20px; color: rgb(67, 67, 67);
+}
+.wcb-form-box .inputTxt {
+	background: url("home_wcbFormInput_0.png") repeat-x 0px 0px; padding: 2px 0px 2px 2px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 60%; height: 14px; color: rgb(67, 67, 67); vertical-align: middle;
+}
+.wcb-form p {
+	margin-bottom: 10px;
+}
+.wcb-botton {
+	background: url("home_wcbFormBt_0.png") repeat-x 0px 0px; border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(204, 204, 204) currentColor; border-image: none; width: 16%; height: 20px; color: rgb(67, 67, 67); vertical-align: bottom; cursor: pointer;
+}
+.wcb-infor-list {
+	padding: 0px 0px 0px 20px; color: rgb(67, 67, 67);
+}
+.wcb-infor-list p {
+	margin-bottom: 10px;
+}
+.two-row {
+	margin-bottom: 10px;
+}
+.two-row .cont-show {
+	height: 395px; overflow: hidden;
+}
+.wc-tit-tabNav {
+	background: rgb(229, 229, 229); width: 100%; height: 26px; overflow: hidden;
+}
+.wc-tit-tabNav li {
+	width: 49.9%; height: 26px; text-align: center; display: inline-block;
+}
+.wc-tit-tabNav li a {
+	
+}
+.wc-tit-tabNav .current {
+	background: url("home_wctittabNav_0.png") repeat-x 0px 0px;
+}
+.wc-tit-tabNav .current a {
+	color: rgb(67, 67, 67); font-weight: bold;
+}
+.paddingRg .wct-lf {
+	background: url("home_wctIco_0.png") no-repeat 0px 0px; width: 20%; height: 54px; float: left; display: inline-block;
+}
+.paddingRg .wct-ct {
+	background: url("home_wctRp_0.gif") repeat-x 0px 0px; width: 60%; height: 54px; float: left; display: inline-block;
+}
+.paddingRg .wct-ct h3 {
+	text-align: center; color: rgb(65, 160, 211); line-height: 54px; font-size: 12px;
+}
+.paddingRg .wct-rg {
+	background: url("home_wctIco_0.png") no-repeat right 0px; width: 20%; height: 54px; float: left; display: inline-block;
+}
+.paddingLf .wct-lf {
+	background: url("home_wctIco_1.png") no-repeat 0px 0px; width: 20%; height: 54px; float: left; display: inline-block;
+}
+.paddingLf .wct-ct {
+	background: url("home_wctRp_0.gif") repeat-x 0px 0px; width: 60%; height: 54px; float: left; display: inline-block;
+}
+.paddingLf .wct-ct h3 {
+	text-align: center; color: rgb(65, 160, 211); line-height: 54px; font-size: 12px;
+}
+.paddingLf .wct-rg {
+	background: url("home_wctIco_1.png") no-repeat right 0px; width: 20%; height: 54px; float: left; display: inline-block;
+}
+.public-service li {
+	background: url("home_serviceIco_bg.jpg") repeat-x 0px 0px; margin: 0px 5px 13px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 140px; height: 46px; overflow: hidden;
+}
+.public-service li .ps-imgLf {
+	width: 50%; height: 42px; text-align: center; padding-top: 4px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; float: left; display: inline;
+}
+.public-service li .ps-imgRg {
+	width: 48%; height: 42px; text-align: center; padding-top: 4px; float: right; display: inline;
+}
+.public-service li .ps-imgRg a {
+	height: 12px; color: rgb(67, 67, 67); font-size: 12px; margin-bottom: 8px; display: block;
+}
+.public-service li .ps-imgRg a:hover {
+	text-decoration: underline;
+}
+.public-service li:hover {
+	border: 1px solid rgb(65, 160, 211); border-image: none;
+}
+.public-service li img {
+	margin: 0px 10px; vertical-align: middle;
+}
+.service-tit {
+	background: url("home_serviceTit_0.png") no-repeat 12px 8px; height: 30px; color: rgb(67, 67, 67); line-height: 30px; padding-left: 35px; font-family: "΢���ź�","����"; font-size: 14px; font-weight: bold; margin-bottom: 10px; border-bottom-color: rgb(231, 231, 231); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.service-look {
+	height: 62px; text-align: center; overflow: hidden; padding-left: 12px;
+}
+.service-look-box {
+	overflow: hidden;
+}
+.service-look-box a:hover b {
+	color: rgb(65, 160, 211); text-decoration: none;
+}
+.service-look-box a:hover {
+	color: rgb(65, 160, 211); text-decoration: none;
+}
+.public-service li:hover a {
+	color: rgb(65, 160, 211); text-decoration: none;
+}
+.public-service li a:hover {
+	color: rgb(65, 160, 211); text-decoration: none;
+}
+.service-look-box a img {
+	vertical-align: middle;
+}
+.service-look-box a b {
+	color: rgb(67, 67, 67); font-family: "΢���ź�","����"; font-size: 14px; margin-left: 10px;
+}
+#serviceTitCs {
+	margin-bottom: 8px; border-top-color: rgb(231, 231, 231); border-top-width: 1px; border-top-style: solid;
+}
+.public-service {
+	margin: 0px auto; width: 456px;
+}
+#two .tit-tabNav {
+	background: url("home_titJbBg_0.png") no-repeat 0px 0px;
+}
+#two .mo-rg {
+	float: right;
+}
+.lineAd-rg {
+	background: url("home_lineAd_rg_0.png") no-repeat 0px 0px;
+}
+.lineAd-rg ul li {
+	line-height: 24px;
+}
+.lineAd-rg ul li a {
+	color: rgb(67, 67, 67);
+}
+.lineAd-rg ul li a:hover {
+	color: rgb(65, 160, 211);
+}
+.three-row .w980 {
+	background: url("home_ShadowBg_0.png") repeat-x bottom; _overflow: hidden;
+}
+.picScroll {
+	left: 0px; top: 0px; height: 90px; overflow: hidden; position: relative;
+}
+.picScroll ul li img {
+	left: 0px; top: 0px; height: 90px; vertical-align: text-top; position: relative;
+}
+.tit-tips a {
+	margin: 0px 4px; color: rgb(67, 67, 67);
+}
+.border-cont {
+	padding: 10px 10px 0px; border: 1px solid rgb(229, 229, 229); border-image: none; height: 380px; overflow: hidden;
+}
+.money-box {
+	padding: 10px 10px 0px; border: 1px solid rgb(229, 229, 229); border-image: none; height: 380px; overflow: hidden;
+}
+.gray-cont .brief {
+	padding-top: 10px;
+}
+.gray-cont .infor-list li a {
+	font-size: 12px;
+}
+.gray-cont .infor-list li .date {
+	font-size: 12px;
+}
+.gray-tit {
+	background: rgb(242, 242, 242); left: 0px; top: 0px; height: 30px; overflow: hidden; position: relative;
+}
+.gray-tit h2 {
+	line-height: 22px; padding-top: 6px; padding-left: 10px;
+}
+.more-box {
+	top: 8px; right: 10px; position: absolute;
+}
+.more-box a {
+	margin: 0px 6px;
+}
+.interBox {
+	padding: 10px 0px; overflow: hidden;
+}
+.interImg {
+	width: 245px; overflow: hidden; padding-bottom: 5px;
+}
+.interview {
+	width: 146px; margin-left: 6px;
+}
+.interImg-ct {
+	background: url("home_serviceIco_bg.jpg") repeat-x 0px 0px; border: 1px solid rgb(232, 232, 232); border-image: none; height: 28px; text-align: center; line-height: 28px; margin-top: 10px;
+}
+.interImg-ct a {
+	margin: 0px 10px;
+}
+.interLine {
+	height: 26px; line-height: 26px; overflow: hidden;
+}
+.interBrief {
+	line-height: 24px;
+}
+.interBrief a {
+	color: rgb(67, 67, 67);
+}
+.interBrief a:hover {
+	color: rgb(65, 160, 211);
+}
+.four-row {
+	margin-bottom: 10px;
+}
+.five-row {
+	margin-bottom: 10px;
+}
+.six-row {
+	margin-bottom: 10px;
+}
+.seven-row {
+	margin-bottom: 10px;
+}
+.gray-cont .infor-list {
+	padding: 10px 10px 0px;
+}
+.gray-cont .infor-list li {
+	padding-left: 6px;
+}
+#colTab li {
+	background: url("home_fgIcoBg_0.png") no-repeat right 8px; padding: 0px 10px;
+}
+#colTab .nopadding {
+	padding-left: 0px;
+}
+#colTab .nobg {
+	background: none;
+}
+.txt-more {
+	background: url("home_moreIco_0.png") no-repeat right 0px; top: 4px; width: 40px; height: 19px; text-align: right; right: 3px; line-height: 19px; padding-right: 25px; display: block; position: absolute;
+}
+.more {
+	background: url("home_moreIco_0.png") no-repeat right 0px; top: 4px; width: 40px; height: 19px; text-align: right; right: 3px; line-height: 19px; padding-right: 25px; display: block; position: absolute;
+}
+.txt-more a {
+	color: rgb(67, 67, 67);
+}
+.txt-more a:hover {
+	color: rgb(65, 160, 211);
+}
+.money-cont {
+	padding: 10px;
+}
+.money-cont .infor-list li a {
+	font-size: 12px;
+}
+.money-cont .infor-list li .date {
+	font-size: 12px;
+}
+.money-tit {
+	background: url("home_moneyTitBg_0.png") repeat-x 0px 0px; left: 0px; top: 0px; height: 30px; overflow: hidden; position: relative;
+}
+.money-tit h2 {
+	height: 30px; color: rgb(67, 67, 67); line-height: 30px; padding-left: 10px; font-size: 14px;
+}
+.mo-more {
+	top: 10px; width: 35px; height: 19px; right: 4px; color: rgb(67, 67, 67); display: block; position: absolute;
+}
+.mc-pic ul {
+	height: 110px; overflow: hidden;
+}
+.mc-pic ul li {
+	margin-right: 7px;
+}
+.mc-pic ul li a {
+	padding: 4px; border-radius: 4px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 81px; height: 81px; overflow: hidden; display: block;
+}
+.mc-pic ul li h4 {
+	text-align: center; font-size: 12px; font-weight: normal; margin-top: 4px;
+}
+.city-picList {
+	height: 182px; overflow: hidden;
+}
+.city-picList li {
+	margin: 0px 4px 4px;
+}
+.city-picList li a {
+	padding: 4px; border-radius: 4px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 70px; height: 60px; overflow: hidden; display: block;
+}
+.city-picList li h4 {
+	text-align: center; color: rgb(67, 67, 67); font-size: 12px; font-weight: normal; margin-top: 4px;
+}
+.mc-txt {
+	padding: 4px; border-radius: 4px; border: 1px solid rgb(204, 204, 204); border-image: none; line-height: 22px; margin-top: 10px;
+}
+.mc-txt a {
+	margin: 0px 4px;
+}
+.col-active .tit-tips a {
+	color: rgb(67, 67, 67);
+}
+.mc-fl {
+	margin: 10px 0px 0px 10px; color: rgb(67, 67, 67); padding-left: 10px; border-left-color: rgb(204, 204, 204); border-left-width: 1px; border-left-style: dashed;
+}
+.money-park {
+	height: 178px; overflow: hidden; padding-top: 8px;
+}
+.mp-left {
+	height: 170px; overflow: hidden; float: left; display: inline;
+}
+.mp-center {
+	height: 170px; overflow: hidden; float: left; display: inline;
+}
+.mp-right {
+	height: 170px; overflow: hidden; float: left; display: inline;
+}
+.mp-left {
+	width: 40%; padding-top: 8px;
+}
+.mp-center {
+	width: 30%;
+}
+.mp-right {
+	width: 30%;
+}
+.mp-center .infor-list {
+	padding-left: 10px; border-left-color: rgb(204, 204, 204); border-left-width: 1px; border-left-style: dashed;
+}
+.mp-right .infor-list {
+	padding-left: 10px; border-left-color: rgb(204, 204, 204); border-left-width: 1px; border-left-style: dashed;
+}
+.mp-brief {
+	text-align: center;
+}
+.mp-brief h4 {
+	margin-top: 10px;
+}
+.mp-brief h4 a {
+	font-weight: normal;
+}
+.mp-center .infor-list li a {
+	width: 100%;
+}
+.mp-right .infor-list li a {
+	width: 100%;
+}
+.count-tit {
+	background: url("home_countTit_1.png") repeat-x 0px 0px; left: 0px; top: 0px; height: 27px; overflow: hidden; position: relative;
+}
+.count-tit h2 {
+	height: 27px; color: rgb(255, 255, 255); line-height: 27px;
+}
+.count-tit h2 a {
+	color: rgb(67, 67, 67); font-weight: normal; margin-left: 10px;
+}
+.ct-subTit {
+	background: url("home_countTit_0.png") repeat-x 0px 0px; width: 130px;
+}
+.count-tit .ct-subTit a {
+	color: rgb(255, 255, 255); font-weight: bold;
+}
+.count-tit .ct-subTit a:hover {
+	text-decoration: none;
+}
+.count-tit h2 a:hover {
+	text-decoration: none;
+}
+.count-tit .sr-djch {
+	margin: 0px auto; width: 133px; text-align: center; display: block;
+}
+.count-tit .ct-subBottom a {
+	background: url("home_ctsubBottom_0.jpg") no-repeat 0px 0px; color: rgb(65, 160, 211);
+}
+.count-tit .ct-subBottom a:hover {
+	background: url("home_ctsubBottom_1.jpg") no-repeat 0px 0px; color: rgb(255, 255, 255);
+}
+.cc-listTit {
+	height: 15px; overflow: hidden;
+}
+.cc-listTit h3 {
+	width: 49.5%; color: rgb(67, 67, 67); overflow: hidden; padding-left: 0.5%; float: left; display: inline;
+}
+.count-cont {
+	border-width: medium 1px 1px; border-style: none solid solid; border-color: currentColor rgb(204, 204, 204) rgb(204, 204, 204); padding: 10px; border-image: none;
+}
+.count-box {
+	background: url("home_serviceBg_0.png") no-repeat right 35px; width: 228px; padding-left: 10px;
+}
+.count-box h1 {
+	margin: 10px 0px; color: rgb(67, 67, 67); font-family: "΢���ź�","����";
+}
+.hotTop-list li {
+	height: 24px; line-height: 24px; overflow: hidden; font-size: 12px; margin-bottom: 4px;
+}
+.hotTop-list li a {
+	width: 70%; height: 24px; overflow: hidden; float: left; display: inline;
+}
+.hotTop-list li .date {
+	width: 30%; height: 24px; overflow: hidden; float: left; display: inline;
+}
+.friend-links {
+	background: url("home_countTit_1.png") repeat-x 0px 0px; height: 27px; overflow: hidden; border-top-color: rgb(204, 0, 51); border-top-width: 1px; border-top-style: solid;
+}
+.friend-links ul li {
+	background: url("home_friendfg_0.png") no-repeat right 2px; padding: 0px 54px; height: 27px; line-height: 27px; overflow: hidden; font-family: "΢���ź�","����"; font-weight: bold; float: left; display: inline;
+}
+.friend-links ul .current {
+	
+}
+.friend-links ul .current a {
+	color: rgb(185, 40, 47); font-size: 14px; font-weight: bold;
+}
+.friend-links ul li a {
+	color: rgb(67, 67, 67); font-weight: normal;
+}
+.friend-links ul li a:hover {
+	color: rgb(65, 160, 211);
+}
+#newsShow {
+	height: 330px; overflow: hidden;
+}
+#newsShow-1 {
+	height: 330px; 
+/* 	overflow: hidden; */
+}
+#colTabShow {
+	height: 230px; overflow: hidden;
+}
+.news-slider {
+	height: 308px; overflow: hidden;
+}
+.news-slider .flex-control-nav {
+	text-align: right; right: 10px; bottom: 10px; z-index: 0;
+}
+.moneySlider .flex-control-nav {
+	text-align: right; right: 10px; bottom: 10px; z-index: 0;
+}
+.news-slider .flex-caption {
+	height: 46px; text-align: right; font-weight: bold; text-decoration: none;
+}
+.moneySlider .flex-caption {
+	height: 46px; text-align: right; font-weight: bold; text-decoration: none;
+}
+.news-slider .flex-control-nav li a {
+	background: url("home_numSlider_0.png") no-repeat 0px 0px; width: 15px; height: 16px; text-align: center; line-height: 16px; text-indent: 0px;
+}
+.moneySlider .flex-control-nav li a {
+	background: url("home_numSlider_0.png") no-repeat 0px 0px; width: 15px; height: 16px; text-align: center; line-height: 16px; text-indent: 0px;
+}
+.news-slider .flex-control-nav li a.active {
+	background: url("home_numSlider_1.png") no-repeat 0px 0px; width: 15px; height: 16px; color: rgb(67, 67, 67);
+}
+.moneySlider .flex-control-nav li a.active {
+	background: url("home_numSlider_1.png") no-repeat 0px 0px; width: 15px; height: 16px; color: rgb(67, 67, 67);
+}
+.news-slider .flex-control-nav li a:hover {
+	background: url("home_numSlider_0.png") no-repeat 0px 0px; color: rgb(255, 255, 255);
+}
+.moneySlider .flex-control-nav li a:hover {
+	background: url("home_numSlider_0.png") no-repeat 0px 0px; color: rgb(255, 255, 255);
+}
+.moneySlider {
+	height: 220px; overflow: hidden;
+}
+.wsbs01 div.gray-cont {
+	padding: 10px; border: 1px solid rgb(238, 238, 238); border-image: none; height: 318px;
+}
+.ul_topLinks {
+	color: rgb(65, 160, 211); margin-right: 5px;
+}
+.ul_topLinks a {
+	margin: 0px 10px; color: rgb(65, 160, 211);
+}
+.wsbs01 {
+	width: 265px;
+}
+.span_warn {
+	color: rgb(230, 0, 18);
+}
+.div_gzwd {
+	margin-top: 20px;
+}
+.div_dczj {
+	margin-top: 20px;
+}
+.col-active {
+	margin-right: 0px;
+}
+#col-5 {
+	width: 265px;
+}
+#col-6 {
+	margin: 0px 15px; width: 370px;
+}
+#col-7 {
+	width: 290px;
+}
+#four .more-box {
+	color: rgb(67, 67, 67);
+}
+#four .more-box a {
+	color: rgb(67, 67, 67);
+}
+#four .more-box a:hover {
+	color: rgb(65, 160, 211);
+}
+#four ul.infor-list li {
+	line-height: 26px;
+}
+.ul_fwxxcx li {
+	background: url("bg_zzl_home_fwxxcx.png") repeat-x; margin: 0px 6px; border: 1px solid rgb(212, 212, 212); border-image: none; width: 30%; height: 53px; line-height: 53px; float: left;
+}
+.ul_fwxxcx li a {
+	width: 100%; height: 53px; text-align: center; display: block;
+}
+.ul_fwxxcx li img {
+	padding-top: 16px; padding-right: 50px; vertical-align: baseline;
+}
+.ul_fwxxcx li.li01 a {
+	background: url("home_zzl_bgfwxxcx01.png") no-repeat right bottom;
+}
+.ul_fwxxcx li.li02 a {
+	background: url("home_zzl_bgfwxxcx02.png") no-repeat right bottom;
+}
+.ul_fwxxcx li.li03 a {
+	background: url("home_zzl_bgfwxxcx03.png") no-repeat right bottom;
+}
+.ul_hnwhPics {
+	width: 380px; height: 157px;
+}
+.ul_hnwhPics li {
+	width: 123px; margin-right: 2px; float: left;
+}
+.ul_hnwhPics li a {
+	left: 0px; top: 0px; width: 123px; height: 155px; display: block; position: relative;
+}
+.ul_hnwhPics li a:hover {
+	text-decoration: none;
+}
+.ul_hnwhPics li a p {
+	background: rgb(0, 0, 0); left: 0px; width: 100%; height: 24px; text-align: center; bottom: 0px; color: rgb(255, 255, 255); line-height: 24px; text-decoration: none; display: inline-block; position: absolute; opacity: 0.6;
+}
+.ul_hnwhPics li.li_02 {
+	width: 127px;
+}
+.ul_hnwhPics li.li_02 .picFirst {
+	height: 80px; overflow: hidden; margin-bottom: 2px;
+}
+.ul_hnwhPics li.li_02 a {
+	height: 73px; overflow: hidden; _height: 76px;
+}
+.govNavList {
+	margin-bottom: 6px;
+}
+.govNavList a {
+	width: 220px; height: 40px; overflow: hidden; display: block; background-image: url("home_zzl_rightNav.png");
+}
+#goleader a {
+	background-position: -222px 0px;
+}
+#goleader a:hover {
+	background-position: 0px 0px;
+}
+#goUs a {
+	background-position: -222px -42px;
+}
+#goUs a:hover {
+	background-position: 0px -42px;
+}
+#goEmail a {
+	background-position: -222px -84px;
+}
+#goEmail a:hover {
+	background-position: 0px -84px;
+}
+#goManage a {
+	background-position: -222px -126px;
+}
+#goManage a:hover {
+	background-position: 0px -126px;
+}
+#goXwfbh a {
+	background-position: -222px -168px;
+}
+#goXwfbh a:hover {
+	background-position: 0px -168px;
+}
+#gohunanNews a {
+	background-position: -222px -210px;
+}
+#gohunanNews a:hover {
+	background-position: 0px -210px;
+}
+.search-box {
+	padding: 0px; height: 25px; margin-bottom: 7px;
+}
+#homeSearch {
+	background: url("home_zzl_searchBg.png") no-repeat left top; margin: 0px 8px 0px 0px; padding: 0px; border: 0px currentColor; border-image: none; width: 222px; height: 25px; float: right;
+}
+#txt_searchWord {
+	background: none; padding: 0px 5px; border: currentColor; border-image: none; width: 155px; height: 18px; color: gray; line-height: 18px; margin-top: 1px; margin-left: 1px;
+}
+.home_btnSearchSubmit {
+	background: none; border: currentColor; border-image: none; width: 50px; height: 20px; _width: 45px;
+}
+.govHomePubItems li {
+	width: 90px; float: left;
+}
+#col-7 .div_flzx .gray-cont {
+	height: 136px; padding-top: 10px; padding-left: 10px;
+}
+#col-5 .interImg {
+	width: 240px; height: auto;
+}
+.ptfw-box {
+	background: url("home_ptfwbg_0.png") no-repeat 0px 0px; padding: 2px 0px 0px; overflow: hidden;
+}
+.ptfw-item {
+	background: url("home_ptfwbg_1.png") no-repeat 0px 0px; padding: 10px 0px 0px 10px; width: 142px; height: 167px; overflow: hidden; float: left; display: inline;
+}
+.ptfw-item img {
+	margin-right: 4px; vertical-align: middle;
+}
+.ptfw-brief {
+	color: rgb(67, 67, 67); line-height: 24px; padding-top: 10px;
+}
+.ptfw-brief p a {
+	color: rgb(67, 67, 67);
+}
+.ptfw-item .infor-list li {
+	margin-bottom: 0px;
+}
+.ptfw-item .infor-list li a {
+	color: rgb(67, 67, 67);
+}
+.ptfw-item .infor-list li a:hover {
+	color: rgb(67, 67, 67);
+}
+.hnjj .FWDiv .EduDesc .msub-whkb a {
+	color: rgb(67, 67, 67);
+}
+.interImg-top img {
+	width: 245px; height: auto;
+}
+#interview {
+	width: 230px;
+}
+.ul_gzwdDocList {
+	padding-left: 10px;
+}
+.ul_gzwdDocList li {
+	list-style: none;
+}
+.govHomePubItems {
+	height: 95px;
+}
+.importantOpen_links {
+	height: 105px;
+}
+.div_msfw {
+	margin: 10px; border: 1px solid rgb(232, 232, 232); border-image: none; width: 210px; height: 285px; overflow: hidden; float: left; _margin: 5px;
+}
+h3.chnlTitle {
+	background: url("bg_2013_chnlGray3.jpg") no-repeat; height: 32px; line-height: 32px;
+}
+.chnlTitle .span_chnlTitle {
+	color: rgb(178, 7, 14); padding-left: 8px; font-weight: bold; margin-left: 15px;
+}
+.ul_msfwList li {
+	width: 33%; text-align: center; float: left;
+}
+.ul_msfwList li span {
+	margin: 2px auto 3px; width: 44px; height: 42px; display: block; background-image: url("bg_msfwIcons2.png"); _background-image: url(bg_msfwIcons2.gif);
+}
+.msfwIcons {
+	
+}
+.msfwIcons_1 {
+	background-position: 0px 0px;
+}
+.msfwIcons_2 {
+	background-position: -44px 0px;
+}
+.msfwIcons_3 {
+	background-position: -88px 0px;
+}
+.msfwIcons_4 {
+	background-position: -132px 0px;
+}
+.msfwIcons_5 {
+	background-position: -176px 0px;
+}
+.msfwIcons_6 {
+	background-position: -220px 0px;
+}
+.msfwIcons_7 {
+	background-position: -264px 0px;
+}
+.msfwIcons_8 {
+	background-position: -308px 0px;
+}
+.msfwIcons_9 {
+	background-position: -352px 0px;
+}
+.msfwIcons_10 {
+	background-position: -396px 0px;
+}
+.msfwIcons_11 {
+	background-position: -440px 0px;
+}
+.msfwIcons_12 {
+	background-position: -484px 0px;
+}
+.div_zdfwsx_qyfw {
+	margin: 10px auto; width: 335px; float: left;
+}
+.div_zdfwsx {
+	border: 1px solid rgb(232, 232, 232); border-image: none; height: 185px; overflow: hidden; margin-bottom: 10px;
+}
+.ul_zdfwsxList {
+	padding: 9px 4px; _padding: 5px 4px;
+}
+.ul_zdfwsxList li {
+	background: url("bg_2013_chnlGray.jpg") repeat-x; margin: 3px; border: 1px solid rgb(233, 233, 233); border-image: none; width: 100px; height: 26px; text-align: center; line-height: 26px; float: left; _margin: 1px 1px 1px 2px;
+}
+.div_qyfw {
+	border: 1px solid rgb(232, 232, 232); border-image: none; height: 88px; _height: 83px;
+}
+.ul_qyfwList {
+	margin: 10px auto; width: 326px; _margin: 5px auto;
+}
+.ul_qyfwList li {
+	background: url("bg_2013_chnlGray2.jpg") repeat-x left top; margin: 0px 3px; border: 1px solid rgb(232, 232, 232); border-image: none; width: 100px; text-align: center; line-height: 32px; float: left; _margin: 0 1px 0 2px;
+}
+.ul_qyfwList li img {
+	vertical-align: middle;
+}
+.div_cjsfw {
+	background: url("bg_2013_cjsfwTitle.jpg") no-repeat left top rgb(242, 242, 242); margin: 0px auto; width: 477px; height: 70px; padding-top: 8px; padding-left: 80px;
+}
+.ul_cjsfwList {
+	width: 470px;
+}
+.ul_cjsfwList li {
+	background: url("bg_2013_chnlGray2.jpg") repeat-x; margin: 0px 5px; border: 1px solid rgb(233, 233, 233); border-image: none; width: 66px; height: 59px; text-align: center; float: left; _margin: 0 2px 0 3px;
+}
+.ul_cjsfwList li span {
+	margin: 5px auto; display: block; background-image: url("bg_2013_cjsfwIcons.png"); _background-image: url(bg_2013_cjsfwIcons.gif);
+}
+.cjsfwIcons_1 {
+	background-position: 0px 0px; width: 29px; height: 30px;
+}
+.cjsfwIcons_2 {
+	background-position: -29px 0px; width: 29px; height: 30px;
+}
+.cjsfwIcons_3 {
+	background-position: -58px 0px; width: 29px; height: 30px;
+}
+.cjsfwIcons_4 {
+	background-position: -87px 0px; width: 29px; height: 30px;
+}
+.cjsfwIcons_5 {
+	background-position: -116px 0px; width: 29px; height: 30px;
+}
+.cjsfwIcons_6 {
+	background-position: -145px 0px; width: 29px; height: 30px;
+}
+.wc-cont ul.ul_grbsList li a {
+	background: none;
+}
+.wc-cont ul.ul_qybsList li a {
+	background: none;
+}
+ul.ul_grbsList li {
+	margin: 5px; border: 1px solid rgb(233, 233, 233); border-image: none; width: 21%; height: 26px; text-align: center; line-height: 26px; float: left; _margin: 2px 3px 3px 2px;
+}
+ul.ul_qybsList li {
+	margin: 5px; border: 1px solid rgb(233, 233, 233); border-image: none; width: 21%; height: 26px; text-align: center; line-height: 26px; float: left; _margin: 2px 3px 3px 2px;
+}
+.wc-cont a {
+	width: auto;
+}
+ul.ul_grbsList li span {
+	margin-top: 3px; vertical-align: middle; float: left; display: block; background-image: url("bg_2013_grbsfwIcon.png"); _background-image: url(bg_2013_grbsfwIcon.gif);
+}
+.grbsIcons_1 {
+	background-position: 0px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_2 {
+	background-position: -21px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_3 {
+	background-position: -42px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_4 {
+	background-position: -63px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_5 {
+	background-position: -84px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_6 {
+	background-position: -105px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_7 {
+	background-position: -126px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_8 {
+	background-position: -147px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_9 {
+	background-position: -168px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_10 {
+	background-position: -189px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_11 {
+	background-position: -210px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_12 {
+	background-position: -231px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_13 {
+	background-position: -252px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_14 {
+	background-position: -273px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_15 {
+	background-position: -294px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_16 {
+	background-position: -315px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_17 {
+	background-position: -336px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_18 {
+	background-position: -357px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_19 {
+	background-position: -378px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_20 {
+	background-position: -399px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_21 {
+	background-position: -420px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_22 {
+	background-position: -441px 0px; width: 21px; height: 21px;
+}
+.grbsIcons_23 {
+	background-position: -462px 0px; width: 21px; height: 21px;
+}
+.ul_qybsList li span {
+	margin-top: 3px; vertical-align: middle; float: left; display: block; background-image: url("bg_2013_qyfwIcons.gif");
+}
+.qybsIcons_1 {
+	background-position: 0px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_2 {
+	background-position: -18px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_3 {
+	background-position: -36px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_4 {
+	background-position: -54px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_5 {
+	background-position: -72px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_6 {
+	background-position: -90px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_7 {
+	background-position: -108px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_8 {
+	background-position: -126px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_9 {
+	background-position: -144px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_10 {
+	background-position: -162px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_11 {
+	background-position: -180px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_12 {
+	background-position: -198px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_13 {
+	background-position: -216px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_14 {
+	background-position: -234px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_15 {
+	background-position: -252px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_16 {
+	background-position: -270px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_17 {
+	background-position: -288px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_18 {
+	background-position: -306px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_19 {
+	background-position: -324px 0px; width: 18px; height: 20px;
+}
+.qybsIcons_20 {
+	background-position: -342px 0px; width: 18px; height: 20px;
+}
+.ul_govNavList li a {
+	width: 225px; height: 35px; margin-bottom: 3px; display: block; background-image: url("bg_2013_govNavIcons.png");
+}
+.govNavList_1 {
+	background-position: 0px 0px; width: 220px; height: 35px;
+}
+.govNavList_2 {
+	background-position: 0px -35px; width: 220px; height: 35px;
+}
+.govNavList_3 {
+	background-position: 0px -70px; width: 220px; height: 35px;
+}
+.govNavList_4 {
+	background-position: 0px -105px; width: 220px; height: 35px;
+}
+.govNavList_5 {
+	background-position: 0px -140px; width: 220px; height: 35px;
+}
+.govNavList_6 {
+	background-position: 0px -175px; width: 220px; height: 35px;
+}
+.govNavList_7 {
+	background-position: 0px -210px; width: 220px; height: 35px;
+}
+.govNavList_8 {
+	background-position: 0px -245px; width: 220px; height: 35px;
+}
+.ul_govNavList li a:hover {
+	background-image: url("bg_2013_govNavIcons_hover.png");
+}
+.div_govNavList {
+	margin-bottom: 7px;
+}
+.ul_topicList li {
+	float: left;
+}
+.ul_topicList li.li_topi01 {
+	width: 32%;
+}
+.ul_topicList li.li_topic02 {
+	width: 32%;
+}
+.ul_topicList li.li_topic03 {
+	width: 32%;
+}
+.ul_topicList li.li_split {
+	width: 2%; _width: 1.5%;
+}
+.ul_topicList li img {
+	width: 100%; vertical-align: middle;
+}
+.dl_sItem {
+	background: rgb(255, 255, 255); width: 100%; height: 90px; _float: left;
+}
+.dl_sItem dd {
+	width: 48%; float: left;
+}
+.dl_sItem dd.dd_split {
+	width: 2%;
+}
+.dl_sItem dd img {
+	width: 100%; vertical-align: middle;
+}
+.dl_sItem dd img {
+	_float: left;
+}
+.span_report {
+	display: none;
+}
+.span_split {
+	display: none;
+}
+.span_picLink {
+	display: none;
+}
+.span_split {
+	margin-right: 7px;
+}
+.news-list-box .infor-list-zwdt li a.link_title {
+	width: 78%;
+}
+.img_loading {
+	background: url("loading-heng.gif") no-repeat center; height: 93px;
+}

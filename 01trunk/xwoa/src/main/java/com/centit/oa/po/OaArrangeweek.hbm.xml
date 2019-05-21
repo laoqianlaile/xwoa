@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.centit.oa.po.OaArrangeweek" table="OA_ARRANGEWEEK">
+		<id name="djId" type="java.lang.String">
+			<column name="DJID" length="50" />
+			<generator class="assigned" />
+		</id>
+		<property name="dateran" type="java.lang.String">
+			<column name="DATERAN" length="2" />
+		</property>
+		<property name="createtime" type="java.util.Date">
+			<column name="CREATETIME" />
+		</property>
+		<property name="weekname" type="java.lang.String">
+			<column name="WEEKNAME" length="10" />
+		</property>
+		<property name="weektitle" type="java.lang.String">
+			<column name="WEEKTITLE" length="200" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="REMARK" length="200" />
+		</property>
+		<property name="meetType" type="java.lang.String">
+			<column name="MEETTYPE" length="20" />
+		</property>
+		<property name="remarkInfo" type="java.lang.String">
+			<column name="remarkInfo" length="500" />
+		</property>
+		<property name="attendusers" type="java.lang.String">
+			<column name="ATTENDUSERS" length="200" />
+		</property>
+		<property name="attendleaders" type="java.lang.String">
+			<column name="ATTENDLEADERS" length="200" />
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="ADDRESS" length="200" />
+		</property>
+		<property name="depno" type="java.lang.String">
+			<column name="DEPNO" length="20" />
+		</property>
+		<property name="creater" type="java.lang.String">
+			<column name="CREATER" length="10" />
+		</property>
+		<property name="createdate" type="java.util.Date">
+			<column name="CREATEDATE" />
+		</property>
+		<property name="state" type="java.lang.String">
+			<column name="STATE" length="1" />
+		</property>
+		<property name="content" type="java.lang.String">
+			<column name="CONTENT" length="500" />
+		</property>
+		<property name="attenduserscodes" type="java.lang.String">
+			<column name="ATTENDUSERSCODES" length="4000" />
+		</property>
+		<property name="attendleaderscodes" type="java.lang.String">
+			<column name="ATTENDLEADERSCODES" length="4000" />
+		</property>
+		<property name="itemtype" type="java.lang.String">
+			<column name="ITEMTYPE" length="1" />
+		</property>
+		<property name="office_djid" type="java.lang.String">
+			<column name="OFFICE_DJID" length="200" />
+		</property>
+		<property name="office_applyItemType" type="java.lang.String">
+			<column name="OFFICE_APPLYITEMTYPE" length="200" />
+		</property>
+		<property name="office_itemType" type="java.lang.String">
+			<column name="OFFICE_ITEMTYPE" length="200" />
+		</property>
+		<property name="office_optType" type="java.lang.String">
+			<column name="OFFICE_OPTTYPE" length="200" />
+		</property>
+		<property name="office_bjName" type="java.lang.String">
+			<column name="OFFICE_BJNAME" length="200" />
+		</property>
+
+
+
+
+	</class>
+</hibernate-mapping>

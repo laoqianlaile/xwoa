@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	    http://www.springframework.org/schema/security
+	    http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+	default-lazy-init="true">
+
+	<security:http entry-point-ref="casEntryPoint" use-expressions="true" access-denied-page="/page/common/NoPermit.jsp" >
+			<security:logout logout-url="/j_spring_security_logout" logout-success-url="${cas.home}/logout?service=${local.home}" />  
+	 		<!-- security:anonymous key="doesNotMater" username="codefan" / -->
+	 		<security:anonymous granted-authority="R_G-anonymous" username="noname" />
+	 		<!-- <security:intercept-url pattern="/sys/mainFrame!showMain.do" filters="none" /> -->
+	 		<security:intercept-url pattern="/sys/mainFrame!login.do" filters="none" />
+		    <security:intercept-url pattern="/sys/userDef!register.do" filters="none" />
+		    <security:intercept-url pattern="/sys/userDef!captchaimage.do" filters="none" />
+		    <security:intercept-url pattern="/**/anonymous/*.do" filters="none" />
+		    <security:intercept-url pattern="/**/*.do" access="isAuthenticated()" /> 
+			<security:custom-filter ref="requestSingleLogoutFilter" before="LOGOUT_FILTER"/>
+			<security:custom-filter ref="singleLogoutFilter" before="CAS_FILTER"/> 
+            <security:custom-filter position="FORM_LOGIN_FILTER" ref="casFilter" /> 
+            <security:custom-filter before="FILTER_SECURITY_INTERCEPTOR" ref="centitPowerFilter" />
+            <security:session-management invalid-session-url="${cas.home}/login"></security:session-management>
+	</security:http>
+
+	<bean id="casFilter" class="org.springframework.security.cas.web.CasAuthenticationFilter">
+	      <property name="authenticationManager" ref="authenticationManager"/>
+	      <property name="authenticationSuccessHandler" ref="centitAuthenticationSuccessHandler"/>   
+	</bean>
+	<!-- This filter handles a Single Logout Request from the CAS Server -->
+     <bean id="singleLogoutFilter" class="org.jasig.cas.client.session.SingleSignOutFilter"/>
+	<!-- 单点退出 -->
+	<bean id="requestSingleLogoutFilter"
+         class="org.springframework.security.web.authentication.logout.LogoutFilter">
+       <constructor-arg value="${cas.home}/logout?service=${local.home}"/>
+       <constructor-arg>
+         <bean class= "com.centit.sys.security.CasLogoutHandler"/>
+       </constructor-arg>
+       <property name="filterProcessesUrl" value="/j_spring_security_logout"/>
+    </bean>
+	
+	<!-- 认证成功后，一些处理 -->
+	<bean id="centitAuthenticationSuccessHandler"  
+        class="com.centit.sys.security.CasAuthenticationSuccessHandler">
+       <property name="acLogMgr" ref="accessLogManager"/>
+       <property name="sysUserMgr" ref="sysUserManager"/>
+    </bean>
+    
+	 <!-- 认证的入口 -->
+	<bean id="casEntryPoint"
+	            class="org.springframework.security.cas.web.CasAuthenticationEntryPoint">
+	      <!-- Cas Server的登录地址 -->
+	    <property name="loginUrl" value="${cas.home}/login" />
+	    <!-- loginUrl 一定要写域名，没有加入域的要写机器名，不能写ip地址，否则回报证书找不到
+	     	这个机器名或者域名也是你生产证书的用户名 -->
+	    <property name="serviceProperties" ref="casServiceProperties" />
+	</bean>
+	
+	<bean id="casServiceProperties" class="org.springframework.security.cas.ServiceProperties">
+	  <!-- Cas Server认证成功后的跳转地址，这里要跳转到我们的Spring Security应用，之后会由CasAuthenticationFilter处理，默认处理地址为/j_spring_cas_security_check -->
+	    <property name="service" value="${local.home}/j_spring_cas_security_check"/>
+	    <property name="sendRenew" value="false"/>
+	</bean>
+	
+	<!-- 登录失败 -->
+	<bean id="casAuthenticationProvider"
+	            class="org.springframework.security.cas.authentication.CasAuthenticationProvider">
+	    <property name="authenticationUserDetailsService" ref="sysUserManager" />
+	    <property name="serviceProperties" ref="casServiceProperties" />
+	    <property name="ticketValidator">
+	        <bean class="org.jasig.cas.client.validation.Cas20ServiceTicketValidator">
+	          <!-- Cas Server访问地址的前缀，即根路径-->
+	            <constructor-arg index="0" value="${cas.home}" />
+	            <!-- 
+	            property name="proxyGrantingTicketStorage" ref="proxyGrantingTicketStorage"
+				 --> 
+	            
+	        </bean>
+	    </property>
+	    <property name="key" value="centit" />
+	</bean>
+	<!-- an_id_for_this_auth_provider_only
+	<bean id="proxyGrantingTicketStorage" class="org.jasig.cas.client.proxy.ProxyGrantingTicketStorageImpl" /> 
+	 -->             
+  	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider ref="casAuthenticationProvider" /> 
+	 </security:authentication-manager> 
+  
+    <bean id="centitPowerFilter" class="com.centit.sys.security.DaoFilterSecurityInterceptor">
+        <property name="authenticationManager"
+             ref="authenticationManager" />
+        <property name="accessDecisionManager"
+             ref="centitAccessDecisionManagerBean" />
+        <property name="securityMetadataSource"
+             ref="centitSecurityMetadataSource" />
+    </bean>
+   
+    <!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源 -->
+    <bean id="centitAccessDecisionManagerBean"
+         class="com.centit.sys.security.DaoAccessDecisionManager">
+    </bean>
+    
+    <!-- 资源源数据定义，即定义某一资源可以被哪些角色访问 -->
+    <bean id="centitSecurityMetadataSource"
+         class="com.centit.sys.security.DaoInvocationSecurityMetadataSource" >
+         <property name="functionDao" ref="functionDao"/>
+         <property name="optRunRecDao" ref="optRunRecDao" />
+    </bean>   
+     <bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />  	
+</beans>

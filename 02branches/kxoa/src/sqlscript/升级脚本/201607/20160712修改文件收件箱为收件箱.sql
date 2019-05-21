@@ -1,0 +1,1 @@
+update F_OPTINFO set optname='收件箱' where optid = 'WJSJX';

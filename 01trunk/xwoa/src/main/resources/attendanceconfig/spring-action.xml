@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean name="attendanceSettingAction" class="com.centit.attendance.action.AttendanceSettingAction">
+		<property name="attendanceSettingManager" ref="attendanceSettingManager" />
+	</bean>
+	<bean name="attendanceDetailedAction" class="com.centit.attendance.action.AttendanceDetailedAction">
+		<property name="attendanceDetailedManager" ref="attendanceDetailedManager" />
+		<property name="attendanceSettingManager" ref="attendanceSettingManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+	</bean>
+</beans>

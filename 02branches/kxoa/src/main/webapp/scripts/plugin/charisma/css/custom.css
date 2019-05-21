@@ -1,0 +1,151 @@
+/*
+ *	单元格内容超长，自动省略 
+ */
+table.custom {table-layout:fixed;}
+table.custom td {white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+/*
+ * 工具栏
+ */
+div.toolsBar {height:32px; line-height:32px; padding:5px 20px;}
+
+/*
+ * 搜索区域
+ */
+div.searchArea {padding-top:5px; margin-left:0; }
+div.searchBar {height:28px; line-height:28px; margin-top:10px;}
+div.searchBar div.title {text-align:center; width:110px;}
+
+/*
+ * Ajax请求时遮盖层
+ */
+/* ProgressBar */
+.progressBar { background:url(../img/ajax-loaders/ajax-loader-7.gif) no-repeat; display:block; width:220px; height:20px; position:fixed; top:50%; left:50%; margin-left:-110px; margin-top:-10px; padding:10px 10px 10px 50px; text-align:left; line-height:20px; font-weight:bold; position:absolute; z-index:2001;}
+.background { display:block; width:100%; height:100%; opacity:0.4; filter:alpha(opacity=40); background:#FFF; position:absolute; top:0; left:0; z-index:2000;}
+
+/*
+ * 解决输入框在IE浏览器下高度正常，CHROME浏览器下高度过小问题
+ */
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  height: 28px;
+  height: 18px\9;
+  border: 1px solid #cccccc;
+}
+
+/*
+ * 解决表格字体在Chrome浏览器过大
+ */
+td,th {font-size:14px;}
+
+.table.center th, .table.center td {text-align: center;}
+.table.right th, .table.right td {text-align: right;}
+
+/*
+ * 固定资产统计条
+ */
+.fixed-assets {width:200px; position: relative;}
+.fixed-assets .line {float:left; height:10px; margin-bottom:2px;}
+/*全部*/
+.fixed-assets .all {background-color:#3ABCF9; width:100%;}
+/*占用*/
+.fixed-assets .occupy {background-color:#FFAF56;}
+/*申请*/
+.fixed-assets .apply {background-color:#00FF40;}
+/*其他*/
+.fixed-assets .other {background-color:#FCE59F;}
+/*空闲*/
+.fixed-assets .free {background-color:#777777;}
+/*当前日期*/
+.fixed-assets .current {background-color:#FF3333; position: absolute;}
+
+/*
+ * 表格排序
+ */
+th.sorting {background:url(../img/table/sort_both.png) no-repeat center right;; cursor: pointer;}
+th.sorting_asc {background:url(../img/table/sort_asc.png) no-repeat center right;; cursor: pointer;}
+th.sorting_desc {background:url(../img/table/sort_desc.png) no-repeat center right;; cursor: pointer;}
+span.successInnermsg{
+  width: 24px;
+  height: 24px;
+  background: url(../img/validate/sucess.png) center center no-repeat;
+  display: inline-block;
+  z-index:20;
+}
+/* 表单验证图片 */
+span.success {
+  width: 24px;
+  height: 24px;
+  background: url(../img/validate/valid.png) center center no-repeat;
+  display: inline-block;
+  text-indent: -9999px;
+}
+span.error {
+	font-weight: bold;
+	color: red;
+/* 	padding: 2px 8px; */
+	margin-top: 2px;
+}
+
+/*
+ * 文本框显示已输入字符
+ */
+div.countInfo {position:absolute; bottom:2px; color:#aaa;}
+
+
+.form-horizontal .text-left, .text-left {
+  text-align: left;
+}
+.form-horizontal .text-right, .text-right {
+  text-align: right;
+}
+.form-horizontal .text-center, .text-center {
+  text-align: center;
+}
+
+
+/*
+ * 提示信息不显示
+ */
+#errorInfo,#successInfo {display:none;}
+
+/*
+ * 动态表格模板
+ */
+table.dynamic thead tr.template {display:none;}
+table.dynamic tbody td select, table.dynamic tbody td input{display:none;}
+/*
+ * 
+ */
+.input-append .add-on {margin-left:-5px;}
+/*
+ *表格内提交参数校验
+ */
+table.custom td.error {background:url(../img/validate/invalid_line.gif) bottom repeat-x;}
+
+/*
+ *可编辑表格样式
+ */
+.editable:hover {background-color:#CCFFCC; }
+.editable input,.editable select{display:none;}
+
+/*
+ *考核表格样式
+ */	
+table.stat {border-top:1px solid black; border-left:1px solid black; font-size: 14px;}
+table.stat td {padding:5px 10px; border-right: 1px solid black; border-bottom: 1px solid black;}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="oaBbsAttentionManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.bbs.service.impl.OaBbsAttentionManagerImpl">
+				<property name="oaBbsAttentionDao" ref="oaBbsAttentionDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="oaBbsDashboardManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.bbs.service.impl.OaBbsDashboardManagerImpl">
+				<property name="oaBbsDashboardDao" ref="oaBbsDashboardDao" />
+				<property name="addressBookRelectionManager" ref="addressBookRelectionManager" />
+				<property name="oaBbsDiscussionManager" ref="oaBbsDiscussionManager" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="oaBbsDiscussionManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.bbs.service.impl.OaBbsDiscussionManagerImpl">
+				<property name="oaBbsDiscussionDao" ref="oaBbsDiscussionDao" />
+				<property name="oaBbsThemeManager" ref="oaBbsThemeManager" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="oaBbsThemeManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.bbs.service.impl.OaBbsThemeManagerImpl">
+				<property name="oaBbsThemeDao" ref="oaBbsThemeDao" />
+				<property name="oaBbsAttentionManager" ref="oaBbsAttentionManager" />
+				<property name="oaLeaveMsgManager" ref="oaLeaveMessageManager"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="vBbsThemeUserManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.bbs.service.impl.VBbsThemeUserManagerImpl">
+				<property name="vBbsThemeUserDao" ref="vBbsThemeUserDao" />
+				<property name="vBbsThemeReplayDao" ref="vBbsThemeReplayDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="oaLeaveMessagereplyManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.bbs.service.impl.OaLeaveMessagereplyManagerImpl">
+				<property name="oaLeaveMessagereplyDao" ref="oaLeaveMessagereplyDao" />
+				<property name="oaBbsThemeManager" ref="oaBbsThemeManager" />
+			</bean>
+		</property>
+	</bean>
+</beans>

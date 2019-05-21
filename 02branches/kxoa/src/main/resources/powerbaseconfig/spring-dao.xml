@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none">
+	<bean id="powerOrgInfoDao" class="com.centit.powerbase.dao.PowerOrgInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="suppowerDao" class="com.centit.powerbase.dao.SuppowerDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="suppowerstatechglogDao" class="com.centit.powerbase.dao.SuppowerstatechglogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vsuppowerinusingDao" class="com.centit.powerbase.dao.VsuppowerinusingDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="suppowerchglogDao" class="com.centit.powerbase.dao.SuppowerchglogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vsuppowerwithoutlobDao" class="com.centit.powerbase.dao.VsuppowerwithoutlobDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+
+	<bean id="pcfreeumpiredegreeDao" class="com.centit.powerbase.dao.PcfreeumpiredegreeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pcfreeumpiretypeDao" class="com.centit.powerbase.dao.PcfreeumpiretypeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pcpunishItemDao" class="com.centit.powerbase.dao.PcpunishItemDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pcpunishStandardDao" class="com.centit.powerbase.dao.PcpunishStandardDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="suppowerqlbgsqDao" class="com.centit.powerbase.dao.SuppowerqlbgsqDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="dataenterpriseDao" class="com.centit.powerbase.dao.DataenterpriseDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="dataindividualDao" class="com.centit.powerbase.dao.DataindividualDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="powerUserInfoDao" class="com.centit.powerbase.dao.PowerUserInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="vPowerUserInfoDao" class="com.centit.powerbase.dao.VPowerUserInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

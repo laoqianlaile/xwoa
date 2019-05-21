@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="optPdfInfoDao" class="com.centit.dispatchdoc.dao.OptPdfInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="dispatchDocDao" class="com.centit.dispatchdoc.dao.DispatchDocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="docRelativeDao" class="com.centit.dispatchdoc.dao.DocRelativeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="incomeDocDao" class="com.centit.dispatchdoc.dao.IncomeDocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="optLeaderShipDao" class="com.centit.dispatchdoc.dao.OptLeaderShipDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="vprocTransUsersDao" class="com.centit.dispatchdoc.dao.VProcTransUsersDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="dispatchDocTaskDao" class="com.centit.dispatchdoc.dao.DispatchDocTaskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="commonDocTaskDao" class="com.centit.dispatchdoc.dao.CommonDocTaskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="incomeDocTaskDao" class="com.centit.dispatchdoc.dao.IncomeDocTaskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="VIncomeDocListDao" class="com.centit.dispatchdoc.dao.VIncomeDocListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="vDispatchDocListDao" class="com.centit.dispatchdoc.dao.VDispatchDocListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="ioDocArchiveNoDao" class="com.centit.dispatchdoc.dao.IODocArchiveNoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="incomeProjectDao" class="com.centit.dispatchdoc.dao.IncomeProjectDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="applyUnitInfoDao" class="com.centit.dispatchdoc.dao.ApplyUnitInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="docSendDao" class="com.centit.dispatchdoc.dao.DocSendDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="subprocessProjectDao" class="com.centit.dispatchdoc.dao.SubprocessProjectDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="VSubprocessProjectTaskListDao"
+		class="com.centit.dispatchdoc.dao.VSubprocessProjectTaskListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="VUserTransaffairDao" class="com.centit.dispatchdoc.dao.VUserTransaffairDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="VStuffTransaffairDao" class="com.centit.dispatchdoc.dao.VStuffTransaffairDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="VDispatchDocListDao" class="com.centit.dispatchdoc.dao.VDispatchDocListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="readInfoDao" class="com.centit.dispatchdoc.dao.ReadInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vReadInfoDao" class="com.centit.dispatchdoc.dao.VReadInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="VSwSearchDao" class="com.centit.dispatchdoc.dao.VSwSearchDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="optZwhReservedDao" class="com.centit.dispatchdoc.dao.OptZwhReservedDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="VProjectAuditInfoDao" class="com.centit.dispatchdoc.dao.VProjectAuditInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VUserTransaffairAttentionDao" class="com.centit.dispatchdoc.dao.VUserTransaffairAttentionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VUserTransaffairDcyjDao" class="com.centit.dispatchdoc.dao.VUserTransaffairDcyjDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VUserTransaffairDcyjGrDao" class="com.centit.dispatchdoc.dao.VUserTransaffairDcyjGrDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vuserTaskListOADao" class="com.centit.dispatchdoc.dao.VuserTaskListOADao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="voadDcdbNumDao" class="com.centit.dispatchdoc.dao.VoadDcdbNumDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="signedReportDao" class="com.centit.dispatchdoc.dao.SignedReportDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optProcStuffInfoDao" class="com.centit.dispatchdoc.dao.OptProcStuffInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

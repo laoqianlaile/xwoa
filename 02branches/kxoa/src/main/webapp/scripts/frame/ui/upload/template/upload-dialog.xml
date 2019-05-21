@@ -1,0 +1,14 @@
+<div class="upload-dialog shadow" style="display:none;">
+	<div class="title">
+		<div class="inline-mask" style="width:0"></div>
+		<a href="javascript:;" title="关闭" class="btn close bst5">关闭 </a>
+		<a href="javascript:;" title="最小化" class="btn min bst5">最小化</a>
+		<h4 class="h4">
+			<strong class="info-num"></strong>
+			<strong class="info-speed"></strong>
+		</h4>
+	</div>
+	<div class="content">
+		<dl id="upload-content"></dl> 
+	</div>
+</div>

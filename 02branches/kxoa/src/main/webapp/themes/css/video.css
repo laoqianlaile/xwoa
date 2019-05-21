@@ -1,0 +1,21 @@
+@charset "utf-8";
+			#nav1 div {
+				float: left;
+			}
+			#nav div {
+				float: left;
+			}
+			
+			#overfpic img {
+				width: 100%;
+				height: 210px;
+			}
+			.title {
+				border-bottom: #666 1px solid;
+				border-left: #666 1px solid;
+				width: 250px;
+				height: 23px;
+				font-size: 14px;
+				border-top: #666 1px solid;
+				border-right: #666 1px solid;
+			}

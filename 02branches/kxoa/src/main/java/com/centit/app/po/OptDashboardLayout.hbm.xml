@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.centit.app.po.OptDashboardLayout" table="OPT_DASHBOARD_LAYOUT">
+		<id name="id" type="java.lang.Long">
+			<column name="ID"/>
+		</id>
+		<property name="layoutName" type="java.lang.String">
+			<column name="LAYOUTNAME"/>
+		</property>
+		<property name="layoutType" type="java.lang.String">
+			<column name="LAYOUTTYPE"  />
+		</property>
+		<property name="userScope" type="java.lang.String">
+			<column name="USERSCOPE"/>
+		</property>
+		<property name="layoutMethodId" type="java.lang.Long">
+			<column name="LAYOUTMETHODID"/>
+		</property>
+		<property name="content" type="java.lang.String">
+			<column name="CONTENT"/>
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="REMARK"/>
+		</property>
+		<property name="createBy" type="java.lang.String">
+			<column name="CREATEBY"/>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column name="CREATETIME"/>
+		</property>
+	</class>
+</hibernate-mapping>

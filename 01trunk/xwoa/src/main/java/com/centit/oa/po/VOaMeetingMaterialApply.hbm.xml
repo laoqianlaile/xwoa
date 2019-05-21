@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-26 12:39:50 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.centit.oa.po.VOaMeetingMaterialApply" table="V_OA_MEETINGMATERIAL_APPLY">
+    	<!-- 会议主键 -->
+        <id name="mId" type="java.lang.String">
+			<column name="MID" length="50" />
+			<generator class="assigned" />
+		</id>
+		<!-- 议题主键 -->
+		<property name="djId" type="java.lang.String">
+			<column name="DJID" length="50" />
+		</property>
+		<!-- 议题名称 -->
+		<property name="meetingName" type="java.lang.String">
+			<column name="MEETING_NAME" length="400" />
+		</property>
+		<!-- 议题参会人员 -->
+		<property name="meetingAttendeescodes" type="java.lang.String">
+			<column name="MEETING_ATTENDEESCODES" />
+		</property>
+		<property name="meetingAttendees" type="java.lang.String">
+			<column name="MEETING_ATTENDEES" />
+		</property>
+		<!-- 议题召开时间 -->
+		<property name="meetingTime" type="java.util.Date">
+			<column name="MEETING_TIME" length="7" />
+		</property>
+		<!-- 会议名称 -->
+		<property name="meetApplyName" type="java.lang.String">
+			<column name="MEETAPPLYNAME" length="1000" />
+		</property>
+		<!-- 会议地点 -->
+		<property name="meetApplyAddress" type="java.lang.String">
+			<column name="MEETAPPLYADDRESS" length="400" />
+		</property>
+		<!-- 会议参会人员 -->
+		<property name="attendLeaderCode" type="java.lang.String">
+			<column name="ATTENDLEADERCODE" length="200" />
+		</property>
+		<!-- 会议召开时间-->
+		<property name="meetApplyTime" type="java.util.Date">
+			<column name="MEETAPPLYTIME" length="7" />
+		</property>
+    </class>
+</hibernate-mapping>

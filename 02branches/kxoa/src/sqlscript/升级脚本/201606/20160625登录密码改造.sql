@@ -1,0 +1,1 @@
+alter table f_userinfo add ISDEFAULTPWD varchar2(1) default 'T' ;

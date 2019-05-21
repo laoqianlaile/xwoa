@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>工作流展示</title>
+<style type="text/css">
+* { margin:0; padding:0; }
+#tip { position:absolute; left:0; top:0; display:none; width:250px; border:1px solid #ccc; background:#fff; z-index:100; padding:10px; font-size:12px;}
+#tip span { color:#ff0000; font-weight:bold; padding-right:4px; }
+#tip p { line-height:20px; padding-bottom:4px; }
+#canvas { width:100%; height:700px; }
+v\:line,v\:PolyLine,v\:Oval,v\:arc,v\:stroke,v\:RoundRect,v\:Shadow,v\:Shape { Behavior: url(#default#VML); }
+</style>
+</head>
+
+<body onselectstart="return false;">
+<div id="canvas">
+	<div id="tip"></div>
+</div>
+<script type="text/javascript" src="svg.js"></script>
+<script type="text/javascript" src="loadXml.js"></script>
+<script type="text/javascript">
+var ttt = "xmlDate";
+var obj = window.parent.document.getElementById(ttt);
+if (obj)
+	xmlDataValue = obj.value;
+else
+	xmlDataValue = window.opener.document.getElementById(ttt).value;
+if (xmlDataValue == ""){
+	g("canvas").innerHTML = '<div style="font-size:20px;margin-top:100px;text-align:center">无对应流程图数据</div>';
+}
+else{
+	if( SVG.supported ){
+		loadXml(xmlDataValue,"canvas");
+	}else{
+		vmlXml(xmlDataValue,"canvas");
+	}
+	addEvent(g("canvas"),'mouseover',function(e){
+		var e = window.event || e,
+			target = e.target || e.srcElement;
+		if( SVG.supported ){
+			if(target.nodeName=="rect" || target.nodeName=="polygon"){
+				SVG.get(target.id).style({"fill-opacity":0.5});
+				tip(target);
+				addEvent(target,'mouseout',function(){
+					g("tip").style.display="none";
+					SVG.get(target.id).style({"fill-opacity":0});
+					g("tip").innerHTML = "";
+				});
+			}
+		}else{
+			if(target.nodeName=="RoundRect" || target.nodeName=="Shape"){
+				tip(target);
+				addEvent(target,'mouseout',function(){
+					g("tip").style.display="none";
+					g("tip").innerHTML = "";
+				});
+			}
+			if(target.nodeName=="TextBox"){
+				tip(target.parentNode);
+				addEvent(target,'mouseout',function(){
+					g("tip").style.display="none";
+					g("tip").innerHTML = "";
+				});	
+			}
+		}
+ 	});
+}
+</script>
+</body>
+</html>

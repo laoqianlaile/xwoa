@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="attendance" namespace="/attendance" extends="centitbsdfw">
+		<action name="attendanceSetting" class="attendanceSettingAction">
+			<result name="list">/page/attendance/attendanceSettingList.jsp</result>
+			<result name="view">/page/attendance/attendanceSettingView.jsp</result>
+			<result name="edit">/page/attendance/attendanceSettingForm.jsp</result>
+			<result name="built">/page/attendance/attendanceSettingForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">attendanceSetting</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		<action name="attendanceDetailed" class="attendanceDetailedAction">
+			<result name="list">/page/attendance/attendanceDetailedList.jsp</result>
+			<result name="oaUnitView">/page/attendance/attendanceDetailedListByUnitName.jsp</result>
+			<result name="view">/page/attendance/attendanceDetailedView.jsp</result>
+			<result name="edit">/page/attendance/attendanceDetailedForm.jsp</result>
+			<result name="built">/page/attendance/attendanceDetailedForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">attendanceDetailed</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+	</package>
+</struts>

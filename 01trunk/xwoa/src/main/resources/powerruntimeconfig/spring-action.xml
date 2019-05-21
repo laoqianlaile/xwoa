@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="true">
+
+	<bean name="applyTaskAction" class="com.centit.powerruntime.action.VOptApplyTaskAction"
+		scope="request">
+		<property name="vOptApplyTaskManager" ref="vOptApplyTaskManager" />
+	</bean>
+
+	<bean name="optApplyAction" class="com.centit.powerruntime.action.OptApplyAction"
+		scope="request">
+		<property name="optApplyManager" ref="optApplyManager" />
+		<property name="vPowerOrgInfoManager" ref="vPowerOrgInfoManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="functionManager" ref="functionManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="powerOptInfoManager" ref="powerOptInfoManager" />
+		<property name="optWritdefManager" ref="optWritdefManager" />
+		<property name="generalModuleParamMag" ref="generalModuleParamManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="oaBizBindInfoManager" ref="oaBizBindInfoManager" />
+		<property name="oaSuperviseManager" ref="oaSuperviseManager" />
+		<property name="voaBizBindInfoManager" ref="voaBizBindInfoManager" />
+		<property name="vPowerUserInfoManager" ref="vPowerUserInfoManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="oaAssetinformationBondManager" ref="oaAssetinformationBondManager" />
+		<property name="rtxInfoManager" ref="rtxInfoManager" />
+
+		<property name="vOptBaseListManager" ref="vOptBaseListManager" />
+
+		<property name="taskExecutor" ref="taskExecutor" />
+		<property name="optPdfInfoManager" ref="optPdfInfoManager" />
+		<property name="ideaTempletManager" ref="ideaTempletManager" />
+
+	</bean>
+
+	<bean name="generalOperatorAction" class="com.centit.powerruntime.action.GeneralOperatorAction"
+		scope="request">
+		<property name="suppowerstuffinfoManager" ref="suppowerstuffinfoManager" />
+		<property name="suppowerstuffgroupManager" ref="suppowerstuffgroupManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="optApplyManager" ref="optApplyManager" />
+		<property name="optStuffInfoManager" ref="optStuffInfoManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+
+
+	</bean>
+
+	<bean name="generalModuleParamAction"
+		class="com.centit.powerruntime.action.GeneralModuleParamAction" scope="request">
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="suppowerstuffgroupManager" ref="suppowerstuffgroupManager" />
+	</bean>
+
+	<bean name="optProcAttentionAction" class="com.centit.powerruntime.action.OptProcAttentionAction"
+		scope="request">
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+
+	<bean name="riskInfoAction" class="com.centit.powerruntime.action.RiskInfoAction"
+		scope="request">
+		<property name="riskInfoManager" ref="riskInfoManager" />
+	</bean>
+
+	<bean name="powerOptInfoAction" class="com.centit.powerruntime.action.PowerOptInfoAction"
+		scope="request">
+		<property name="powerOptInfoManager" ref="powerOptInfoManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="suppowerstuffgroupManager" ref="suppowerstuffgroupManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+	</bean>
+
+	<bean name="templateFileAction" class="com.centit.powerruntime.action.TemplateFileAction"
+		scope="request">
+		<property name="templateFileManager" ref="templateFileManager" />
+	</bean>
+
+	<bean name="optWritdefAction" class="com.centit.powerruntime.action.OptWritdefAction"
+		scope="request">
+		<property name="optWritdefManager" ref="optWritdefManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+	</bean>
+
+	<bean name="optApplyFlowFinish" class="com.centit.powerruntime.autonode.OptApplyFlowFinish"
+		scope="request">
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="optStuffInfoManager" ref="optStuffInfoManager" />
+		<property name="oaMeetApplyManager" ref="oaMeetApplyManager" />
+		<property name="oaCarApplyManager" ref="oaCarApplyManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+
+	<bean name="optApplyCaseAccept" class="com.centit.powerruntime.autonode.OptApplyCaseAccept"
+		scope="request">
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="incomeDocManager" ref="incomeDocManager" />
+		<property name="optFlowNoInfoManager" ref="optFlowNoInfoManager" />
+	</bean>
+
+	<bean name="optApplySignIssue" class="com.centit.powerruntime.autonode.OptApplySignIssue"
+		scope="request">
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="incomeDocManager" ref="incomeDocManager" />
+	</bean>
+	<bean name="optNewlyIdeaAction" class="com.centit.powerruntime.action.OptNewlyIdeaAction"
+		scope="request">
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+	</bean>
+	<bean name="optHqFinish" class="com.centit.powerruntime.autonode.OptHqFinish"
+		scope="request">
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+	</bean>
+	<bean name="optProcCollectionAction"
+		class="com.centit.powerruntime.action.OptProcCollectionAction" scope="request">
+		<property name="optProcCollectionManager" ref="optProcCollectionManager" />
+	</bean>
+	<bean name="VOptProcCollectionAction"
+		class="com.centit.powerruntime.action.VOptProcCollectionAction" scope="request">
+		<property name="VOptProcCollectionManager" ref="VOptProcCollectionManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="optProcCollectionManager" ref="optProcCollectionManager" />
+	</bean>
+	<bean name="optProcLockAction" class="com.centit.powerruntime.action.OptProcLockAction"
+		scope="request">
+		<property name="optProcLockManager" ref="optProcLockManager" />
+	</bean>
+	<bean name="oaUnitsLeaderAction" class="com.centit.powerruntime.action.OaUnitsLeaderAction"
+		scope="request">
+		<property name="oaUnitsLeaderManager" ref="oaUnitsLeaderManager" />
+		<property name="oaUnitsLeaderLogManager" ref="oaUnitsLeaderLogManager" />
+		<property name="oaPowerrolergroupManager" ref="oaPowerrolergroupManager" />
+		<property name="oaLeaderunitsManager" ref="oaLeaderunitsManager" />
+	</bean>
+	<bean name="oaUnitsLeaderLogAction" class="com.centit.powerruntime.action.OaUnitsLeaderLogAction"
+		scope="request">
+		<property name="oaUnitsLeaderLogManager" ref="oaUnitsLeaderLogManager" />
+	</bean>
+	<bean name="oaLeaderunitsAction" class="com.centit.powerruntime.action.OaLeaderunitsAction"
+		scope="request">
+		<property name="oaLeaderunitsManager" ref="oaLeaderunitsManager" />
+	</bean>
+
+	<bean name="optFWZWH" class="com.centit.powerruntime.autonode.OptFWZWH"
+		scope="request">
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="dispatchDocMgr" ref="dispatchDocManager" />
+	</bean>
+	<bean name="optRemind" class="com.centit.powerruntime.autonode.OptRemind"
+		scope="request">
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="oaRemindInformationManager" ref="oaRemindInformationManager" />
+	</bean>
+	<bean name="OptNodeBean" class="com.centit.powerruntime.autonode.OptNodeBean"
+		scope="request">
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+	</bean>
+	<bean name="optLeaderSignIssue" class="com.centit.powerruntime.autonode.OptLeaderSignIssue"
+		scope="request">
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="optIdeaInfoDao" ref="optIdeaInfoDao" />
+		<property name="flowEngine" ref="flowEngine" />
+	</bean>
+	<bean name="VoptBaseExceptionAction"
+		class="com.centit.powerruntime.action.VoptBaseExceptionListAction">
+		<property name="voptBaseExceptionListManager" ref="voptBaseExceptionListManager" />
+	</bean>
+	<bean name="optStuffInfoAction" class="com.centit.powerruntime.action.OptStuffInfoAction"
+		scope="request">
+		<property name="optStuffInfoManager" ref="optStuffInfoManager" />
+	</bean>
+
+
+	<bean name="optDocumentFlowFinish"
+		class="com.centit.powerruntime.autonode.OptDocumentFlowFinish">
+		<property name="optBaseInfoManager" ref="optBaseInfoManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+	</bean>
+	<bean name="mipLogAction" class="com.centit.powerruntime.action.MipLogAction"
+		scope="request">
+		<property name="mipLogManager" ref="mipLogManager" />
+	</bean>
+</beans>

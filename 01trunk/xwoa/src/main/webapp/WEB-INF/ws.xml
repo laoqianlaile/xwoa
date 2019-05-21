@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    
+    <bean name="centitWebServiceBean" class="com.centit.webservice.server.impl.CentitWebServiceImpl">
+        <property name="sysunitDao" ref="sysUnitDao" />
+		<property name="sysuserDao" ref="sysUserDao" />
+		<property name="userRoleDao" ref="userRoleDao" />
+		<property name="functionDao" ref="functionDao" />
+		
+		
+		<property name="optBaseInfoDao" ref="optBaseInfoDao" />
+		<property name="wsclientManager" ref="wsclientManager" />
+		<property name="optStuffInfoManager" ref="optStuffInfoManager" />
+		<property name="optProcCollectionManager" ref="optProcCollectionManager" />
+		<property name="optProcLockManager" ref="optProcLockManager" />
+		<property name="vOptBaseListManager" ref="vOptBaseListManager" />
+		
+		
+		
+		<property name="optBaseInfoManager" ref="optBaseInfoManager"/>
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager"/>
+		<property name="generalModuleParamManager" ref="generalModuleParamManager"/>
+		<property name="optProcAttentionManager" ref="optProcAttentionManager"/>
+		<property name="templateFileManager" ref="templateFileManager"/>
+		
+		
+		
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="optIdeaInfoDao" ref="optIdeaInfoDao" />
+		<property name="nodeInstanceDao" ref="nodeInstanceDao" />
+		<property name="vuserTaskListOAManager" ref="vuserTaskListOAManager" />
+		
+		<property name="dashboardDao" ref="dashboardDao" />
+		<property name="oaScheduleManager" ref="oaScheduleManager" />
+		<property name="publicinfoManager" ref="publicinfoManager" />
+		<property name="fileinfoFsManager" ref="fileinfoFsManager" />
+		<property name="innermsgManager" ref="innermsgManager" />
+		<property name="innermsgRecipientManager" ref="innermsgRecipientManager" />
+		<property name="oaInformationManager" ref="oaInformationManager" />
+		<property name="oaUnitIncomedocManager" ref="oaUnitIncomedocManager" />
+		<property name="oaMeetinfoManager" ref="oaMeetinfoManager" />
+		<property name="VOptProcCollectionManager" ref="VOptProcCollectionManager" />
+		<property name="oaMeetApplyManager" ref="oaMeetApplyManager" />
+	    <property name="oaUserinfoManager" ref="oaUserinfoManager" />
+	    
+	    <property name="voaUnitArchiveDispatchdocManager" ref="voaUnitArchiveDispatchdocManager" />
+	    <property name="voaUnitArchiveIncomedocManager" ref="voaUnitArchiveIncomedocManager" />
+	    <property name="oaArchiveManager" ref="oaArchiveManager" />
+	    
+	    <property name="optProcStuffInfoManager" ref="optProcStuffInfoManager" />
+    </bean>
+
+    <jaxws:endpoint id="centitWebService" implementor="#centitWebServiceBean" address="/centitWebService" >
+    </jaxws:endpoint>
+    
+
+</beans>

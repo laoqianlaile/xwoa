@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="queryModelManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.stat.service.impl.QueryModelManagerImpl">
+				<property name="queryModelDao" ref="queryModelDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="formDataManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.stat.twodimenform.FormDataManagerImpl">
+				<property name="baseDao" ref="queryModelDao" />
+			</bean>
+		</property>
+	</bean>
+	
+</beans>

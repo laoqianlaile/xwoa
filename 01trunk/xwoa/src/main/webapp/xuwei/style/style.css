@@ -1,0 +1,799 @@
+#header{background: #14aae4!important;}
+#header .headerNav{
+	background:url(../images/head-sy.png) 20px center no-repeat!important;
+	    border-bottom: none;
+}
+#header .tabBar{left:350px}
+#header .tabBar li.home a {
+    display:inline-block;
+    width:56px;
+    height:75px;
+    padding:none!important;
+    padding-bottom: 0;
+    color: white!important;
+    background: url(../images/sy2.png) no-repeat center 60px!important;
+}
+#header .tabBar li.home a.select {
+    background: url(../images/sy2.png) no-repeat center 60px!important;
+    padding:none!important;
+    line-height:75px;
+    padding-bottom: 0;
+    color: white!important;
+    }
+#header .tabBar li.to a {
+    padding:none!important;
+    line-height:75px;
+    padding-bottom: 0;
+    color: white!important;
+}
+#header .tabBar li.three a{
+    padding:none!important;
+    line-height:75px;
+    padding-bottom: 0;
+    color: white!important;
+}
+#header .tabBar li.four a{
+   padding:none!important;
+    line-height:75px;
+    padding-bottom: 0;
+    color: white!important;
+}
+#header .tabBar li.five a{
+    padding:none!important;
+    line-height:75px;
+    padding-bottom: 0;
+    color: white!important;
+}
+#header .tabBar li.six a{
+    padding:none!important;
+    line-height:75px;
+    padding-bottom: 0;
+    color: white!important;
+}
+#header .tabBar li.one a{
+    padding:none!important;
+    line-height:75px;
+    padding-bottom: 0;
+    color: white!important;
+}
+#header .tabBar li.seven2 a{
+    padding:none!important;
+    line-height:75px;
+    padding-bottom: 0;
+    color: white!important;
+}
+/* #header .tabBar li.select { */
+/*     background: #0088c7; */
+/* } */
+
+#firstPage .page{background:#e7e7e7!important}
+.improveLeft{height:100%;overflow:auto;margin:0;}
+.XW_left>.XWweather{position:relative;background:white;margin-top:20px;padding-right:20px;margin-right: 10px}
+.XW_left>.XWweather>div{background:white;padding:10px 0;height:30px;line-height:30px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap}
+.XW_left>.XWoption{margin-top:20px;height:220px}
+.XWoption>a>span{
+    display: block;
+    padding-right: 20px;
+    line-height: 30px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.XWoption>a{
+    display: inline-block;
+    width: 33%;
+    text-align: right;
+    height: 100px;
+    margin-bottom: 10px;
+    float: left;
+    border-right: 10px solid #e7e7e7;
+    box-sizing: border-box;
+}
+.XWoption>a.dbsx{
+    background:url(../images/dbsx.png) 30px center no-repeat #ef6d4f;
+    color: white;
+}
+.XWoption>a.dbsx:hover{
+    background:url(../images/dbsx_hover.png) 30px center no-repeat white;
+    color:#14aae4;
+}
+.XWoption>a.tzgg{
+    background:url(../images/tzgg.png) 30px center no-repeat #f4563c;
+    color: white;
+}
+.XWoption>a.tzgg:hover{
+    background:url(../images/tzgg_hover.png) 30px center no-repeat white;
+    color:#14aae4;
+}
+.XWoption>a.xxtx{
+    background:url(../images/xxtx.png) 30px center no-repeat #f48c32;
+    color: white;
+}
+.XWoption>a.xxtx:hover{
+    background:url(../images/xxtx_hover.png) 30px center no-repeat white;
+    color:#14aae4;
+}
+.XWoption>a.qbdb{
+    background:url(../images/qbdb.png) 30px center no-repeat #dcaf13;
+    color: white;
+}
+.XWoption>a.qbdb:hover{
+    background:url(../images/qbcb_hover.png) 30px center no-repeat white;
+    color:#14aae4;
+}
+.XWoption>a.sw{
+    background:url(../images/sw.png) 30px center no-repeat #14aae4;
+    color: white;
+}
+.XWoption>a.sw:hover{
+    background:url(../images/sw_hover.png) 30px center no-repeat white;
+    color:#14aae4;
+}
+.XWoption>a.fw{
+    background:url(../images/fw.png) 30px center no-repeat #9c5ab4;
+    color: white;
+}
+.XWoption>a.fw:hover{
+    background:url(../images/fw_hover.png) 30px center no-repeat white;
+    color:#14aae4;
+}
+.XWoption>a.yj{
+    background:url(../images/yj.png) 30px center no-repeat #82a439;
+    color: white;
+}
+.XWoption>a.yj:hover{
+    background:url(../images/yj_hover.png) 30px center no-repeat white;
+    color:#14aae4;
+}
+.XWoption>a.dbcb{
+    background:url(../images/dbcb.png) 30px center no-repeat #4682e7;
+    color: white;
+}
+.XWoption>a.dbcb:hover{
+    background:url(../images/dbcb_hover.png) 30px center no-repeat white;
+    color:#14aae4;
+}
+.XWdbsx{ height: 420px;margin-top:10px}
+.XWdbsx_ul{margin-right:10px;position:relative}
+.XWdbsx_ul>li{
+    list-style: none;
+    display: inline-block;
+    width: 25%;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    background: #ececec;
+    cursor: pointer;
+
+}
+.XWdbsx_ul>li.select{background:white}
+.XWdbsx_ul>li>a{display: inline-block;width: 100%;position: relative;height: 100%;line-height:40px}
+.XWdbsx_ul>li>a span{
+    position:absolute;
+    height:40px;
+    line-height:40px;
+    top:0;
+    right:0px;
+    color:#e3e3e3;
+    width: 1px;
+    background: #e3e3e3;
+}
+.XWdbsx_ul>li>div{
+    width: 100%;
+    background: white;
+    display: none;
+    position: absolute;
+    left: 0%;
+    top:40px;
+    height:350px;
+}
+.XWdbsx_ul>li table tr:hover{
+	background:#f6f6f6
+}
+.XWdbsx_ul>li table td{
+    padding:10px;
+    text-align: left;
+    color: #666666;
+}
+.tj{display: inline-block;margin: auto 5px;color: red}
+.jj{display: inline-block;margin: auto 5px;color: #dcaf13}
+.pj{display: inline-block;margin: auto 5px;color: #89b135}
+.XWdbsx_date{float: right}
+.XWdbsx_readstate_T{float:right;margin-right:10px}
+.XWdbsx_readstate_F{float:right;margin-right:10px;color:orange}
+.XWdbsx_ul>li.select>div{
+    display: table;
+}
+h3.XWtitle{
+    margin-right: 10px;
+    height: 40px;
+    line-height: 40px;
+    background: #f5f5f5;
+    text-align: left;
+    text-indent: 10px;
+    color: #666666;
+    border-bottom: 1px solid #1583cf;
+}
+h3.XWtitle>a{
+    float: right;
+    line-height: 40px;
+    width: 50px;
+    color:#666666;
+}
+.XWldrc{margin-top: 20px;margin-bottom:20px;}
+.XWldrc>.XWtitle{border-bottom:none}
+.XWldrc .mycalendar{margin-right: 10px;background: white;padding-bottom:5px;}
+.XWldrc .mycalendar-navbar{position: relative;}
+.XWldrc .mycalendar-navbar > span{display: inline-block;position:absolute;}
+.XWldrc .mycalendar-navbar > span > a{display:inline-block;margin-right:10px;cursor: pointer;}
+.XWldrc .mycalendar-header{height:40px;}
+.XWldrc .mycalendar-header table{width:100%;height:100%;border:0;cellspacing:0;cellpadding:0;border-collapse: collapse;}
+.XWldrc .mycalendar-header table th{font-size:14px;text-align: center;}
+.XWldrc .mycalendar-body{width:100%}
+.XWldrc .mycalendar-body .mycalendar-body-bg{position:absolute;top:0;bottom:0;left:0;right:0;}
+.XWldrc .mycalendar-body .mycalendar-body-bg table{width:100%;height:100%;border:0;cellspacing:0;cellpadding:0;border-collapse: collapse;}
+.XWldrc .mycalendar-body .mycalendar-body-bg table td{border-left:1px solid #F0F0F0;border-top:1px solid #F0F0F0;}
+.XWldrc .mycalendar-body .mycalendar-body-content td{padding:2px 0;}
+.XWldrc .mycalendar-body .mycalendar-body-content td a{display:block;margin:0px 5px 0 5px;white-space: nowrap; 
+      overflow: hidden;text-overflow: ellipsis;font-size:12px;padding:3px 0;cursor: pointer;}
+.XWldrc .mycalendar-body .mycalendar-body-content td a:hover{color:#000}
+
+.XWright{
+    width: 300px;
+}
+.XWseach{
+    height: 30px;
+    padding: 10px;
+    margin-top: 20px;
+    background: white;
+}
+.XWseach>input{
+    border: none;
+    background: #ececec;
+    line-height: 28px;
+    width: 240px;
+    text-indent: 10px;
+    float: left;
+    height:28px;
+}
+.XWseach>a{
+    height: 32px;
+    display: inline-block;
+    width: 30px;
+    background: url(../images/XWsearch_btn.png) center center;
+}
+.XWbanner{margin-top:20px;background:white;text-align:left;min-height:210px;}
+.XWbanner>a{
+    display: inline-block;
+    height: 30px;
+    padding-top: 45px;
+    line-height: 30px;
+    width: 90px;
+    margin-top:20px;
+    text-align:center;
+    margin-left:5px
+}
+.XWbanner_fwdj{
+    background: url(../images/XWbanner_fwdj.png) center top no-repeat;
+}
+.XWbanner_swdj{
+     background: url(../images/XWbanner_swdj.png) center top no-repeat;
+ }
+.XWbanner_wdyj{
+    background: url(../images/XWbanner_fqtx.png) center top no-repeat;
+}
+.XWbanner_qbdj{
+    background: url(../images/XWbanner_qbdj.png) center top no-repeat;
+}
+.XWbanner_zkqb{
+    background: url(../images/XWbanner_zkqb.png) center top no-repeat;
+}
+h5.XWtitle{
+    height: 40px;
+	line-height: 40px;
+	padding-left: 40px;
+	text-align: left;
+	color: #666666;
+}
+h5.XWtitle>a{
+/*     background: url(../images/XWarrow.png) center center white no-repeat; */
+    display: inline-block;
+	height: 40px;
+	width: 30px;
+	float: right;
+	cursor: pointer;
+	line-height: 40px;
+	margin-right: 10px;
+	color: #666666;
+}
+h5.XWtitle>a.open{
+  /* background: url(../images/XWopen.png) center center white no-repeat;*/
+}
+.XWxxtx,.XWjwbl,.XWtzgg,.XWhd{
+    margin-top: 20px;
+    background: #f6f6f6;
+}
+.XWxxtx h5.XWtitle{
+	cursor:pointer;
+    background: url(../images/XWxxtx.png) 10px center white no-repeat;
+}
+.XWjwbl h5.XWtitle{
+	cursor:pointer;
+    background: url(../images/XWjwbl.png) 10px center white no-repeat;
+}
+.XWtzgg h5.XWtitle{
+	cursor:pointer;
+    background: url(../images/XWtzgg.png) 10px center white no-repeat;
+}
+.XWhd h5.XWtitle{
+	cursor:pointer;
+    background: url(../images/XWhd.png) 10px center white no-repeat;
+}
+.XWxxtx ul,.XWjwbl ul,.XWtzgg ul,.XWhd ul{
+    padding: 10px;
+    background: #ececec;
+    display:none
+}
+.XWxxtx ul li{
+    list-style: none;
+    line-height: 150%;
+    margin-top: 10px;
+    background: white;
+    text-align: left;
+    padding: 10px 35px 10px 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.XWxxtx ul li a.title-txt{
+	display:inline-block;
+	width:235px;  
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height:100%;
+ }
+.XWjwbl ul li,.XWtzgg ul li,.XWhd ul li{
+    list-style: none;
+    text-align: left;
+    padding: 10px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    cursor: pointer;
+}
+.XWjwbl ul li a,.XWtzgg ul li a,.XWhd ul li a{
+	display:block;
+	text-overflow: ellipsis;
+	 white-space: nowrap;
+	  overflow: hidden;
+}
+.XWjwbl ul li:hover,.XWtzgg ul li:hover,.XWhd ul li:hover{
+	background:white;
+}
+
+.XWxxtx ul li a.cls-ico{
+	content: '';
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 35px;
+    background:url(../images/XWliopen.png) center center no-repeat #cccccc ;
+    top: 0;
+    right:0;
+}
+.XWli_select a.title-txt{
+	white-space: normal!important;
+}
+.XWli_select a.cls-ico{
+	background:url(../images/XWliclose.png) center center no-repeat #cccccc!important
+}
+.panel-noscroll{overflow:auto}
+#Calendar,.calendar{border: 0!important;padding: 0;}
+.calendar-selected {
+    background-color: #14aae4;
+    color: #ffffff;
+    border: 1px solid #14aae4;
+    padding: 0;
+}
+.calendar-nav-hover{
+  background-color:#14aae4!important;
+  color: #000000;
+}
+.calendar-header {
+    position: relative;
+    height: 40px;
+    background: #14aae4;
+}
+.calendar-body th {
+    background: #ffffff;
+    padding: 10px 0;
+}
+.calendar-title span {
+    position: relative;
+    display: inline-block;
+    top: 0;
+    padding: 0 3px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    color:white
+}
+.Calendardata{
+	position: relative;
+    background:white;
+    padding-top: 30px;
+}
+.Calendardata>li{
+	list-style: none;
+    height: 45px;
+    line-height: 35px;
+    background: #f6f6f6;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 0 10px;
+    cursor:pointer;
+    text-align: left;
+    color: #666666;
+}
+.Calendardata>li:hover{
+	background:white
+}
+.Calendardata>li>span{float:right;height:30px;line-height:30px}
+
+/*leftside*/
+sidebar{padding-left:10px}
+.accordion{background:white;padding-top: 10px;height: 100%;}
+/* .tree>li>ul>li>div>a { */
+/*     font-weight: bold; */
+/*     color: #666666; */
+/*     text-indent: 2em; */
+/* } */
+.accordion .accordionContent{
+	margin:0px
+}
+ul.tree div{
+	position: relative;
+    text-indent: 30px;
+}
+.tree li ul ul{background:#ececec}
+.tree .file{
+    background: #989393;
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    top: 18px;
+    left: 35px;
+}
+.tree>li>ul>li>ul a {
+    color: #666666!important;
+}
+.tree>li>ul>li>div>a {
+    font-weight: bold;
+    color: #666666!important;
+    text-indent: 1em;
+    height:60px;
+    line-height:60px
+}
+.tree .collapsable+a{background:#dedddd!important}
+.tree .folder_expandable+a{background:#dedddd!important}
+.tree>li>ul>li>ul a.visited{
+	color:#1583ce!important;
+	background:none!important
+}
+
+.tree .selected>a {
+    /* color: #ff0e00; */
+    background-color: #ececec;
+    color: #666666!important;
+}
+.tree .expandable,.tree .collapsable,.tree last_collapsable{
+	height:48px;
+	width:48px;
+}
+ul.tree>li>ul>li>div {
+    height: 60px !important;
+    line-height: 60px !important;
+}
+/*个人办公菜单*/
+
+#menu_GRBGGRDB .expandable,#menu_GRBGGRDB .collapsable{
+	background:url(../images/XWgrbg.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*日程安排*/
+#menu_GRBGRCAP .expandable,#menu_GRBGRCAP .collapsable{
+	background:url(../images/XWrcap.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*内部邮件*/
+#menu_GRBGGRYJ .expandable,#menu_GRBGGRYJ .collapsable{
+	background:url(../images/XWgryj.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*督办催办*/
+#menu_GRBGDBCB .expandable,#menu_GRBGDBCB .collapsable{
+	background:url(../images/XWdbcb.png) center center no-repeat;
+	margin-top: 6px;
+}
+#menu_GRBGFZBG .expandable,#menu_GRBGFZBG .collapsable{
+	background:url(../images/XWfzbg.png) center center no-repeat;
+	margin-top: 6px;
+}
+
+/*内部事务菜单*/
+#menu_NBSQBL .expandable,#menu_NBSQBL .collapsable{
+	background:url(../images/XWnbsw.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*签报管理*/
+#menu_RCBGQBGL .expandable,#menu_RCBGQBGL .collapsable{
+	background:url(../images/XWqbgl.png) center center no-repeat;
+	margin-top: 6px;
+}
+
+
+/*公文流转菜单*/
+/*发文管理*/
+#menu_GWLZFWGL .expandable,#menu_GWLZFWGL .collapsable{
+	background:url(../images/XWfwgl.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*收文管理*/
+#menu_GWLZSWGL .expandable,#menu_GWLZSWGL .collapsable{
+	background:url(../images/XWswgl.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*审批管理*/
+#menu_ZXGWLZFWGL .expandable,#menu_ZXGWLZFWGL .collapsable{
+	background:url(../images/XWfwgl.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*审阅管理*/
+#menu_ZXGWLZSWGL .expandable,#menu_ZXGWLZSWGL .collapsable{
+	background:url(../images/XWswgl.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*公文收藏*/
+#menu_GWSC .expandable,#menu_GWSC .collapsable{
+	background:url(../images/XWgwsc.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*公文归档*/
+#menu_GWLZXGGN .expandable,#menu_GWLZXGGN .collapsable{
+	background:url(../images/XWgwgd.png) center center no-repeat;
+	margin-top: 6px;
+}
+
+/*办公资源菜单*/
+#menu_HYZL .expandable,#menu_HYZL .collapsable{
+	background:url(../images/XWhyzl.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*会议管理*/
+#menu_HYSGL_NEW .expandable,#menu_HYSGL_NEW .collapsable{
+	background:url(../images/XWhygl.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*车辆管理*/
+#menu_CLGL_new .expandable,#menu_CLGL_new .collapsable{
+	background:url(../images/XWclgl.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*短信平台*/
+#menu_MESSAGEGL .expandable,#menu_MESSAGEGL .collapsable{
+	background:url(../images/XWdx.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*新闻中心*/
+#menu_GGZY .expandable,#menu_GGZY .collapsable{
+	background:url(../images/XWxwzx.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*消息提醒*/
+#menu_TXSJ .expandable,#menu_TXSJ .collapsable{
+	background:url(../images/XWbjtx.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*考勤管理*/
+#menu_ATTENDANCE .expandable,#menu_ATTENDANCE .collapsable ,#menu_ATTENDANCE last_collapsable{
+	background:url(../images/XWbjtx.png) center center no-repeat;
+	margin-top: 6px;
+}
+
+/*日常办公菜单*/
+/*日常工作*/
+#menu_RCBG_RCGZ .expandable,#menu_RCBG_RCGZ .collapsable{
+	background:url(../images/XWgwlz.png) center center no-repeat;
+	margin-top: 6px;
+}
+#menu_ZBAP .expandable,#menu_ZBAP .collapsable{
+	background:url(../images/XWzbap.png) center center no-repeat;
+	margin-top: 6px;
+}
+
+/*后台管理菜单*/
+#menu_DEPTMAG .expandable,#menu_DEPTMAG .collapsable{
+	background:url(../images/XWbmgl.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*组织管理*/
+#menu_ORGMAG .expandable,#menu_ORGMAG .collapsable{
+	background:url(../images/XWzzgl.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*支持业务*/
+#menu_SUPORT .expandable,#menu_SUPORT .collapsable{
+	background:url(../images/XWgzlcty.png) center center no-repeat;
+	margin-top: 6px;
+}
+#menu_SYSCONF .expandable,#menu_SYSCONF .collapsable{
+	background:url(../images/XWxtsz.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*内部事务配置*/
+#menu_XZQLK .expandable,#menu_XZQLK .collapsable{
+	background:url(../images/XWnbsw.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*学习园地配置*/
+#menu_BBSM .expandable,#menu_BBSM .collapsable{
+	background:url(../images/XWgwlz.png) center center no-repeat;
+	margin-top: 6px;
+}
+/*帮助中心*/
+#menu_BZZX_ .expandable,#menu_BZZX_ .collapsable  ,#menu_BZZX_ last_collapsable{
+	background:url(../images/Bzzx.png) center center no-repeat;
+	margin-top: 6px;
+}
+
+
+.warning_level_1{background:#E2B739;padding:0 2px;margin-left:10px;color:#fff;border-radius: 3px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ 
+-moz-border-radius: 3px; /* Mozilla浏览器的私有属性 */ 
+-webkit-border-radius: 3px; /* Webkit浏览器的私有属性 */ }
+.warning_level_2{background:#E3833B;padding:0 2px;margin-left:10px;color:#fff;border-radius: 3px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ 
+-moz-border-radius: 3px; /* Mozilla浏览器的私有属性 */ 
+-webkit-border-radius: 3px; /* Webkit浏览器的私有属性 */ }
+.warning_level_3{background:#E3623B;padding:0 2px;margin-left:10px;color:#fff;border-radius: 3px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ 
+-moz-border-radius: 3px; /* Mozilla浏览器的私有属性 */ 
+-webkit-border-radius: 3px; /* Webkit浏览器的私有属性 */ }
+
+/*工作台*/
+.work-desk{padding-bottom: 5px;}
+.work-desk .desk-row ul{
+	overflow:hidden;
+	padding:5px;
+}
+.work-desk .desk-row ul li{
+	float:left;
+	width:110px;
+	height:100px;
+}
+.work-desk .desk-row ul li a{
+	text-decoration: none;
+	cursor: pointer;
+	padding:5px;
+	display:block;
+	border-radius: 3px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ 
+    -moz-border-radius: 3px; /* Mozilla浏览器的私有属性 */ 
+    -webkit-border-radius: 3px; /* Webkit浏览器的私有属性 */
+}
+.work-desk .desk-row ul li a:hover{
+	background:#98DEFA;
+	
+}
+.work-desk .desk-row ul li i{
+	width:95px;
+	height:80px;
+	display:block;
+}
+.work-desk .desk-row ul li .desk-itemico-fwdj{
+	background:url(../images/XWbanner_fwdj.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-sqdj{
+	background:url(../images/XWbanner_swdj.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-qbdj{
+	background:url(../images/XWbanner_qbdj.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-fqtx{
+	background:url(../images/XWbanner_fqtx.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-fsyj{
+	background:url(../images/XWbanner_wdyj.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-grrc{
+	background:url(../images/XWbanner_grrc.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-gwsq{
+	background:url(../images/XWbanner_gwsq.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-swdj{
+	background:url(../images/XWbanner_sqdj.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-fdx{
+	background:url(../images/XWbanner_fdx.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-ftz{
+	background:url(../images/XWbanner_ftz.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-fgg{
+	background:url(../images/XWbanner_fgg.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-fhd{
+	background:url(../images/XWbanner_fhd.png) no-repeat center
+}
+.work-desk .desk-row ul li .desk-itemico-gwgd{
+	background:url(../images/XWbanner_gwgd.png) no-repeat center
+}
+.work-desk .desk-row ul li span{
+	font-size:15px;
+	font-weight:bold;
+	color:#000; 
+	width:95px;
+	text-align: center;
+	display: block;
+}
+
+#tooltipTarget{display:none;position: absolute;background:#ECECEC;border:solid 1px #1583CF;padding:5px;}
+#tooltipTarget .tooltip-content{background:url('../images/tip_content_bg1.png') no-repeat center -10px;}
+#tooltipTarget .tooltip-content img{
+	vertical-align: middle;
+    margin: 10px 24px 10px -20px;
+    display: inline-block;
+    height:38px;
+    width:38px;
+}
+#tooltipTarget .tooltip-content p{
+	font-size:12px;
+	padding:10px 0;
+}
+#tooltipTarget .tooltip-content .linkbtns a{
+	display:inline-block;
+	width:32px;
+	height:32px;
+    margin: 8px 4px;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helpcenter{
+	background:url('../images/helpcenter.png') no-repeat center;
+	cursor: pointer;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helpcenter:hover{
+	background:url('../images/helpcenter_hover.png') no-repeat center;
+	cursor: pointer;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helpgrzl{
+	background:url('../images/helpgrzl.png') no-repeat center;
+	cursor: pointer;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helpgrzl:hover{
+	background:url('../images/helpgrzl_hover.png') no-repeat center;
+	cursor: pointer;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helptxl{
+	background:url('../images/helptxl.png') no-repeat center;
+	cursor: pointer;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helptxl:hover{
+	background:url('../images/helptxl_hover.png') no-repeat center;
+	cursor: pointer;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helpxgmm{
+	background:url('../images/helpxgmm.png') no-repeat center;
+	cursor: pointer;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helpxgmm:hover{
+	background:url('../images/helpgxgmm_hover.png') no-repeat center;
+	cursor: pointer;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helpzlk{
+	background:url('../images/helpzlk.png') no-repeat center;
+	cursor: pointer;
+}
+#tooltipTarget .tooltip-content .linkbtns a.helpzlk:hover{
+	background:url('../images/helpzlk_hover.png') no-repeat center;
+	cursor: pointer;
+}

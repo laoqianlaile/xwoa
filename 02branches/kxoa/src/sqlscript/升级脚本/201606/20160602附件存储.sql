@@ -1,0 +1,1 @@
+alter table opt_stuff_info add(stuffpath varchar2(1000)); 

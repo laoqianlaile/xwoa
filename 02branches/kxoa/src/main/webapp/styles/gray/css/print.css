@@ -1,0 +1,179 @@
+A
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	TEXT-DECORATION: none
+}
+
+A:hover
+{
+	TEXT-DECORATION: underline
+}
+
+FONT
+{  
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px
+}
+
+BODY
+{
+	font-size: 12px;
+	SCROLLBAR-FACE-COLOR: #ffffff;
+	SCROLLBAR-HIGHLIGHT-COLOR: #346786;
+	SCROLLBAR-SHADOW-COLOR: #346786;
+	SCROLLBAR-3DLIGHT-COLOR: #BBD9EA;
+	SCROLLBAR-ARROW-COLOR: #346786;
+	SCROLLBAR-TRACK-COLOR: #ffffff;
+	SCROLLBAR-DARKSHADOW-COLOR: #BBD9EA;
+	bgcolor:#ffffff
+}
+
+TABLE
+{
+	WIDTH: 90%;	
+	BACKGROUND-COLOR: #ffffff;
+	margin: auto;
+	BORDER-RIGHT: 1px solid #000000; 
+	BORDER-BOTTOM: 1px solid #000000;
+	color: #000000
+}
+
+TBODY
+{
+	BACKGROUND-COLOR: #ffffff;
+	font-family: "宋体";
+	font-size: 12px;
+	color: #000000;
+	TEXT-ALIGN: center
+}
+
+td {
+	font-size: 12px;
+	color: #000000;
+	BORDER-TOP: 1px solid #000000; 
+	BORDER-LEFT: 1px solid #000000; 
+	WHITE-SPACE: nowrap;
+
+}
+
+.FTITLE
+{  
+	BACKGROUND-COLOR: #FFFFFF;
+	COLOR: #000000;
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;		
+	TEXT-ALIGN: center
+}
+.HEADINGTITLE
+{  
+	BACKGROUND-COLOR: #FFFFFF;
+	COLOR: #000000;
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+	TEXT-ALIGN: center
+}
+
+.TTITLE
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	COLOR: #003399; 
+	LINE-HEIGHT: 25px; 
+	TEXT-ALIGN: right
+}
+.TDTITLE
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	COLOR: #003399; 
+	LINE-HEIGHT: 25px; 
+	TEXT-ALIGN: right
+}
+
+.CTITLE
+{  
+	FONT-FAMILY: "宋体"; 
+	FONT-SIZE: 16px; 
+	FONT-WEIGHT: bold; 
+	COLOR: #CC3300
+}
+
+.BORDERLEFT 
+{  
+	BORDER: 1px #2F459F solid
+}
+
+.LISTTAB 
+{  
+	BACKGROUND-COLOR: #003399; 
+	BORDER-TOP-WIDTH: thin; 
+	BORDER-RIGHT-WIDTH: thin; 
+	BORDER-BOTTOM-WIDTH: thin; 
+	BORDER-LEFT-WIDTH: thin
+}
+
+.LISTHEAD 
+{  
+	BACKGROUND-COLOR: #3c6ab0
+}
+
+.INPUTFIELD
+{
+	TEXT-ALIGN: left;	
+}
+.RLTABLE
+{
+	WIDTH: 100%;
+	
+}
+.RLFONT
+{  
+	FONT-FAMILY: "Wingdings 3";
+	FONT-SIZE: 12px
+}
+
+.CASETITLE
+{  
+	FONT-FAMILY: "宋体"; 
+	FONT-SIZE: 16px; 
+	FONT-WEIGHT: bold; 
+	COLOR: #FF00CC
+}
+
+TTABLE
+{
+	WIDTH: 100%;	
+	BACKGROUND-COLOR: #006699;
+}
+Input {
+	BACKGROUND-COLOR: #ffffff;
+        border: 1px solid #999999;
+}
+Select {
+	border: 1px solid #6666FF;
+}
+textarea {
+	border: 1px solid #999999;
+}
+
+.LITTLEFONT
+{  
+	FONT-FAMILY: "宋体"; 
+	FONT-SIZE: 5px; 	
+}
+.BUTTONTABLE
+{
+	WIDTH: 90%;	
+	BACKGROUND-COLOR: #000000;
+}
+.BUTTONTR
+{
+	BACKGROUND-COLOR: #FFFFFF;
+	COLOR: #FFFFFF;
+	TEXT-ALIGN: center
+}

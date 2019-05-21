@@ -1,0 +1,189 @@
+.col-active {
+	overflow: hidden; float: left; display: inline;
+}
+.count-box {
+	overflow: hidden; float: left; display: inline;
+}
+.m-lf {
+	overflow: hidden; float: left; display: inline;
+}
+.m-ct {
+	overflow: hidden; float: left; display: inline;
+}
+.m-rg {
+	overflow: hidden; float: left; display: inline;
+}
+.mo-lf {
+	overflow: hidden; float: left; display: inline;
+}
+.mo-rg {
+	overflow: hidden; float: left; display: inline;
+}
+.mc-fl {
+	overflow: hidden; float: left; display: inline;
+}
+.contShow-lf {
+	overflow: hidden; float: left; display: inline;
+}
+.contShow-rg {
+	overflow: hidden; float: left; display: inline;
+}
+.newsShow-lf {
+	overflow: hidden; float: left; display: inline;
+}
+.leaderList-lf {
+	overflow: hidden; float: left; display: inline;
+}
+.leaderList-rg {
+	overflow: hidden; float: left; display: inline;
+}
+.logo-box {
+	width: 588px;
+}
+.logo-box h1 {
+	padding-left: 30px;
+}
+.header-rg {
+	top: 15px; width: 392px; right: 0px; position: absolute; z-index: 101;
+}
+.header .w980 {
+	padding: 19px 0px; overflow: hidden;
+}
+.menu {
+	width: 100%; overflow: hidden;
+}
+.mode {
+	width: 100%; overflow: hidden;
+}
+.site-menu {
+	margin: 0px auto;
+}
+.menu {
+	margin: 0px auto; padding: 0px; height: 44px;
+}
+.site-menu {
+	margin-bottom: 10px;
+}
+.module {
+	margin-bottom: 10px;
+	min-height:  350px;
+}
+.site-menu {
+	left: 0px; top: 0px; width: 980px; position: relative; z-index: 102;
+}
+.m-lf {
+	width: 48%;
+}
+.m-ct {
+	width: 370px; margin-left: 10px;
+}
+.m-rg {
+	width: 48%; margin-left: 10px;
+}
+.m-lf .module {
+	margin-bottom: 4px;
+	min-height:  308px;
+}
+.m-ct .module {
+	margin-bottom: 4px;
+	min-height: 350px;
+}
+.open-bottom {
+	height: 9px;
+}
+.important-open {
+	overflow: hidden;
+}
+.mo-lf {
+	width: 580px;
+}
+.mo-rg {
+	width: 390px; margin-left: 10px;
+}
+.work-col {
+	
+}
+.work-col-rg {
+	width: 50%;
+}
+.work-col .paddingRg {
+	padding-top: 10px; padding-right: 10px; padding-left: 10px;
+}
+.work-col-rg .paddingLf {
+	padding-top: 10px; padding-left: 15px;
+}
+.public-service {
+	height: 244px; overflow: hidden;
+}
+.three-row {
+	margin: 10px 0px;
+}
+.three-row .w980 {
+	height: 120px;
+}
+.picScroll {
+	width: 890px; height: 90px; overflow: hidden; float: right; display: inline-block;
+}
+.lineAd-lf {
+	width: 890px;
+}
+.picAd {
+	height: 90px; overflow: hidden; float: right; display: inline;
+}
+.lineAd-rg {
+	height: 90px; overflow: hidden; float: right; display: inline;
+}
+.picAd {
+	overflow: hidden; float: left; display: inline;
+}
+.lineAd-rg {
+	top: 0px; width: 80px; right: -10px; padding-top: 37px; margin-left: 10px; position: relative;
+}
+.adInfor-list {
+	padding: 6px 10px 0px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 160px; height: 82px; float: left; display: inline-block;
+}
+.adInfor-list ul li {
+	line-height: 20px;
+}
+.col-active {
+	width: 310px; margin-right: 9px;
+}
+.count-box {
+	width: 228px; padding-left: 10px;
+}
+.pos-nav-box {
+	left: 0px; top: 0px; height: 30px; line-height: 30px; padding-left: 20px; position: relative;
+}
+.pos-return {
+	top: 0px; height: 30px; right: 10px; color: rgb(164, 0, 0); position: absolute;
+}
+.contShow-lf {
+	width: 668px;
+}
+.newsShow-lf {
+	width: 668px;
+}
+.contShow-rg {
+	width: 300px; margin-left: 10px;
+}
+.content-show {
+	margin-bottom: 10px;
+}
+.contRg-mode {
+	margin-bottom: 10px;
+}
+.show-body {
+	padding: 20px 20px 10px;
+}
+.leaderList-box {
+	overflow: hidden;
+}
+.leaderList-lf {
+	width: 210px;
+}
+.leaderList-rg {
+	width: 758px; margin-left: 10px;
+}
+.leaderList-pos-box {
+	margin: 10px 0px; left: 0px; top: 0px; height: 30px; line-height: 30px; padding-left: 20px; position: relative;
+}

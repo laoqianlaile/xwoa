@@ -1,0 +1,10 @@
+<div class="line {folderType}" _data_infocode="{infocode}">
+<div class="name info"">
+	<span class="check icon"></span>
+	<span class="icon {type} cst1">&nbsp;</span> 
+	<a href="{url}" target="navTab" rel="viewDoc" type="{atype}" title="{fullFilename}">{filename}</a>
+</div>
+<div class="size info">{size}</div>
+<div class="owner info">{ownercode}</div>
+<div class="time info">{uploadtime}</div>
+</div>

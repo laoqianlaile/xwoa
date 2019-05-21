@@ -1,0 +1,37 @@
+* { margin:0; padding:0; }
+body { font-size:12px; line-height:24px; }
+li { list-style:none; }
+#leftSide a { text-decoration:none; color:#666; }
+#leftSide a:hover { text-decoration:underline; color:#ff0000; }
+#attAlert #leftSide,#l-r-arrow,#rightSide,#t-b-arrow { float:left;padding-top:10px; background:#fff; }
+#attAlert #leftSide,#rightSide { width:190px; height:300px; border-right:1px solid #ccc; overflow:auto; }
+#l-r-arrow,#t-b-arrow { width:104px; height:300px; border-top:1px solid #ccc; border-bottom:1px solid #ccc; }
+#t-b-arrow { border-right:1px solid #ccc; margin:0 auto; }
+#leftSide {padding-left:10px;}
+#leftSide .button{padding-left:0 !important}
+#rightSide {width:180px}
+.fix { clear:both; zoom:1; }
+.fix:after { display:block; height:0; visibility:hidden; clear:both; overflow:hidden; }
+#attAlert #leftSide h2 { cursor:default; font-size:12px; line-height:16px; padding:4px 0; color:#333; }
+#attAlert #leftSide dl { padding-left:10px; }
+#attAlert #leftSide dd { padding:4px 0; line-height:16px; }
+#l-r-arrow .lb,#l-r-arrow .rb { position:relative; width:32px; height:27px; margin:50px 0 50px 25px; }
+#t-b-arrow div { float:left; width:28px; height:32px; margin:100px 0 0 15px; }
+.l,.r,.t,.b { cursor:pointer; }
+.lb { background:url(../default/images/arrows/arrow-leftb.gif) no-repeat; }
+.rb { background:url(../default/images/arrows/arrow-rightb.gif) no-repeat; }
+.l { background:url(../default/images/arrows/arrow-left.gif) no-repeat; }
+.r { background:url(../default/images/arrows/arrow-right.gif) no-repeat; }
+.t { display:none; background:url(../default/images/arrows/arrow-top.gif) no-repeat; }
+.b { display:none; background:url(../default/images/arrows/arrow-bottom.gif) no-repeat; }
+.tb { display:none; background:url(../default/images/arrows/arrow-topb.gif) no-repeat; }
+.bb { display:none; background:url(../default/images/arrows/arrow-bottomb.gif) no-repeat; }
+#rightSide ul { width:150px; overflow:hidden; }
+#rightSide li { line-height:16px; padding:4px 10px; color:#444; }
+#rightSide li.select,#rightSide li:hover { cursor:pointer; background:#fba357; color:#fff; }
+.btns { position:relative; top:100px; left:10px; }
+.hide { display:none; }
+#l-r-arrow .tip { position:absolute; top:-40px; left:-15px; width:150px; height:30px; }
+.tip p { height:30px; line-height:30px; border:1px solid #26a5d2; padding:0 10px !important; background:#fff; color:#666; }
+.out { position:absolute; left:20px; top:31px; display:block; visibility:visible; border-color:#26a5d2 transparent transparent ; border-width: 6px 6px 0; border-style:solid dashed dashed; overflow:hidden; }
+.in { position:absolute; left:21px; top:31px; display:block; visibility:visible; border-color:#fff transparent transparent ; border-width: 5px 5px 0; border-style:solid dashed dashed; overflow:hidden; }

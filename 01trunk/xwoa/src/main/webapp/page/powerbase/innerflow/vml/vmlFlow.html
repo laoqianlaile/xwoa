@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>工作流展示与绘画</title>
+<style type="text/css">
+* { margin:0; padding:0; font-size:12px;}
+table { border-collapse:collapse; background:#fff; }
+table td { border:1px solid #ccc; }
+table td div { padding:4px; text-align:right; line-height:20px; }
+table td span { padding:4px; }
+table td label { padding-left:2px; }
+#tool { position:fixed; left:0; top:0; width:250px; height:24px; padding:6px 0 6px 6px; background:buttonface; BORDER-BOTTOM: gray 2px solid;BORDER-TOP: #eeeeee 2px solid;BORDER-LEFT: #eeeeee 2px solid; z-index:10; }
+#tool div { position:relative; z-index:10; float:left; height:16px; padding:4px; background:buttonface; margin-right:8px; }
+#tool div:hover { background:#888; }
+#tool img { cursor:pointer; }
+#argumentTool { position:fixed; left:0; top:40px; width:258px; z-index:10; }
+.argumentTitle {  cursor:move; padding:4px 0; height:20px; background:#ccc; line-height:20px; text-indent:10px; }
+.argumentContent { width:258px; }
+#tool .move { cursor:move; position:absolute; padding:0; margin:0; top:0; right:0; width:20px; height:36px; background-color:#777; }
+#ispro,#isline { display:none; }
+#canvas { width:100%;min-height:1500px;}
+#delete { margin-left:15px; }
+v\:line,v\:PolyLine,v\:Oval,v\:arc,v\:stroke,v\:RoundRect,v\:Shadow,v\:Shape { Behavior: url(#default#VML); }
+</style>
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onselectstart="return false;">
+<div id="canvas">
+</div>
+<div id="tool">
+    <div class="opt" ><img id="drawRect"  src="images/rect.png" title="点击画0矩形" /></div>
+    <div class="opt" ><img id="drawLine" src="images/polyline.png" title="点击画折线" /></div>
+    <div class="opt" id="cursor"><img id="default" src="images/default.png" title="点击操作【去除画图功能】" /></div>
+    <div id="delete"><img src="images/delete.png" title="删除选中过程" /></div>
+    <div id="xml"><img src="images/save.png" title="效验xml" /></div>
+    <div id="close" onclick="exit();"><img src="images/cancel.png" title="关闭" /></div>
+    <div id="move" class="move"></div>
+</div>
+<div id="argumentTool">
+	<div id="argumentTitle" class="argumentTitle">属性工具栏</div>
+    <div id="argumentContent" class="argumentContent">
+    	<div id="ismain">
+	        <table width="100%" cellpadding="0" cellspacing="0">
+	        	<tr>
+	            	<td width="32%"><div>流程ID</div></td>
+	                <td width="67%"><span><input type="text" id="flow_id" value=""  style="width:85%;" /></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>流程编码</div></td>
+	                <td><span><input type="text" id="flow_code" value="" style="width:85%;" /></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>流程标题</div></td>
+	                <td><span><input type="text" id="flow_title" value="" style="width:85%;" /></span></td>
+	            </tr>
+	        </table>
+        </div>
+    	<div id="ispro">
+	    	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	        	<tr>
+	            	<td><div>环节ID</div></td>
+	                <td><span id="f_id"></span></td>
+	            </tr>
+	        	<tr>
+	            	<td width="32%"><div>环节类型</div></td>
+	                <td width="67%"><span> <select id="f_type" style="width:86%;"><option value="U">用户参与</option><option value="J" selected>判断环节</option><option value="D">系统过程处理</option></select></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>环节名称</div></td>
+	                <td><span><input type="text" id="f_name" value="" style="width:85%;" /></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>是否风险点</div></td>
+	                <td><span><input id="isRisk" name="risk" type="radio" value="1"><label for="isRisk" style="padding-right:10px;">是</label><input id="noRisk" type="radio" name="risk" value="0" checked><label for="noRisk" >否</label></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>风险点描述</div></td>
+	                <td><span><textarea id="risk_desc" style="height:40px; width:85%;margin-top:4px;padding:3px 0 3px 3px;"></textarea></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>办理人员</div></td>
+	                <td><span><textarea id="f_user" style="height:40px; width:85%;margin-top:4px;padding:3px 0 3px 3px;"></textarea></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>岗位职责</div></td>
+	                <td><span><textarea id="station_function" style="height:40px; width:85%;margin-top:4px;padding:3px 0 3px 3px;"></textarea></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>环节办理时限</div></td>
+	                <td><span><input type="text" id="anticipate_day" value="" style="width:40px;text-align:center;" />&nbsp;(请填写数字)</span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>办理时限单位</div></td>
+	                <td><span><select id="anticipate_type" style="width:86%;"><option value="4">小时</option><option value="0">天</option><option value="1">工作日</option><option value="2">月</option><option value="3">年</option></select></span></td>
+	            </tr>
+	        </table>
+        </div>
+        <div id="isline">
+	        <table width="100%" cellpadding="0" cellspacing="0">
+	        	<tr>
+	            	<td width="32%"><div>判断环节连线</div></td>
+	                <td width="67%"><span><input id="isJudgeLine" name="judgeLine" type="radio" value="1"><label for="isJudgeLine" style="padding-right:10px;">判断真</label><input id="noJudgeLine" type="radio" name="judgeLine" value="0"><label for="noJudgeLine" >判断假</label></span></td>
+	            </tr>
+	        </table>
+        </div>
+    </div>
+</div> 
+
+
+<script type="text/javascript" src="js/loadXml.js"></script>
+<script type="text/javascript" src="js/moveTip.js"></script>
+<script type="text/javascript" src="js/addPointMove.js"></script>
+<script type="text/javascript">
+	var selectTag,image,targetId,leng=0,flag=1,linePoine=[],pointID=0;
+	var canvas = g("canvas");
+	var line = g("line");
+	var lineId = 1,changeflag = false;
+	//操作工具栏
+	addEvent(g("tool"),"mousedown",function(e){
+		var e = window.event || e, target = e.srcElement || e.target;
+		flag = 1;//状态标志，当为0时不能进行拖动操作
+		if(target.nodeName.toLowerCase()=="img" && target.parentNode.className=="opt"){
+			if(selectTag){  //选中状态标志
+				selectTag.style.backgroundColor = "buttonface";
+			}
+			target.parentNode.style.backgroundColor = "#888";
+			selectTag = target.parentNode;
+			switch(target.id){
+				case "drawRect":
+					image="rect";
+					break;
+				case "drawLine":
+					image="line";
+					flag=0;
+					break;
+				case "polygon":
+					image="polygon";
+					break;
+				case "default":
+					image="default";
+					break;
+				default:
+					break;
+			}
+			
+		}
+	});
+	//画线函数
+	 function drawLine(e){
+		var e = window.event || e, target = e.srcElement || e.target,pL1;
+		if(target.nodeName=="TextBox"){ //当鼠标定位到文本框时使其捕获目标变成文本框所在那个矩形、菱形或圆
+			target = g(target.getAttribute("imgId"));
+		}
+		function lineMove(e){  //鼠标移动函数
+			var e = window.event || e;
+			var pL2 = [e.x,e.y];
+			var	newPoint = pL1[0]+","+pL1[1]+" "+pL2[0]+","+pL2[1];
+			g("newLine"+lineId).points.value = newPoint; //对线条位置进行动态赋值
+			g("newLine"+lineId).style.zIndex = -10;
+						
+		}
+		
+		function lineStop(e){  //鼠标弹起停止函数，判断所画线条是否合法
+			
+			var e = window.event || e, targetE = e.srcElement || e.target;
+			if(targetE.nodeName=="TextBox"){ //当鼠标定位到文本框时使其捕获目标变成文本框所在那个矩形、菱形或圆
+				targetE = g(targetE.getAttribute("imgId"));
+			}
+			//移除鼠标绑定事件
+			removeEvent(canvas,"mouseup",lineStop);
+			removeEvent(canvas,"mousemove",lineMove);
+			if( (target.nodeName=="RoundRect" || target.nodeName=="Oval") && target.getAttribute("to") ){
+				alert("错误原因：\n\n此过程已经作为一次起始过程连线！");
+				canvas.removeChild(g("newLine"+lineId));
+				return false;
+			}
+			if( target.nodeName=="Shape" ){
+				var to = target.getAttribute("to");
+				if(to){
+					var len = to.split(",").length;
+					if(len==2){
+						alert("错误原因：\n\n此过程已经作为两次起始过程连线！");
+						canvas.removeChild(g("newLine"+lineId));
+						return false;	
+					}
+				}
+				
+			}
+			if(targetE.nodeName!="RoundRect"&&targetE.nodeName!="Shape"&&targetE.nodeName!="Oval"&&targetE.nodeName!="PolyLine"){
+				alert("错误原因：\n\n没有有效末点");
+				canvas.removeChild(g("newLine"+lineId));
+				return false;
+			}
+			if(targetE.getAttribute("from")){
+				alert("错误原因：\n\n目标过程只能有一次起始连线！");
+				canvas.removeChild(g("newLine"+lineId));
+				return false;
+			}
+			if(target.nodeName=="Oval"&&targetE.nodeName=="Oval"){
+				alert("错误原因：\n\n流程不符合逻辑！");
+				canvas.removeChild(g("newLine"+lineId));
+				return false;
+			}
+			var FP = VMLformatLine(g(target.id),g(targetE.id));//根据起始图形和目标图形重新计算线条位置
+			g("newLine"+lineId).style.zIndex = 10;
+			g("newLine"+lineId).points.value = FP; //重新赋值
+			g("newLine"+lineId).setAttribute("from",target.id);//设置线条源点ID
+			g("newLine"+lineId).setAttribute("to",targetE.id);//设置线条目的点ID
+			g("newLine"+lineId).setAttribute("point",FP)//保存线条位置信息
+			if(g(target.id).getAttribute("to")){ //设置线条目的节点的起始节点
+				g(target.id).setAttribute("to",g(target.id).getAttribute("to")+","+targetE.id);
+			}
+			else{
+				g(target.id).setAttribute("to",targetE.id);
+			}
+			g(targetE.id).setAttribute("from",target.id);//设置线条起始节点的目的节点
+			if(g(target.id).getAttribute("toLine")){//设置线条起始节点的目的线条
+				g(target.id).setAttribute("toLine",g(target.id).getAttribute("toLine")+","+"newLine"+lineId);
+			}
+			else{
+				g(target.id).setAttribute("toLine","newLine"+lineId);
+			}
+			g(targetE.id).setAttribute("fromLine","newLine"+lineId);//设置线条目的节点的起始线条
+			linePoine.push("newLine"+lineId);//将线条ID存入数组中
+			lineId++;
+			if(e.stopPropagation){
+				e.stopPropagation();
+			}else{
+				return false;	
+			}			
+		}
+		function lineDisplay(){ //鼠标按下函数
+			if(flag==0){
+			    pL1 = [e.x,e.y];	
+				canvas.innerHTML += shape["polyline"].replace("{id}","newLine"+lineId);
+				for (var i=0; i<linePoine.length; i++) { //插入新的图形元素后需对原先的线进行重画，所有线的数据保存在数组中
+					if(g(linePoine[i])) g(linePoine[i]).points.value = g(linePoine[i]).getAttribute("point");
+				}
+				addEvent(canvas,"mousemove",lineMove);
+				addEvent(canvas,"mouseup",lineStop);			
+			}
+		}
+		return lineDisplay();
+	} 
+	
+	 function judge(o){
+		if(o.nodeName=="DIV"&&o.id=="canvas"){
+			return false;
+		}
+		if(o.nodeName!="TextBox"&&o.nodeName!="Oval"&&o.nodeName!="RoundRect"&&o.nodeName!="PolyLine"&&o.nodeName!="Shape"){
+			return true;
+		}
+		return false;
+	} 
+	
+	//鼠标点击图形元素函数
+	    function init(e){
+	    	var e = window.event || e;
+	    	var oEvt=e.target || e.srcElement;
+	    	 if(judge(oEvt)){
+	    		changeflag = false;
+	    		return;
+	    	} 
+	    	changeflag = false;
+	    		if(targetId&&targetId!=""){
+	    			if(!g(targetId).getAttribute("judge")){
+	        			g(targetId).strokeColor="#000";
+	        			g(targetId).strokeWeight = 1;
+	        			if(g(targetId).getAttribute("cx")){
+	            			g(targetId).fillColor = "#fff";
+	            		}
+	    			}
+	    		}
+	    		if(oEvt.nodeName=="TextBox"){
+	    			changeflag = true;
+	    			oEvt = g(oEvt.getAttribute("imgId"));
+	    		}
+	    		
+	    		targetId = oEvt.id;
+	    		if(!g(targetId).getAttribute("judge")){
+	        		g(targetId).strokeColor="#f00";
+	        		g(targetId).strokeWeight = 1.3;
+	    		}
+	    		
+	    		if(oEvt.nodeName=="Oval"&&oEvt.getAttribute("cx")){
+	    			g(targetId).fillColor = "#f00";
+	    		}
+	    		
+	    		if(oEvt.nodeName=="PolyLine"){
+	    			changeflag = true;
+	    			if(g(oEvt.getAttribute("from")).getAttribute("type1")=="j"){
+	    				g("isline").style.display = "block";
+	    				g("ispro").style.display = "none";
+	    				g("ismain").style.display = "none";
+	    				bindLine(oEvt);
+	    			}
+	    			else{
+	    				g("ismain").style.display = "none";
+	    				g("ispro").style.display = "none";
+	    				g("isline").style.display = "none";
+	    			}
+	    			lineMove(oEvt);//线条拖动函数
+	    		}
+	    		else{
+	    			if(oEvt.nodeName=="RoundRect" || oEvt.nodeName=="Shape"){
+	    				changeflag = true;
+	    				g("ismain").style.display = "block";
+	    				g("ispro").style.display = "none";
+	    				g("isline").style.display = "none";
+	        			tip(oEvt);   
+	        			drag(oEvt);//圆、圆矩形、菱形拖动函数
+	        		}
+	    			else if(oEvt.nodeName=="Oval"){
+	    				changeflag = true;
+	    				g("ismain").style.display = "none";
+	    				g("ispro").style.display = "none";
+	    				g("isline").style.display = "none";
+	    				drag(oEvt);//圆、圆矩形、菱形拖动函数
+	    			}
+	    			else{
+	    				g("ismain").style.display = "block";
+	    				g("ispro").style.display = "none";
+	    				g("isline").style.display = "none";
+	    			}
+	    			
+	    		}
+				
+	    }
+	
+	//根据点击工具栏的图形画图
+	function selectImage(e){
+		var e = window.event || e, target = e.srcElement || e.target;
+		switch(image){
+		case "rect":	
+			leng++;
+			canvas.innerHTML += shape["rect"];
+			g("text").innerHTML = "过程";
+			g("text").setAttribute("imgId","proc"+leng);
+			g("text").setAttribute( "id","text"+leng );
+			addStyle( g("rect"),{"left":e.x+"px","top":e.y+"px" } );
+			g("rect").setAttribute("id","proc"+leng);
+			addNode( g("proc"+leng),
+					 {
+					   "type1":"u",
+					   "is_risk":0,
+					   "anticipate_day":0,
+					   "anticipate_type":1,
+					   "risk_desc":"",
+					   "station_function":"",
+					   "accept_name":"",
+					   "title":"过程",
+					   "to":"",
+					   "textId":"text"+leng,
+					   "lt":e.x,
+					   "tp":e.y
+					 });
+			for (var i=0; i<linePoine.length; i++) {//插入新的图形元素后需对原来的线条进行再赋值，由于VML中line和polyline特殊性引起的
+				if(g(linePoine[i])) g(linePoine[i]).points.value = g(linePoine[i]).getAttribute("point");
+			}
+			break;
+		case "line":
+			if( target.nodeName=="RoundRect" || target.nodeName=="Shape" ||target.nodeName=="Oval" ||target.nodeName=="TextBox"){
+				drawLine(e);
+			}
+			else{ 
+				alert("错误原因：\n\n起点末点必须是过程！");	
+				} 
+			break;
+		case "polygon":
+			leng++;
+			canvas.innerHTML += shape["polygon"];
+			g("text").innerHTML = "过程";
+			g("text").setAttribute("imgId","proc"+leng);
+			g("text").setAttribute( "id","text"+leng );
+			addStyle( g("rect"),{"left":e.x+"px","top":e.y+"px" } );
+			g("rect").setAttribute("id","proc"+leng);
+			addNode( g("proc"+leng),
+					 {
+					   "type1":"j",
+					   "is_risk":0,
+					   "anticipate_day":0,
+					   "anticipate_type":1,
+					   "risk_desc":"",
+					   "station_function":"",
+					   "accept_name":"",
+					   "title":"过程",
+					   "to":"",
+					   "textId":"text"+leng,
+					   "lt":e.x,
+					   "tp":e.y
+					 });
+			for (var i=0; i<linePoine.length; i++) { //插入新的图形元素后需对原来的线条进行再赋值，由于VML中line和polyline特殊性引起的
+				if(g(linePoine[i])) g(linePoine[i]).points.value = g(linePoine[i]).getAttribute("point");
+			}
+			
+			break;
+			default:break;
+		}
+				 
+	}
+	
+	//删除图形元素
+	function deletePro(id){
+		if(id==""){
+			return false;
+		}
+		else{
+		var pro = g(id);
+		switch(pro.nodeName){
+		case "RoundRect":
+			if( pro.getAttribute("from") || pro.getAttribute("to") ){ alert("有连线关联过程，请删除关联线，孤立过程！"); }
+			else{ 
+				canvas.removeChild(g(id));
+				targetId = "";
+			}
+			break;
+		case "Shape":
+			if( pro.getAttribute("from") || pro.getAttribute("to") ){ alert("有连线关联过程，请删除关联线，孤立过程！"); }
+			else{ 
+				canvas.removeChild(g(id));
+				targetId = "";
+			}
+			break;
+		case "Oval":
+			if(pro.getAttribute("cx")){
+				var pointArray = new Array,points = g(pro.getAttribute("lineID")).getAttribute("point").split(" ");
+				var circleIds = g(pro.getAttribute("lineID")).getAttribute("circleID").split(","),newCircleIds = new Array;
+			   for( var i=0,len=points.length;i<len;i++ ){
+				  var cp = points[i].split(",");
+				  pointArray.push([cp[0],cp[1]]);	
+			   }
+				var n = getcurPoint(g(pro.getAttribute("lineID")),[pro.getAttribute("cx"),pro.getAttribute("cy")]);
+				pointArray.splice(n,1);
+				g(pro.getAttribute("lineID")).points.value = pointArray.join(" ");
+				g(pro.getAttribute("lineID")).setAttribute("point",pointArray.join(" "));
+				
+				for(var j=0;j<circleIds.length;j++){
+					if(circleIds[j]!=id){
+						newCircleIds.push(circleIds[j]);
+					}
+				}
+				g(pro.getAttribute("lineID")).setAttribute("circleID",newCircleIds.join(","));
+				canvas.removeChild(g(id));
+				targetId = "";
+			}
+			else{
+				if( pro.getAttribute("from") || pro.getAttribute("to") ){ alert("有连线关联过程，请删除关联线，孤立过程！"); }
+				else{ 
+					canvas.removeChild(g(id));
+					targetId = "";
+				}
+			}			
+			break;
+		case "PolyLine":
+			var from = pro.getAttribute("from");
+			var to = pro.getAttribute("to");
+			if(g(from).getAttribute("type1")=="j"){
+				var newTo = g(from).getAttribute("to").replace(to,"").replace(",","");
+				var newToLine = g(from).getAttribute("toLine").replace(id,"").replace(",","");
+				if(newTo==""){
+					g(from).removeAttribute("to"); //移除线条起始节点的目的节点属性
+					g(from).removeAttribute("toLine"); //移除线条起始节点的目的线条属性
+				}
+				else{
+					g(from).setAttribute("to",newTo);//重新设定线条起始节点的目的节点属性
+					g(from).setAttribute("toLine",newToLine);//重新设定线条起始节点的目的线条属性
+				}		
+			}
+			else{
+				g(from).removeAttribute("to"); //移除线条起始节点的目的节点属性
+				g(from).removeAttribute("toLine"); //移除线条起始节点的目的线条属性
+			}
+			g(to).removeAttribute("from");//移除线条目的节点的起始节点属性
+			g(to).removeAttribute("fromLine");//移除线条目的节点的起始线条属性
+			if(pro.getAttribute("circleID")){
+				var circleArray = pro.getAttribute("circleID").split(",");
+				for(var i=0;i<circleArray.length;i++){
+					canvas.removeChild(g(circleArray[i]));
+				}
+			}
+			canvas.removeChild(g(id));//移除元素
+			//删除数组中线条的ID
+			for (var i=0; i<linePoine.length; i++) {
+				 if(linePoine[i]==id){
+					 linePoine.splice(i,1);
+					 break;
+				 }
+			}
+			targetId = "";
+			break;
+		default:break;
+			
+		}
+
+		g("ispro").style.display = "none";
+		g("isline").style.display = "none";			
+		}
+	}
+	
+	//退出编辑
+	function exit() {
+		if(confirm("确定要退出本次编辑吗？")) {
+			window.close();
+		}
+	}
+	//g(id)函数是document.getElementById(id)的封装
+	addEvent(document,"mousedown",init)
+	addEvent(canvas,"mousedown",selectImage);
+	//xml的生成
+	addEvent(g("xml"),"click",function(){getXml()});
+	addEvent(g("delete"),"click",function(){deletePro(targetId)});
+	moveTip( g("tool"),g("move") );
+	moveTip( g("argumentTool"),g("argumentTitle") );
+	//从父窗口获得xml值
+    var xml = window.opener.document.getElementById("inFlowInfo").value;
+	if(xml&&xml!="内部流程信息"){
+	   vmlXml(xml);		
+	}
+	else{
+		createXml();
+	}
+</script>
+</body>
+</html>

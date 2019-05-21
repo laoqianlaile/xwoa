@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+
+	<bean id="equipmentInfoDao" class="com.centit.oa.dao.EquipmentInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="equipmentUsingDao" class="com.centit.oa.dao.EquipmentUsingDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaTripPlanDao" class="com.centit.oa.dao.OaTripPlanDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="innermsgDao" class="com.centit.oa.dao.InnermsgDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="msgannexDao" class="com.centit.oa.dao.MsgannexDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userMailConfigDao" class="com.centit.oa.dao.UserMailConfigDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="innermsgRecipientDao" class="com.centit.oa.dao.InnermsgRecipientDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+
+	<bean id="addressbooksDao" class="com.centit.oa.dao.AddressbooksDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="addressBookRelectionDao" class="com.centit.oa.dao.AddressBookRelectionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaMeetApplyDao" class="com.centit.oa.dao.OaMeetApplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vmeetApplyListDao" class="com.centit.oa.dao.VMeetApplyListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaMeetinfoDao" class="com.centit.oa.dao.OaMeetinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaCommonTypeDao" class="com.centit.oa.dao.OaCommonTypeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaMeetMinutesDao" class="com.centit.oa.dao.OaMeetMinutesDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaInformationDao" class="com.centit.oa.dao.OaInformationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaInfoAttachmentDao" class="com.centit.oa.dao.OaInformationAttachmentDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaCarApplyDao" class="com.centit.oa.dao.OaCarApplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaCarinfoDao" class="com.centit.oa.dao.OaCarinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaDriverInfoDao" class="com.centit.oa.dao.OaDriverInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaAccidentRecordDao" class="com.centit.oa.dao.OaAccidentRecordDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaFeedbackDao" class="com.centit.oa.dao.OaFeedbackDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaTrafficRecordDao" class="com.centit.oa.dao.OaTrafficRecordDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaCostInfoDao" class="com.centit.oa.dao.OaCostInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaDriverBookDao" class="com.centit.oa.dao.OaDriverBookDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaScheduleDao" class="com.centit.oa.dao.OaScheduleDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaVideoInformationDao" class="com.centit.oa.dao.OaVideoInformationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaSuperviseDao" class="com.centit.oa.dao.OaSuperviseDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaScheduleResponseDao" class="com.centit.oa.dao.OaScheduleResponseDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaRemindInformationDao" class="com.centit.oa.dao.OaRemindInformationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaMeetroomApplyDao" class="com.centit.oa.dao.OaMeetroomApplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaLeaveMessageDao" class="com.centit.oa.dao.OaLeaveMessageDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaWorkLogDao" class="com.centit.oa.dao.OaWorkLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaOnlineItemDao" class="com.centit.oa.dao.OaOnlineItemDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaOnlineItemsDao" class="com.centit.oa.dao.OaOnlineItemsDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaSurveyDao" class="com.centit.oa.dao.OaSurveyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaSurveydetailDao" class="com.centit.oa.dao.OaSurveydetailDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaSurveyTypeDao" class="com.centit.oa.dao.OaSurveyTypeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaPowergroupDetailDao" class="com.centit.oa.dao.OaPowergroupDetailDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaPowerrolergroupDao" class="com.centit.oa.dao.OaPowerrolergroupDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaHelpinfoDao" class="com.centit.oa.dao.OaHelpinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaLeaveReplyDao" class="com.centit.oa.dao.OaLeaveReplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaBizBindInfoDao" class="com.centit.oa.dao.OaBizBindInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="voaBizBindInfoDao" class="com.centit.oa.dao.VoaBizBindInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaUserinfoDao" class="com.centit.oa.dao.OaUserinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="voaUnitIncomedocDao" class="com.centit.oa.dao.VoaUnitIncomedocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaUnitIncomedocDao" class="com.centit.oa.dao.OaUnitIncomedocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaAssetinformationDao" class="com.centit.oa.dao.OaAssetinformationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaAssetinformationBondDao" class="com.centit.oa.dao.OaAssetinformationBondDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaAssetinformationInlogDao" class="com.centit.oa.dao.OaAssetinformationInlogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaAssetinformationOutlogDao" class="com.centit.oa.dao.OaAssetinformationOutlogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vOptBaseListDao" class="com.centit.oa.dao.VOptBaseListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaSubvideoInformationDao" class="com.centit.oa.dao.OaSubvideoInformationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaArchiveDao" class="com.centit.oa.dao.OaArchiveDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="voaUnitArchiveDispatchdocDao" class="com.centit.oa.dao.VoaUnitArchiveDispatchdocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="voaUnitArchiveIncomedocDao" class="com.centit.oa.dao.VoaUnitArchiveIncomedocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaSmssendDao" class="com.centit.oa.dao.OaSmssendDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaSmssendLogDao" class="com.centit.oa.dao.OaSmssendLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaLeaveOverTimeDao" class="com.centit.oa.dao.OaLeaveOverTimeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaAttendanceDetailsDao" class="com.centit.oa.dao.OaAttendanceDetailsDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaServiceentranceDao" class="com.centit.oa.dao.OaServiceentranceDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="voaInformationDao" class="com.centit.oa.dao.VOaInformationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaOptPowerDefDao" class="com.centit.oa.dao.OaOptPowerDefDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ztreeDao" class="com.centit.oa.dao.ZtreeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="mailProfileDao" class="com.centit.mailclient.dao.MailProfileDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="mailInfoDao" class="com.centit.mailclient.dao.MailInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="mailAttachmentDao" class="com.centit.mailclient.dao.MailAttachmentDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="oaFilemanagerDao" class="com.centit.oa.dao.OaFilemanagerDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+
+
+	<bean id="optFileTransferSendDao" class="com.centit.oa.dao.OptFileTransferSendDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optFileTransferReceiveDao" class="com.centit.oa.dao.OptFileTransferReceiveDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optFilingCabinetsDao" class="com.centit.oa.dao.OptFilingCabinetsDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaConsumablesPartsDao" class="com.centit.oa.dao.OaConsumablesPartsDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaEquipmentpurchaseDao" class="com.centit.oa.dao.OaEquipmentpurchaseDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaKqnotificationDao" class="com.centit.oa.dao.OaKqnotificationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaKqreceptionDao" class="com.centit.oa.dao.OaKqreceptionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaKqvisitorgroupDao" class="com.centit.oa.dao.OaKqvisitorgroupDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaLeaveapplyDao" class="com.centit.oa.dao.OaLeaveapplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaLeavereportedDao" class="com.centit.oa.dao.OaLeavereportedDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaNetapplicationDao" class="com.centit.oa.dao.OaNetapplicationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaOfficesuppliesDao" class="com.centit.oa.dao.OaOfficesuppliesDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaInfosummaryDao" class="com.centit.oa.dao.OaInfosummaryDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaMeetingmaterialinfosDao" class="com.centit.oa.dao.OaMeetingmaterialinfosDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaMeetingmaterialDao" class="com.centit.oa.dao.OaMeetingmaterialDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="oaMeetingApplyDao" class="com.centit.oa.dao.OaMeetingApplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaBuffetapplyDao" class="com.centit.oa.dao.OaBuffetapplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaDuescollectioninfosDao" class="com.centit.oa.dao.OaDuescollectioninfosDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaDuescollectionDao" class="com.centit.oa.dao.OaDuescollectionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaSearchHistoryDao" class="com.centit.advancedsearch.dao.OaSearchHistoryDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="advancedSearchDao" class="com.centit.advancedsearch.dao.AdvancedSearchDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="oaSMSConfigDao" class="com.centit.oa.dao.OaSMSConfigDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaMeetingMaterialApplyDao" class="com.centit.oa.dao.VOaMeetingMaterialApplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="oaArrangeweekDao" class="com.centit.oa.dao.OaArrangeweekDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

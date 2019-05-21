@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-26 12:39:50 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.centit.oa.po.VOaMeetApplyList" table="V_OA_MEET_APPLY_LIST">
+        <id name="djid" type="java.lang.String">
+			<column name="DJID" length="50" />
+			<generator class="assigned" />
+		</id>
+		<property name="applyNo" type="java.lang.String">
+			<column name="APPLY_NO" length="40" />
+		</property>
+		<property name="title" type="java.lang.String">
+			<column name="TITLE" length="400" />
+		</property>
+		<property name="applytime" type="java.util.Date">
+			<column name="APPLYTIME" length="7" />
+		</property>
+		<property name="meetingNo" type="java.lang.String">
+			<column name="MEETING_NO" length="32" />
+		</property>
+		<property name="planBegTime" type="java.util.Date">
+			<column name="PLAN_BEG_TIME" length="7" />
+		</property>
+		<property name="planEndTime" type="java.util.Date">
+			<column name="PLAN_END_TIME" length="7" />
+		</property>
+		<property name="telephone" type="java.lang.String">
+			<column name="TELEPHONE" length="40" />
+		</property>
+		<property name="meetingPersionsNum" type="java.lang.Long">
+			<column name="MEETING_PERSIONS_NUM" precision="0" scale="0" />
+		</property>
+		<property name="state" type="java.lang.String">
+			<column name="STATE" length="2" />
+		</property>
+		<property name="usercode" type="java.lang.String">
+			<column name="USERCODE" length="8" />
+		</property>
+		<property name="unitcode" type="java.lang.String">
+			<column name="UNITCODE" length="6" />
+		</property>
+		<property name="opertime" type="java.util.Date">
+			<column name="OPERTIME" length="7" />
+		</property>
+		<property name="optid" type="java.lang.String">
+			<column name="OPTID" length="20" />
+		</property>
+		<property name="flowinstid" type="java.lang.Long">
+                <column name="FLOWINSTID" precision="0" scale="0" />
+            </property>
+            <property name="flowcode" type="java.lang.String">
+                <column name="FLOWCODE" length="8" />
+            </property>
+            <property name="transaffairname" type="java.lang.String">
+                <column name="TRANSAFFAIRNAME" length="200" />
+            </property>
+            <property name="bizstate" type="java.lang.String">
+                <column name="BIZSTATE" length="1" />
+            </property>
+            <property name="powerid" type="java.lang.String">
+                <column name="POWERID" length="100" />
+            </property>
+            <property name="powername" type="java.lang.String">
+                <column name="POWERNAME" length="200" />
+            </property>
+            <property name="solvestatus" type="java.lang.String">
+                <column name="SOLVESTATUS" length="4" />
+            </property>
+            <property name="solvetime" type="java.util.Date">
+                <column name="SOLVETIME" length="7" />
+            </property>
+            <property name="solvenote" type="java.lang.String">
+                <column name="SOLVENOTE" length="2000" />
+            </property>
+            <property name="acceptarchiveno" type="java.lang.String">
+                <column name="ACCEPTARCHIVENO" length="128" />
+            </property>
+            <property name="biztype" type="java.lang.String">
+                <column name="BIZTYPE" length="8" />
+            </property>
+            <property name="doBegTime" type="java.util.Date">
+			<column name="DO_BEG_TIME" length="7" />
+		</property>
+		<property name="doEndTime" type="java.util.Date">
+			<column name="DO_END_TIME" length="7" />
+		</property>
+		 <property name="depno" type="java.lang.String">
+                <column name="DEPNO" length="40" />
+          </property>
+          <property name="meetingName" type="java.lang.String">
+                <column name="MEETING_NAME" length="400" />
+          </property>
+    </class>
+</hibernate-mapping>

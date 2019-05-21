@@ -1,0 +1,12 @@
+<div class="line new">
+	<div class="name info">
+		<span class="check icon"></span>
+		<span class="icon folder cst1">&nbsp;</span> 
+		<input type="text" name="filename" value="新建文件夹" class="newfolder" />
+		<a title="确定" class="btn sure bst4" href="javascript:;">确定</a>
+		<a title="取消" class="btn cancel bst4" href="javascript:;">取消</a>
+	</div>
+	<div class="size info">-</div>
+	<div class="owner info">{username}</div>
+	<div class="time info">-</div>
+</div>

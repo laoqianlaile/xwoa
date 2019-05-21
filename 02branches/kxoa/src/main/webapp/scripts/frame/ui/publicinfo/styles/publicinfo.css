@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+.uploadify {
+	float:left;
+}
+
+/**
+	文件容器
+*/
+.file-container {min-width: 1000px;}
+.file-container form {margin:0}
+.file-container input.newfolder {vertical-align: middle; border: 1px solid #D2D2D2; background: white; height: 18px; width:200px; margin:0; height: 14px\9;}
+.file-container .public-window {width:100%;}
+.file-container .public-window a {text-decoration: none;}
+.file-container .line,.file-container .header  {padding:0 0 0 10px; height:36px; font-size: 14px; font-family:Microsoft YaHei!important;}
+.file-container .line.navigation {padding:10px; /* background: url(../images/tyun.jpg) no-repeat; */} 
+
+.file-container .line.path {height:28px; line-height:28px; border-top:1px solid #eee; padding:0 25px;} 
+.file-container .line.path .info {height:32px; line-height:32px; border:none;}
+.file-container .line.path .st {width: 130px;}
+.file-container .line.path .ed {width:65%;}
+.file-container .line.path .th {width: 150px; text-align: center; float:right; margin-right:50px;}
+.file-container .line.path a {color:#06c; cursor:pointer;}
+.file-container .line.path a.text {color:#999; cursor:default; text-decoration: none;}
+.file-container .line.path a.path {margin-left:5px; font-size: 13px;}
+.file-container .line.path .status {float:right; height:28px; line-height:28px; display:inline-block; text-align: center;}
+
+.file-container .line .info,.file-container .header .info { border-top:1px solid #eee;}
+.file-container .line.last .info{border-bottom:1px solid #eee;}
+
+.file-container .selected .info{background:#F2F7FF}
+.public-window .line:hover .info{background:#F0F8FD}
+.file-container .header .info.hover,.file-container .header .info:hover{background:#F0F8FD} 
+.file-container .header .info {cursor:pointer;}
+
+.file-container .line .info,.file-container .header .info  {float:left; line-height:36px;}
+.file-container .line .operation,.file-container .header .operation {width:99%; background:#F2F7FF}
+.file-container .line .name,.file-container .header .name {width:50%}
+.file-container .line .size,.file-container .header .size {width:16%}
+.file-container .line .owner,.file-container .header .owner{width:16%}
+.file-container .line .time,.file-container .header .time {width:17%}
+
+/**
+	下拉菜单
+*/
+.file-container .pull-down-menu {width:64px; position:absolute; padding:0; line-heigth:24px; text-align:center; background:#fff; border:1px solid #cfcfcf; box-shadow:0 2px 3px #cfcfcf; cursor:default; list-style:none; z-index: 99;}
+.file-container .pull-down-menu li {display: block; height: 24px!important;}
+.file-container .pull-down-menu a {color:#666; display:block; height:24px; line-height:24px; padding:0 5px; text-decoration: none;}
+.file-container .pull-down-menu a:hover {background:#F0F8FD;}
+.file-container .pull-down-menu a.disable:hover {background:#fff;}
+.file-container .pull-down-menu a.disable {color:#ddd;}
+/**
+	图标
+*/
+.file-container .icon {display:inline-block; position:relative; z-index:5; margin-right:10px;}
+
+.file-container .cst1 {cursor:pointer; width:26px; height:22px; line-height:22px; background:url(../images/sprite_list_icon.gif) no-repeat -416px -80px;}
+.file-container .icon.folder {background-position:0 0;}
+.file-container .icon.img {background-position:0 -80px;}
+.file-container .icon.visio {background-position:-32px -80px;}
+.file-container .icon.pdf {background-position:-64px -80px;}
+.file-container .icon.word {background-position:-96px -80px;}
+.file-container .icon.excel {background-position:-128px -80px;}
+.file-container .icon.txt {background-position:-160px -80px;}
+.file-container .icon.music {background-position:-192px -80px;}
+.file-container .icon.movie {background-position:-224px -80px;}
+.file-container .icon.ppt {background-position:-256px -80px;}
+.file-container .icon.apple {background-position:-288px -80px;}
+.file-container .icon.exe {background-position:-320px -80px;}
+.file-container .icon.zip {background-position:-352px -80px;}
+.file-container .icon.apk {background-position:-384px -80px;}
+
+/*公共文件*/
+.file-container .line.public .icon.folder {background-position:0 -24px;}
+.file-container .line.public .icon.img {background-position:0 -104px;}
+.file-container .line.public .icon.visio {background-position:-32px -104px;}
+.file-container .line.public .icon.pdf {background-position:-64px -104px;}
+.file-container .line.public .icon.word {background-position:-96px -104px;}
+.file-container .line.public .icon.excel {background-position:-128px -104px;}
+.file-container .line.public .icon.txt {background-position:-160px -104px;}
+.file-container .line.public .icon.music {background-position:-192px -104px;}
+.file-container .line.public .icon.movie {background-position:-224px -104px;}
+.file-container .line.public .icon.ppt {background-position:-256px -104px;}
+.file-container .line.public .icon.apple {background-position:-288px -104px;}
+.file-container .line.public .icon.exe {background-position:-320px -104px;}
+.file-container .line.public .icon.zip {background-position:-352px -104px;}
+.file-container .line.public .icon.apk {background-position:-384px -104px;}
+
+/*共享文件*/
+.file-container .line.share .icon.folder {background-position:0 -48px;}
+.file-container .line.share .icon.img {background-position:0 -128px;}
+.file-container .line.share .icon.visio {background-position:-32px -128px;}
+.file-container .line.share .icon.pdf {background-position:-64px -128px;}
+.file-container .line.share .icon.word {background-position:-96px -128px;}
+.file-container .line.share .icon.excel {background-position:-128px -128px;}
+.file-container .line.share .icon.txt {background-position:-160px -128px;}
+.file-container .line.share .icon.music {background-position:-192px -128px;}
+.file-container .line.share .icon.movie {background-position:-224px -128px;}
+.file-container .line.share .icon.ppt {background-position:-256px -128px;}
+.file-container .line.share .icon.apple {background-position:-288px -128px;}
+.file-container .line.share .icon.exe {background-position:-320px -128px;}
+.file-container .line.share .icon.zip {background-position:-352px -128px;}
+.file-container .line.share .icon.apk {background-position:-384px -128px;}
+
+.file-container .check {width:14px; height:14px; cursor:pointer; margin:0 10px 0 10px; background:url(../images/btn_icon.gif) no-repeat -113px 0;}
+.file-container .selected .icon.check {background-position:-113px -19px;}
+
+.file-container .sort {cursor:pointer; width:8px; height:4px; margin:0 0 0 5px; display:none;background:url(../images/btn_icon.gif) no-repeat}
+.file-container .sort.asc {display:inline-block; background-position:-46px -86px;}
+.file-container .sort.desc {display:inline-block; background-position:-46px -101px;}
+
+
+
+/**
+	按钮
+*/
+.file-container .btn{vertical-align: middle; position:relative; margin:0 0 0 10px; padding-left:9px; padding-right:7px; cursor:pointer; text-decoration:none; display:inline-block;background:url(btn3.png) center top;}
+
+.file-container .btn .icon {float:left; margin:0 5px 0 0; background: url(../images/btn_icon.gif?@=-1) no-repeat;}
+.file-container .btn .text {font-weight:100; /* display:inline-block; */ font-family:Microsoft YaHei!important;width:100%}
+
+.file-container .bst1 {height:30px; line-height:30px; background-position:0 -600px;}
+.file-container .bst1 .text {height:30px; line-height:30px; background-position:right -600px; color:#fff; }
+.file-container .bst1 .icon {width:20px; height:20px; top:5px;}
+.file-container .btn.upload .icon {background-position:-183px -281px;} 
+
+.file-container .bst2 {height:24px; line-height:24px; width:54px; padding-top:0px;}
+.file-container .bst2 .text {height:24px; line-height:24px; background-position:right -144px; color:white; font-weight: normal;}
+.file-container .bst2 .icon {width:18px; height:18px; top:2px;}
+.file-container .btn.download .icon {background-position:-159px -39px;} 
+.file-container .btn.download:hover .icon {background-position:-182px -39px;}
+.file-container .btn.delete .icon {background-position:-159px -131px;} 
+.file-container .btn.delete:hover .icon {background-position:-182px -131px;}
+.file-container .btn.add .icon {background-position:-160px -20px;} 
+.file-container .btn.add:hover .icon {background-position:-183px -20px;}
+
+.file-container .bst3 .text {padding-right:9px; padding-left:2px;}
+.file-container .btn.more .icon {background-position:-85px -113px; left:40px; position:absolute;} 
+
+.file-container .bst4 {text-indent:-999px; margin:0 0 0 2px; padding:0; width:22px; height:22px; background: url(../images/btn_icon.gif?@=-1) no-repeat;}
+.file-container .btn.sure {background-position:0 -512px;}
+.file-container .btn.cancel {background-position: -27px -512px;}
+ 

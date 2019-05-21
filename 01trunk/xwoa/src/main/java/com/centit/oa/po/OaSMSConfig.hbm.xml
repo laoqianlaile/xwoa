@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.centit.oa.po">
+	<class name="OaSMSConfig" table="C_SMS_config" >
+		<id name="smsid" type="java.lang.String">
+			<column name="smsid" length="64" />
+			<generator class="assigned" />
+		</id>
+		<property name="status" type="java.lang.String">
+			<column name="status"  />
+		</property>
+		
+		<property name="openOrClose" type="java.lang.String">
+			<column name="openOrClose"  />
+		</property>
+		<property name="operatorSource" type="java.lang.String">
+			<column name="operatorSource" />
+		</property>
+		<property name="gateway" type="java.lang.String">
+			<column name="gateway" />
+		</property>
+		<property name="username" type="java.lang.String">
+			<column name="username" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="password" />
+		</property>
+		<property name="port" type="java.lang.Long">
+			<column name="port" />
+		</property>
+		<property name="sendMSgMod" type="java.lang.String">
+			<column name="sendMSgMod" />
+		</property>
+		<property name="limitYesOrNo" type="java.lang.String">
+			<column name="limitYesOrNo" />
+		</property>
+	    <property name="limitNumber" type="java.lang.Long">
+			<column name="limitNumber"  />
+		</property>
+			<property name="remark" type="java.lang.String">
+			<column name="remark" />
+		</property>
+		
+		
+		<property name="settime" type="java.util.Date">
+			<column name="settime" length="7" />
+		</property>
+		
+		
+	
+		
+	</class>
+</hibernate-mapping>

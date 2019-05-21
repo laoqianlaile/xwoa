@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>工作流展示与绘画</title>
+<style type="text/css">
+* { margin:0; padding:0; font-size:12px; -moz-user-select:none; }
+li { list-style:none; }
+table { border-collapse:collapse; background:#fff; }
+table td { border:1px solid #ccc; }
+table td div { padding:4px; text-align:right; line-height:20px; }
+table td span { padding:4px; }
+table td label { padding-left:2px; }
+#tool { position:fixed; left:0; top:0; width:250px; height:24px; padding:6px 0 6px 6px; background:buttonface; BORDER-BOTTOM: gray 2px solid;BORDER-TOP: #eeeeee 2px solid;BORDER-LEFT: #eeeeee 2px solid; z-index:1; }
+#tool div { position:relative; z-index:10; float:left; height:16px; padding:4px; background:buttonface; margin-right:8px; }
+#tool div:hover { background:#888; }
+#tool img { cursor:pointer; }
+#argumentTool { position:fixed; left:0; top:40px; width:258px; z-index:1; }
+.argumentTitle {  cursor:move; padding:4px 0; height:20px; background:#ccc; line-height:20px; text-indent:10px; }
+.argumentContent { width:258px; }
+#tool .move { cursor:move; position:absolute; padding:0; margin:0; top:0; right:0; width:20px; height:36px; background-color:#777; }
+#c { float:left; width:100%; min-height:800px; }
+#ispro,#isline { display:none; }
+#canvas { width:100%; }
+#delete { margin-left:15px; }
+svg { min-height:1000px; }
+</style>
+</head>
+
+<body onselectstart="return false;">
+<div id="tool">
+    <div class="opt"><img id="rect" src="images/rect.png" title="点击画0矩形" /></div>
+    <div class="opt"><img id="line" src="images/polyline.png" title="点击画折线" /></div>
+    <div class="opt" id="cursor"><img id="default" src="images/default.png" title="点击操作【去除画图功能】" /></div>
+    <!--<div><img src="images/cricle.png" alt="点击画圆形" /></div>-->
+    <!--<div><img id="polygon" src="images/leng.png" alt="点击画菱形" /></div>-->
+    <div id="delete"><img src="images/delete.png" title="删除选中过程" /></div>
+    <div id="xml"><img src="images/save.png" title="保存校验" /></div>
+    <div id="close"><img src="images/cancel.png" title="关闭" /></div>
+    <!--<div id="save"><img src="images/save.png" alt="保存xml" /></div>-->
+    <div id="move" class="move"></div>
+</div>
+<div id="argumentTool">
+	<div id="argumentTitle" class="argumentTitle">属性工具栏</div>
+    <div id="argumentContent" class="argumentContent">
+    	<div id="ismain">
+	        <table width="100%" cellpadding="0" cellspacing="0">
+	        	<tr>
+	            	<td width="32%"><div>流程ID</div></td>
+	                <td width="67%"><span><input type="text" id="flow_id" value="" style="width:85%;" /></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>流程编码</div></td>
+	                <td><span><input type="text" id="flow_code" value="" style="width:85%;" /></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>流程标题</div></td>
+	                <td><span><input type="text" id="flow_title" value="" style="width:85%;" /></span></td>
+	            </tr>
+	        </table>
+        </div>
+    	<div id="ispro">
+	    	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	        	<tr>
+	            	<td><div>环节ID</div></td>
+	                <td><span id="f_id"></span></td>
+	            </tr>
+	        	<tr>
+	            	<td width="32%"><div>环节类型</div></td>
+	                <td width="67%"><span> <select id="f_type" style="width:86%;"><option value="U">用户参与</option><option value="J" selected>判断环节</option><option value="D">系统过程处理</option></select></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>环节名称</div></td>
+	                <td><span><input type="text" id="f_name" value="" style="width:85%;" /></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>是否风险点</div></td>
+	                <td><span><input id="isRisk" name="risk" type="radio" value="1"><label for="isRisk" style="padding-right:10px;">是</label><input id="noRisk" type="radio" name="risk" value="0" checked><label for="noRisk" >否</label></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>风险点描述</div></td>
+	                <td><span><textarea id="risk_desc" style="height:40px; width:85%;margin-top:4px;padding:3px 0 3px 3px;"></textarea></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>办理人员</div></td>
+	                <td><span><textarea id="f_user" style="height:40px; width:85%;margin-top:4px;padding:3px 0 3px 3px;"></textarea></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>岗位职责</div></td>
+	                <td><span><textarea id="station_function" style="height:40px; width:85%;margin-top:4px;padding:3px 0 3px 3px;"></textarea></span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>环节办理时限</div></td>
+	                <td><span><input type="text" id="anticipate_day" value="" style="width:40px;text-align:center;" />&nbsp;(请填写数字)</span></td>
+	            </tr>
+	            <tr>
+	            	<td><div>办理时限单位</div></td><!--<input type="text" id="anticipate_type" value="" style="width:20px;text-align:center;margin:4px 0;" />-->
+	                <td><span><select id="anticipate_type" style="width:86%;"><option value="4">小时</option><option value="0">天</option><option value="1">工作日</option><option value="2">月</option><option value="3">年</option></select></span></td>
+	            </tr>
+	        </table>
+        </div>
+        <div id="isline">
+	        <table width="100%" cellpadding="0" cellspacing="0">
+	        	<tr>
+	            	<td width="32%"><div>判断环节连线</div></td>
+	                <td width="67%"><span><input id="isJudgeLine" name="judgeLine" type="radio" value="1"><label for="isJudgeLine" style="padding-right:10px;">判断真</label><input id="noJudgeLine" type="radio" name="judgeLine" value="0"><label for="noJudgeLine" >判断假</label></span></td>
+	            </tr>
+	        </table>
+        </div>
+    </div>
+</div>
+<div id="canvas"></div>
+
+<script type="text/javascript" src="svg.js"></script>
+<script type="text/javascript" src="drag.js"></script>
+<script type="text/javascript" src="moveTip.js"></script>
+<script type="text/javascript" src="moveCircle.js"></script>
+<script type="text/javascript" src="addPointMove.js"></script>
+<script type="text/javascript">
+	function nodeValue(o,nodeName){
+		if(o.getElementsByTagName(nodeName)[0]){
+			if(o.getElementsByTagName(nodeName)[0].textContent){
+				return o.getElementsByTagName(nodeName)[0].textContent;
+			}else{
+				return o.getElementsByTagName(nodeName)[0].text;	
+			}
+		}
+	}
+
+	function attrValue(o,nodeName,attrName){
+		return o.getElementsByTagName(nodeName)[0].getAttribute(attrName);	
+	}
+	
+	function setValue(o,content){;
+		if(o.text!=undefined){
+			o.text = content;
+		}else{
+			o.textContent = content;	
+		}
+	}
+	
+	function getPoint(pro){
+		var x,y,w,h,left,right,top,bottom,pointArray = new Array, points;
+		if(pro.type=="rect"){
+			x = pro.x(),y=pro.y();
+			w = pro.attr("width");
+			h = pro.attr("height");
+			left = [x,y+h/2];
+			right = [x+w,y+h/2];
+			top = [x+w/2,y];
+			bottom = [x+w/2,y+h];
+		}else if(pro.type=="polygon"){
+			points = pro.attr("points").split(" ");
+			
+			for( var i=0,len=points.length;i<len;i++ ){
+				var cp = points[i].split(",");
+				pointArray.push([cp[0],cp[1]]);	
+			}
+			top = pointArray[2];
+			right = pointArray[1];
+			bottom = pointArray[0];
+			left = pointArray[3];
+		}else{
+			x = pro.x(),y=pro.y();
+			w = h = parseInt(pro.attr("rx"))*2;
+			left = [x,y+h/2];
+			right = [x+w,y+h/2];
+			top = [x+w/2,y];
+			bottom = [x+w/2,y+h];
+		}
+		return {L:left,T:top,R:right,B:bottom};
+	}
+	
+	function getEndPoint(pro){
+		var x,y,w,h,left,right,top,bottom,pointArray = new Array, points;
+		if(pro.type=="rect"){
+			x = pro.x(),y=pro.y(),
+			w = pro.attr("width"),
+			h = pro.attr("height"),
+			left = [x-11,y+h/2],
+			right = [x+w+11,y+h/2],
+			top = [x+w/2,y-11],
+			bottom = [x+w/2,y+h+11];
+		}else if( pro.type=="polygon" ){
+			points = pro.attr("points").split(" ");
+			
+			for( var i=0,len=points.length;i<len;i++ ){
+				var cp = points[i].split(",");
+				pointArray.push([cp[0],cp[1]]);	
+			}
+			top = pointArray[2];
+			right = pointArray[1];
+			bottom = pointArray[0];
+			left = pointArray[3];
+		}else{
+			x = pro.x(),y=pro.y();
+			w = h = parseInt(pro.attr("rx"))*2;
+			left = [x-11,y+h/2],
+			right = [x+w+11,y+h/2],
+			top = [x+w/2,y-11],
+			bottom = [x+w/2,y+h+11];	
+		}
+		return {L:left,T:top,R:right,B:bottom};
+	}
+	
+	//矩形中心点
+	function getRectCenter(o){
+		var x,y,w,h;
+		x = o.x();
+		y = o.y();
+		w = parseInt(o.attr("width"));
+		h = parseInt(o.attr("height"));
+		return {x:x+(w/2),y:y+(h/2)};
+	}
+	
+	//处理字串方法
+	String.prototype.trim = function(){
+		return this.replace(/(^\s*)|(\s*$)/g,"");	
+	}
+	//截取多余的字串
+	function dealStr(str,length){
+		if(!length) var length = 5;
+		if(str.length==0){ return ""; }
+		else{
+			if(str.trim().length>length){
+				return str.substr(0,length)+"...";
+			}else{
+				return 	str;
+			}
+		}
+	}
+	
+	// 画菱形的4个点
+	function drawPolygon(point){
+		var p = new Array;
+		p[0] = [point[0],point[1]+25];
+		p[1] = [point[0]+50,point[1]];
+		p[2] = [point[0],point[1]-25];
+		p[3] = [point[0]-50,point[1]];
+		return p.join(" ");
+	}
+	
+	//使线的末点坐标和鼠标的末点坐标不重合，便于获取鼠标按在某个过程上，以便获取过程的一些参数
+	function p(x1,y1,x2,y2){
+		if( x1<x2 ){
+			x2 = x2-1;
+		}else if(x1>x2){
+			x2 = x2+1;
+		}
+		if( y1<y2 ){
+			y2 = y2-1;
+		}else if(y1>y2){
+			y2 = y2+1;
+		}
+		return {x:x2,y:y2};
+	}
+	
+	//格式化线的位置 此方法适合于只有两个点的直线，如果是多点就不合适
+	function formatLine(pocBegin,pocEnd){
+		var F1 = getPoint(pocBegin),
+			F2 = getEndPoint(pocEnd),
+			w = 100,
+			h = 50,
+			p1,p2,x1,x2,y1,y2;
+		
+		if( pocBegin.type=="rect" || pocBegin.type=="ellipse" ){
+			x1 = pocBegin.x();
+			y1 = pocBegin.y();
+		}else if( pocBegin.type=="polygon" ){
+			x1 = parseInt(pocBegin.attr("getX"))-50;
+			y1 = parseInt(pocBegin.attr("getY"))-25;
+		}
+		
+		if( pocEnd.type=="rect" || pocEnd.type=="ellipse" ){
+			x2 = pocEnd.x();
+			y2 = pocEnd.y();
+		}else if( pocEnd.type=="polygon" ){
+			x2 = parseInt(pocEnd.attr("getX"))-50;
+			y2 = parseInt(pocEnd.attr("getY"))-25;
+		}
+			
+		if(x1+w+50<x2){
+			if(y1+h+50<y2){
+				p1 = F1.R;
+				p2 = F2.T;
+			}else if(y1-h-50>y2){
+				p1 = F1.R;
+				p2 = F2.B;
+			}else{
+				p1 = F1.R;
+				p2 = F2.L;
+			}
+		}else if(x1-w-50>x2){
+			if(y1+h+50<y2){
+				p1 = F1.L;
+				p2 = F2.T;
+			}else if(y1-h-50>y2){
+				p1 = F1.L;
+				p2 = F2.B;
+			}else{
+				p1 = F1.L;
+				p2 = F2.R;
+			}
+		}else{
+			if(y1+h<y2){
+				p1 = F1.B;
+				p2 = F2.T;
+			}else if(y1-h>y2){
+				p1 = F1.T;
+				p2 = F2.B;
+			}
+		}
+		return {p1:p1,p2:p2};
+	}
+	
+	//折线工具 添加节点 
+	function addPolylinePoint(line,newPoint){
+		var pointArray = new Array, points = line.getAttribute("points").split(" "),
+			flagX,flagY,newPosition,extraPoint,newPointArray=new Array;
+		
+		for( var i=0,len=points.length;i<len;i++ ){
+			var cp = points[i].split(",");
+			pointArray.push([cp[0],cp[1]]);	
+		}
+		
+		for( var j=0,jLen=pointArray.length;j<jLen-1;j++ ){
+			flagX = (( newPoint[0]>=pointArray[j][0] && newPoint[0]<=pointArray[j+1][0] ) || ( newPoint[0]<=pointArray[j][0] && newPoint[0]>=pointArray[j+1][0] ) );
+			flagY = (( newPoint[1]>=pointArray[j][1] && newPoint[1]<=pointArray[j+1][1] ) || ( newPoint[1]<=pointArray[j][1] && newPoint[1]>=pointArray[j+1][1] ) );
+			if( flagX && flagY ){
+				newPosition=j+1;
+				break;
+			}
+		}
+		
+		for( var h=0,hLen=pointArray.length;h<hLen;h++ ){
+			if(h==newPosition) newPointArray.push(newPoint[0]+","+newPoint[1]);
+			newPointArray.push(pointArray[h][0]+","+pointArray[h][1]);
+		}
+		
+		line.setAttribute("points",newPointArray.join(" "));
+		return newPosition;
+		
+	}
+	
+	//拖动某一节点变化位置 n为变化的第几个节点【重要】
+	function changePolylinePoint(line,point,n){
+		var pointArray = new Array, points = line.getAttribute("points").split(" ");
+		
+		for( var i=0,len=points.length;i<len;i++ ){
+			var cp = points[i].split(",");
+			pointArray.push([cp[0],cp[1]]);	
+		}
+		
+		pointArray[n]=point[0]+","+point[1];
+		line.setAttribute("points",pointArray.join(" "));
+		line.removeAttribute("marker-end");
+	}
+	
+	//删除线上指定节点
+	function deletePoint(line,point,pointID){
+		var n = getcurPoint(line,point),
+			pointArray = new Array,
+			points = line.getAttribute("points").split(" "),
+			cricleID = line.getAttribute("cricleID").split(","),
+			newCricleID = new Array;
+			
+		for( var i=0,len=points.length;i<len;i++ ){
+			var cp = points[i].split(",");
+			pointArray.push([cp[0],cp[1]]);	
+		}
+		
+		for( var j=0,jLen=cricleID.length;j<jLen;j++ ){
+			if( cricleID[j] != pointID ){
+				newCricleID.push(cricleID[j]);		
+			}
+		}
+		
+		pointArray.splice(n,1);
+		line.setAttribute("points",pointArray.join(" "));
+		 if(navigator.userAgent.indexOf("Mozilla")>-1){
+			line.removeAttribute("marker-end");
+		}		
+		line.setAttribute("cricleID",newCricleID.join(","));
+	}
+	
+	//删除选中添加的节点
+	function deleteP(line,point){
+		var pointArray = new Array,
+			points = line.getAttribute("points").split(" ");
+			
+		for( var i=0,len=points.length;i<len;i++ ){
+			var cp = points[i].split(",");
+			pointArray.push([cp[0],cp[1]]);	
+		}
+		for(var h=0,hLen=pointArray.length;h<hLen;h++ ){
+			if(Math.abs(point[0]-pointArray[h][0])<5&&Math.abs(point[1]-pointArray[h][1])<5){
+				var circle = gCircle.circle(8).cx(pointArray[h][0]).cy(pointArray[h][1]).stroke({color:"#000"}).fill("#fff").attr({"lineID":line.getAttribute("id")});	
+				if(line.getAttribute("cricleID")){
+					var cricleID = line.getAttribute("cricleID");
+					line.setAttribute("cricleID",cricleID+","+circle.attr("id"));
+				}else{
+					line.setAttribute("cricleID",circle.attr("id"));
+				}
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	//得到上一方法的 n
+	function getcurPoint(line,point){
+		var pointArray = new Array, points = line.getAttribute("points").split(" ");
+		
+		for( var i=0,len=points.length;i<len;i++ ){
+			var cp = points[i].split(",");
+			pointArray.push([cp[0],cp[1]]);	
+		}
+		
+		for( var h=0,hLen=pointArray.length;h<hLen;h++ ){
+			if( Math.abs(parseInt(pointArray[h][0])-parseInt(point[0]))<2 && Math.abs(parseInt(pointArray[h][1])-parseInt(point[1]))<2  ){
+				return h;
+				break;
+			}
+		}
+	}
+	
+	//初始化svg 和一些全局参数
+	if (SVG.supported) {
+		var c = SVG("canvas"),
+		    gLine = c.group(),
+			gCircle = c.group(),
+			gText = c.group(),
+			gShape = c.group(),
+			marker = c.marker(),
+			markerRed = c.marker(),
+			markerBlue = c.marker(),
+			markerYellow = c.marker();
+		var o_filter = document.createElementNS(SVG.ns, "filter");
+		var o_feOffset = document.createElementNS(SVG.ns, "feOffset");
+		var o_feGaussianBlur = document.createElementNS(SVG.ns, "feGaussianBlur");
+		var o_feBlend = document.createElementNS(SVG.ns, "feBlend");
+		o_feOffset.setAttribute("result","offOut");
+		o_feOffset.setAttribute("in","SourceAlpha");
+		o_feOffset.setAttribute("dx",6);
+		o_feOffset.setAttribute("dy",6);
+		o_feGaussianBlur.setAttribute("result","blurOut");
+		o_feGaussianBlur.setAttribute("in","offOut");
+		o_feGaussianBlur.setAttribute("stdDeviation",4);
+		o_feBlend.setAttribute("in","SourceGraphic");
+		o_feBlend.setAttribute("in2","blurOut");
+		o_feBlend.setAttribute("mode","normal");
+		o_filter.setAttribute("x",0);
+		o_filter.setAttribute("y",0);
+		o_filter.setAttribute("width","200%");
+		o_filter.setAttribute("height","200%");
+		o_filter.setAttribute("id","filter");
+		o_filter.appendChild(o_feOffset);
+		o_filter.appendChild(o_feGaussianBlur);
+		o_filter.appendChild(o_feBlend);
+		g("s1").appendChild(o_filter);	
+		marker.attr({"viewBox":"0 0 8 8","refX":0,"refY":4,"markerUnits":"strokeWidth","markerWidth":5,"markerHeight":5,"orient":"auto"});
+		marker.path().attr({"d":"M 0 0 L 7 4 L 0 7 z"}).fill("#000");
+		
+		markerRed.attr({"viewBox":"0 0 8 8","refX":0,"refY":4,"markerUnits":"strokeWidth","markerWidth":5,"markerHeight":5,"orient":"auto"});
+		markerRed.path().attr({"d":"M 0 0 L 7 4 L 0 7 z"}).fill("#ff0000");
+		
+		markerBlue.attr({"viewBox":"0 0 8 8","refX":0,"refY":4,"markerUnits":"strokeWidth","markerWidth":5,"markerHeight":5,"orient":"auto"});
+		markerBlue.path().attr({"d":"M 0 0 L 7 4 L 0 7 z"}).fill("blue");
+		
+		markerYellow.attr({"viewBox":"0 0 8 8","refX":0,"refY":4,"markerUnits":"strokeWidth","markerWidth":5,"markerHeight":5,"orient":"auto"});
+		markerYellow.path().attr({"d":"M 0 0 L 7 4 L 0 7 z"}).fill("#999");
+		
+		
+	}
+	
+	var canvas = g("canvas"),o,flag=1,linePoint,image="default",selectTag,changeflag = false;
+	
+	//画线工具
+	function drawLine(e){
+		var e = window.event || e, target = e.srcElement || e.target, pL1,p1,targetEnd;
+			
+		function lineMove(e){
+			var e = window.event || e;
+			var pL2 = [e.clientX-canvas.offsetLeft,e.clientY-canvas.offsetTop],
+				newPoint = p( pL1[0],pL1[1],pL2[0],pL2[1] );
+			pl.attr({points:pL1[0]+","+pL1[1]+","+newPoint.x+","+newPoint.y});
+			g(pl.attr("id")).removeAttribute("marker-end");
+		}
+		
+		function lineStop(e){
+			var e = window.event || e, targetE = e.srcElement || e.target;
+			
+			removeEvent(document,"mouseup",lineStop);
+			removeEvent(document,"mousemove",lineMove);
+			
+			if( (target.nodeName=="rect" || target.nodeName=="ellipse") && target.getAttribute("from") ){
+				alert("错误原因：\n\n此过程已经作为一次起始过程连线！");
+				pl.remove();
+				pl=null;
+				return false;
+			}
+			
+			if( target.nodeName=="polygon" ){
+				var from = target.getAttribute("from");
+				if(from){
+					var len = from.split(",").length;
+					g("move").innerHTML = len;
+					if(len>=2){
+						alert("错误原因：\n\n此过程已经作为两次起始过程连线！");
+						pl.remove();
+						pl=null;
+						return false;	
+					}
+				}
+				
+			}
+			
+			if(target.nodeName=="ellipse"&&target.getAttribute("name")=="end"){
+				alert("错误原因：\n\n结束过程不可以作为起始过程！");
+				pl.remove();
+				pl=null;
+				return false;
+			}
+			
+			if(targetE.nodeName=="ellipse"&&targetE.getAttribute("name")=="begin"){
+				alert("错误原因：\n\n开始过程不可以作为回流过程！");
+				pl.remove();
+				pl=null;
+				return false;
+			}
+			
+			if( target.nodeName=="ellipse" && targetE.nodeName=="ellipse"&&target.getAttribute("name") ){
+				alert("错误原因：\n\n流程不符合逻辑！");
+				pl.remove();
+				pl=null;
+				return false;
+			}
+			
+			if( (targetE.nodeName!="rect" && targetE.nodeName!="ellipse" && targetE.nodeName!="polygon" ) || targetE.id == target.id ){
+				alert("错误原因：\n\n末点必须是过程！\n起末不能是同一个过程！");
+				pl.remove();
+				pl=null;
+				return false;
+			}
+			
+			if(SVG.get(target.id).attr("from")){
+				SVG.get(target.id).attr({"from":SVG.get(target.id).attr("from")+','+pl.attr("id")});
+			}else{
+				SVG.get(target.id).attr({"from":pl.attr("id")});
+			}
+			if(SVG.get(targetE.id).attr("to")){
+				SVG.get(targetE.id).attr({"to":SVG.get(targetE.id).attr("to")+','+pl.attr("id")});
+			}else{
+				SVG.get(targetE.id).attr({"to":pl.attr("id")});
+			}
+			
+			var FP = formatLine(SVG.get(target.id),SVG.get(targetE.id));
+			if(FP["p1"]){
+			    pl.attr({points:FP["p1"][0]+","+FP["p1"][1]+" "+FP["p2"][0]+","+FP["p2"][1],"from":target.id,"to":targetE.id});				
+			}
+			g(pl.attr("id")).setAttribute("marker-end","url(#"+marker.attr("id")+")");
+			SVG.get(targetE.id).attr({"line":pl.id});
+			//image="default";
+			//flag=1;
+			
+			if(e.stopPropagation){
+				e.stopPropagation();
+			}else{
+				return false;	
+			}
+			
+		}
+		
+		function lineDisplay(){
+			if( flag==0 ){
+				pL1 = [e.clientX-canvas.offsetLeft,e.clientY-canvas.offsetTop];	
+				pl = gLine.polyline(0,0,0,0).stroke({ color:"#000",width: 2 }).fill("#fff").attr({'transform':"","marker-end":"url(#"+marker.attr("id")+")"});
+				addEvent(document,"mousemove",lineMove);
+				addEvent(document,"mouseup",lineStop);
+			}
+		}
+		return lineDisplay();
+	}
+	
+	//选择所画图形
+	function selectImage(e){
+		var e = window.event || e, target = e.srcElement || e.target;
+		
+		switch(image){
+			case "rect":
+				if( target.nodeName == "svg" ){
+					var rect = gShape.rect(100,50).attr({rx:6,ry:6,"type":"U","is_risk":0,"filter":"url(#filter)","anticipate_day":0,"anticipate_type":1,"risk_desc":"","station_function":"","accept_name":""}).stroke({color:"#000",width:2}).fill("#fff").style({"fill-opacity":0}).x(e.clientX-canvas.offsetLeft-50).y(e.clientY-canvas.offsetTop-25);
+					var text = gText.text("过程").x(rect.x()+5).y(rect.y()+32).attr({dx:rect.x()+50}).font({family:"Arial",size:14,"text-anchor":"middle"});
+					rect.attr({"textID":text.attr("id"),"title":"过程","name":"proc"});
+					//image = "default";
+				}
+				break;
+				
+			case "line":
+				if( target.nodeName=="rect" || target.nodeName=="ellipse" || target.nodeName=="polygon" ){
+					addEvent(target,"mousedown",drawLine);
+				}
+				else{ alert("错误原因：\n\n起点末点必须是过程！");	}
+				break;
+             /* 			
+			case "polygon":
+				if( target.nodeName == "svg" ){
+					var pp = drawPolygon([e.clientX-canvas.offsetLeft,e.clientY-canvas.offsetTop]);
+					var polygon = gShape.polygon(pp).fill("#fff").stroke({color:"#000",width:2}).style({"fill-opacity":0}).attr({'transform':"",getX:e.clientX-canvas.offsetLeft,getY:e.clientY-canvas.offsetTop,"type":"J","is_risk":0,"anticipate_day":0,"anticipate_type":1,"risk_desc":""});
+					var pText = gText.text("过程").x(e.clientX-canvas.offsetLeft).y(e.clientY-canvas.offsetTop+3).attr({dx:e.clientX-canvas.offsetLeft}).font({family:"Arial",size:14,"text-anchor":"middle"});
+					polygon.attr({"textID":pText.attr("id"),"title":"过程","name":"proc"});
+					//image = "default";
+				}
+				break; */
+			
+			default:break;
+		}	
+		
+		
+	}
+	//初始化
+	function init(e){
+		var e = window.event || e, target = e.srcElement || e.target;
+			
+		if( (target.nodeName == "ellipse" && target.getAttribute("type")) || target.nodeName=="polygon" ){
+			changeflag = true;
+			if(g(o)){
+				if( g(o).nodeName=="polyline" && g(o).getAttribute("judgeLine") ){}
+				else if( g(o).nodeName=="ellipse" && !g(o).getAttribute("type") ){
+					if(g(g(o).getAttribute("lineID")).getAttribute("judgeLine")){}
+					SVG.get(o).stroke({color:"#000"}).fill("#fff");
+				}
+				else{
+					SVG.get(o).stroke({color:"#000"}).fill("#fff");
+					if(g(o).nodeName=="polyline"){ 
+						SVG.get(o).attr({"marker-end":"url(#"+marker.attr("id")+")"}); 
+					}
+					
+					if(g(o).nodeName=="ellipse" && !g(o).getAttribute("type")){
+						SVG.get( SVG.get(o).attr("lineID") ).stroke({color:"#000"}).attr({"marker-end":"url(#"+marker.attr("id")+")"}); 
+					}
+				}
+			}
+			SVG.get(target.id).stroke({color:"#ff0000"});
+			o = target.id;
+			
+			if(target.nodeName=="polygon"){
+				g("ispro").style.display = "block";	
+				g("ismain").style.display = "none";
+				bindToolBar();
+			}else{
+				if(target.getAttribute("name")=="begin"){
+					g("ismain").style.display = "block";	
+				}else{
+					g("ismain").style.display = "none";	
+				}
+				g("ispro").style.display = "none";
+			}
+			g("isline").style.display = "none";
+			
+			moveCircle(g(o));
+		}
+		
+		else if(target.nodeName == "rect"){
+			changeflag = true;
+			if(g(o)){
+				if( g(o).nodeName=="polyline" && g(o).getAttribute("judgeLine") ){}
+				else if( g(o).nodeName=="ellipse" && !g(o).getAttribute("type") ){
+					if(g(g(o).getAttribute("lineID")).getAttribute("judgeLine")){}
+					SVG.get(o).stroke({color:"#000"}).fill("#fff");
+				}
+				else{
+					SVG.get(o).stroke({color:"#000"}).fill("#fff");
+					if(g(o).nodeName=="polyline"){ SVG.get(o).attr({"marker-end":"url(#"+marker.attr("id")+")"}); }
+					if(g(o).nodeName=="ellipse" && !g(o).getAttribute("type")){ 
+						SVG.get( SVG.get(o).attr("lineID") ).stroke({color:"#000"}).attr({"marker-end":"url(#"+marker.attr("id")+")"}); 
+					}
+				}
+			}
+			
+			SVG.get(target.id).stroke({color:"#ff0000"});
+			o = target.id;
+			
+			g("ispro").style.display = "block";
+			g("isline").style.display = "none";
+			g("ismain").style.display = "none";
+			bindToolBar();
+			
+			//移动
+			drag(g(o));
+		}
+		else if( target.nodeName == "svg" ){
+			changeflag = false;
+			if(g(o)){
+				if( g(o).nodeName=="polyline" && g(o).getAttribute("judgeLine") ){}
+				else if( g(o).nodeName=="ellipse" && !g(o).getAttribute("type") ){
+					if(g(g(o).getAttribute("lineID")).getAttribute("judgeLine")){}
+					SVG.get(o).stroke({color:"#000"}).fill("#fff");
+				}
+				else{
+					SVG.get(o).stroke({color:"#000"}).fill("#fff");
+					if(g(o).nodeName=="polyline"){ SVG.get(o).attr({"marker-end":"url(#"+marker.attr("id")+")"}); }
+					if(g(o).nodeName=="ellipse" && !g(o).getAttribute("type")){ 
+						SVG.get( SVG.get(o).attr("lineID") ).stroke({color:"#000"}).attr({"marker-end":"url(#"+marker.attr("id")+")"}); 
+					}
+				}
+			}
+			
+			g("ismain").style.display = "block";	
+			g("ispro").style.display = "none";
+			g("isline").style.display = "none";
+		}
+		
+		else if( (target.nodeName == "polyline" || target.nodeName == "ellipse") && image != "line" && !target.getAttribute("type")){
+			changeflag = true;
+			g("ispro").style.display = "none";
+			g("ismain").style.display = "none";
+			if(target.nodeName == "polyline"){
+	            if( g(target.getAttribute("from")).nodeName == "polygon" ){
+				   g("isline").style.display = "block";				
+			     }				
+			}
+			if(g(o)){
+				
+				if( g(o).nodeName=="polyline" && g(o).getAttribute("judgeLine") ){}
+				else if( g(o).nodeName=="ellipse" && !g(o).getAttribute("type") ){
+					if(g(g(o).getAttribute("lineID")).getAttribute("judgeLine")){}
+					SVG.get(o).stroke({color:"#000"}).fill("#fff");
+				}
+				else{
+					SVG.get(o).stroke({color:"#000"}).fill("#fff");
+					if(g(o).nodeName=="polyline"){ 
+						SVG.get(o).attr({"marker-end":"url(#"+marker.attr("id")+")"}); 
+					}
+					if(g(o).nodeName=="ellipse" && !g(o).getAttribute("type")){ 
+						SVG.get( SVG.get(o).attr("lineID") ).stroke({color:"#000"}).attr({"marker-end":"url(#"+marker.attr("id")+")"});
+					}
+				}
+			}
+			
+			o = target.id;
+			if( g(o).nodeName=="polyline" && g(o).getAttribute("judgeLine") ){}
+			else {SVG.get(o).stroke({color:"#ff0000"});}
+			
+			if(target.nodeName == "ellipse" ){
+				
+				SVG.get(o).fill("#ff0000");
+				if( g(o).nodeName=="polyline" && g(o).getAttribute("judgeLine") ){}
+				else if( g(o).nodeName=="ellipse" && !g(o).getAttribute("type") ){
+					if(g(g(o).getAttribute("lineID")).getAttribute("judgeLine")){}
+				}
+				else{
+					
+					SVG.get( SVG.get(o).attr("lineID") ).stroke({color:"#ff0000"}).attr({"marker-end":"url(#"+markerRed.attr("id")+")"});
+				}
+				
+				if( g(SVG.get( SVG.get(o).attr("lineID") ).attr("from")).nodeName=="polygon" ){ g("isline").style.display = "block"; }
+				
+				drag(g(o));	
+			}else{
+				var lineP=g(o).getAttribute("points").split(",");
+				if( g(o).nodeName=="polyline" && g(o).getAttribute("judgeLine") ){}
+				else {
+					SVG.get(o).attr({"marker-end":"url(#"+markerRed.attr("id")+")"});
+				}
+				addPointMove(g(o));
+				//var nPoint = addPolylinePoint(g(o),[e.clientX-canvas.offsetLeft,e.clientY-canvas.offsetTop]);
+				
+				/*var circle = gCircle.circle(8).cx(e.clientX-canvas.offsetLeft).cy(e.clientY-canvas.offsetTop).stroke({color:"#000"}).fill("#fff").attr({"lineID":o});
+				
+				if(g(o).getAttribute("cricleID")){
+					var cricleID = g(o).getAttribute("cricleID");
+					g(o).setAttribute("cricleID",cricleID+","+circle.attr("id"));
+				}else{
+					g(o).setAttribute("cricleID",circle.attr("id"));
+				}*/
+			}
+			bindLine();
+		}
+		else{
+			changeflag = false;
+		}
+		
+	}
+	
+	function bindToolBar(){
+		//绑定属性框
+		g("f_id").innerHTML = o;
+		
+		g("f_name").value = g(o).getAttribute("title");
+		g("f_name").onchange = function(){
+			if(changeflag){
+				return false;
+			}
+			g(o).setAttribute("title",this.value);
+			var text = g( g(o).getAttribute("textID") );
+			setValue(text,dealStr(this.value));
+			changeflag = false;
+		}
+		
+		if(!parseInt(g(o).getAttribute("is_risk"))){
+			g("risk_desc").disabled = true;
+			g(o).setAttribute("risk_desc","");
+		}else{
+			g("risk_desc").disabled = false;	
+		}
+		
+		var selectObj = g("f_type");
+		for(var i=0,len=selectObj.options.length;i<len;i++){
+			if(selectObj.options[i].value.toLowerCase()==g(o).getAttribute("type").toLowerCase()){
+				selectObj.options[i].selected = true;	
+			}	
+		}
+		selectObj.onchange = function(){
+			if(selectObj.value.toLowerCase()=="j"){
+				var center = getRectCenter(SVG.get(o));
+				var polygonCenter = drawPolygon([center.x,center.y]);
+				var polygon = gShape.polygon(polygonCenter).fill("#fff").stroke({color:"#ff0000",width:2}).style({"fill-opacity":0})
+								.attr({'transform':"",
+								"getX":center.x,
+								"getY":center.y,
+								"textID":SVG.get(o).attr("textID"),
+								"type":SVG.get(o).attr("type"),
+								"is_risk":SVG.get(o).attr("is_risk"),
+								"anticipate_day":SVG.get(o).attr("anticipate_day"),
+								"anticipate_type":SVG.get(o).attr("anticipate_type"),
+								"risk_desc":SVG.get(o).attr("risk_desc"),
+								"station_function":SVG.get(o).attr("station_function"),
+								"accept_name":SVG.get(o).attr("accept_name"),
+								"title":SVG.get(o).attr("title"),
+								"to":SVG.get(o).attr("to"),
+								"from":SVG.get(o).attr("from")});
+				SVG.get(o).remove();
+				polygon.attr({"id":o});
+			}else if( g(o).nodeName=="polygon" && selectObj.value.toLowerCase()!="j" ){
+				var rect = gShape.rect(100,50).stroke({color:"#ff0000",width:2}).fill("#fff").style({"fill-opacity":0})
+								 .attr({rx:6,ry:6,
+									   "type":SVG.get(o).attr("type"),
+									   "is_risk":SVG.get(o).attr("is_risk"),
+									   "anticipate_day":SVG.get(o).attr("anticipate_day"),
+									   "anticipate_type":SVG.get(o).attr("anticipate_type"),
+									   "risk_desc":SVG.get(o).attr("risk_desc"),
+									   "station_function":SVG.get(o).attr("station_function"),
+									   "accept_name":SVG.get(o).attr("accept_name"),
+									   "textID":SVG.get(o).attr("textID"),
+									   "title":SVG.get(o).attr("title"),
+									   "to":SVG.get(o).attr("to"),
+								       "from":SVG.get(o).attr("from"),
+									   "x":parseInt(SVG.get(o).attr("getX"))-50,
+									   "y":parseInt(SVG.get(o).attr("getY"))-25 });
+				SVG.get(o).remove();
+				rect.attr({"id":o});
+			}
+			g(o).setAttribute("type",selectObj.value);
+		}
+		
+		g("f_user").value = g(o).getAttribute("accept_name");
+		g("f_user").onchange = function(){
+			if(changeflag){
+				return false;
+			}
+			g(o).setAttribute("accept_name",this.value);
+			changeflag = false;
+		}
+		g("station_function").value = g(o).getAttribute("station_function")==null?"":g(o).getAttribute("station_function");
+		g("station_function").onchange = function(){
+			if(changeflag){
+				return false;
+			}
+			g(o).setAttribute("station_function",this.value);
+			changeflag = false;
+		}
+		
+		g("anticipate_day").value = parseInt(g(o).getAttribute("anticipate_day"));
+		g("anticipate_day").onchange = function(){
+			if(changeflag){
+				return false;
+			}
+			if(isNaN(this.value)){
+				alert("请输入数字！");
+			}	
+			else{					
+				g(o).setAttribute("anticipate_day",this.value);	
+			}
+			changeflag = false;
+		}
+				
+		var anticipate_type = g("anticipate_type");
+		for(var i=0,len=anticipate_type.options.length;i<len;i++){
+			if(anticipate_type.options[i].value==g(o).getAttribute("anticipate_type")){
+				anticipate_type.options[i].selected = true;	
+			}	
+		}
+		anticipate_type.onchange = function(){
+			g(o).setAttribute("anticipate_type",anticipate_type.value);
+		}
+		
+		g("risk_desc").value = g(o).getAttribute("risk_desc");
+		g("risk_desc").onchange = function(){
+			if(changeflag){
+				return false;
+			}
+			g(o).setAttribute("risk_desc",this.value);
+			changeflag = false;
+		}
+		
+		var radio = document.getElementsByName("risk");
+		for(var j=0,jLen=radio.length;j<jLen;j++){
+			if(radio[j].value==g(o).getAttribute("is_risk")){
+				radio[j].checked = true;
+			}
+			radio[j].onclick = function(){
+				g(o).setAttribute("is_risk",this.value);
+				if( parseInt(this.value) ){
+					g("risk_desc").disabled=false;
+				}else{
+					g("risk_desc").disabled=true;
+					g(o).setAttribute("risk_desc","");
+					g("risk_desc").value="";
+				}
+			}
+		}
+	}
+	
+	function bindLine(){
+		var isLine = document.getElementsByName("judgeLine");
+		if(!g(o)) return false;
+		for(var i=0,len=isLine.length;i<len;i++){
+			
+			if( g(o).nodeName=="ellipse" && !g(o).getAttribute("type")){
+				if(isLine[i].value==SVG.get( g(o).getAttribute("lineID") ).attr("judgeLine")) isLine[i].checked = true;
+				else isLine[i].checked = false;
+			}
+			if( g(o).nodeName=="polyline" && g(o).getAttribute("judgeLine") ){
+				if(isLine[i].value==SVG.get(o).attr("judgeLine")) isLine[i].checked = true;
+				else isLine[i].checked = false;
+			}
+		
+			isLine[i].onclick = function(){
+				if( g(o).nodeName=="ellipse" ){
+					SVG.get( g(o).getAttribute("lineID") ).attr({"judgeLine":this.value});
+					var other = fromOther(g(o).getAttribute("lineID"));
+					if(parseInt(this.value)){
+						SVG.get( g(o).getAttribute("lineID") ).stroke({color:"blue"}).attr({"marker-end":"url(#"+markerBlue.attr("id")+")"});
+						if(other){
+							SVG.get(other).stroke({color:"#999"}).attr({"marker-end":"url(#"+markerYellow.attr("id")+")"});
+							SVG.get(other).attr({"judgeLine":"0"});
+						}
+					}else{
+						SVG.get( g(o).getAttribute("lineID") ).stroke({color:"#999"}).attr({"marker-end":"url(#"+markerYellow.attr("id")+")"});
+						if(other){
+							SVG.get(other).stroke({color:"blue"}).attr({"marker-end":"url(#"+markerBlue.attr("id")+")"});
+							SVG.get(other).attr({"judgeLine":"1"});
+						}
+					}
+				}else if( g(o).nodeName=="polyline" ){
+					var other = fromOther(o);
+					SVG.get(o).attr({"judgeLine":this.value});
+					if(parseInt(this.value)){
+						SVG.get(o).stroke({color:"blue"}).attr({"marker-end":"url(#"+markerBlue.attr("id")+")"});
+						if(other){
+							SVG.get(other).stroke({color:"#999"}).attr({"marker-end":"url(#"+markerYellow.attr("id")+")"});
+							SVG.get(other).attr({"judgeLine":"0"});
+						}
+					}else{
+						SVG.get(o).stroke({color:"#999"}).attr({"marker-end":"url(#"+markerYellow.attr("id")+")"});
+						if(other){
+							SVG.get(other).stroke({color:"blue"}).attr({"marker-end":"url(#"+markerBlue.attr("id")+")"});
+							SVG.get(other).attr({"judgeLine":"1"});
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	function bindMain(){
+		g("flow_id").value = g("s5").getAttribute("flow_id");
+		g("flow_id").onblur = function(){
+			g("s5").setAttribute("flow_id",this.value);
+		}
+		
+		g("flow_code").value = g("s5").getAttribute("flow_code");
+		g("flow_code").onblur = function(){
+			g("s5").setAttribute("flow_code",this.value);
+		}
+		
+		g("flow_title").value = g("s5").getAttribute("flow_title");
+		g("flow_title").onblur = function(){
+			g("s5").setAttribute("flow_title",this.value);
+		}
+	}
+	
+	function fromOther(o){
+		var from = g(g(o).getAttribute("from")).getAttribute("from").split(","),
+			len = from.length;
+		if(len==2){
+			if(from[0]==o) return from[1];
+			else return from[0];
+		}
+		return 0;
+	}
+	
+	//删除过程
+	function deletePro(o){
+		if(!o){ return false; }
+		else{ var pro = g(o); }
+		if(pro){
+			switch(pro.nodeName){
+				case "rect":
+					if( pro.getAttribute("from") || pro.getAttribute("to") ){ alert("有连线关联过程，请删除关联线，孤立过程！"); }
+					else{ 
+						SVG.get(o).remove();
+						SVG.get(pro.getAttribute("textID")).remove();
+					}
+					break;
+					
+				case "polygon":
+					if( pro.getAttribute("from") || pro.getAttribute("to") ){ alert("有连线关联过程，请删除关联线，孤立过程！"); }
+					else{ 
+						SVG.get(o).remove();
+						SVG.get(pro.getAttribute("textID")).remove();
+					}
+					break;
+				
+				case "polyline":
+					var fromPro = g( pro.getAttribute("from") ),
+						toPro = g( pro.getAttribute("to") ),
+						lenFrom = fromPro.getAttribute("from").split(","),
+						lenTo = toPro.getAttribute("to").split(","),
+						fromArray = new Array,toArray = new Array;
+					if(pro.getAttribute("cricleID")){
+						var cricleIDArray = pro.getAttribute("cricleID").split(",");
+						
+						for( var i=0,len=cricleIDArray.length;i<len;i++ ){
+							SVG.get(cricleIDArray[i]).remove();
+						}
+					}
+					
+					for(var i=0,len=lenFrom.length;i<len;i++){
+						if( lenFrom[i]!=o ){
+							fromArray.push(lenFrom[i]);
+						}
+					}
+					fromPro.setAttribute("from",fromArray.join(","));
+					
+					for(var i=0,len=lenTo.length;i<len;i++){
+						if( lenTo[i]!=o ){
+							toArray.push(lenTo[i]);
+						}
+					}
+					toPro.setAttribute("to",toArray.join(","));
+					SVG.get(o).remove();
+					break;
+					
+				case "ellipse":
+					if(!pro.getAttribute("type")){
+						if( g(g(o).getAttribute("lineID")).getAttribute("judgeLine") ){}
+						else{
+							SVG.get( SVG.get(o).attr("lineID") ).stroke({color:"#000"}).attr({"marker-end":"url(#"+marker.attr("id")+")"});
+						}						
+						deletePoint( g(pro.getAttribute("lineID")),[pro.getAttribute("cx"),pro.getAttribute("cy")],o);
+						SVG.get(o).remove();				
+					}
+					break;
+				
+				default:break;
+			}
+			g("ispro").style.display = "none";
+			g("isline").style.display = "none";
+		}
+	}
+	
+	
+	//生成xml空文档
+	function createNewXml(){ 
+		var xmlDom = null;   
+	  	if (window.ActiveXObject){   
+	   		xmlDom = new ActiveXObject("Microsoft.XMLDOM");   
+	   		xmlDom.async=false;   
+	  	} 
+	  	else if(document.implementation && document.implementation.createDocument){   
+	  		xmlDom = document.implementation.createDocument("", "", null); 
+	  	}else{   
+			xmlDom = null;   
+	  	}
+	  	return xmlDom;   
+	}
+	
+	//给xml添加具体的节点属性
+	function getXml(){
+		var xmlDoc = createNewXml(),
+			xmlSer=new XMLSerializer(),
+		    newPI=xmlDoc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"utf-8\""),
+			xmlString,flow,flow_id,flow_code,flow_title,flow_seq,seq_id,type,title,accept_name,station_function,next_seq_id,true_next_seq_id,false_next_seq_id,is_risk,risk_desc,left,top,heigth,width,anticipate_day,anticipate_type;
+			
+		flow = xmlDoc.createElement("flow");
+		flow_id = xmlDoc.createElement("flow_id");
+		flow_code = xmlDoc.createElement("flow_code");
+		flow_title = xmlDoc.createElement("flow_title");
+		
+		xmlDoc.appendChild(newPI);
+		xmlDoc.appendChild(flow);
+		flow.appendChild(flow_id);
+		flow.appendChild(flow_code);
+		flow.appendChild(flow_title);
+		
+		setValue(flow_id,g("s5").getAttribute("flow_id"));
+		setValue(flow_code,g("s5").getAttribute("flow_code"));
+		setValue(flow_title,g("s5").getAttribute("flow_title"));
+		
+		var obj = g("s5").childNodes;
+		for( var i=0,len=obj.length;i<len;i++ ){
+			
+			if( !obj[i].getAttribute("to") && !obj[i].getAttribute("from") ){
+				alert("流程不全,请补全！");
+				return false;
+			}
+			//alert(obj[i].getAttribute("type"));
+			flow_seq = xmlDoc.createElement("flow_seq");
+			seq_id = xmlDoc.createElement("seq_id");
+			type = xmlDoc.createElement("type");
+			title = xmlDoc.createElement("title");
+			accept_name = xmlDoc.createElement("accept_name");
+			station_function = xmlDoc.createElement("station_function");
+			
+			if(obj[i].getAttribute("type").toLowerCase()=="j"){
+				true_next_seq_id = xmlDoc.createElement("true_next_seq_id");
+				false_next_seq_id = xmlDoc.createElement("false_next_seq_id");
+				
+				flow_seq.appendChild(true_next_seq_id);
+				flow_seq.appendChild(false_next_seq_id);
+				
+				if(!obj[i].getAttribute("from")){ alert("判断过程有两分支，请补全！"); return false; }
+				var from = obj[i].getAttribute("from").split(",");
+				if(from.length!=2){ alert("判断过程有两分支，请补全！"); return false; }
+				if( g(from[0]).getAttribute("judgeLine") || g(from[1]).getAttribute("judgeLine") ){}
+				else{
+					alert("判断过程两分支线，请设定条件！"); return false;
+				}
+				if( parseInt(g(from[0]).getAttribute("judgeLine")) ){
+					setValue(true_next_seq_id,g(from[0]).getAttribute("to"));
+					setValue(false_next_seq_id,g(from[1]).getAttribute("to"));
+					true_next_seq_id.setAttribute("point",g(from[0]).getAttribute("points"));
+					false_next_seq_id.setAttribute("point",g(from[1]).getAttribute("points"));
+				}else{
+					setValue(true_next_seq_id,g(from[1]).getAttribute("to"));
+					setValue(false_next_seq_id,g(from[0]).getAttribute("to"));
+					true_next_seq_id.setAttribute("point",g(from[1]).getAttribute("points"));
+					false_next_seq_id.setAttribute("point",g(from[0]).getAttribute("points"));
+				}
+				
+			}else{
+				next_seq_id = xmlDoc.createElement("next_seq_id");
+				
+				flow_seq.appendChild(next_seq_id);
+				
+				if( obj[i].getAttribute("from") ){
+					var o = obj[i].getAttribute("from");
+					setValue(next_seq_id,g(o).getAttribute("to"));
+					next_seq_id.setAttribute("point",g(o).getAttribute("points"))
+				}
+			}
+			is_risk = xmlDoc.createElement("is_risk");
+			risk_desc = xmlDoc.createElement("risk_desc");
+			left = xmlDoc.createElement("left");
+			top = xmlDoc.createElement("top");
+			width = xmlDoc.createElement("width");
+			height = xmlDoc.createElement("height");
+			
+			anticipate_day = xmlDoc.createElement("anticipate_day");
+			anticipate_type = xmlDoc.createElement("anticipate_type");
+			
+			flow.appendChild(flow_seq);
+			flow_seq.appendChild(seq_id);
+			flow_seq.appendChild(type);
+			flow_seq.appendChild(title);
+			flow_seq.appendChild(accept_name);
+			flow_seq.appendChild(station_function);
+			flow_seq.appendChild(is_risk);
+			flow_seq.appendChild(risk_desc);
+			flow_seq.appendChild(anticipate_day);
+			flow_seq.appendChild(anticipate_type);
+			flow_seq.appendChild(left);
+			flow_seq.appendChild(top);
+			flow_seq.appendChild(width);
+			flow_seq.appendChild(height);			
+			//var textObj = g(obj[i].getAttribute("textID"))
+			//title.setAttribute("x", textObj.getAttribute("x") );
+			//title.setAttribute("y", textObj.getAttribute("y") );
+			//title.setAttribute("dx", textObj.getAttribute("dx") );
+			
+			setValue(seq_id,obj[i].getAttribute("id"));
+			setValue(type,obj[i].getAttribute("type"));
+			setValue(title,obj[i].getAttribute("title"));
+			setValue(accept_name,obj[i].getAttribute("accept_name"));
+			setValue(station_function,obj[i].getAttribute("station_function"));
+			setValue(is_risk,obj[i].getAttribute("is_risk"));
+			setValue(anticipate_day,obj[i].getAttribute("anticipate_day"));
+			setValue(anticipate_type,obj[i].getAttribute("anticipate_type"));
+			if(obj[i].nodeName == "rect"){
+				setValue(left,obj[i].getAttribute("x"));
+				setValue(top,obj[i].getAttribute("y"));
+				//杨淮生 添加 2013-10-28
+				setValue(width,obj[i].getAttribute("width"));
+				setValue(height,obj[i].getAttribute("height"));
+			}else if(obj[i].nodeName == "ellipse"){
+				setValue(left,obj[i].getAttribute("cx"));
+				setValue(top,obj[i].getAttribute("cy"));	
+			}else{
+				setValue(left,obj[i].getAttribute("getX"));
+				setValue(top,obj[i].getAttribute("getY"));	
+			}
+		}
+		if(xmlDoc.xml){
+			xmlString = xmlDoc.xml;
+		}else{
+			xmlString = xmlSer.serializeToString(xmlDoc);
+		}
+		//alert(xmlString);
+		window.opener.document.getElementById("inFlowInfo").value = xmlString;
+		window.close();
+		
+	}
+	
+	//操作工具栏
+	addEvent(g("tool"),"mousedown",function(e){
+		var e = window.event || e, target = e.srcElement || e.target;
+		flag = 1;
+		if(target.nodeName.toLowerCase()=="img" && target.parentNode.className=="opt"){
+			if(selectTag){
+				selectTag.style.backgroundColor = "buttonface";
+			}
+			target.parentNode.style.backgroundColor = "#888";
+			selectTag = target.parentNode;
+			switch(target.id){
+				case "rect":
+					image="rect";
+					break;
+				case "line":
+					image="line";
+					flag=0;
+					break;
+				case "polygon":
+					image="polygon";
+					break;
+				case "default":
+					image="default";
+					break;
+				default:
+					break;
+			}
+		}
+	});
+	
+	function loadXml(xml,canvas){
+		var xmlDoc;
+		if(window.ActiveXObject){
+			xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.loadXML(xml);
+		}else if(window.DOMParser){
+			parser=new DOMParser();
+			xmlDoc=parser.parseFromString(xml,"text/xml");
+		}  
+		
+		var getShape = xmlDoc.getElementsByTagName("flow_seq");
+		for( var i=0,len=getShape.length;i<len;i++ ){
+			switch(nodeValue(getShape[i],"type").toLowerCase()){
+				case "circle":
+					var c = gShape.circle(50).cx(nodeValue(getShape[i],"left")).cy(nodeValue(getShape[i],"top"))
+						  .attr("id",nodeValue(getShape[i],"seq_id")).stroke({width:2,color:"#000"}).fill("#fff").style({"fill-opacity":0});					
+					var t = gText.text( dealStr(nodeValue(getShape[i],"title")) )
+						 .x(nodeValue(getShape[i],"left"))
+						 .y(parseInt(nodeValue(getShape[i],"top"))+6)
+						 .attr({dx:nodeValue(getShape[i],"left")})
+						 .font({family:"Arial",size:14,"text-anchor":"middle"});
+					c.attr({"textID":t.attr("id"),"filter":"url(#filter)"});
+					c.attr({"type":nodeValue(getShape[i],"type"),
+						   "is_risk":nodeValue(getShape[i],"is_risk"),
+						   "anticipate_day":nodeValue(getShape[i],"anticipate_day"),
+						   "anticipate_type":nodeValue(getShape[i],"anticipate_type"),
+						   "risk_desc":nodeValue(getShape[i],"risk_desc"),
+						   "station_function":nodeValue(getShape[i],"station_function"),
+						   "accept_name":nodeValue(getShape[i],"accept_name"),
+						   "title":nodeValue(getShape[i],"title")});
+					
+					break;
+					
+				case "j":
+					var p = gShape.polygon(drawPolygon([parseInt(nodeValue(getShape[i],"left")),parseInt(nodeValue(getShape[i],"top"))])).fill("#fff")
+						  .stroke({color:"#000",width:2}).style({"fill-opacity":0})
+						  .attr({'transform':"","id":nodeValue(getShape[i],"seq_id"),
+							                    "filter":"url(#filter)",
+												"type":nodeValue(getShape[i],"type"),
+												"is_risk":nodeValue(getShape[i],"is_risk"),
+												"anticipate_day":nodeValue(getShape[i],"anticipate_day"),
+												"anticipate_type":nodeValue(getShape[i],"anticipate_type"),
+												"risk_desc":nodeValue(getShape[i],"risk_desc"),
+												"station_function":nodeValue(getShape[i],"station_function"),
+												"accept_name":nodeValue(getShape[i],"accept_name"),
+												"title":nodeValue(getShape[i],"title"),
+												"getX":parseInt(nodeValue(getShape[i],"left")),
+												"getY":parseInt(nodeValue(getShape[i],"top"))
+						  });
+					var t = gText.text( dealStr(nodeValue(getShape[i],"title")) )
+						 .x(nodeValue(getShape[i],"left"))
+						 .y(parseInt(nodeValue(getShape[i],"top"))+6)
+						 .attr({dx:nodeValue(getShape[i],"left")})
+						 .font({family:"Arial",size:14,"text-anchor":"middle"});
+					p.attr({"textID":t.attr("id")});
+					break;
+					
+				default:
+					var r = gShape.rect(100,50).x(nodeValue(getShape[i],"left")).y(nodeValue(getShape[i],"top"))
+						  .stroke({color:"#000",width:2}).fill("#fff").style({"fill-opacity":0})
+						  .attr({rx:6,ry:6,"id":nodeValue(getShape[i],"seq_id"),
+							               "filter":"url(#filter)",
+										   "type":nodeValue(getShape[i],"type"),
+										   "is_risk":nodeValue(getShape[i],"is_risk"),
+										   "anticipate_day":nodeValue(getShape[i],"anticipate_day"),
+										   "anticipate_type":nodeValue(getShape[i],"anticipate_type"),
+										   "risk_desc":nodeValue(getShape[i],"risk_desc"),
+										   "station_function":nodeValue(getShape[i],"station_function"),
+										   "accept_name":nodeValue(getShape[i],"accept_name"),
+										   "title":nodeValue(getShape[i],"title")
+								});
+					var t = gText.text( dealStr(nodeValue(getShape[i],"title")) )
+						 .x(parseInt(nodeValue(getShape[i],"left"))+5)
+						 .y(parseInt(nodeValue(getShape[i],"top"))+32)
+						 .attr({dx:parseInt(nodeValue(getShape[i],"left"))+50})
+						 .font({family:"Arial",size:14,"text-anchor":"middle"});
+					r.attr({"textID":t.attr("id")});
+					break;
+			}
+		}
+		
+		for( var i=0,len=getShape.length;i<len;i++ ){
+			
+			if(nodeValue(getShape[i],"next_seq_id")){
+				var line1 = gLine.polyline().stroke({ color:"#000",width: 2 }).fill("#fff")
+							.attr({'transform':"","marker-end":"url(#"+marker.attr("id")+")"});
+				if(attrValue(getShape[i],"next_seq_id","point")){
+					line1.attr({ "points":attrValue(getShape[i],"next_seq_id","point") });	
+				}else{
+					var p = formatLine( SVG.get(nodeValue(getShape[i],"seq_id")),SVG.get(nodeValue(getShape[i],"next_seq_id")) );
+					line1.attr({ "points":p["p1"][0]+","+p["p1"][1]+" "+p["p2"][0]+","+p["p2"][1] });		
+				}
+				line1.attr({"from":nodeValue(getShape[i],"seq_id"),"to":nodeValue(getShape[i],"next_seq_id")});
+				
+				var from = SVG.get(nodeValue(getShape[i],"seq_id")),
+					to = SVG.get(nodeValue(getShape[i],"next_seq_id"));
+				if( from.attr("from") ){
+					from.attr({"from":from.attr("from")+","+line1.attr("id")})
+				}else{
+					from.attr({"from":line1.attr("id")});
+				}
+				
+				if( to.attr("to") ){
+					to.attr({"to":to.attr("to")+","+line1.attr("id")})
+				}else{
+					to.attr({"to":line1.attr("id")});
+				}
+				
+			}
+			if(nodeValue(getShape[i],"true_next_seq_id")){
+				var line2 = gLine.polyline().stroke({ color:"blue",width: 2 }).fill("#fff")
+							.attr({'transform':"","judgeLine":1,"marker-end":"url(#"+markerBlue.attr("id")+")"});
+				if(attrValue(getShape[i],"true_next_seq_id","point")){
+					line2.attr({ "points":attrValue(getShape[i],"true_next_seq_id","point") });	
+				}else{
+					var p = formatLine( SVG.get(nodeValue(getShape[i],"seq_id")),SVG.get(nodeValue(getShape[i],"true_next_seq_id")) );
+					line2.attr({ "points":p["p1"][0]+","+p["p1"][1]+" "+p["p2"][0]+","+p["p2"][1] });		
+				}
+				line2.attr({"from":nodeValue(getShape[i],"seq_id"),"to":nodeValue(getShape[i],"true_next_seq_id")});
+				
+				var from = SVG.get(nodeValue(getShape[i],"seq_id")),
+					to = SVG.get(nodeValue(getShape[i],"true_next_seq_id"));
+				if( from.attr("from") ){
+					from.attr({"from":from.attr("from")+","+line2.attr("id")})
+				}else{
+					from.attr({"from":line2.attr("id")});
+				}
+				
+				if( to.attr("to") ){
+					to.attr({"to":to.attr("to")+","+line2.attr("id")})
+				}else{
+					to.attr({"to":line2.attr("id")});
+				}
+				
+			}
+			if(nodeValue(getShape[i],"false_next_seq_id")){
+				var line3 = gLine.polyline().stroke({ color:"#999",width: 2 }).fill("#fff")
+							.attr({'transform':"","judgeLine":0,"marker-end":"url(#"+markerYellow.attr("id")+")"});
+				if(attrValue(getShape[i],"false_next_seq_id","point")){
+					line3.attr({ "points":attrValue(getShape[i],"false_next_seq_id","point") });	
+				}else{
+					var p = formatLine( SVG.get(nodeValue(getShape[i],"seq_id")),SVG.get(nodeValue(getShape[i],"false_next_seq_id")) );
+					line3.attr({ "points":p["p1"][0]+","+p["p1"][1]+" "+p["p2"][0]+","+p["p2"][1] });		
+				}
+				line3.attr({"from":nodeValue(getShape[i],"seq_id"),"to":nodeValue(getShape[i],"false_next_seq_id")});
+				
+				var from = SVG.get(nodeValue(getShape[i],"seq_id")),
+					to = SVG.get(nodeValue(getShape[i],"false_next_seq_id"));
+				if( from.attr("from") ){
+					from.attr({"from":from.attr("from")+","+line3.attr("id")})
+				}else{
+					from.attr({"from":line3.attr("id")});
+				}
+				
+				if( to.attr("to") ){
+					to.attr({"to":to.attr("to")+","+line3.attr("id")})
+				}else{
+					to.attr({"to":line3.attr("id")});
+				}
+				
+			}
+			//line.remove();	
+			
+		}
+		
+		SVG.get("s5").attr({"flow_id":nodeValue(xmlDoc,"flow_id"),
+							"flow_code":nodeValue(xmlDoc,"flow_code"),
+							"flow_title":nodeValue(xmlDoc,"flow_title")});
+	}
+	
+	function initDraw(xml){
+		if(xml){
+			loadXml(xml,canvas);
+		}else{
+			var begin = gShape.circle(50).cx(400).cy(100).stroke({width:2,color:"#000"}).fill("#fff").attr({"type":"circle","filter":"url(#filter)","flowID":"","flowCode":"","flowTitle":""}).style({"fill-opacity":0});
+			var beginText = gText.text("开始").x(400).y(106).attr({dx:400}).font({family:"Arial",size:14,"text-anchor":"middle"});
+			var end = gShape.circle(50).cx(400).cy(300).stroke({width:2,color:"#000"}).fill("#fff").attr({"type":"circle","filter":"url(#filter)"}).style({"fill-opacity":0});
+			var endText = gText.text("结束").x(400).y(306).attr({dx:400}).font({family:"Arial",size:14,"text-anchor":"middle"});
+			begin.attr({"textID":beginText.attr("id"),"title":"开始","name":"begin"});
+			end.attr({"textID":endText.attr("id"),"title":"结束","name":"end"});
+		}
+		bindMain();
+	}
+	
+	function mouseMove(e){
+		var e = e || window.event;
+		  var target = e.target || e.srcElement;
+		  if(target.nodeName=="polyline"||target.nodeName=="ellipse"||target.nodeName=="rect"||target.nodeName=="polygon"||target.nodeName=="text"){
+			  g(target.id).style.cursor = "pointer";
+		  }		 
+	}
+	
+	//移动操作工具栏
+	moveTip( g("tool"),g("move") );
+	moveTip( g("argumentTool"),g("argumentTitle") );
+	
+	//删除过程
+	addEvent(g("delete"),"click",function(){deletePro(o)});
+	
+	//绑定初始化
+	addEvent(document,"mousedown",init);
+	addEvent(canvas,"mousedown",selectImage);
+	//改变鼠标指针样式
+	addEvent(canvas,"mousemove",mouseMove);
+	//xml的生成
+	addEvent(g("xml"),"click",function(){getXml()});
+	
+	//
+	addEvent(g("close"),"mousedown",function(){window.close();});
+	
+	initDraw(window.opener.document.getElementById("inFlowInfo").value);
+
+</script>
+</body>
+</html>

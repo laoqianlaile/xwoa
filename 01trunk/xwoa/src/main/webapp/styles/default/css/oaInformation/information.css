@@ -1,0 +1,107 @@
+
+div.tableleft{
+	float:left;
+	 width:140px;
+	  margin-top:0px;
+    background: #f8f8f8;
+}
+
+ div.tableleft table td{
+    line-height: 40px;
+    display: block;
+	border: none;
+/* 	border-bottom: 1px solid #dedede; */
+/* 	border-top: 1px solid #ececec; */
+	padding: 0px 30px ;
+	background:url("../oaInformationimage/zwgk_Rz_icon16.jpg") no-repeat ;
+}
+
+div.tableleft table td:hover{
+	  background: #DFD8D8;
+	
+}
+
+ div.tableleft table td.news{
+	 line-height: 56px;
+/*     width: 136px; */
+	height:56px;
+	background:url("../oaInformationimage/newsShortTab.jpg") no-repeat ;
+}
+div.tableright{
+	width:80%;
+	position:absolute;
+    left:150px;
+}
+div.tableright table {
+	width: 99%;
+ 	border: 1px solid #ececec; 
+	margin: auto
+}
+
+div.tableright table td{
+	border: none;
+/* 	border-bottom: 1px solid #ececec; */
+/* 	border-top: 1px solid #ececec; */
+	padding: 10px 15px 10px 15px;
+}
+.public-position {
+	background:white;
+	margin: 10px auto; 
+	border:none; 
+	border-image: none; 
+	height: 40px; 
+	overflow: hidden;
+	
+}
+.pubpos-search-box {
+	overflow: hidden; float: right; display: inline;
+}
+.pubpos-nav {
+	height: 30px; line-height: 30px; overflow: hidden; padding-left: 10px; float: left; display: inline;
+}
+.pubpos-search-box {
+	padding: 5px 0px 0px 0px; 
+/* 	width: 200px;  */
+	height: 40px;
+}
+.search-box {
+	padding: 10px; height: 47px; overflow: hidden; margin-bottom: 10px;
+}
+.search-txt {
+padding: 2px 0px 2px 2px;
+    border: 1px solid rgb(204, 204, 204);
+    border-image: none;
+    width: 250px;
+    height: 35px !important;
+    color: rgb(67, 67, 67);
+    float: left;
+    display: inline;
+    padding: 0px !important;
+    border-right: none;
+    border-radius: 4px 0 0 4px!important;
+}
+
+.submit-botton {
+	background:url("../oaInformationimage/XWsearch.png") no-repeat;
+    border: currentColor;
+    border-image: none;
+    width: 35px !important;
+    height: 35px !important;
+    color: rgb(255, 255, 255);
+    float: left;
+    display: inline;
+    cursor: pointer;
+/*     margin: 0 5px; */
+}
+
+.stuff-excit {
+	z-index:1000;
+	text-align:left;
+	border:0px solid #939393;
+	padding:17px;
+	min-width:50px;
+	max-width:530px;
+	color:#8c3901;
+	background-color:#fef9d9;
+	background-image:url(tip-yellow.png);
+}

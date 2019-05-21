@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="powerbase" namespace="/powerbase" extends="centitbsdfw">
+		<action name="powerOrgInfo" class="powerOrgInfoAction">
+			<result name="powerOrgInfoList">/page/powerbase/optcommon/powerOrgInfoSelectList.jsp
+			</result>
+			<result name="list">/page/powerbase/optcommon/powerOrgInfoList.jsp
+			</result>
+			<result name="edit">/page/powerbase/optcommon/powerOrgInfoForm.jsp
+			</result>
+			<result name="editInfo">/page/powerbase/optcommon/powerOrgInfoEditForm.jsp
+			</result>
+			<result name="built">/page/powerbase/optcommon/powerOrgInfoNewForm.jsp
+			</result>
+			<result name="listOrgList">/page/powerbase/optcommon/powerOrgInfolistOrgList.jsp
+			</result>
+			<result name="listSelectOrg">/page/powerbase/optcommon/powerOrgInfolistSelectOrg.jsp
+			</result>
+		</action>
+		<action name="vsuppowerinusing" class="vsuppowerinusingAction">
+			<result name="list">/page/powerbase/optcommon/vsuppowerinusingList.jsp</result>
+			<result name="sdDocList">/page/powerbase/optcommon/listSelectDocSupPower_Sd.jsp</result>
+		</action>
+		
+		<!-- <action name="powerOptInfo" class="powerOptInfo">
+		    <result name="save" type="redirectAction">
+			    <param name="namespace">/powerbase</param>
+				<param name="actionName">vsuppowerinusing</param>
+				<param name="method">list</param>
+			</result>
+		</action> -->
+		
+		<action name="supPower" class="supPowerAction">
+			<result name="input">/page/powerbase/optcommon/suppowerList.jsp</result>
+			<result name="listSupPower">/page/powerbase/optcommon/suppowerSelectList.jsp</result>
+			<result name="fromcf">/page/powerbase/optcommon/suppowerSelectfromcf.jsp</result>
+			<result name="listSupPower_CF_faci">/page/powerbase/optcommon/listSelectSupPower_CF_faci.jsp</result>
+			<result name="epowersd">/page/powerbase/optcommon/listSelectSupPower_Sd.jsp</result>
+			
+			<result name="listSupPowerDocument">/page/powerbase/optcommon/suppowerDocumentList.jsp	</result>
+			
+			<result name="listSupPowerSQ">/page/powerbase/optcommon/suppowerQlbgSqList.jsp
+			</result>
+			<result name="listSupPowerSH">/page/powerbase/optcommon/suppowerQlbgShList.jsp
+			</result>
+			<result name="nbsqList">/page/powerbase/optcommon/suppowerNbsqList.jsp
+			</result>
+			<result name="userPowerList">/page/powerbase/optcommon/suppowerSQList.jsp
+			</result>
+			<result name="userPowerListV2">/page/powerbase/optcommon/suppowerSQListV2.jsp
+			</result>
+			<result name="startFQList">/page/powerbase/optcommon/suppowerStartFQList.jsp
+			</result>
+			<result name="listSupPowerReply">/page/powerbase/optcommon/suppowerQlbgReplyList.jsp
+			</result>
+			<result name="SuppowerQlbgView">/page/powerbase/optcommon/suppowerQlbgSqView.jsp
+			</result>
+			<result name="SuppowerQlbgSqXz">/page/powerbase/optcommon/suppowerQlbgSqXz.jsp
+			</result>
+			<result name="SuppowerQlbgSqXg">/page/powerbase/optcommon/suppowerQlbgSqXg.jsp
+			</result>
+			
+			<result name="SuppowerQlbgSqNXz">/page/powerbase/optcommon/suppowerQlbgSqNXz.jsp
+			</result>
+			<result name="SuppowerQlbgSqNXg">/page/powerbase/optcommon/suppowerQlbgSqNXg.jsp
+			</result>
+			
+			<result name="suppowerQlfbView">/page/powerbase/optcommon/suppowerQlfbView.jsp
+			</result>
+			<result name="list">/page/powerbase/optcommon/suppowerList.jsp
+			</result>
+			<result name="Qlfblist">/page/powerbase/optcommon/suppowerQlfbList.jsp
+			</result>
+			<result name="edit">/page/powerbase/optcommon/suppowerForm.jsp
+			</result>
+			<result name="nEdit">/page/powerbase/optcommon/suppowerNForm.jsp
+			</result>
+			<result name="view">/page/powerbase/optcommon/suppowerView.jsp
+			</result>
+			<result name="selectCF">/page/powerbase/optcommon/suppowerSelectCF.jsp
+			</result>
+			<result name="listCK">/page/powerbase/optcommon/suppowerListCK.jsp</result>
+			<result name="listCKByState">/page/powerbase/optcommon/suppowerListCKByState.jsp
+			</result>
+			<result name="editzycl">/page/powerbase/optcommon/zycledit.jsp</result>
+			<result name="viewzycl">/page/powerbase/optcommon/discretionaryView.jsp
+			</result>
+			<result name="viewcfcx">/page/powerbase/optcommon/DiscretionaryStandardView.jsp
+			</result>
+			<result name="editcfcx">/page/powerbase/optcommon/cfcxedit.jsp</result>
+			<result name="viewVersion">/page/powerbase/optcommon/suppowerChglogbyId.jsp
+			</result>
+			<result name="contrastlist">/page/powerbase/optcommon/suppowercontrastList.jsp
+			</result>
+			<result name="editContrast">/page/powerbase/optcommon/suppowercontrastEdit.jsp
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			
+			<result name="SQlist">/page/powerbase/optcommon/flowerSQlist.jsp</result>
+		</action>
+
+		<action name="suppowerchglog" class="suppowerchglogAction">
+			<result name="list">/page/powerbase/optcommon/suppowerchglogList.jsp
+			</result>
+			<result name="edit">/page/powerbase/optcommon/suppowerchglogForm.jsp
+			</result>
+			<result name="view">/page/powerbase/optcommon/suppowerchglogView.jsp
+			</result>
+			<result name="suppowerQlbgShEdit">/page/powerbase/optcommon/suppowerQlbgShEdit.jsp
+			</result>
+			<result name="suppowerQlbgReplyEdit">/page/powerbase/optcommon/suppowerQlbgReplyEdit.jsp
+			</result>
+			<result name="listVersion">/page/powerbase/optcommon/suppowerChglogbyId.jsp
+			</result>
+			<result name="listNVersion">/page/powerbase/optcommon/suppowerNChglogbyId.jsp
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">supPower</param>
+				<param name="method">listSupPowerSH</param>
+			</result>
+			<result name="successReply" type="chain">
+				<param name="actionName">supPower</param>
+				<param name="method">listSupPowerReply</param>
+			</result>
+			<result name="listSupPowerSH" type="chain">
+				<param name="actionName">supPower</param>
+				<param name="method">listSupPowerSH</param>
+			</result>
+			<result name="listSupPowerReply" type="chain">
+				<param name="actionName">supPower</param>
+				<param name="method">listSupPowerReply</param>
+			</result>
+
+		</action>
+		
+		<action name="powerOptInfo" class="powerOptInfoAction">
+		    <result name="save" type="redirectAction">
+				<param name="actionName">vsuppowerinusing</param>
+				<param name="method">list</param>
+			</result>
+			
+			<result name="listSelectStuffgroup">/page/powerbase/listSelectStuffgroup.jsp</result>
+			<result name="listSelectFlowDescribe">/page/powerbase/listSelectFlowDescribe.jsp</result>
+			<result name="listSelectTempfile">/page/powerbase/listSelectTempfile.jsp</result>
+			
+			<result name="input">/page/powerbase/optcommon/powerOptInfoList.jsp</result>
+			<result name="list">/page/powerbase/optcommon/powerOptInfoList.jsp</result>
+			<result name="view">/page/powerbase/optcommon/powerOptInfoView.jsp</result>
+			<result name="edit">/page/powerbase/optcommon/powerOptInfoForm.jsp</result>
+			<result name="viewpcpunishStandard">/page/powerbase/optcommon/pcpunishStandardList.jsp
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">powerOptInfo</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">powerOptInfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/sampleflow</param>
+				<param name="actionName">flowUserTask</param>
+				<param name="method">list</param>
+			</result>
+			<result name="GroupID" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="powerUserInfo" class="powerUserInfoAction">
+		    <result name="save" type="redirectAction">
+				<param name="actionName">powerUserInfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="list">/page/powerbase/optcommon/powerUserInfoList.jsp</result>
+			<result name="powerList">/page/powerbase/optcommon/powerUserInfoPowerList.jsp</result>
+			<result name="userList">/page/powerbase/optcommon/powerUserInfoUserList.jsp</result>
+				<result name="powerSelectList">/page/powerbase/optcommon/powerUserInfoPowerSelectList.jsp</result>
+			<result name="userSelectList">/page/powerbase/optcommon/powerUserInfoUserSelectList.jsp</result>
+			
+			<result name="view">/page/powerbase/optcommon/powerUserInfoView.jsp</result>
+			<result name="edit">/page/powerbase/optcommon/powerUserInfoForm.jsp</result>
+			<result name="viewpcpunishStandard">/page/powerbase/optcommon/pcpunishStandardList.jsp
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">powerUserInfo</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">powerUserInfo</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		<action name="*" class="{1}Action">
+			<result name="input">/page/powerbase/optcommon/{1}List.jsp</result>
+			<result name="list">/page/powerbase/optcommon/{1}List.jsp</result>
+			<result name="view">/page/powerbase/optcommon/{1}View.jsp</result>
+			<result name="edit">/page/powerbase/optcommon/{1}Form.jsp</result>
+			<result name="viewpcpunishStandard">/page/powerbase/optcommon/pcpunishStandardList.jsp
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/sampleflow</param>
+				<param name="actionName">flowUserTask</param>
+				<param name="method">list</param>
+			</result>
+			<result name="GroupID" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+				
+		
+		<action name="dataenterprise" class="dataenterpriseAction">
+			<result name="list">/page/powerbase/dataenterpriseList.jsp</result>
+			<result name="view">/page/powerbase/dataenterpriseView.jsp</result>
+			<result name="edit">/page/powerbase/dataenterpriseForm.jsp</result>
+			<result name="built" type="chain" />
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="success" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">closeCurrent</param>
+				<param name="navTabId"></param>
+			</result>
+		</action>
+		
+		<action name="dataindividual" class="dataindividualAction">
+			<result name="list">/page/powerbase/dataindividualList.jsp</result>
+			<result name="view">/page/powerbase/dataindividualView.jsp</result>
+			<result name="edit">/page/powerbase/dataindividualForm.jsp</result>
+			<result name="built" type="chain" />
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+			<result name="success" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">closeCurrent</param>
+				<param name="navTabId"></param>
+			</result>
+		</action>
+	</package>
+
+</struts>

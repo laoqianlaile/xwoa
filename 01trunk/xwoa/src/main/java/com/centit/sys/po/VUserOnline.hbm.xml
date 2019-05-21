@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.centit.sys.po.VUserOnline" table="V_USERS_ONLINE">
+    
+		<id name="usercode" type="java.lang.String">
+			<column name="USERCODE" length="8" />
+			<generator class="assigned" />
+		</id>
+		<property name="username" type="java.lang.String">
+			<column name="USERNAME" length="64" />
+		</property>
+		<property name="unitcode" type="java.lang.String">
+			<column name="UNITCODE" length="6" />
+		</property>
+		<property name="userstate" type="java.lang.String">
+			<column name="USERSTATE" length="10" />
+		</property>
+		<property name="unitname" type="java.lang.String">
+			<column name="UNITNAME" length="100" />
+		</property>
+		<property name="userdesc" type="java.lang.String">
+			<column name="USERDESC" length="256" />
+		</property>
+		<property name="accesstime" type="java.util.Date">
+			<column name="ACCESSTIME" length="7" />
+		</property>
+      
+    </class>
+</hibernate-mapping>

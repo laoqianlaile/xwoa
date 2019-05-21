@@ -1,0 +1,486 @@
+
+[2017-3-7 12:26:04][Notice]:App Started
+[2017-3-7 12:26:04][Debug]:Sourcefile - d:\oa.home\upload\workflowaffix\sw\SW00000000011506\9319ee9bc0714131a345620a8cfbc77e.ceb
+[2017-3-7 12:26:04][Debug]:Output Dir - d:\oa.home\upload\workflowaffix\sw\SW00000000011506
+[2017-3-7 12:26:04][Debug]:Outputfile - d:\oa.home\upload\workflowaffix\sw\SW00000000011506\9319ee9bc0714131a345620a8cfbc77e.pdf
+[2017-3-7 12:26:04][Warning]:MainHandle Window not found, c2pfree.exe
+[2017-3-7 12:26:05][Debug]:c2pfree Application Window found: 0x00030D4C
+[2017-3-7 12:26:05][Notice]:Starting Script...
+[2017-3-7 12:26:05][Debug]:ManualOutputDir-Button found: 0x00020D54
+[2017-3-7 12:26:05][Debug]:Edit-Field found: 0x00080D0A
+[2017-3-7 12:26:05][Debug]:OpenFile-Button found: 0x00030D46
+[2017-3-7 12:26:05][Debug]:OpenFileDialog-Window found: 0x00020D1A
+[2017-3-7 12:26:06][Debug]:OpenFileDialog->Edit-Field found: 0x00020D38
+[2017-3-7 12:26:06][Debug]:OpenFileDialog->Open-Button found: 0x00020D34
+[2017-3-7 12:26:06][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 12:26:06][Debug]:UI Controll Script Execution Time: 1810ms
+[2017-3-7 12:26:06][Debug]:File Generation Execution Time:203ms
+[2017-3-7 12:26:06][Notice]:Restarting Application..
+[2017-3-7 12:26:06][Debug]:Execution Restart Cycle:5/0
+[2017-3-7 12:26:06][Debug]:Entire Process Execution Time:2231ms
+[2017-3-7 12:26:06][Notice]:Application Ended
+
+[2017-3-7 12:27:20][Notice]:App Started
+[2017-3-7 12:27:20][Debug]:Sourcefile - d:\oa.home\upload\workflowaffix\sw\SW00000000011506\9319ee9bc0714131a345620a8cfbc77e.ceb
+[2017-3-7 12:27:20][Debug]:Output Dir - d:\oa.home\upload\workflowaffix\sw\SW00000000011506
+[2017-3-7 12:27:20][Debug]:Outputfile - d:\oa.home\upload\workflowaffix\sw\SW00000000011506\9319ee9bc0714131a345620a8cfbc77e.pdf
+[2017-3-7 12:27:20][Debug]:c2pfree Application Window found: 0x000D0D12
+[2017-3-7 12:27:20][Notice]:Starting Script...
+[2017-3-7 12:27:20][Debug]:ManualOutputDir-Button found: 0x00020D72
+[2017-3-7 12:27:20][Debug]:Edit-Field found: 0x00020D76
+[2017-3-7 12:27:20][Debug]:OpenFile-Button found: 0x00040D44
+[2017-3-7 12:27:20][Debug]:OpenFileDialog-Window found: 0x00040D8E
+[2017-3-7 12:27:21][Debug]:OpenFileDialog->Edit-Field found: 0x000A0D66
+[2017-3-7 12:27:21][Debug]:OpenFileDialog->Open-Button found: 0x00010DC8
+[2017-3-7 12:27:21][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 12:27:21][Debug]:UI Controll Script Execution Time: 811ms
+[2017-3-7 12:27:21][Debug]:File Generation Execution Time:203ms
+[2017-3-7 12:27:21][Debug]:Execution Restart Cycle:5/1
+[2017-3-7 12:27:21][Debug]:Entire Process Execution Time:1014ms
+[2017-3-7 12:27:21][Notice]:Application Ended
+
+[2017-3-7 12:28:03][Notice]:App Started
+[2017-3-7 12:28:03][Debug]:Sourcefile - d:\oa.home\upload\workflowaffix\sw\SW00000000011506\9319ee9bc0714131a345620a8cfbc77e.ceb
+[2017-3-7 12:28:03][Debug]:Output Dir - d:\oa.home\upload\workflowaffix\sw\SW00000000011506
+[2017-3-7 12:28:03][Debug]:Outputfile - d:\oa.home\upload\workflowaffix\sw\SW00000000011506\9319ee9bc0714131a345620a8cfbc77e.pdf
+[2017-3-7 12:28:03][Debug]:c2pfree Application Window found: 0x000D0D12
+[2017-3-7 12:28:03][Notice]:Starting Script...
+[2017-3-7 12:28:03][Debug]:ManualOutputDir-Button found: 0x00020D72
+[2017-3-7 12:28:03][Debug]:Edit-Field found: 0x00020D76
+[2017-3-7 12:28:03][Debug]:OpenFile-Button found: 0x00040D44
+[2017-3-7 12:28:08][Error]:Can not Find the OpenFileDialog-Window.
+
+[2017-3-7 13:32:31][Notice]:App Started
+[2017-3-7 13:32:31][Debug]:Sourcefile - d:\oa.home\upload\temp\ef4ebc902aeb4a4a957cae3b10598f59.ceb
+[2017-3-7 13:32:31][Debug]:Output Dir - d:\oa.home\upload\temp
+[2017-3-7 13:32:31][Debug]:Outputfile - d:\oa.home\upload\temp\ef4ebc902aeb4a4a957cae3b10598f59.pdf
+[2017-3-7 13:32:31][Debug]:c2pfree Application Window found: 0x00390CEA
+[2017-3-7 13:32:31][Notice]:Starting Script...
+[2017-3-7 13:32:31][Debug]:ManualOutputDir-Button found: 0x00140B42
+[2017-3-7 13:32:31][Debug]:Edit-Field found: 0x001B076C
+[2017-3-7 13:32:31][Debug]:OpenFile-Button found: 0x000C0D82
+[2017-3-7 13:32:32][Debug]:OpenFileDialog-Window found: 0x000C0DEA
+[2017-3-7 13:32:32][Debug]:OpenFileDialog->Edit-Field found: 0x00100D60
+[2017-3-7 13:32:32][Debug]:OpenFileDialog->Open-Button found: 0x00060E02
+[2017-3-7 13:32:32][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 13:32:32][Debug]:UI Controll Script Execution Time: 468ms
+[2017-3-7 13:32:32][Debug]:File Generation Execution Time:203ms
+[2017-3-7 13:32:32][Debug]:Execution Restart Cycle:5/2
+[2017-3-7 13:32:32][Debug]:Entire Process Execution Time:671ms
+[2017-3-7 13:32:32][Notice]:Application Ended
+
+[2017-3-7 13:35:10][Notice]:App Started
+[2017-3-7 13:35:10][Debug]:Sourcefile - d:\oa.home\upload\temp\4c74421bd02043bab6a4a2b1384db205.ceb
+[2017-3-7 13:35:10][Debug]:Output Dir - d:\oa.home\upload\temp
+[2017-3-7 13:35:10][Debug]:Outputfile - d:\oa.home\upload\temp\4c74421bd02043bab6a4a2b1384db205.pdf
+[2017-3-7 13:35:10][Debug]:c2pfree Application Window found: 0x00390CEA
+[2017-3-7 13:35:10][Notice]:Starting Script...
+[2017-3-7 13:35:10][Debug]:ManualOutputDir-Button found: 0x00140B42
+[2017-3-7 13:35:10][Debug]:Edit-Field found: 0x001B076C
+[2017-3-7 13:35:10][Debug]:OpenFile-Button found: 0x000C0D82
+[2017-3-7 13:35:11][Debug]:OpenFileDialog-Window found: 0x000C0DEA
+[2017-3-7 13:35:11][Debug]:OpenFileDialog->Edit-Field found: 0x00100D60
+[2017-3-7 13:35:11][Debug]:OpenFileDialog->Open-Button found: 0x00060E02
+[2017-3-7 13:35:11][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 13:35:11][Debug]:UI Controll Script Execution Time: 375ms
+[2017-3-7 13:35:11][Debug]:File Generation Execution Time:202ms
+[2017-3-7 13:35:11][Debug]:Execution Restart Cycle:5/3
+[2017-3-7 13:35:11][Debug]:Entire Process Execution Time:577ms
+[2017-3-7 13:35:11][Notice]:Application Ended
+
+[2017-3-7 13:39:40][Notice]:App Started
+[2017-3-7 13:39:40][Debug]:Sourcefile - D:\4c74421bd02043bab6a4a2b1384db205.ceb
+[2017-3-7 13:39:40][Debug]:Output Dir - D:\
+[2017-3-7 13:39:40][Debug]:Outputfile - D:\4c74421bd02043bab6a4a2b1384db205.pdf
+[2017-3-7 13:39:40][Warning]:MainHandle Window not found, c2pfree.exe
+[2017-3-7 13:39:40][Debug]:c2pfree Application Window found: 0x000F0DB8
+[2017-3-7 13:39:40][Notice]:Starting Script...
+[2017-3-7 13:39:40][Debug]:ManualOutputDir-Button found: 0x002309CE
+[2017-3-7 13:39:40][Debug]:Edit-Field found: 0x00070EBC
+[2017-3-7 13:39:40][Debug]:OpenFile-Button found: 0x001B0E58
+[2017-3-7 13:39:41][Debug]:OpenFileDialog-Window found: 0x000E0DD8
+[2017-3-7 13:39:41][Debug]:OpenFileDialog->Edit-Field found: 0x00050F18
+[2017-3-7 13:39:41][Debug]:OpenFileDialog->Open-Button found: 0x00020F40
+[2017-3-7 13:39:41][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 13:39:41][Debug]:UI Controll Script Execution Time: 1388ms
+[2017-3-7 13:39:41][Debug]:File Generation Execution Time:203ms
+[2017-3-7 13:39:41][Debug]:Execution Restart Cycle:5/4
+[2017-3-7 13:39:41][Debug]:Entire Process Execution Time:1591ms
+[2017-3-7 13:39:41][Notice]:Application Ended
+
+[2017-3-7 13:42:39][Notice]:App Started
+[2017-3-7 13:42:39][Debug]:Sourcefile - d:\oa.home\4c74421bd02043bab6a4a2b1384db205.ceb
+[2017-3-7 13:42:39][Debug]:Output Dir - d:\oa.home
+[2017-3-7 13:42:39][Debug]:Outputfile - d:\oa.home\4c74421bd02043bab6a4a2b1384db205.pdf
+[2017-3-7 13:42:39][Debug]:c2pfree Application Window found: 0x000F0DB8
+[2017-3-7 13:42:39][Notice]:Starting Script...
+[2017-3-7 13:42:39][Debug]:ManualOutputDir-Button found: 0x002309CE
+[2017-3-7 13:42:39][Debug]:Edit-Field found: 0x00070EBC
+[2017-3-7 13:42:39][Debug]:OpenFile-Button found: 0x001B0E58
+[2017-3-7 13:42:45][Error]:Can not Find the OpenFileDialog-Window.
+
+[2017-3-7 13:42:49][Notice]:App Started
+[2017-3-7 13:42:49][Debug]:Sourcefile - d:\oa.home\4c74421bd02043bab6a4a2b1384db205.ceb
+[2017-3-7 13:42:49][Debug]:Output Dir - d:\oa.home
+[2017-3-7 13:42:49][Debug]:Outputfile - d:\oa.home\4c74421bd02043bab6a4a2b1384db205.pdf
+[2017-3-7 13:42:49][Debug]:c2pfree Application Window found: 0x000F0DB8
+[2017-3-7 13:42:49][Notice]:Starting Script...
+[2017-3-7 13:42:49][Debug]:ManualOutputDir-Button found: 0x002309CE
+[2017-3-7 13:42:49][Debug]:Edit-Field found: 0x00070EBC
+[2017-3-7 13:42:49][Debug]:OpenFile-Button found: 0x001B0E58
+[2017-3-7 13:42:49][Debug]:OpenFileDialog-Window found: 0x00110D82
+[2017-3-7 13:42:50][Debug]:OpenFileDialog->Edit-Field found: 0x00050F38
+[2017-3-7 13:42:50][Debug]:OpenFileDialog->Open-Button found: 0x00030F46
+[2017-3-7 13:42:50][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 13:42:50][Debug]:UI Controll Script Execution Time: 546ms
+[2017-3-7 13:42:50][Debug]:File Generation Execution Time:203ms
+[2017-3-7 13:42:50][Debug]:Execution Restart Cycle:5/5
+[2017-3-7 13:42:50][Debug]:Entire Process Execution Time:749ms
+[2017-3-7 13:42:50][Notice]:Application Ended
+
+[2017-3-7 14:00:57][Notice]:App Started
+[2017-3-7 14:00:57][Debug]:Sourcefile - d:\cebTemp\be73c06a123c44f3b3eefb9dfec83e9b.ceb
+[2017-3-7 14:00:57][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:00:57][Debug]:Outputfile - d:\cebTemp\be73c06a123c44f3b3eefb9dfec83e9b.pdf
+[2017-3-7 14:00:57][Warning]:MainHandle Window not found, c2pfree.exe
+[2017-3-7 14:00:57][Debug]:c2pfree Application Window found: 0x00270E94
+[2017-3-7 14:00:57][Notice]:Starting Script...
+[2017-3-7 14:00:57][Debug]:ManualOutputDir-Button found: 0x00020F98
+[2017-3-7 14:00:57][Debug]:Edit-Field found: 0x00020F94
+[2017-3-7 14:00:57][Debug]:OpenFile-Button found: 0x00100E20
+[2017-3-7 14:00:58][Debug]:OpenFileDialog-Window found: 0x00020F82
+[2017-3-7 14:00:58][Debug]:OpenFileDialog->Edit-Field found: 0x00010FAC
+[2017-3-7 14:00:58][Debug]:OpenFileDialog->Open-Button found: 0x00010FB6
+[2017-3-7 14:00:58][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:00:58][Debug]:UI Controll Script Execution Time: 1404ms
+[2017-3-7 14:00:58][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:00:58][Notice]:Restarting Application..
+[2017-3-7 14:00:58][Debug]:Execution Restart Cycle:5/0
+[2017-3-7 14:00:58][Debug]:Entire Process Execution Time:1716ms
+[2017-3-7 14:00:58][Notice]:Application Ended
+
+[2017-3-7 14:02:41][Notice]:App Started
+[2017-3-7 14:02:41][Debug]:Sourcefile - d:\cebTemp\c7efc51146434f888cfa0d1920611465.ceb
+[2017-3-7 14:02:41][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:02:41][Debug]:Outputfile - d:\cebTemp\c7efc51146434f888cfa0d1920611465.pdf
+[2017-3-7 14:02:41][Debug]:c2pfree Application Window found: 0x00060F78
+[2017-3-7 14:02:41][Notice]:Starting Script...
+[2017-3-7 14:02:41][Debug]:ManualOutputDir-Button found: 0x00030F9C
+[2017-3-7 14:02:41][Debug]:Edit-Field found: 0x00030F7E
+[2017-3-7 14:02:41][Debug]:OpenFile-Button found: 0x00400A90
+[2017-3-7 14:02:42][Debug]:OpenFileDialog-Window found: 0x00050F74
+[2017-3-7 14:02:42][Debug]:OpenFileDialog->Edit-Field found: 0x00040F9E
+[2017-3-7 14:02:42][Debug]:OpenFileDialog->Open-Button found: 0x00030FC2
+[2017-3-7 14:02:42][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:02:42][Debug]:UI Controll Script Execution Time: 920ms
+[2017-3-7 14:02:43][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:02:43][Debug]:Execution Restart Cycle:5/1
+[2017-3-7 14:02:43][Debug]:Entire Process Execution Time:1123ms
+[2017-3-7 14:02:43][Notice]:Application Ended
+
+[2017-3-7 14:03:23][Notice]:App Started
+[2017-3-7 14:03:23][Debug]:Sourcefile - d:\cebTemp\40eda92f73e5485199bc3554b4784c56.ceb
+[2017-3-7 14:03:23][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:03:23][Debug]:Outputfile - d:\cebTemp\40eda92f73e5485199bc3554b4784c56.pdf
+[2017-3-7 14:03:24][Warning]:MainHandle Window not found, c2pfree.exe
+[2017-3-7 14:03:24][Debug]:c2pfree Application Window found: 0x00060F9A
+[2017-3-7 14:03:24][Notice]:Starting Script...
+[2017-3-7 14:03:24][Debug]:ManualOutputDir-Button found: 0x00060F6A
+[2017-3-7 14:03:24][Debug]:Edit-Field found: 0x00420A90
+[2017-3-7 14:03:24][Debug]:OpenFile-Button found: 0x00050F92
+[2017-3-7 14:03:24][Debug]:OpenFileDialog-Window found: 0x00060FC4
+[2017-3-7 14:03:25][Debug]:OpenFileDialog->Edit-Field found: 0x00050FF2
+[2017-3-7 14:03:25][Debug]:OpenFileDialog->Open-Button found: 0x00060FF0
+[2017-3-7 14:03:25][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:03:25][Debug]:UI Controll Script Execution Time: 1436ms
+[2017-3-7 14:03:25][Debug]:File Generation Execution Time:202ms
+[2017-3-7 14:03:25][Debug]:Execution Restart Cycle:5/2
+[2017-3-7 14:03:25][Debug]:Entire Process Execution Time:1638ms
+[2017-3-7 14:03:25][Notice]:Application Ended
+
+[2017-3-7 14:04:31][Notice]:App Started
+[2017-3-7 14:04:31][Debug]:Sourcefile - d:\cebTemp\dfe2788f980145c8af7059ba38c9ccbc.ceb
+[2017-3-7 14:04:31][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:04:31][Debug]:Outputfile - d:\cebTemp\dfe2788f980145c8af7059ba38c9ccbc.pdf
+[2017-3-7 14:04:31][Warning]:MainHandle Window not found, c2pfree.exe
+[2017-3-7 14:04:32][Debug]:c2pfree Application Window found: 0x00090F8E
+[2017-3-7 14:04:32][Notice]:Starting Script...
+[2017-3-7 14:04:32][Debug]:ManualOutputDir-Button found: 0x00090F7E
+[2017-3-7 14:04:32][Debug]:Edit-Field found: 0x00130EF2
+[2017-3-7 14:04:32][Debug]:OpenFile-Button found: 0x000A0F7C
+[2017-3-7 14:04:32][Debug]:OpenFileDialog-Window found: 0x000A0FB4
+[2017-3-7 14:04:33][Debug]:OpenFileDialog->Edit-Field found: 0x000D0EEE
+[2017-3-7 14:04:33][Debug]:OpenFileDialog->Open-Button found: 0x00370E30
+[2017-3-7 14:04:33][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:04:33][Debug]:UI Controll Script Execution Time: 1420ms
+[2017-3-7 14:04:33][Debug]:File Generation Execution Time:202ms
+[2017-3-7 14:04:33][Debug]:Execution Restart Cycle:5/3
+[2017-3-7 14:04:33][Debug]:Entire Process Execution Time:1622ms
+[2017-3-7 14:04:33][Notice]:Application Ended
+
+[2017-3-7 14:04:57][Notice]:App Started
+[2017-3-7 14:04:57][Debug]:Sourcefile - d:\cebTemp\dfe2788f980145c8af7059ba38c9ccbc.ceb
+[2017-3-7 14:04:57][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:04:57][Debug]:Outputfile - d:\cebTemp\dfe2788f980145c8af7059ba38c9ccbc.pdf
+[2017-3-7 14:04:57][Warning]:MainHandle Window not found, c2pfree.exe
+[2017-3-7 14:04:57][Debug]:c2pfree Application Window found: 0x00230CAE
+[2017-3-7 14:04:57][Notice]:Starting Script...
+[2017-3-7 14:04:57][Debug]:ManualOutputDir-Button found: 0x00480A90
+[2017-3-7 14:04:57][Debug]:Edit-Field found: 0x00210D60
+[2017-3-7 14:04:57][Debug]:OpenFile-Button found: 0x00190CE0
+[2017-3-7 14:04:57][Debug]:OpenFileDialog-Window found: 0x003F0E54
+[2017-3-7 14:04:58][Debug]:OpenFileDialog->Edit-Field found: 0x000B1022
+[2017-3-7 14:04:58][Debug]:OpenFileDialog->Open-Button found: 0x000B0F9C
+[2017-3-7 14:04:58][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:04:58][Debug]:UI Controll Script Execution Time: 1404ms
+[2017-3-7 14:04:58][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:04:58][Debug]:Execution Restart Cycle:5/4
+[2017-3-7 14:04:58][Debug]:Entire Process Execution Time:1607ms
+[2017-3-7 14:04:58][Notice]:Application Ended
+
+[2017-3-7 14:05:50][Notice]:App Started
+[2017-3-7 14:05:50][Debug]:Sourcefile - d:\cebTemp\22.ceb
+[2017-3-7 14:05:50][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:05:50][Debug]:Outputfile - d:\cebTemp\22.pdf
+[2017-3-7 14:05:50][Warning]:MainHandle Window not found, c2pfree.exe
+[2017-3-7 14:05:51][Debug]:c2pfree Application Window found: 0x00330DFC
+[2017-3-7 14:05:51][Notice]:Starting Script...
+[2017-3-7 14:05:51][Debug]:ManualOutputDir-Button found: 0x003B0B3E
+[2017-3-7 14:05:51][Debug]:Edit-Field found: 0x000F0E24
+[2017-3-7 14:05:51][Debug]:OpenFile-Button found: 0x00160E56
+[2017-3-7 14:05:51][Debug]:OpenFileDialog-Window found: 0x000A0DA0
+[2017-3-7 14:05:52][Debug]:OpenFileDialog->Edit-Field found: 0x00090EFA
+[2017-3-7 14:05:52][Debug]:OpenFileDialog->Open-Button found: 0x00040F2A
+[2017-3-7 14:05:52][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:05:52][Debug]:UI Controll Script Execution Time: 1654ms
+[2017-3-7 14:05:52][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:05:52][Debug]:Execution Restart Cycle:5/5
+[2017-3-7 14:05:52][Debug]:Entire Process Execution Time:1857ms
+[2017-3-7 14:05:52][Notice]:Application Ended
+
+[2017-3-7 14:07:16][Notice]:App Started
+[2017-3-7 14:07:16][Debug]:Sourcefile - d:\cebTemp\20170307140633.ceb
+[2017-3-7 14:07:16][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:07:16][Debug]:Outputfile - d:\cebTemp\20170307140633.pdf
+[2017-3-7 14:07:16][Warning]:MainHandle Window not found, c2pfree.exe
+[2017-3-7 14:07:16][Debug]:c2pfree Application Window found: 0x00360E5A
+[2017-3-7 14:07:16][Notice]:Starting Script...
+[2017-3-7 14:07:16][Debug]:ManualOutputDir-Button found: 0x00330E18
+[2017-3-7 14:07:16][Debug]:Edit-Field found: 0x00080F12
+[2017-3-7 14:07:16][Debug]:OpenFile-Button found: 0x000B0DCA
+[2017-3-7 14:07:17][Debug]:OpenFileDialog-Window found: 0x00280CAE
+[2017-3-7 14:07:17][Debug]:OpenFileDialog->Edit-Field found: 0x000F0D9E
+[2017-3-7 14:07:17][Debug]:OpenFileDialog->Open-Button found: 0x000A0EFA
+[2017-3-7 14:07:17][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:07:17][Debug]:UI Controll Script Execution Time: 1451ms
+[2017-3-7 14:07:17][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:07:17][Notice]:Restarting Application..
+[2017-3-7 14:07:17][Debug]:Execution Restart Cycle:5/0
+[2017-3-7 14:07:17][Debug]:Entire Process Execution Time:1763ms
+[2017-3-7 14:07:17][Notice]:Application Ended
+
+[2017-3-7 14:07:28][Notice]:App Started
+[2017-3-7 14:07:28][Debug]:Sourcefile - d:\cebTemp\20170307140633.ceb
+[2017-3-7 14:07:28][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:07:28][Debug]:Outputfile - d:\cebTemp\20170307140633.pdf
+[2017-3-7 14:07:28][Warning]:d:\cebTemp\20170307140633.pdf already exists, deleting old File.
+[2017-3-7 14:07:28][Debug]:c2pfree Application Window found: 0x00170E16
+[2017-3-7 14:07:28][Notice]:Starting Script...
+[2017-3-7 14:07:28][Debug]:ManualOutputDir-Button found: 0x00270E34
+[2017-3-7 14:07:28][Debug]:Edit-Field found: 0x001A0E22
+[2017-3-7 14:07:28][Debug]:OpenFile-Button found: 0x00120786
+[2017-3-7 14:07:28][Debug]:OpenFileDialog-Window found: 0x00300B48
+[2017-3-7 14:07:28][Debug]:OpenFileDialog->Edit-Field found: 0x00060F02
+[2017-3-7 14:07:28][Debug]:OpenFileDialog->Open-Button found: 0x000B0E08
+[2017-3-7 14:07:28][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:07:28][Debug]:UI Controll Script Execution Time: 718ms
+[2017-3-7 14:07:28][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:07:28][Debug]:Execution Restart Cycle:5/1
+[2017-3-7 14:07:28][Debug]:Entire Process Execution Time:921ms
+[2017-3-7 14:07:28][Notice]:Application Ended
+
+[2017-3-7 14:08:15][Notice]:App Started
+[2017-3-7 14:08:15][Debug]:Sourcefile - d:\cebTemp\4c74421bd02043bab6a4a2b1384db205.ceb
+[2017-3-7 14:08:15][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:08:15][Debug]:Outputfile - d:\cebTemp\4c74421bd02043bab6a4a2b1384db205.pdf
+[2017-3-7 14:08:15][Debug]:c2pfree Application Window found: 0x00170E16
+[2017-3-7 14:08:15][Notice]:Starting Script...
+[2017-3-7 14:08:15][Debug]:ManualOutputDir-Button found: 0x00270E34
+[2017-3-7 14:08:15][Debug]:Edit-Field found: 0x001A0E22
+[2017-3-7 14:08:15][Debug]:OpenFile-Button found: 0x00120786
+[2017-3-7 14:08:20][Error]:Can not Find the OpenFileDialog-Window.
+
+[2017-3-7 14:08:25][Notice]:App Started
+[2017-3-7 14:08:25][Debug]:Sourcefile - d:\cebTemp\4c74421bd02043bab6a4a2b1384db205.ceb
+[2017-3-7 14:08:25][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:08:25][Debug]:Outputfile - d:\cebTemp\4c74421bd02043bab6a4a2b1384db205.pdf
+[2017-3-7 14:08:25][Debug]:c2pfree Application Window found: 0x00170E16
+[2017-3-7 14:08:25][Notice]:Starting Script...
+[2017-3-7 14:08:25][Debug]:ManualOutputDir-Button found: 0x00270E34
+[2017-3-7 14:08:25][Debug]:Edit-Field found: 0x001A0E22
+[2017-3-7 14:08:25][Debug]:OpenFile-Button found: 0x00120786
+[2017-3-7 14:08:30][Error]:Can not Find the OpenFileDialog-Window.
+
+[2017-3-7 14:08:35][Notice]:App Started
+[2017-3-7 14:08:35][Debug]:Sourcefile - d:\cebTemp\4c74421bd02043bab6a4a2b1384db205.ceb
+[2017-3-7 14:08:35][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:08:35][Debug]:Outputfile - d:\cebTemp\4c74421bd02043bab6a4a2b1384db205.pdf
+[2017-3-7 14:08:35][Debug]:c2pfree Application Window found: 0x00170E16
+[2017-3-7 14:08:35][Notice]:Starting Script...
+[2017-3-7 14:08:35][Debug]:ManualOutputDir-Button found: 0x00270E34
+[2017-3-7 14:08:35][Debug]:Edit-Field found: 0x001A0E22
+[2017-3-7 14:08:35][Debug]:OpenFile-Button found: 0x00120786
+[2017-3-7 14:08:36][Debug]:OpenFileDialog-Window found: 0x00120DA0
+[2017-3-7 14:08:36][Debug]:OpenFileDialog->Edit-Field found: 0x000A0EBE
+[2017-3-7 14:08:36][Debug]:OpenFileDialog->Open-Button found: 0x00070F10
+[2017-3-7 14:08:36][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:08:36][Debug]:UI Controll Script Execution Time: 577ms
+[2017-3-7 14:08:36][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:08:36][Debug]:Execution Restart Cycle:5/2
+[2017-3-7 14:08:36][Debug]:Entire Process Execution Time:780ms
+[2017-3-7 14:08:36][Notice]:Application Ended
+
+[2017-3-7 14:14:49][Notice]:App Started
+[2017-3-7 14:14:49][Debug]:Sourcefile - d:\cebTemp\20170307141402.ceb
+[2017-3-7 14:14:49][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:14:49][Debug]:Outputfile - d:\cebTemp\20170307141402.pdf
+[2017-3-7 14:14:49][Debug]:c2pfree Application Window found: 0x00170E16
+[2017-3-7 14:14:49][Notice]:Starting Script...
+[2017-3-7 14:14:49][Debug]:ManualOutputDir-Button found: 0x00270E34
+[2017-3-7 14:14:49][Debug]:Edit-Field found: 0x001A0E22
+[2017-3-7 14:14:49][Debug]:OpenFile-Button found: 0x00120786
+[2017-3-7 14:14:49][Debug]:OpenFileDialog-Window found: 0x001D0EA8
+[2017-3-7 14:14:50][Debug]:OpenFileDialog->Edit-Field found: 0x00100F1E
+[2017-3-7 14:14:50][Debug]:OpenFileDialog->Open-Button found: 0x00050E70
+[2017-3-7 14:14:50][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:14:50][Debug]:UI Controll Script Execution Time: 577ms
+[2017-3-7 14:14:50][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:14:50][Debug]:Execution Restart Cycle:5/3
+[2017-3-7 14:14:50][Debug]:Entire Process Execution Time:780ms
+[2017-3-7 14:14:50][Notice]:Application Ended
+
+[2017-3-7 14:17:02][Notice]:App Started
+[2017-3-7 14:17:02][Debug]:Sourcefile - d:\cebTemp\20170307141656.ceb
+[2017-3-7 14:17:02][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:17:02][Debug]:Outputfile - d:\cebTemp\20170307141656.pdf
+[2017-3-7 14:17:02][Debug]:c2pfree Application Window found: 0x00170E16
+[2017-3-7 14:17:02][Notice]:Starting Script...
+[2017-3-7 14:17:02][Debug]:ManualOutputDir-Button found: 0x00270E34
+[2017-3-7 14:17:02][Debug]:Edit-Field found: 0x001A0E22
+[2017-3-7 14:17:02][Debug]:OpenFile-Button found: 0x00120786
+[2017-3-7 14:17:02][Debug]:OpenFileDialog-Window found: 0x00100FFC
+[2017-3-7 14:17:02][Debug]:OpenFileDialog->Edit-Field found: 0x00120F1E
+[2017-3-7 14:17:02][Debug]:OpenFileDialog->Open-Button found: 0x00420E54
+[2017-3-7 14:17:02][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:17:02][Debug]:UI Controll Script Execution Time: 655ms
+[2017-3-7 14:17:03][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:17:03][Debug]:Execution Restart Cycle:5/4
+[2017-3-7 14:17:03][Debug]:Entire Process Execution Time:858ms
+[2017-3-7 14:17:03][Notice]:Application Ended
+
+[2017-3-7 14:23:23][Notice]:App Started
+[2017-3-7 14:23:23][Debug]:Sourcefile - d:\cebTemp\20170307142257.ceb
+[2017-3-7 14:23:23][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:23:23][Debug]:Outputfile - d:\cebTemp\20170307142257.pdf
+[2017-3-7 14:23:23][Debug]:c2pfree Application Window found: 0x00170E16
+[2017-3-7 14:23:23][Notice]:Starting Script...
+[2017-3-7 14:23:23][Debug]:ManualOutputDir-Button found: 0x00270E34
+[2017-3-7 14:23:23][Debug]:Edit-Field found: 0x001A0E22
+[2017-3-7 14:23:23][Debug]:OpenFile-Button found: 0x00120786
+[2017-3-7 14:23:29][Error]:Can not Find the OpenFileDialog-Window.
+
+[2017-3-7 14:23:41][Notice]:App Started
+[2017-3-7 14:23:41][Debug]:Sourcefile - d:\cebTemp\20170307142257.ceb
+[2017-3-7 14:23:41][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:23:41][Debug]:Outputfile - d:\cebTemp\20170307142257.pdf
+[2017-3-7 14:23:41][Debug]:c2pfree Application Window found: 0x00170E16
+[2017-3-7 14:23:41][Notice]:Starting Script...
+[2017-3-7 14:23:41][Debug]:ManualOutputDir-Button found: 0x00270E34
+[2017-3-7 14:23:41][Debug]:Edit-Field found: 0x001A0E22
+[2017-3-7 14:23:41][Debug]:OpenFile-Button found: 0x00120786
+[2017-3-7 14:23:41][Debug]:OpenFileDialog-Window found: 0x00021098
+[2017-3-7 14:23:42][Debug]:OpenFileDialog->Edit-Field found: 0x000110FC
+[2017-3-7 14:23:42][Debug]:OpenFileDialog->Open-Button found: 0x00011106
+[2017-3-7 14:23:42][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:23:42][Debug]:UI Controll Script Execution Time: 655ms
+[2017-3-7 14:23:42][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:23:42][Debug]:Execution Restart Cycle:5/5
+[2017-3-7 14:23:42][Debug]:Entire Process Execution Time:858ms
+[2017-3-7 14:23:42][Notice]:Application Ended
+
+[2017-3-7 14:24:48][Notice]:App Started
+[2017-3-7 14:24:48][Debug]:Sourcefile - d:\cebTemp\20170307142448.ceb
+[2017-3-7 14:24:48][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:24:48][Debug]:Outputfile - d:\cebTemp\20170307142448.pdf
+[2017-3-7 14:24:48][Debug]:c2pfree Application Window found: 0x00170E16
+[2017-3-7 14:24:48][Notice]:Starting Script...
+[2017-3-7 14:24:48][Debug]:ManualOutputDir-Button found: 0x00270E34
+[2017-3-7 14:24:48][Debug]:Edit-Field found: 0x001A0E22
+[2017-3-7 14:24:48][Debug]:OpenFile-Button found: 0x00120786
+[2017-3-7 14:24:49][Debug]:OpenFileDialog-Window found: 0x000510CA
+[2017-3-7 14:24:49][Debug]:OpenFileDialog->Edit-Field found: 0x00060D98
+[2017-3-7 14:24:49][Debug]:OpenFileDialog->Open-Button found: 0x000610A2
+[2017-3-7 14:24:49][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:24:49][Debug]:UI Controll Script Execution Time: 812ms
+[2017-3-7 14:24:49][Debug]:File Generation Execution Time:202ms
+[2017-3-7 14:24:49][Notice]:Restarting Application..
+[2017-3-7 14:24:50][Debug]:Execution Restart Cycle:5/0
+[2017-3-7 14:24:50][Debug]:Entire Process Execution Time:1139ms
+[2017-3-7 14:24:50][Notice]:Application Ended
+
+[2017-3-7 14:25:40][Notice]:App Started
+[2017-3-7 14:25:40][Debug]:Sourcefile - d:\cebTemp\20170307142540.ceb
+[2017-3-7 14:25:40][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:25:40][Debug]:Outputfile - d:\cebTemp\20170307142540.pdf
+[2017-3-7 14:25:40][Debug]:c2pfree Application Window found: 0x0003118A
+[2017-3-7 14:25:40][Notice]:Starting Script...
+[2017-3-7 14:25:40][Debug]:ManualOutputDir-Button found: 0x000A0EC4
+[2017-3-7 14:25:40][Debug]:Edit-Field found: 0x003E0E64
+[2017-3-7 14:25:40][Debug]:OpenFile-Button found: 0x00080DB6
+[2017-3-7 14:25:40][Debug]:OpenFileDialog-Window found: 0x00160EDE
+[2017-3-7 14:25:41][Debug]:OpenFileDialog->Edit-Field found: 0x000B1058
+[2017-3-7 14:25:41][Debug]:OpenFileDialog->Open-Button found: 0x00180786
+[2017-3-7 14:25:41][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:25:41][Debug]:UI Controll Script Execution Time: 795ms
+[2017-3-7 14:25:41][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:25:41][Debug]:Execution Restart Cycle:5/1
+[2017-3-7 14:25:41][Debug]:Entire Process Execution Time:998ms
+[2017-3-7 14:25:41][Notice]:Application Ended
+
+[2017-3-7 14:26:38][Notice]:App Started
+[2017-3-7 14:26:38][Debug]:Sourcefile - d:\cebTemp\20170307142638.ceb
+[2017-3-7 14:26:38][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:26:38][Debug]:Outputfile - d:\cebTemp\20170307142638.pdf
+[2017-3-7 14:26:38][Debug]:c2pfree Application Window found: 0x0003118A
+[2017-3-7 14:26:38][Notice]:Starting Script...
+[2017-3-7 14:26:38][Debug]:ManualOutputDir-Button found: 0x000A0EC4
+[2017-3-7 14:26:38][Debug]:Edit-Field found: 0x003E0E64
+[2017-3-7 14:26:38][Debug]:OpenFile-Button found: 0x00080DB6
+[2017-3-7 14:26:38][Debug]:OpenFileDialog-Window found: 0x001E0E70
+[2017-3-7 14:26:39][Debug]:OpenFileDialog->Edit-Field found: 0x001D0786
+[2017-3-7 14:26:39][Debug]:OpenFileDialog->Open-Button found: 0x00190CF0
+[2017-3-7 14:26:39][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:26:39][Debug]:UI Controll Script Execution Time: 687ms
+[2017-3-7 14:26:39][Debug]:File Generation Execution Time:202ms
+[2017-3-7 14:26:39][Debug]:Execution Restart Cycle:5/2
+[2017-3-7 14:26:39][Debug]:Entire Process Execution Time:889ms
+[2017-3-7 14:26:39][Notice]:Application Ended
+
+[2017-3-7 14:34:20][Notice]:App Started
+[2017-3-7 14:34:20][Debug]:Sourcefile - d:\cebTemp\20170307143420.ceb
+[2017-3-7 14:34:20][Debug]:Output Dir - d:\cebTemp
+[2017-3-7 14:34:20][Debug]:Outputfile - d:\cebTemp\20170307143420.pdf
+[2017-3-7 14:34:20][Debug]:c2pfree Application Window found: 0x0003118A
+[2017-3-7 14:34:20][Notice]:Starting Script...
+[2017-3-7 14:34:20][Debug]:ManualOutputDir-Button found: 0x000A0EC4
+[2017-3-7 14:34:20][Debug]:Edit-Field found: 0x003E0E64
+[2017-3-7 14:34:20][Debug]:OpenFile-Button found: 0x00080DB6
+[2017-3-7 14:34:20][Debug]:OpenFileDialog-Window found: 0x00150C6A
+[2017-3-7 14:34:21][Debug]:OpenFileDialog->Edit-Field found: 0x000C0DE6
+[2017-3-7 14:34:21][Debug]:OpenFileDialog->Open-Button found: 0x00131056
+[2017-3-7 14:34:21][Notice]:UI controll finished, waiting for Output file...
+[2017-3-7 14:34:21][Debug]:UI Controll Script Execution Time: 702ms
+[2017-3-7 14:34:21][Debug]:File Generation Execution Time:203ms
+[2017-3-7 14:34:21][Debug]:Execution Restart Cycle:5/3
+[2017-3-7 14:34:21][Debug]:Entire Process Execution Time:905ms
+[2017-3-7 14:34:21][Notice]:Application Ended

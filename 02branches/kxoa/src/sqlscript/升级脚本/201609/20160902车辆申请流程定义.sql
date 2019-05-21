@@ -1,0 +1,2 @@
+insert into WF_FLOW_DEFINE (WFCODE, VERSION, WFNAME, WFCLASS, WFPUBLISHDATE, WFSTATE, WFDESC, WFXMLDESC, TIMELIMIT, EXPIREOPT, ATPUBLISHDATE, OPTID)
+values ('000858', 7, '车辆申请流程', 'R', to_date('02-09-2016 10:01:45', 'dd-mm-yyyy hh24:mi:ss'), 'B', null, '<CLOB>', null, '0', null, 'OA_OPT');

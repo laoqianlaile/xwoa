@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+*{padding:0;margin:0;border:0;  font-family: Microsoft YaHei!important;}
+.login_wrapper{height:100%;width:100%; position:absolute;left:0;top:0; background:url(images/login/bg.jpg) center -100px no-repeat;min-weight:900px}
+.login_wrapper>div{ 
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(images/login/2.png) left bottom no-repeat;
+	}
+.login_wrapper form{
+	width:360px; 
+	height:420px; 
+	background:url(images/login/login.png) center center; 
+	position:absolute;
+	top:50%;
+	margin-top:-170px;
+	right:15%;
+	z-index:8;
+	text-align:center
+	}
+.font{display:none;position: relative;top: 50%;width:400px;left:50%;margin-left:-400px;z-index:5;margin-top:-120px}
+.font>h3{color:white;font-size:24px}
+.login_top{height:90px;position:relative;z-index:10; background:url(images/login/grounding.png)}
+.logo_img{position:relative;z-index:15;width:466px;height:90px;background:url(../default/improve/head-sy.png) left center no-repeat;float:left;margin-left:20px}
+.username{margin:90px auto auto 0; text-align:center; /* background:url(images/login/user.png) left center no-repeat white; */}
+.username>input{height:40px;/* margin-left:30px; */outline:none;line-height:38px;width:290px;font-size: 17px;border:none}
+.password{margin:60px auto auto 0; text-align:center; /* background:url(images/login/pwd.png) left center no-repeat white; */ font-size: 17px;}
+.password>input{height:40px;/* margin-left:30px; */ outline:none;line-height:38px;width:290px;font-size: 17px;border:none}
+.btn{width:240px; height:40px; background:red; color:white; margin-top:60px;font-size: 15px;font-weight: bold;}
+.footer{
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	background:#F3EEEE;
+	opacity: 0.6;
+	background:rgba(243, 238, 238, 0.6);height:38px; position:absolute;width:100%; left:0;bottom:0;line-height:38px; text-align:center}
+.yanzhengma{margin-top: 40px; }
+#check_num{
+	height: 40px;
+	outline: none;
+	line-height: 38px;
+	width: 200px;
+	font-size: 17px;
+	border: none;
+}
+.modifypasswordpg{
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-left:-267px;margin-top:-176px;
+	border:1px solid #B8D0D6;
+	font-size:14px;
+	width:534px;
+	height:352px;
+	text-align:center;
+	background:url(images/bg.png) center center no-repeat;
+	position:absolute;
+	z-index:205
+}
+.login_wrapper_div{ 
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(images/login/2.png) left bottom no-repeat;
+	}
+#QRshadow{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: #000;
+	opacity: 0.5;
+	z-index:202;
+	filter:alpha(opacity=50);
+}
+.shadow_QRcode{min-width: 1024px;position:absolute;z-index:200; height:100%;width:100%;left:0;top:0;font-family: Microsoft YaHei !important;}
+#closeQRcode{width: 24px;height: 24px;background: url("../../newStatic/image/close.png") no-repeat;top:0;left:100%;position: absolute;font-size: 20px;z-index:205;margin-left:-40px;margin-top:20px;cursor: pointer}
+
+.login-help{
+	 margin-top:42px;
+     float: right;
+     width: 80px;
+     padding-right: 30px;
+	 padding-top:8px;
+	 text-align: center;
+	 display: block;
+	}
+.login-help a{
+	 cursor: pointer;
+	 text-decoration: none;
+	}	
+.login-help-lable{
+		padding-left: 15px;
+	}	
+.btn_login{
+	margin-top: 40px;
+    float: left;
+    margin-left: 35px;
+	width:200px;
+}

@@ -1,0 +1,21 @@
+insert into F_OPTDEF (OPTCODE, OPTNAME, OPTID, OPTMETHOD, OPTDESC, ISINWORKFLOW)
+values ((select max(optcode) from F_Optdef)+1, '查看二维码', 'WDSYPZ', 'showcode', '系统自动添加', null);
+insert into F_OPTDEF (OPTCODE, OPTNAME, OPTID, OPTMETHOD, OPTDESC, ISINWORKFLOW)
+values ((select max(optcode) from F_Optdef)+1, '查看在线人数', 'WDSYPZ', 'showOnline', '系统自动添加', null);
+
+
+
+--为角色添加权限 主席----通用
+insert into F_ROLEPOWER (ROLECODE, OPTCODE)
+values ('1-zx', (select t.optcode from f_optdef t where t.optname = '查看二维码'));
+
+insert into F_ROLEPOWER (ROLECODE, OPTCODE)
+values ('1-zx', (select t.optcode from f_optdef t where t.optname = '查看在线人数'));
+
+insert into F_ROLEPOWER (ROLECODE, OPTCODE)
+values ('1-OA_COM', (select t.optcode from f_optdef t where t.optname = '查看二维码'));
+
+insert into F_ROLEPOWER (ROLECODE, OPTCODE)
+values ('1-OA_COM', (select t.optcode from f_optdef t where t.optname = '查看在线人数'));
+
+

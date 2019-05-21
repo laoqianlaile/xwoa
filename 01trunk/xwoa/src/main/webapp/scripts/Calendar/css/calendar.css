@@ -1,0 +1,29 @@
+@charset "utf-8";
+* { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+
+#calendar { width:364px; margin:30px auto; font-family:tahoma,arial,宋体,sans-serif; }
+#setYMD { height:40px; }
+#calendarTable { width:362px; height:300px; margin:0 auto; border-bottom:1px solid #F0D785; }
+#calendarTable td,#calendarTable th { width:50px; border:1px solid #F0D785; text-align:center; vertical-align:middle; }
+#calendarTable th { height:30px; border:0; font-size:14px; color:#4C1200; }
+#calendarTable td { font-size:18px; color:#666; vertical-align:top; cursor:pointer; color:#4C1200; }
+#calendarTable p { padding:10px 6px 6px 0; text-align:right; }
+
+/* 显示不是当月天的样式 */
+#calendarTable td.last_next_day { color:#F2C585; }
+
+/* 显示周六周日的样式 */
+#calendarTable p.weekDay { color:#D23B0D; }
+
+/* 设定加班的样式 */
+#calendarTable td.overtime { color:#4C1200; background:#E1E1C1 url(../img/ban.jpg) no-repeat left top; }
+
+/* 设定国家规定的假期样式 */
+#calendarTable td.ruleHoliday { background:#F6D6A6 url(../img/jia.jpg) no-repeat left top; color:#D23B0D; }
+
+/* 今天的样式 */
+#calendarTable td.today { color:#FFF2b8; background:#e84e04 url(../img/nowBg.jpg) no-repeat left top; border:1px solid #9E1F06; }
+
+/* 鼠标点击的样式 */
+#calendarTable td.clickDay { color:#FFF2b8; background:#ED6F32; border:1px solid #ED6F32; }

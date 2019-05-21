@@ -1,0 +1,190 @@
+.improvecustom {
+    overflow: hidden;
+    margin-right: 0px;
+}
+.custom {
+    width: 40px;
+}
+.custom .title {
+ left: 25%;
+    position: absolute; 
+    color: #f7f3f3;
+    font-size: 18px;
+    padding-top: 50px;
+}
+ .custom>div {
+	margin-right: -40px;
+    margin-left: 40px;
+    background:  center center no-repeat #a8acb4;
+    height: 232px;
+    width: 40px;
+    position: relative;
+}
+.customFW>div {
+    margin-left: 40px;
+    background:  center center no-repeat #a8acb4;
+    height: 232px;
+    width: 40px;
+    position: relative;
+}
+
+.registerList .viewFlow {
+    background: url(viewFlow.png) center center no-repeat #a8acb4 ;
+/*     background-size:30px 30px; */
+    display: inline-block;
+    padding-left: 15px;
+    
+}
+.registerList .viewFlow2 {
+    background: url(viewFlow2.png) no-repeat center ;
+}
+.registerList .viewFlow3 {
+    background: url(viewFlow3.png) no-repeat  center ;
+}
+.registerList div span {
+
+}
+.registerList .td_linkdoc .in {
+    background: url(icon_right.png) center center no-repeat; 
+}
+.td_linkdoc .in {
+display: -webkit-inline-box;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    /* right: 10px; */
+    top: 10px;
+}
+a:link {
+    text-decoration: none;
+}
+.td_linkdoc  .word {
+   text-align: left;
+    /* position: absolute; */
+    width: 140px;
+    height: 48px;
+    display: block;
+    /* bottom: -1px; */
+    line-height: 40px;
+    text-indent: 1em;
+    color: white;
+    font-size: 14px;
+    vertical-align: bottom;
+    /* position: fixed; */
+    text-align: center;
+    /* left: 55px; */
+
+}
+
+
+.suppower_custom .word{
+    background: #9ea3ab;
+}
+.suppower_custom>div {
+    background: url(XW-SW-0003.png) center center no-repeat;
+    height: 232px;
+    margin: 20px 10px 20px 10px;
+    position: relative;
+}
+
+ .suppower_custom .td_linkdoc {
+    width: 140px;
+    display: block;
+    margin: 0 auto;
+    /* background-color: #9ea3ab; */
+    text-align: center;
+    /* margin-top: 43px; */
+    vertical-align: bottom;
+    /* position: absolute; */
+    /* bottom: 0; */
+    height: 197px;
+    padding-top: 190px;
+}
+
+/* 事权对应样式 */
+.XW-FW-0001_custom>div {
+    background: url(XW-FW-0001.png) center center no-repeat #a8acb4;
+    height: 232px;
+    margin: 20px 10px 20px 10px;
+    position: relative;
+}
+.XW-FW-0002_custom>div {
+    background: url(XW-FW-0002.png) center center no-repeat #a8acb4;
+    height: 232px;
+    margin: 20px 10px 20px 10px;
+    position: relative;
+}
+
+.XW-FW-0003_custom>div {
+    background: url(XW-FW-0003.png) center center no-repeat #a8acb4;
+    height: 232px;
+    margin: 20px 10px 20px 10px;
+    position: relative;
+}
+.XW-SW-0001_custom>div {
+/*     background: url(XW-SW-0001.png) center center no-repeat #a8acb4; */
+	background: url(XW-SW-0003.png) center center no-repeat;
+    height: 232px;
+    margin: 20px 10px 20px 10px;
+    position: relative;
+}
+.XW-SW-0002_custom>div {
+/*     background: url(XW-SW-0002.png) center center no-repeat #a8acb4; */
+	background: url(XW-SW-0003.png) center center no-repeat;
+    height: 232px;
+    margin: 20px 10px 20px 10px;
+    position: relative;
+}
+
+.XW-FW-0001_custom .word, .XW-SW-0001_custom .word {
+    background: #9ea3ab;
+}
+.XW-FW-0002_custom .word, .XW-SW-0002_custom .word {
+    background: #b4afb8;
+}
+.XW-FW-0003_custom .word, .XW-SW-0003_custom .word {
+    background: #abab9e;
+}
+
+
+.XW-FW-0001_custom .word, .XW-SW-0001_custom .td_linkdoc {
+width: 140px;
+    display: block;
+    margin: 0 auto;
+    /* background-color: #9ea3ab; */
+    text-align: center;
+    /* margin-top: 43px; */
+    vertical-align: bottom;
+    /* position: absolute; */
+    /* bottom: 0; */
+    height: 197px;
+    padding-top: 190px;
+}
+.XW-FW-0002_custom .word, .XW-SW-0002_custom .td_linkdoc {
+width: 140px;
+    display: block;
+    margin: 0 auto;
+    /* background-color: #9ea3ab; */
+    text-align: center;
+    /* margin-top: 43px; */
+    vertical-align: bottom;
+    /* position: absolute; */
+    /* bottom: 0; */
+    height: 197px;
+    padding-top: 190px;
+}
+.XW-FW-0003_custom .word, .XW-SW-0003_custom .td_linkdoc {
+width: 140px;
+    display: block;
+    margin: 0 auto;
+    /* background-color: #9ea3ab; */
+    text-align: center;
+    /* margin-top: 43px; */
+    vertical-align: bottom;
+    /* position: absolute; */
+    /* bottom: 0; */
+    height: 197px;
+    padding-top: 190px;
+}
+
+

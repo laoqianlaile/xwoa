@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none">
+
+	<bean id="optBaseInfoDao" class="com.centit.powerruntime.dao.OptBaseInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optProcAttentionDao" class="com.centit.powerruntime.dao.OptProcAttentionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vProcAttentionDao" class="com.centit.powerruntime.dao.VProcAttentionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optProcInfoDao" class="com.centit.powerruntime.dao.OptProcInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="optStuffInfoDao" class="com.centit.powerruntime.dao.OptStuffInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="vOptStuffInfoDao" class="com.centit.powerruntime.dao.VOptStuffInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optIdeaInfoDao" class="com.centit.powerruntime.dao.OptIdeaInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="generalModuleParamDao" class="com.centit.powerruntime.dao.GeneralModuleParamDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="riskInfoDao" class="com.centit.powerruntime.dao.RiskInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="vPowerOrgInfoDao" class="com.centit.powerruntime.dao.VPowerOrgInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="powerOptInfoDao" class="com.centit.powerruntime.dao.PowerOptInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="suppowerDao" class="com.centit.powerruntime.dao.SuppowerDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vSupPowerDao" class="com.centit.powerruntime.dao.VSupPowerWithoutLobDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vOrgSupPowerDao" class="com.centit.powerruntime.dao.VOrgSupPowerDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="suppowerstuffinfoDao" class="com.centit.powerruntime.dao.SuppowerstuffinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="suppowerstuffgroupDao" class="com.centit.powerruntime.dao.SuppowerstuffgroupDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="templateFileDao" class="com.centit.powerruntime.dao.TemplateFileDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optWritdefDao" class="com.centit.powerruntime.dao.OptWritdefDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optApplyDao" class="com.centit.powerruntime.dao.OptApplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vOptApplyInfoDao" class="com.centit.powerruntime.dao.VOptApplyInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vOptApplyTaskDao" class="com.centit.powerruntime.dao.VOptApplyTaskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optNewlyIdeaDao" class="com.centit.powerruntime.dao.OptNewlyIdeaDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vOptShowIdeaInfoDao" class="com.centit.powerruntime.dao.VOptShowIdeaInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optProcCollectionDao" class="com.centit.powerruntime.dao.OptProcCollectionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VOptProcCollectionDao" class="com.centit.powerruntime.dao.VOptProcCollectionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optProcLockDao" class="com.centit.powerruntime.dao.OptProcLockDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaUnitsLeaderDao" class="com.centit.powerruntime.dao.OaUnitsLeaderDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaUnitsLeaderLogDao" class="com.centit.powerruntime.dao.OaUnitsLeaderLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaLeaderunitsDao" class="com.centit.powerruntime.dao.OaLeaderunitsDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

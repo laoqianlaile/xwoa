@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+
+	<bean id="fileinfoDao" class="com.centit.app.dao.FileInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="fileinfoFsDao" class="com.centit.app.dao.FileinfoFsDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="outerNetFileinfoFsDao" class="com.centit.app.dao.OuterNetFileinfoFsDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="taskListAnnexDao" class="com.centit.app.dao.TaskListAnnexDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaStatMonthDao" class="com.centit.app.dao.OaStatMonthDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="oaWorkDayDao" class="com.centit.app.dao.OaWorkDayDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="oaWorkingTimeDao" class="com.centit.app.dao.OaWorkingTimeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="innermsgDao" class="com.centit.app.dao.InnermsgDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="taskListDao" class="com.centit.app.dao.TaskListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- lq -->
+	<!-- 文件夹 begin -->
+	<bean id="publicinfoDao" class="com.centit.app.dao.PublicinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="publicinfologDao" class="com.centit.app.dao.PublicinfologDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="outerNetPublicinfoDao" class="com.centit.app.dao.OuterNetPublicinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 文件夹 end -->
+	<!-- 讨论版 -->
+	<bean id="forumDao" class="com.centit.app.dao.ForumDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="threadDao" class="com.centit.app.dao.ThreadDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="forumStaffDao" class="com.centit.app.dao.ForumStaffDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="replyDao" class="com.centit.app.dao.ReplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="replyAnnexDao" class="com.centit.app.dao.ReplyAnnexDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="threadAnnexDao" class="com.centit.app.dao.ThreadAnnexDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="forumTypeDao" class="com.centit.app.dao.ForumTypeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 讨论版 end -->
+	<!-- 通讯录 -->
+	<bean id="addressBookFsDao" class="com.centit.app.dao.AddressBookFsDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 通讯录end -->
+	<!-- 首页待办查询 -->
+	<bean id="dashboardDao" class="com.centit.app.dao.DashboardDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 首页待办查询 end -->
+	
+	<bean id="rtxInfoDao" class="com.centit.app.dao.RtxInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="voaScheduleRemindDao" class="com.centit.app.dao.VOaScheduleRemindDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="optDashboardModuleDao" class="com.centit.app.dao.OptDashboardModuleDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="optDashboardLayoutDao" class="com.centit.app.dao.OptDashboardLayoutDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="optLayoutMethodDao" class="com.centit.app.dao.OptLayoutMethodDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="optDashboardActiveDao" class="com.centit.app.dao.OptDashboardActiveDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+</beans>

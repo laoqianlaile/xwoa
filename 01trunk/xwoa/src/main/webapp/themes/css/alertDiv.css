@@ -1,0 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+html,body {
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	background: #f8f8f8;
+	padding: 30px;
+	height: 100%;
+}
+
+.content a {
+	font-size: 30px;
+	color: #369;
+	font-weight: 700;
+}
+
+.alert {
+	border: 1px solid #369;
+	background:#FCFCFC;
+	z-index: 1000;
+	position: absolute;
+	display: none;
+}
+
+.alert h4 {
+	height: 20px;
+	background: #369;
+	color: #fff;
+	padding: 5px 0 0 5px;
+}
+
+.alert h4 span {
+	float: left;
+}
+
+.alert h4 span.close {
+	margin-left: 210px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.alert p {
+	padding: 12px 0 0 30px;
+}

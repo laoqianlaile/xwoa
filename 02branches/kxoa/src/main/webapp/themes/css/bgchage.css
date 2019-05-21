@@ -1,0 +1,252 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 12px;
+	text-align: center;
+	background: url(images/login_bg.png) center center;
+}
+
+.mid {
+/* 	gc */
+/* 	width: 619px; */
+/* 	height: 30px; */
+/* 	margin: 0 auto; */
+/* 	border: solid 0px #d0d0d0; */
+/* 	position: absolute; */
+/* 	top: 356px; */
+/* 	left: 50px; */
+    width: 260px;
+    height: 30px;
+    margin: 0 auto;
+    border: solid 0px #d0d0d0;
+    position: absolute;
+    bottom: -10px;
+    left: 121px;
+}
+
+.mid ul li {
+	list-style-type: none;
+	border: solid 1px #d0d0d0;
+	float: left;
+	margin: 3px;
+	padding: 0 5px;
+	height: 12px;
+	width: 10px;
+}
+
+#login_box {
+/* 	gc*/
+/* 	position: absolute; */
+/* 	height: 474px; */
+/* 	width: 1024px; */
+/* 	left: 50%; */
+/* 	top: 55%; */
+/* 	margin-left: -512px; */
+/* 	margin-top: -237px; */
+/* 	background-image: url(images/loginbox15.png); */
+	position: absolute;
+    height: 420px;
+    width: 350px;
+    right: 35px;
+    top: 100px;
+}
+/*div{ width:6px; height:14px; margin:1px; padding:0 5px; float:left; border:solid 1px #d0d0d0;}*/
+.btn_1 {
+	background:#ed190d;
+	width:302px;
+	height: 42px;
+	border: 0px;
+	cursor: pointer;
+	position: absolute;
+	top: 300px;
+/* 	gc */
+/* 	left: 751px; */
+    left: 28px;
+   font-size: 18px;
+    color: white;
+}
+
+.btn_1:hover,.btn_2:hover {
+	background-position: 0px -32px;
+}
+
+.btn_2 {
+	background-image: url(images/btn_cancel2.png);
+	background-repeat: no-repeat;
+	width: 86px;
+	height: 32px;
+	border: 0px;
+	cursor: pointer;
+	position: absolute;
+	top: 300px;
+/* 	gc */
+/* 	left: 868px; */
+    left: 219px;
+}
+
+.input {
+	position: relative;
+	width: 200px;
+	height: 33px;
+	background-repeat: no-repeat;
+	background-position: left;
+	font-size: 17px;
+	font-family: '微软雅黑';
+	padding-left: 3px;
+	margin: 0 10px 0 10px;
+	box-shadow: 1px 1px 2px #bbb inset;
+	border-radius: 2px;
+	border: 1px solid #eee;
+	resize: none;
+}
+
+#username {
+	position: absolute;
+	top: 140px;
+	/* 	gc*/
+/* 	left: 740px;*/
+    left: 18px;
+    width: 300px;
+    height:40px;
+    line-height:40px;
+}
+
+#password {
+	position: absolute;
+	top: 200px;
+/* 	gc */
+/* 	left: 740px; */
+    left: 18px;
+    width: 300px;
+    height:40px;
+    line-height:40px;
+}
+
+a {
+	cursor: pointer;
+}
+
+a:hover {
+	color: #3487df;
+}
+
+.inboxx {
+/* 	gc */
+/* 	position: absolute; */
+/* 	top: 280px; */
+/* 	left: 750px; */
+    position: absolute;
+    top: 250px;
+    left: 38px;
+    width: 260px;
+    margin: 10px;
+}
+
+.innotice {
+	position: absolute;
+	top: 370px;
+	left: 40px;
+}
+
+.header {
+	/* 	background: url(images/title.png) no-repeat center; */
+    background: url(images/head-dl.png) no-repeat center;
+	position: fixed;
+	width: 100%;
+	height: 109px;
+	valign: middle;
+	z-index: 100;
+	top: 5%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.footer {
+	color: #fff;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	z-index: 100;
+	bottom: 10px;
+	text-align: center;
+	line-height: 25px;
+	font-size: 14px;
+	font-weight: bold;
+	color:#666666
+}
+
+#pic_player {
+	margin-top: 90px;
+	width: 701px;
+	height: 233px;
+	clear: none;
+	border: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+}
+
+img {
+/* 	gc */
+/* 	border: 0; */
+    border: 2px solid #D0D0D0;
+    margin-top: 2px;
+}
+.login_wrapper{
+	background:url(images/logo.png) center center no-repeat;
+	width:1000px;height:580px;
+	position:absolute;
+	top:50%;left:50%;
+	margin-top:-290px;
+	margin-left:-500px;
+}
+.zytz{
+	font-size: 15px;
+    position: absolute;
+    top: 240px;
+    height: 120px;
+    width: 260px;
+    left: 31px;
+    line-height: 180%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color:white;
+    text-align: left
+	}
+.date_login_wrapper{
+	    position: absolute;
+    color: white;
+    top: 233px;
+    left: 326px;
+    height: 280px;
+    width: 260px;
+}
+.date_login_wrapper>div{
+    color: white;
+    font-size: 30px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 180%;
+}
+.date_login_wrapper_div{
+	color: white;
+    font-size: 30px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 180%;
+}
+.weather{
+	font-size: 15px;
+    position: absolute;
+    top: 410px;
+    height: 120px;
+    width: 240px;
+    left: 55px;
+    line-height: 180%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	
+}

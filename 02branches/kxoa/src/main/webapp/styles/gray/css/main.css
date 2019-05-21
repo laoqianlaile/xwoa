@@ -1,0 +1,245 @@
+A
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px;
+	COLOR: #003399;
+	TEXT-DECORATION: none
+}
+
+A:hover
+{
+	TEXT-DECORATION: underline
+}
+
+FONT
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px
+}
+
+BODY
+{
+	SCROLLBAR-FACE-COLOR: #ffffff;
+	SCROLLBAR-HIGHLIGHT-COLOR: #346786;
+	SCROLLBAR-SHADOW-COLOR: #346786;
+	SCROLLBAR-3DLIGHT-COLOR: #BBD9EA;
+	SCROLLBAR-ARROW-COLOR: #346786;
+	SCROLLBAR-TRACK-COLOR: #ffffff;
+	SCROLLBAR-DARKSHADOW-COLOR: #BBD9EA;
+        font-size: 12px;
+    background-color: #ebf3fb;    
+    margin-left: 0;
+    margin-right: 10;
+    margin-top: 0;
+}
+
+TABLE
+{
+	WIDTH: 100%;
+	BACKGROUND-COLOR: #ffffff;
+}
+.PROCESSIMAGETABLE
+{
+	WIDTH: 0;
+	BACKGROUND-COLOR: transparent;
+}
+ul
+{
+	margin:0px;
+}
+TBODY
+{
+	BACKGROUND-COLOR: #E7F0F8;
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px;
+	COLOR: #006699;
+	TEXT-ALIGN: left
+}
+
+.FTITLE
+{
+	BACKGROUND-COLOR: #4d96e3;
+	COLOR: #ffffff;
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	TEXT-ALIGN: center;
+	vertical-align: middle;
+}
+.HEADINGTITLE
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+	TEXT-ALIGN: center
+}
+
+.TTITLE
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	COLOR: #006699;
+	LINE-HEIGHT: 25px;
+	TEXT-ALIGN: right
+}
+.TTITLE2
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 14px;
+	COLOR: #000000;
+	LINE-HEIGHT: 25px;
+
+}
+.TDTITLE
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	COLOR: #006699;
+	LINE-HEIGHT: 25px;
+	TEXT-ALIGN: right
+}
+
+.DRAGTOGTITLE
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	COLOR: #CC3300;
+	CURSOR:move
+}
+
+.CTITLE
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	COLOR: #CC3300
+}
+.BORDERLEFT
+{
+	BORDER: 1px #2F459F solid
+}
+
+.LISTTAB
+{
+	BACKGROUND-COLOR: #006699;
+	BORDER-TOP-WIDTH: thin;
+	BORDER-RIGHT-WIDTH: thin;
+	BORDER-BOTTOM-WIDTH: thin;
+	BORDER-LEFT-WIDTH: thin
+}
+
+.LISTHEAD
+{
+	BACKGROUND-COLOR: #3c6ab0
+}
+
+.INPUTFIELD
+{
+	TEXT-ALIGN: left;
+}
+.RLTABLE
+{
+	WIDTH: 100%;
+
+}
+.RLFONT
+{
+	FONT-FAMILY: "Wingdings 3";
+	FONT-SIZE: 12px
+}
+
+.CASETITLE
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px;
+	COLOR: #FF00CC
+}
+.VIPTITLE
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 12px;
+	COLOR: #FF0000
+}
+TTABLE
+{
+	WIDTH: 100%;
+	BACKGROUND-COLOR: #006699;
+}
+Input {
+	BACKGROUND-COLOR: #ffffff;
+        border: 1px solid #999999;
+}
+Select {
+	border: 1px solid #6666FF;
+}
+textarea {
+	border: 1px solid #999999;
+}
+
+.LITTLEFONT
+{
+	FONT-FAMILY: "宋体";
+	FONT-SIZE: 5px;
+}
+.BUTTONTABLE
+{
+	WIDTH: 90%;
+	BACKGROUND-COLOR: #000000;
+}
+.BUTTONTR
+{
+	BACKGROUND-COLOR: #FFFFFF;
+	COLOR: #FFFFFF;
+	TEXT-ALIGN: center
+}
+.btn{
+	BORDER-RIGHT: #bbbbbb 1px solid;
+	BORDER-TOP: #bbbbbb 1px solid;
+	BORDER-LEFT: #bbbbbb 1px solid;
+	BORDER-BOTTOM: #bbbbbb 1px solid;
+	PADDING-RIGHT: 2px;
+	PADDING-TOP: 2px;
+	PADDING-LEFT: 2px;
+	PADDING-BOTTOM: -2px;
+	FONT-SIZE: 12px;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5);
+	CURSOR: hand; COLOR: black;
+	height:20;
+	text-align:center
+}
+/* CSS Document */
+body{ margin:10; padding:0px; font-size:12px;}
+.top1 { background:url(../images/maincss/right_01.gif); height:6px; font-size:1px; }
+.top2 { float:right; height:6px; font-size:1px; }
+
+.center { margin:20px;}
+.margin10 { margin-bottom:10px;} 
+.table { border:1px solid #96b0c9; margin-bottom:10px; background:#e3f1fe;}
+.table td { color:#006699; padding:8px 5px 0px 15px; height:12px; }
+.table td a:link {color:#006699;}
+.table td a:visited {color:#006699}
+.table td a:activeactive {color:#006699}
+.table td a:hover {color:#006699; text-decoration:none;}
+.table th { background: url(../images/maincss/index.gif); font-size:12px; font-weight:normal; text-align:left; color:#062d6b;}
+
+.table_bg1 { background:url(../images/maincss/table_bg1.gif) right bottom no-repeat #e3f1fe;}
+.table_bg2 { background:url(../images/maincss/table_bg2.gif) right bottom no-repeat #e3f1fe;}
+
+.th_l { background:url(../images/maincss/index+03.gif) no-repeat left; height:15px; }
+.th_r { float:right; }
+.th_ll { float:left; font-size:13px; font-weight:bolder;}
+.th_left { float:left;margin:3px 0 0 3px;}
+
+.right { float:right; width:62%;}
+.left { float:left; width:95%;}
+
+.right1 { float:right; width:20%;}
+.left1 { float:left; width:20%; margin-right:2%}
+.center1 { float:left; width:55%;}
+
+.menu_10 { background:#dee5d1; height:30px; margin-right:7px;}
+.menu_10r { float:right; padding-top:5px; padding-right:10px;}
+
+.input_pm { border:1px solid #0066FF; background:#ffdd9d; color:#002262; padding-top:3px;}

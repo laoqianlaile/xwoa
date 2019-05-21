@@ -1,0 +1,21 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #ebf3fb;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ebf3fb;
+	SCROLLBAR-SHADOW-COLOR: #ffffff;
+	SCROLLBAR-3DLIGHT-COLOR: #CCCCCC;
+	/*SCROLLBAR-ARROW-COLOR: #CCCCCC;*/
+	SCROLLBAR-TRACK-COLOR: #ffffff;
+	SCROLLBAR-DARKSHADOW-COLOR: #000000;
+	font-size: 12px;
+	background-color: #ebf3fb;
+	margin-top: 0;
+	margin-right: -40px;
+	margin-left: 0;
+}
+
+input {
+	border-bottom: 1 solid #eae8e9;
+	border-right: 1 solid #eae8e9;
+	border-left: 1 solid #ffffff;
+	border-top: 1 solid #ffffff;
+}

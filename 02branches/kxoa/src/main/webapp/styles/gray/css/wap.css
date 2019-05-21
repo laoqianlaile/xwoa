@@ -1,0 +1,40 @@
+
+body {
+	font-size: 12px;
+	background-color: #ebf3fb;
+	margin-top: 0px;
+	
+}
+
+.outer {
+	border-bottom: 0 solid #999999;
+	border-right: 0 solid #999999;
+	border-left: 0 solid #dddddd;
+	border-top: 0 solid #dddddd;
+}
+
+.inner {
+	font-size: 12px;
+}
+
+li {
+	color: #6699FF;
+}
+
+a {
+	color: #0066FF;
+}
+.btn{
+	border: 1 solid #ebf3fb;
+	background-color:#ebf3fb; 
+	font-size: 12px;
+	padding-top: 2;
+	background-image: url("../page/wap/images/search.gif");
+}	
+form{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+img{
+	margin-bottom: -2px;
+}

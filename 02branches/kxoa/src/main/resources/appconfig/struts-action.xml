@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="app" namespace="/app" extends="centitbsdfw">
+	 	<action name="dashboard" class="dashboardAction" >
+            <result name="dashboard">/page/app/dashboard.jsp</result>
+            
+            <result name="dashboardV2">/page/app/dashboardV2.jsp</result>
+            <result name="dashboardV3">/page/app/dashboardV3.jsp</result>
+            <result name="dashboardV4">/page/app/dashboardV4.jsp</result>
+            <result name="dashboardV5">/page/app/dashboardV5.jsp</result>
+            <result name="test">/page/app/test.jsp</result>
+            <result name="weapons">/page/demo/weapons.jsp</result>
+            <result name="json" type="json">
+            	<param name="root">json</param>
+            </result>
+            <result name="sydb" type="json">
+            	<param name="root">vuserTaskListrl</param>
+            </result>
+            <result name="jjcq" type="json">
+            	<param name="root">jjcqList</param>
+            </result>
+            <result name="ycq" type="json">
+            	<param name="root">ycqList</param>
+            </result>
+            <result name="tzgg" type="json">
+            	<param name="root">tzggList</param>
+            </result>
+            <result name="yj" type="json">
+            	<param name="root">msgrlList</param>
+            </result>
+            <result name="jwbl" type="json">
+            	<param name="root">voptBaseList</param>
+            </result>
+            <result name="sw" type="json">
+            	<param name="root">bmswList</param>
+            </result>
+            <result name="fw" type="json">
+            	<param name="root">dispatchDocList</param>
+            </result>
+            <result name="showCalendar" type="json">
+            	<param name="root">gerenrcrlList</param>
+            </result>
+            <result name="messageNum" type="json">
+            	<param name="root">messagenummap</param>
+            </result>
+            <result name="WDTX" type="json">
+            	<param name="root">oaRemindInformation</param>
+            </result>
+            <result name="JRTZ" type="json">
+            	<param name="root">oaInformationList</param>
+            </result>
+            <result name="DBLIST" type="json">
+            	<param name="root">DBList</param>
+            </result>
+            <result name="wdsw" type="json">
+            	<param name="root">vincomddoclist</param>
+            </result>
+             <result name="calendarSX">/page/app/calendarSXView.jsp</result>
+            
+            <result name="txdate" type="json">
+            	<param name="root">dateNumList</param>
+            </result>
+            
+            <result name="unitFile" type="json">
+            	<param name="root">unitFileList</param>
+            </result>
+            
+            <result name="functionEntry">/page/app/functionEntry.jsp</result>
+            
+            <result name="ajaxDashboardNum" type="json">
+            	<param name="root">ajaxDashboardNumMap</param>
+            </result>
+            
+            <!-- <result name="showCalendar">/page/app/calendarSXView.jsp</result> -->
+        </action>
+		<action name="innermsg" class="innermsgAction">
+			<result name="msgFrame">/page/app/innermsgFrame.jsp</result>
+			<result name="list">/page/app/innermsgList.jsp</result>
+			<result name="view">/page/app/innermsgView.jsp</result>
+			<result name="edit">/page/app/innermsgForm.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">innermsg</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">innermsg</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		
+		<action name="fileinfo" class="fileinfoAction">
+			<result name="list">/page/app/PFileinfoList.jsp</result>
+			<result name="edit">/page/app/PFileinfoForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">fileinfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">fileinfo</param>
+				<param name="method">edit</param>
+			</result>
+			<result type="json" name="newupload">
+				<param name="contentType">text/html</param>  				
+				<param name="root">result</param>  				
+			</result>			
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="uploadindialog">/page/app/uploadfile.jsp</result>
+		</action>
+		
+		<action name="fileinfoFs" class="fileinfoFsAction">
+			<result name="files" type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">dataMap</param>
+			</result>
+			
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream;charset=ISO8859-1</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fullname}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			
+			<result name="image" type="stream">
+				<param name="contentType">application/object</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fullname}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+	<action name="outerNetFileinfoFs" class="outerNetFileinfoFsAction">
+			<result name="files" type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">dataMap</param>
+			</result>
+			
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream;charset=ISO8859-1</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fullname}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			
+			<result name="image" type="stream">
+				<param name="contentType">application/object</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fullname}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="searcher" class="searcherAction">
+			<result name="search">/page/app/searcher.jsp</result>
+		</action>
+		
+		<action name="calendar" class="calendarAction">
+			<result name="calendar">/page/app/calendar.jsp</result>	
+			<result name="view">/page/app/calendarSdView.jsp</result>	
+			<result name="save" type="json">
+				<param name="contentType">text/html</param>  		
+				<param name="root">result</param>  
+			</result>
+			<result name="jsonArray" type="json">
+				<param name="contentType">text/html</param>  		
+				<param name="root">result</param>  
+			</result>
+		</action>
+		
+		<action name="taskList" class="taskListAction">
+            <result name="edit">/page/app/taskListSdForm.jsp</result>
+            <result name="view">/page/app/taskListSdView.jsp</result>
+            
+            <result name="success" type="redirectAction">
+            	
+				<param name="actionName">calendar</param>
+				<param name="method">view</param>
+				<param name="instance">taskListManager</param>
+
+				<param name="tasktype">${object.tasktype}</param>
+				<param name="day">${object.day}</param>
+
+			</result>
+
+        </action>
+		
+		
+		
+		
+    <!-- lq -->
+    <!-- 文件夹 begin -->	
+    <action name="publicinfo" class="publicinfoAction">
+			<result name="list">
+				/page/app/publicinfo/publicinfo.jsp
+			</result>
+
+			<result name="files" type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">dataMap</param>
+				<param name="excludeNullProperties">false</param>
+				<param name="excludeProperties">
+					files.parentinfocode,files.filecode
+				</param>
+			</result>
+			
+			<result name="ztree" type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">dataList</param>
+				<param name="excludeNullProperties">false</param>
+			</result>						
+			
+			<result name="saveComment" type="redirectAction">
+				<param name="actionName">publicinfo</param>
+                <param name="method">view</param>
+                <param name="infocode">${infocode}</param>
+                <param name="type">${type}</param>
+            </result>
+			
+			<result name="view">/page/app/publicinfo/publicinfoView.jsp</result>
+			<result name="viewNew">/page/app/publicinfo/publicinfoViewNew.jsp</result>
+			
+			
+			<result name="viewTest">/page/app/publicinfo/publicinfoViewTest.jsp</result>
+			<result name="unitFilePanel">/page/app/publicinfo/unitFilePanel.jsp</result>
+			
+		</action>
+        
+        <action name="outerNetPublicinfo" class="outerNetPublicinfoAction">
+			<result name="list">
+				/page/app/publicinfo/outerNetPublicinfo.jsp
+			</result>
+
+			<result name="files" type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">dataMap</param>
+				<param name="excludeNullProperties">false</param>
+				<param name="excludeProperties">
+					files.parentinfocode,files.filecode
+				</param>
+			</result>
+			
+			<result name="ztree" type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">dataList</param>
+				<param name="excludeNullProperties">false</param>
+			</result>						
+			
+			<result name="saveComment" type="redirectAction">
+				<param name="actionName">publicinfo</param>
+                <param name="method">view</param>
+                <param name="infocode">${infocode}</param>
+                <param name="type">${type}</param>
+            </result>
+			
+			<result name="view">/page/app/publicinfo/publicinfoView.jsp</result>
+			<result name="viewNew">/page/app/publicinfo/publicinfoViewNew.jsp</result>
+			
+			
+			<result name="viewTest">/page/app/publicinfo/publicinfoViewTest.jsp</result>
+			
+		</action>
+		<action name="searcher" class="searcherAction">
+			<result name="search">/page/app/searcher.jsp</result>
+			<result name="retrieve">/page/app/publicinfo/retrieveList.jsp</result>
+			<result name="delete" type="centitui">
+			    <param name="newWin">false</param>
+				<param name="navTabId">external_SEARCH</param>
+			</result>
+		</action>
+    <!-- 文件夹 end -->
+	<!-- 讨论版 -->
+	 <action name="forum" class="forumAction">
+            <result name="list">/page/app/forumList.jsp</result>
+            <result name="manager">/page/app/forumManager.jsp</result>
+            <result name="listApply">/page/app/forumApply.jsp</result>
+            <result name="confirmApplyJoin">/page/app/forumConfirmList.jsp</result>
+            <result name="view">/page/app/forumView.jsp</result>
+            <result name="edit">/page/app/forumForm.jsp</result>
+            <result name="editInfoRelease">/page/app/forumInfoReleaseForm.jsp</result>
+            <result name="infoRelease">/page/app/forumByInfoRelease.jsp</result>
+            <result name="infoReleaseManager">/page/app/forumInfoReleaseManager.jsp</result>
+
+            
+            <result name="success" type="redirectAction">
+            	<param name="actionName">forum</param>
+				<param name="method">manager</param>
+			</result>
+
+            <result name="tolistApply" type="redirectAction">
+                <param name="actionName">forum</param>
+				<param name="method">listApply</param>
+            </result>
+            
+            <result name="saveInfoRelease" type="redirectAction">
+                <param name="actionName">forum</param>
+				<param name="method">listInfoReleaseManager</param>
+            </result>
+
+            <result name="deleteInfoRelease" type="redirectAction">
+                <param name="actionName">forum</param>
+				<param name="method">listInfoReleaseManager</param>
+            </result>
+        </action>
+
+        <action name="forumStaff" class="forumStaffAction">
+            <result name="list">/page/app/forumStaffList.jsp</result>
+            <result name="view">/page/app/forumStaffView.jsp</result>
+            <result name="edit">/page/app/forumStaffForm.jsp</result>
+
+            <result name="success" type="redirectAction">
+				<param name="actionName">forumStaff</param>
+				<param name="method">list</param>
+				<param name="s_forumid">${object.cid.forumid }</param>
+			</result>
+
+            <result name="successAjax" type="centitui">
+                <param name="newWin">false</param>
+                <param name="navTabId">forumConfirmList</param>
+            </result>
+
+            <result name="delete" type="centitui">
+                <param name="newWin">false</param>
+                <param name="navTabId">external_FORUM</param>
+            </result>
+
+            <result name="error" type="centitui">
+                <param name="newWin">false</param>
+            </result>
+        </action>
+
+        <action name="thread1" class="threadAction">
+            <result name="list">/page/app/threadList.jsp</result>
+            <result name="view">/page/app/threadView.jsp</result>
+            <result name="edit">/page/app/threadForm.jsp</result>
+
+            <result name="success" type="redirectAction">
+				<param name="actionName">thread</param>
+				<param name="method">list</param>
+				<param name="forum.forumid">${object.forum.forumid }</param>
+			</result>
+
+            <result name="delete" type="centitui">
+                <param name="newWin">false</param>
+                <param name="navTabId">FORUM_DETAIL</param>
+            </result>
+        </action>
+
+        <action name="reply" class="replyAction">
+            <result name="list">/page/app/threadView.jsp</result>
+
+
+            <result name="success" type="chain">
+				<param name="actionName">reply</param>
+				<param name="method">list</param>
+				<param name="thread.threadid">${object.thread.threadid }</param>
+				<param name="pageBoardCood">${pageBoardCood}</param>
+			</result>
+
+        </action>
+	<!-- 讨论版 end-->	
+	<!-- 通讯录 -->
+	<action name="addressBook" class="addressBookFsAction">
+			<result name="oaUserView">/page/app/addressBookoaUserView.jsp</result>
+			<result name="oaUnitView">/page/app/addressBookoaUnitView.jsp</result>
+			<result name="oaUserEdit">/page/app/addressBookoaUserForm.jsp</result>
+			<result name="oaUnitEdit">/page/app/addressBookoaUnitForm.jsp</result>
+			<result name="oaSave" type="redirectAction">
+			    <param name="actionName">addressBook</param>
+			    <param name="method">oaView</param>
+				<param name="bodycode">${bodycode}</param>
+				<param name="bodytype">${bodytype}</param>
+			</result>
+			<result name="view">/page/app/addressBookView.jsp</result>
+			<result name="list">/page/app/addressBookList.jsp</result>
+			<result name="addressBookTree">/page/app/addressBookTree.jsp</result>
+			<result name="listAddressBookByUnit">/page/app/addressBookListByUnit.jsp</result>
+			<result name="listAddressBookByGroup">/page/app/addressBookListByGroup.jsp</result>
+			<result name="edit">/page/app/addressBookForm.jsp</result>
+			<result name="add">/page/app/addressBookFormAdd.jsp</result>
+			<result name="beforeImportA">/page/app/addressBookImport.jsp</result>
+			<result name="viewExpandInfo">/page/app/addressBookExpandInfo.jsp</result>
+			<result name="editAndSave" type="centitui">
+			    <param name="newWin">false</param>
+			    <param name="callbackType">closeCurrent</param>
+				<param name="navTabId">external_ADDRESS</param>
+			</result>
+			<result name="save" type="centitui">
+			    <param name="newWin">false</param>
+			    <param name="callbackType">closeCurrent</param>
+				<param name="navTabId">external_ADDRESS</param>
+			</result>			
+			<result name="ImportA" type="centitui">
+			    <param name="newWin">false</param>
+				<param name="navTabId">addressBookImport</param>
+			</result>
+						
+			<result name="editindialog">/page/app/addressBookDialogForm.jsp</result>
+			<result name="returnuser" type="redirectAction">
+				/userDef!edit.do?usercode=${object.bodycode}
+			</result>
+			<result name="load" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="loadLabelFields" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="success" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">closeCurrent</param>
+				<param name="navTabId">external_ADDRESS</param>
+			</result>
+			
+			
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+		</action>
+	<!-- 通讯录end -->	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<action name="*" class="{1}Action">
+			<result name="payView">/page/app/reimbursePayView.jsp</result>
+			<result name="auditing">/page/app/reimburseauditingForm.jsp</result>
+			<result name="list">/page/app/{1}List.jsp</result>
+			<result name="view">/page/app/{1}View.jsp</result>
+			<result name="edit">/page/app/{1}Form.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="listUserTasks" type="redirectAction">
+				<param name="namespace">/sampleflow</param>
+				<param name="actionName">sampleFlowManager</param>
+				<param name="method">listUserTasks</param>
+			</result>
+			<result name="nextstep" type="redirectAction">
+				<param name="namespace">/sampleflow</param>
+				<param name="actionName">sampleFlowManager</param>
+				<param name="method">nextStep</param>
+				<param name="flowInstId">${object.wfinstid}</param> 
+			</result>
+		</action>
+		
+	
+	</package>
+</struts>

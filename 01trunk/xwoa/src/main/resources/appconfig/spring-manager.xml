@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+
+	<!-- 文件管理与全文检索 -->
+	<bean id="fileinfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.FileinfoManagerImpl">
+				<property name="fileinfoDao" ref="fileinfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="fileinfoFsManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.FileinfoFsManagerImpl">
+				<property name="fileinfoFsDao" ref="fileinfoFsDao" />
+				<property name="taskLogDao" ref="taskLogDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="outerNetFileinfoFsManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.OuterNetFileinfoFsManagerImpl">
+				<property name="fileinfoFsDao" ref="outerNetFileinfoFsDao" />
+				<property name="taskLogDao" ref="taskLogDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="taskListAnnexManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.TaskListAnnexManagerImpl">
+				<property name="taskListAnnexDao" ref="taskListAnnexDao"/>
+				<property name="fileinfoFsManager" ref="fileinfoFsManager" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="workCalendar" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.WorkCalendarImpl">
+			
+				<property name="oaStatMonthDao" ref="oaStatMonthDao" />
+				<property name="oaWorkDayDao" ref="oaWorkDayDao" />
+				
+			</bean>
+		</property>
+	</bean>
+	<bean id="innermsgManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.InnermsgManagerImpl">
+			
+				<property name="innermsgDao" ref="innermsgDao" />
+				<property name="fileinfoDao" ref="fileinfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="emailMsgSender" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.EmailMessageSenderImpl">
+				<property name="addressBookDao" ref="addressBookDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="oaWorkDayManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.OaWorkDayManagerImpl">
+				<property name="oaWorkDayDao" ref="oaWorkDayDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="taskListManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.TaskListManagerImpl">
+				<property name="taskListDao" ref="taskListDao"/>
+				<property name="functionManager" ref="functionManager"/>
+				<property name="taskListAnnexManager" ref="taskListAnnexManager" />
+			</bean>
+		</property>
+	</bean>
+	
+	
+	<bean id="calendarManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.CalendarManagerImpl">
+				<property name="toDoMatter">
+					<map>
+						<entry key="taskListManager" value-ref="taskListManager"/>
+						<!-- <entry key="oaWorkDayManager" value-ref="oaWorkDayManager"/> -->
+					</map>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- lq -->
+	<!-- 文件夹 begin -->	
+	<bean id="publicinfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.PublicinfoManagerImpl">
+				<property name="publicinfoDao" ref="publicinfoDao"/>
+				<property name="taskLogDao" ref="taskLogDao"/>
+				<property name="fileinfoFsDao" ref="fileinfoFsDao"/>
+				<property name="indexManager" ref="indexManager"/>
+				<property name="sysUserManager" ref="sysUserManager"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="outerNetPublicinfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.OuterNetPublicinfoManagerImpl">
+				<property name="publicinfoDao" ref="outerNetPublicinfoDao"/>
+				<property name="taskLogDao" ref="taskLogDao"/>
+				<property name="fileinfoFsDao" ref="outerNetFileinfoFsDao"/>
+				<property name="indexManager" ref="indexManager"/>
+				<property name="sysUserManager" ref="sysUserManager"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 文件夹 end -->
+	<!-- 讨论版 -->
+	<bean id="forumManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.ForumManagerImpl">
+				<property name="forumDao" ref="forumDao"/>
+				<property name="forumStaffDao" ref="forumStaffDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="threadManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.ThreadManagerImpl">
+				<property name="threadDao" ref="threadDao"/>
+				<property name="threadAnnexDao" ref="threadAnnexDao"/>
+				<property name="fileinfoFsManager" ref="fileinfoFsManager"/>
+				<property name="taskLogManager" ref="taskLogManager"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="forumStaffManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.ForumStaffManagerImpl">
+				<property name="forumDao" ref="forumDao"/>
+				<property name="forumStaffDao" ref="forumStaffDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="replyManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.ReplyManagerImpl">
+				<property name="replyDao" ref="replyDao"/>
+				<property name="replyAnnexDao" ref="replyAnnexDao"/>
+				<property name="fileinfoFsManager" ref="fileinfoFsManager"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="replyAnnexManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.ReplyAnnexManagerImpl">
+				<property name="replyAnnexDao" ref="replyAnnexDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="threadAnnexManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.ThreadAnnexManagerImpl">
+				<property name="threadAnnexDao" ref="threadAnnexDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="forumTypeManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.ForumTypeManagerImpl">
+				<property name="forumTypeDao" ref="forumTypeDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 讨论版 end-->
+	<!-- 通讯录 -->
+	<bean id="addressBookFsManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.AddressBookFsManagerImpl">
+				<property name="addressBookFsDao" ref="addressBookFsDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 通讯录end -->
+	
+	<bean id="instantMsg" class="com.centit.app.util.InstantMsgImpl"/>
+	
+	<!-- 首页待办查询 -->
+	<bean id="dashboardManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.DashboardManagerImpl">
+				<property name="dashboardDao" ref="dashboardDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 首页待办查询end -->
+	<bean id="rtxInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.RtxInfoManagerImpl">
+			   <property name="vuserTaskListOADao" ref="vuserTaskListOADao" />
+				<property name="rtxInfoDao" ref="rtxInfoDao"/>
+				<property name="msgSenders">
+			<map>			
+				<entry key="rtx">
+					<ref bean="rtxMsg"/>
+				</entry>
+			</map>
+		</property>			
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="voaScheduleRemindManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.VOaScheduleRemindManagerImpl">
+				<property name="voaScheduleRemindDao" ref="voaScheduleRemindDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optDashboardModuleManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.OptDashboardModuleManagerImpl">
+				<property name="optDashboardModuleDao" ref="optDashboardModuleDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optDashboardLayoutManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.OptDashboardLayoutManagerImpl">
+				<property name="optDashboardLayoutDao" ref="optDashboardLayoutDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optLayoutMethodManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.OptLayoutMethodManagerImpl">
+				<property name="optLayoutMethodDao" ref="optLayoutMethodDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optDashboardActiveManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.OptDashboardActiveManagerImpl">
+				<property name="optDashboardActiveDao" ref="optDashboardActiveDao"/>
+			</bean>
+		</property>
+	</bean>
+</beans>

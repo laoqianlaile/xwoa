@@ -1,0 +1,17 @@
+.item {
+	margin: 5px 0px;;
+	padding: 0px;;
+	list-style: none
+}
+
+a.title:link,a.title:visited,a.title:hover {
+	display: block;;
+	background: no-repeat;;
+	color: #385065;;
+	font-weight: bold;;
+	padding: 1px 0 0 22px;;
+	width: 100%;;
+	line-height: 23px;;
+	cursor: pointer;;
+	text-decoration: none
+}

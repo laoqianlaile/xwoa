@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="stat" namespace="/stat" extends="centitbsdfw">
+		<action name="twodimenform" class="twodimenformAction">
+			<result name="twodimenform">/page/stat/${resultName}.jsp</result>
+			<result name="ajaxJsonData" type="json">
+				<param name="root">jsonFormData</param>
+			</result>
+		</action>
+		
+		<action name="queryModel" class="queryModelAction">
+			<result name="list">/page/stat/queryModelList.jsp</result>
+			<result name="view">/page/stat/queryModelView.jsp</result>
+			<result name="edit">/page/stat/queryModelFormNew.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">queryModel</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">closeCurrent</param>
+				<param name="navTabId">external_statmod</param>
+			</result>
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">forward</param>
+				<param name="forwardUrl">external_statmod</param>
+			</result>
+		</action>
+		
+		<action name="*" class="{1}Action">
+			<result name="list">/page/stat/{1}List.jsp</result>
+			<!-- <result name="view">/page/stat/{1}View.jsp</result> -->
+			<!-- <result name="edit">/page/stat/{1}Form.jsp</result> -->
+			<result name="built" type="chain" />
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+	</package>
+</struts>

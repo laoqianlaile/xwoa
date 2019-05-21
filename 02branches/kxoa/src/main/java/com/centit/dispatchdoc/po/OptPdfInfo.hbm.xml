@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.centit.dispatchdoc.po.OptPdfInfo" table="OPT_PDF_INFO">
+		<id name="id" type="java.lang.Long">
+			<column name="id"  />
+			<generator class="assigned"/>
+		</id>
+		<property name="djId" type="java.lang.String">
+			<column name="DJ_ID" length="32"/>
+		</property>
+		<property name="bizType" type="java.lang.String">
+			<column name="BIZTYPE" length="2"/>
+		</property>
+		<property name="nodeInstId" type="java.lang.Long">
+			<column name="NODEINSTID" />
+		</property>
+		<property name="filePath" type="java.lang.String">
+			<column name="FILEPATH" length="1000" />
+		</property>
+		<property name="fileName" type="java.lang.String">
+			<column name="FILENAME" length="150" />
+		</property>
+		<property name="userCode" type="java.lang.String">
+			<column name="USERCODE" length="8" />
+		</property>
+		<property name="nodeName" type="java.lang.String">
+			<column name="NODENAME" length="50"/>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column name="CREATETIME"/>
+		</property>
+		<property name="secretKey" type="java.lang.String">
+		   <column name="SECRETKEY"/>
+		</property>
+	</class>
+</hibernate-mapping>

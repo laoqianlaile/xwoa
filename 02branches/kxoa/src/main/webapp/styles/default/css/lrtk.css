@@ -1,0 +1,81 @@
+.sider {
+	border: 0;
+	width: 40px;
+	position: fixed;
+	right: 2px;
+	bottom: 30px;
+}
+.sider a{
+	width: 40px;
+	height: 40px;
+	Line-height:18px;
+}
+#myDiv_fhdb A {
+display:block;
+
+text-indent:-9999px; 
+background-image: url("../images/zhiding1.png");
+
+}
+ #myDiv_fhdb A:HOVER {
+background-image:url("");
+text-align:center;
+background-color:#48BA86;
+color:black;
+text-indent:1px;
+}
+
+#sy A {
+display:block;
+text-indent:-9999px; 
+background-image: url("../images/sy.png");
+
+}
+ #sy A:HOVER {
+background-image:url("");
+text-align:center;
+background-color:#48BA86;
+color:black;
+text-indent:1px;
+}
+
+#fsyj A {
+display:block;
+text-indent:-9999px; 
+background-image: url("../images/fsyj.png");
+
+}
+ #fsyj A:HOVER {
+background-image:url("");
+text-align:center;
+background-color:#48BA86;
+color:black;
+text-indent:1px;
+}
+#fstx A {
+display:block;
+text-indent:-9999px; 
+background-image: url("../images/fstx.png");
+
+}
+ #fstx A:HOVER {
+background-image:url("");
+text-align:center;
+background-color:#48BA86;
+color:black;
+text-indent:1px;
+}
+#fhdb A {
+display:block;
+text-indent:-9999px; 
+background-image: url("../images/fhdb.png");
+
+}
+ #fhdb A:HOVER {
+background-image:url("");
+text-align:center;
+background-color:#48BA86;
+color:black;
+text-indent:1px;
+} 
+
